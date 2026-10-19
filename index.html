@@ -3,41 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kobo 每週 99 日報</title>
+<title>Kobo 每週書單</title>
 <style>
-:root { --accent:#2563eb; --bg:#fafafa; --card:#fff; --text:#1a1a1a; --meta:#6b7280; --hr:#e5e7eb; }
+:root { --accent:#2563eb; --bg:#fafafa; --card:#fff; --text:#1a1a1a; --meta:#6b7280; --line:#e5e7eb; --hot:#dc2626; --warn-bg:#fef3c7; --warn-text:#92400e; }
 @media (prefers-color-scheme: dark) {
-  :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --meta:#9ca3af; --hr:#374151; --accent:#60a5fa; }
+  :root { --accent:#60a5fa; --bg:#111827; --card:#1f2937; --text:#f3f4f6; --meta:#9ca3af; --line:#374151; --hot:#f87171; --warn-bg:#422006; --warn-text:#fcd34d; }
 }
 * { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;
-  background:var(--bg); color:var(--text); line-height:1.7; padding:1rem; }
-.container { max-width:720px; margin:0 auto; }
-h1 { font-size:1.5rem; margin:1.5rem 0 .5rem; color:var(--accent); }
-h2 { font-size:1.15rem; margin:2rem 0 .6rem; }
-.card { display:flex; gap:1rem; background:var(--card); border:1px solid var(--hr);
-  border-radius:8px; padding:1rem; margin:.8rem 0; }
-.card img { width:96px; height:auto; object-fit:cover; border-radius:4px; align-self:flex-start; }
-.card h3 { font-size:1.05rem; }
-.meta { font-size:.85rem; color:var(--meta); }
-.price { color:#dc2626; font-weight:700; }
-.ratings { font-size:.8rem; margin-top:.3rem; }
-.ratings a { margin-right:.7rem; }
-.desc { font-size:.9rem; margin-top:.4rem; }
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif; background:var(--bg); color:var(--text); line-height:1.7; padding:1rem; }
+.container { max-width:760px; margin:0 auto; }
+h1 { font-size:1.5rem; margin:1rem 0 .2rem; }
+h2 { font-size:1.2rem; margin:2rem 0 .3rem; }
+h3.group { font-size:.9rem; color:var(--meta); margin:1.2rem 0 .4rem; font-weight:600; }
 a { color:var(--accent); }
-.nav { margin:1rem 0; font-size:.85rem; }
-ul.index { list-style:none; }
-ul.index li { margin:.6rem 0; }
-footer { margin-top:2rem; font-size:.75rem; color:var(--meta); }
+.meta { font-size:.85rem; color:var(--meta); }
+.warn { background:var(--warn-bg); color:var(--warn-text); border-radius:8px; padding:.6rem .8rem; margin:.6rem 0; font-size:.9rem; }
+.card { display:flex; gap:1rem; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:.9rem; margin:.6rem 0; }
+.card.today { border:2px solid var(--hot); }
+.card.past { opacity:.55; }
+.card img { width:84px; height:auto; border-radius:4px; align-self:flex-start; flex-shrink:0; }
+.card .body { min-width:0; }
+.card h4 { font-size:1rem; line-height:1.5; }
+.badge { display:inline-block; font-size:.75rem; font-weight:700; padding:0 .45rem; border-radius:999px; background:var(--line); margin-right:.4rem; }
+.today .badge { background:var(--hot); color:#fff; }
+.desc { font-size:.88rem; margin-top:.3rem; }
+.links { font-size:.82rem; margin-top:.3rem; }
+.links a { margin-right:.8rem; }
+.code { font-family:ui-monospace,Menlo,monospace; font-weight:700; }
+details summary { cursor:pointer; color:var(--meta); font-size:.9rem; margin:.8rem 0 .2rem; }
+footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
+@media (max-width:480px) { .card img { width:64px; } }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>📚 Kobo 每週 99 日報</h1>
-<ul class="index">
-<li><a href="2026-10-19.html">📚 2026-10-19</a></li>
-</ul>
-<footer>資料來源：<a href="https://kobo99.com/">kobo99.com</a> · 評分與價格僅供參考，以各平台官網為準。</footer>
+  <h1>📚 Kobo 每週書單</h1>
+  <p class="meta" id="today"></p>
+  <div id="app"><p class="meta">載入中…</p></div>
+  <footer>
+    資料整理自 <a href="https://www.kobo.com/zh/blog">Kobo 官方部落格</a>，價格與優惠以 Kobo 官網為準。
+    一週99每週四更新、本週精選每週一更新。
+  </footer>
 </div>
+<script>
+(() => {
+  const KOBO_BLOG = 'https://www.kobo.com/zh/blog';
+
+  const taipeiToday = () => {
+    const override = new URLSearchParams(location.search).get('date');
+    if (override && /^\d{4}-\d{2}-\d{2}$/.test(override)) return override;
+    return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Taipei' }).format(new Date());
+  };
+
+  const h = (tag, attrs = {}, ...children) => {
+    const el = document.createElement(tag);
+    Object.entries(attrs).forEach(([key, value]) => {
+      if (value !== null && value !== undefined) el.setAttribute(key, value);
+    });
+    children.flat(Infinity).forEach((child) => {
+      if (child !== null && child !== undefined && child !== '') {
+        el.append(child instanceof Node ? child : String(child));
+      }
+    });
+    return el;
+  };
+
+  const safeUrl = (url) => (typeof url === 'string' && url.startsWith('https://') ? url : null);
+  const mmdd = (iso) => `${Number(iso.slice(5, 7))}/${Number(iso.slice(8, 10))}`;
+  const WEEKDAYS = ['日', '一', '二', '三', '四', '五', '六'];
+  const weekday = (iso) => WEEKDAYS[new Date(`${iso}T00:00:00Z`).getUTCDay()];
+
+  const bookCard = (book, { badge, state }) => {
+    const kobo = safeUrl(book.kobo_url);
+    const titleEl = kobo ? h('a', { href: kobo, target: '_blank', rel: 'noopener' }, book.title) : book.title;
+    const byline = [book.author, book.publisher].filter(Boolean).join(' ｜ ');
+    const hk = safeUrl(book.kobo_hk_url);
+    return h('div', { class: `card ${state || ''}` },
+      safeUrl(book.cover_url) ? h('img', { src: book.cover_url, alt: '', loading: 'lazy' }) : null,
+      h('div', { class: 'body' },
+        h('h4', {}, badge ? h('span', { class: 'badge' }, badge) : null, titleEl),
+        byline ? h('p', { class: 'meta' }, byline) : null,
+        book.description ? h('p', { class: 'desc' }, book.description) : null,
+        h('p', { class: 'links' },
+          kobo ? h('a', { href: kobo, target: '_blank', rel: 'noopener' }, 'Kobo 台灣') : null,
+          hk ? h('a', { href: hk, target: '_blank', rel: 'noopener' }, 'Kobo 香港') : null)));
+  };
+
+  const listHeader = (list, today) => {
+    const nodes = [
+      h('h2', {}, list.label),
+      h('p', { class: 'meta' },
+        `${mmdd(list.period_start)}–${mmdd(list.period_end)} ｜ `,
+        h('a', { href: safeUrl(list.url) || KOBO_BLOG, target: '_blank', rel: 'noopener' }, 'Kobo 原文')),
+    ];
+    if (today > list.period_end) {
+      nodes.push(h('div', { class: 'warn' }, '這份書單已過期，新書單可能尚未整理。請先看 ',
+        h('a', { href: KOBO_BLOG, target: '_blank', rel: 'noopener' }, 'Kobo 部落格'), '。'));
+    }
+    return nodes;
+  };
+
+  const renderDd99 = (list, today) => {
+    const books = [...list.books].sort((a, b) => a.sale_date.localeCompare(b.sale_date));
+    const badge = (b) => `${mmdd(b.sale_date)}（${weekday(b.sale_date)}）`;
+    const todays = books.filter((b) => b.sale_date === today);
+    const upcoming = books.filter((b) => b.sale_date > today);
+    const past = books.filter((b) => b.sale_date < today);
+    return h('section', {},
+      listHeader(list, today),
+      todays.length ? [h('h3', { class: 'group' }, '🔥 今日 NT$99'),
+        todays.map((b) => bookCard(b, { badge: badge(b), state: 'today' }))] : null,
+      upcoming.length ? [h('h3', { class: 'group' }, '⏳ 接下來'),
+        upcoming.map((b) => bookCard(b, { badge: badge(b) }))] : null,
+      past.length ? h('details', {}, h('summary', {}, `已結束（${past.length}）`),
+        past.map((b) => bookCard(b, { badge: badge(b), state: 'past' }))) : null);
+  };
+
+  const render8585 = (list, today) => {
+    const books = [...list.books].sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
+    return h('section', {},
+      listHeader(list, today),
+      list.promo_code ? h('p', {}, '結帳折扣碼：', h('span', { class: 'code' }, list.promo_code)) : null,
+      books.map((b) => bookCard(b, { badge: b.rank ? `#${b.rank}` : null })));
+  };
+
+  // For each kind: the list whose period contains today, else the newest one that has started.
+  const pickList = (entries, kind, today) => {
+    const started = entries
+      .filter((e) => e.kind === kind && e.period_start <= today)
+      .sort((a, b) => b.period_start.localeCompare(a.period_start));
+    return started.find((e) => e.period_end >= today) || started[0] || null;
+  };
+
+  const loadJson = async (path) => {
+    const res = await fetch(path, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
+    return res.json();
+  };
+
+  const main = async () => {
+    const today = taipeiToday();
+    document.getElementById('today').textContent = `今天 ${today}（${weekday(today)}，台灣時間）`;
+    const app = document.getElementById('app');
+    try {
+      const manifest = await loadJson('data/manifest.json');
+      const entries = Array.isArray(manifest.lists) ? manifest.lists : [];
+      const picks = ['dd99', '8585'].map((kind) => pickList(entries, kind, today)).filter(Boolean);
+      const lists = await Promise.all(picks.map((e) => loadJson(`data/${encodeURIComponent(e.slug)}.json`)));
+      const sections = lists.map((list) => (list.kind === 'dd99' ? renderDd99 : render8585)(list, today));
+      app.replaceChildren(...(sections.length ? sections : [h('p', {}, '目前沒有書單資料。')]));
+    } catch (error) {
+      console.error(error);
+      app.replaceChildren(h('div', { class: 'warn' }, '書單載入失敗，請稍後再試，或直接前往 ',
+        h('a', { href: KOBO_BLOG }, 'Kobo 部落格'), '。'));
+    }
+  };
+
+  main();
+})();
+</script>
 </body>
 </html>
