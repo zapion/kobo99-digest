@@ -9,6 +9,11 @@ on:
   schedule:
     - cron: "0 4 * * 3"   # Wed 12:00 Taipei: retry anything blocked/not found earlier in the week
   workflow_dispatch:
+    inputs:
+      refresh:
+        description: "Ignore cached ratings and look every book up again"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -35,6 +40,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          ENRICH_REFRESH: ${{ inputs.refresh }}
         run: python3 src/enrich.py
 
       - name: Commit data

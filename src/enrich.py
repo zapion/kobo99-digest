@@ -6,7 +6,7 @@ candidates → we fetch each page politely → verify title/author ourselves →
 rating. Results are cached in data/ratings/<kobo_id>.json with a TTL per status.
 
 Env: OPENAI_API_KEY (needed for discovery; without it only overrides/cached URLs are refreshed),
-OPENAI_MODEL (optional).
+OPENAI_MODEL (optional), ENRICH_REFRESH=1 (ignore cache TTLs), ENRICH_MAX_BOOKS.
 """
 
 from __future__ import annotations
@@ -31,7 +31,11 @@ OVERRIDES_NAME = "rating_overrides.json"
 TAIPEI = ZoneInfo("Asia/Taipei")
 PLATFORM_ORDER = ("readmoo", "goodreads")
 # Days before a cached result is retried, by status.
-TTL_DAYS = {"ok": 30, "no_rating": 14, "not_found": 14, "low_confidence": 14, "disallowed": 30, "blocked": 7}
+TTL_DAYS = {"ok": 30, "search_reported": 7, "no_rating": 14, "not_found": 14, "low_confidence": 14,
+            "disallowed": 30, "blocked": 7}
+# Accept a model-proposed page whose title the model reported faithfully, at this confidence or above.
+MIN_MODEL_CONFIDENCE = 0.85
+SHOWN_STATUSES = frozenset({"ok", "search_reported"})
 ACTIVE_WINDOW_DAYS = 14
 MAX_BOOKS_PER_RUN = 40
 
@@ -60,83 +64,124 @@ def is_fresh(entry: dict | None, today: dt.date) -> bool:
     return (today - fetched).days < TTL_DAYS[entry["status"]]
 
 
-def needs_update(entry: dict | None, platform: str, override: str | None, today: dt.date) -> bool:
+def needs_update(entry: dict | None, platform: str, override: str | None, today: dt.date, refresh: bool = False) -> bool:
     if override and (not entry or entry.get("url") != canonical_url(PLATFORMS[platform], override)):
         return True
-    return not is_fresh(entry, today)
+    return refresh or not is_fresh(entry, today)
 
 
-def _verified(book: dict, platform: str, identity: dict, hints: dict) -> bool:
+def _verified(book: dict, platform: str, identity: dict, hints: dict, candidate: dict | None) -> bool:
+    """Deterministic title/author check, or a confident model match whose title the page confirms."""
     if platform == "readmoo":
+        # Same Chinese edition: the page must match on its own; no model judgement.
         return titles_match(book.get("title", ""), identity["title"]) and authors_match(book.get("author", ""), identity["authors"])
     title_ok = any(titles_match(t, identity["title"]) for t in (hints.get("original_title"), book.get("title")) if t)
-    author = hints.get("original_author") or book.get("author", "")
-    return title_ok and authors_match(author, identity["authors"])
+    if title_ok and authors_match(hints.get("original_author") or book.get("author", ""), identity["authors"]):
+        return True
+    # Translations: trust a confident model match only if the page shows the title the model reported.
+    return bool(candidate) and candidate["confidence"] >= MIN_MODEL_CONFIDENCE and titles_match(candidate["title"], identity["title"])
+
+
+def _search_reported(candidates: list[dict], unreadable: set[str], base: dict) -> dict | None:
+    """Fallback for pages we could not read: the rating search results showed for a confident match.
+
+    Candidates whose page we did read (and which failed verification) are never used.
+    """
+    for c in candidates:
+        if c["url"] not in unreadable:
+            continue
+        if c["confidence"] >= MIN_MODEL_CONFIDENCE and c.get("rating") is not None and c.get("rating_count"):
+            return {**base, "status": "search_reported", "url": c["url"], "matched_title": c["title"],
+                    "score": c["rating"], "count": c["rating_count"]}
+    return None
+
+
+def _candidates_for(book: dict, platform: str, find: Discover | None, override: str | None,
+                    hints: dict) -> tuple[list[dict] | None, dict]:
+    if override:
+        url = canonical_url(PLATFORMS[platform], override)
+        return ([{"url": url, "title": "", "author": "", "confidence": 1.0, "rating": None, "rating_count": None}]
+                if url else []), hints
+    if find is None:
+        return None, hints
+    try:
+        found = find(book, platform)
+    except DiscoveryError as error:
+        print(f"[warn] discovery {platform} for {book.get('title')}: {error}", file=sys.stderr)
+        return None, hints
+    new_hints = {k: found.get(k) for k in ("original_title", "original_author") if found.get(k)}
+    return found["candidates"], {**hints, **new_hints}
 
 
 def rate_platform(book: dict, platform: str, fetcher: PoliteFetcher, find: Discover | None,
                   override: str | None, hints: dict, now: str) -> tuple[dict | None, dict]:
     """Return (cache entry or None when discovery is unavailable, updated hints)."""
-    if override:
-        urls = [u for u in [canonical_url(PLATFORMS[platform], override)] if u]
-    elif find is None:
+    candidates, hints = _candidates_for(book, platform, find, override, hints)
+    if candidates is None:
         return None, hints
-    else:
-        try:
-            found = find(book, platform)
-        except DiscoveryError as error:
-            print(f"[warn] discovery {platform} for {book.get('title')}: {error}", file=sys.stderr)
-            return None, hints
-        hints = {**hints, **{k: v for k, v in found.items() if k != "urls" and v and not hints.get(k)}}
-        urls = found["urls"]
     base = {"platform": platform, "fetched_at": now}
-    if not urls:
+    if not candidates:
         return {**base, "status": "not_found"}, hints
-    tried = []
-    for url in urls:
+    tried, problem = [], None
+    unreadable = {c["url"] for c in candidates}  # shrinks as pages are actually read
+    for candidate in candidates:
+        url = candidate["url"]
         try:
             page = fetcher.get(url)
         except NotFound:
+            unreadable.discard(url)
             continue
         except Disallowed:
-            return {**base, "status": "disallowed", "url": url}, hints
+            problem = problem or {"status": "disallowed", "url": url}
+            continue
         except Blocked as error:
-            return {**base, "status": "blocked", "url": url, "detail": str(error)}, hints
+            problem = {"status": "blocked", "url": url, "detail": str(error)}
+            break  # the host refuses us for the rest of this run
+        unreadable.discard(url)
         identity = page_identity(page)
-        if not override and not _verified(book, platform, identity, hints):
-            tried.append({"url": url, "title": identity["title"], "authors": identity["authors"]})
+        if not override and not _verified(book, platform, identity, hints, candidate):
+            tried.append({"url": url, "title": identity["title"], "authors": identity["authors"],
+                          "confidence": candidate["confidence"]})
             continue
         rating = extract_rating(page)
         if not rating:
             return {**base, "status": "no_rating", "url": url}, hints
         return {**base, "status": "ok", "url": url, "matched_title": identity["title"], **rating}, hints
+    fallback = None if override else _search_reported(candidates, unreadable, base)
+    if fallback:
+        return fallback, hints
+    if problem:
+        return {**base, **problem}, hints
     return {**base, "status": "low_confidence", "tried": tried}, hints
 
 
 def enrich_book(book: dict, cache: dict, fetcher: PoliteFetcher, find: Discover | None,
-                overrides: dict, today: dt.date, now: str) -> dict:
+                overrides: dict, today: dt.date, now: str, refresh: bool = False) -> dict:
     platforms = dict(cache.get("platforms", {}))
     hints = dict(cache.get("hints", {}))
     for platform in PLATFORM_ORDER:
         override = overrides.get(platform)
-        if not needs_update(platforms.get(platform), platform, override, today):
+        if not needs_update(platforms.get(platform), platform, override, today, refresh):
             continue
         entry, hints = rate_platform(book, platform, fetcher, find, override, hints, now)
         if entry:
             platforms[platform] = entry
+            print(f"{book.get('title', '')[:24]} | {platform}: {entry['status']} {entry.get('score', '')} {entry.get('url', '')}")
     return {"kobo_id": ebook_id(book["kobo_url"]), "title": book.get("title", ""), "hints": hints, "platforms": platforms}
 
 
 def public_ratings(cache: dict) -> list[dict]:
-    """What the page shows: verified ratings only."""
+    """What the page shows: ratings read from the page ("page") or, failing that, from search results ("search")."""
     return [
-        {"platform": key, "name": PLATFORMS[key].name.split(" ")[0], "score": e["score"], "count": e["count"], "url": e["url"]}
+        {"platform": key, "name": PLATFORMS[key].name.split(" ")[0], "score": e["score"], "count": e["count"],
+         "url": e["url"], "source": "page" if e["status"] == "ok" else "search"}
         for key in PLATFORM_ORDER
-        if (e := cache.get("platforms", {}).get(key)) and e.get("status") == "ok"
+        if (e := cache.get("platforms", {}).get(key)) and e.get("status") in SHOWN_STATUSES
     ]
 
 
-def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover | None, max_books: int) -> dict:
+def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover | None, max_books: int,
+        refresh: bool = False) -> dict:
     ratings_dir = data_dir / RATINGS_DIRNAME
     overrides = _read_json(data_dir / OVERRIDES_NAME, {})
     now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
@@ -151,9 +196,10 @@ def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover |
             cache_path = ratings_dir / f"{kobo_id}.json"
             cache = _read_json(cache_path, {})
             book_overrides = overrides.get(kobo_id, {})
-            stale = any(needs_update(cache.get("platforms", {}).get(p), p, book_overrides.get(p), today) for p in PLATFORM_ORDER)
+            stale = any(needs_update(cache.get("platforms", {}).get(p), p, book_overrides.get(p), today, refresh)
+                        for p in PLATFORM_ORDER)
             if kobo_id and stale and budget > 0:
-                updated = enrich_book(book, cache, fetcher, find, book_overrides, today, now)
+                updated = enrich_book(book, cache, fetcher, find, book_overrides, today, now, refresh)
                 if updated["platforms"] != cache.get("platforms", {}) or updated["hints"] != cache.get("hints", {}):
                     _write_json(cache_path, updated)
                     cache = updated
@@ -174,7 +220,8 @@ def main() -> int:
     if find is None:
         print("[warn] OPENAI_API_KEY not set: only overrides are refreshed.", file=sys.stderr)
     today = dt.datetime.now(TAIPEI).date()
-    stats = run(DATA_DIR, today, PoliteFetcher(), find, int(os.getenv("ENRICH_MAX_BOOKS", MAX_BOOKS_PER_RUN)))
+    refresh = os.getenv("ENRICH_REFRESH", "").lower() in ("1", "true", "yes")
+    stats = run(DATA_DIR, today, PoliteFetcher(), find, int(os.getenv("ENRICH_MAX_BOOKS", MAX_BOOKS_PER_RUN)), refresh)
     print(json.dumps(stats))
     return 0
 

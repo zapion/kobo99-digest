@@ -178,22 +178,46 @@ def openai_payload(result: dict) -> dict:
                        {"type": "message", "content": [{"type": "output_text", "text": json.dumps(result)}]}]}
 
 
-def test_discover_filters_to_allowlisted_canonical_urls():
+def cand(url, title="t", author="a", conf=0.9, rating=None, count=None):
+    return {"url": url, "title": title, "author": author, "same_book_confidence": conf, "rating": rating, "rating_count": count}
+
+
+def test_discover_filters_to_allowlisted_canonical_urls_and_cleans_fields():
     sent = {}
 
     def post(body, key):
         sent.update(body)
         return openai_payload({"candidates": [
-            {"url": READMOO_URL + "?utm=x", "title": "t", "author": "a"},
-            {"url": "https://readmoo.com/search/keyword?q=x", "title": "t", "author": "a"},
-            {"url": "https://evil.example/book/1", "title": "t", "author": "a"},
-            {"url": READMOO_URL, "title": "dup", "author": "a"},
+            cand(READMOO_URL + "?utm=x", rating=4.7, count=141, conf=1.7),
+            cand("https://readmoo.com/search/keyword?q=x"),
+            cand("https://evil.example/book/1"),
+            cand(READMOO_URL, title="dup"),
         ], "original_title": "The Worlds I See", "original_author": "Fei-Fei Li"})
 
     result = rating_discover.discover(BOOK, "readmoo", "key", model="m", post=post)
-    assert result == {"urls": [READMOO_URL], "original_title": "The Worlds I See", "original_author": "Fei-Fei Li"}
+    assert result["candidates"] == [{"url": READMOO_URL, "title": "t", "author": "a", "confidence": 1.0,
+                                     "rating": 4.7, "rating_count": 141}]
+    assert (result["original_title"], result["original_author"]) == ("The Worlds I See", "Fei-Fei Li")
     assert sent["tools"] == [{"type": "web_search", "filters": {"allowed_domains": ["readmoo.com"]}}]
     assert sent["text"]["format"]["strict"] is True
+    assert "short title: AI科學家李飛飛的視界之旅" in sent["input"]
+
+
+@pytest.mark.parametrize(
+    "hint",
+    ["（未在 readmoo.com 找到原文書名；本次搜尋未發現）", "(not found on readmoo.com)", "x" * 200, "unknown", ""],
+)
+def test_discover_drops_noise_hints(hint):
+    post = lambda body, key: openai_payload({"candidates": [], "original_title": hint, "original_author": hint})
+    result = rating_discover.discover(BOOK, "goodreads", "k", post=post)
+    assert result == {"candidates": [], "original_title": "", "original_author": ""}
+
+
+def test_discover_rejects_impossible_ratings():
+    post = lambda body, key: openai_payload({"candidates": [cand(GOODREADS_URL, rating=8.5, count=-3)],
+                                             "original_title": "", "original_author": ""})
+    candidate = rating_discover.discover(BOOK, "goodreads", "k", post=post)["candidates"][0]
+    assert (candidate["rating"], candidate["rating_count"]) == (None, None)
 
 
 def test_discover_rejects_unusable_responses():
@@ -234,9 +258,15 @@ def fake_find(results):
     return find, calls
 
 
+def found(url, title="", author="", conf=0.9, rating=None, count=None, original_title="", original_author=""):
+    candidates = [{"url": url, "title": title, "author": author, "confidence": conf, "rating": rating,
+                   "rating_count": count}] if url else []
+    return {"candidates": candidates, "original_title": original_title, "original_author": original_author}
+
+
 FOUND = {
-    "readmoo": {"urls": [READMOO_URL], "original_title": "The Worlds I See", "original_author": "Fei-Fei Li"},
-    "goodreads": {"urls": [GOODREADS_URL], "original_title": "", "original_author": ""},
+    "readmoo": found(READMOO_URL, original_title="The Worlds I See", original_author="Fei-Fei Li"),
+    "goodreads": found(GOODREADS_URL),
 }
 
 
@@ -248,8 +278,8 @@ def test_enrich_verifies_and_attaches_ratings_then_uses_cache(tmp_path):
     assert stats["enriched"] == 1 and stats["lists_updated"] == 1
     book = json.loads((data / "weekly-dd99-2026-w42.json").read_text())["books"][0]
     assert book["ratings"] == [
-        {"platform": "readmoo", "name": "讀墨", "score": 4.7, "count": 141, "url": READMOO_URL},
-        {"platform": "goodreads", "name": "Goodreads", "score": 4.3, "count": 5715, "url": GOODREADS_URL},
+        {"platform": "readmoo", "name": "讀墨", "score": 4.7, "count": 141, "url": READMOO_URL, "source": "page"},
+        {"platform": "goodreads", "name": "Goodreads", "score": 4.3, "count": 5715, "url": GOODREADS_URL, "source": "page"},
     ]
     cache = json.loads((data / "ratings" / "ai-146.json").read_text())
     assert cache["hints"]["original_title"] == "The Worlds I See"
@@ -263,7 +293,7 @@ def test_enrich_verifies_and_attaches_ratings_then_uses_cache(tmp_path):
 def test_enrich_rejects_unverified_pages(tmp_path):
     data = seed_data(tmp_path, books=[{**BOOK, "title": "中年理財", "author": "雨果"}])
     fetcher = fetcher_with({READMOO_URL: (200, READMOO_HTML, {}), GOODREADS_URL: (200, GOODREADS_HTML, {})})
-    find, _ = fake_find({**FOUND, "readmoo": {**FOUND["readmoo"], "original_title": "", "original_author": ""}})
+    find, _ = fake_find({"readmoo": found(READMOO_URL, title="AI科學家", conf=0.95), "goodreads": found(GOODREADS_URL, conf=0.4)})
     enrich.run(data, TODAY, fetcher, find, 40)
     cache = json.loads((data / "ratings" / "ai-146.json").read_text())
     assert cache["platforms"]["readmoo"]["status"] == "low_confidence"
@@ -274,11 +304,62 @@ def test_enrich_rejects_unverified_pages(tmp_path):
 def test_enrich_records_blocked_and_not_found(tmp_path):
     data = seed_data(tmp_path)
     fetcher = fetcher_with({READMOO_URL: (200, READMOO_HTML, {}), GOODREADS_URL: (202, "", {"x-amzn-waf-action": "challenge"})})
-    find, _ = fake_find({**FOUND, "readmoo": {"urls": [], "original_title": "", "original_author": ""}})
+    find, _ = fake_find({"readmoo": found(None), "goodreads": found(GOODREADS_URL, conf=0.95)})
     enrich.run(data, TODAY, fetcher, find, 40)
     platforms = json.loads((data / "ratings" / "ai-146.json").read_text())["platforms"]
     assert platforms["readmoo"]["status"] == "not_found"
     assert platforms["goodreads"]["status"] == "blocked"
+
+
+def test_blocked_page_falls_back_to_search_reported_rating(tmp_path):
+    data = seed_data(tmp_path)
+    fetcher = fetcher_with({READMOO_URL: (403, "nope", {}), GOODREADS_URL: (202, "", {"x-amzn-waf-action": "challenge"})})
+    find, _ = fake_find({
+        "readmoo": found(READMOO_URL, title="AI科學家李飛飛的視界之旅", conf=0.9, rating=4.7, count=141),
+        "goodreads": found(GOODREADS_URL, title="The Worlds I See", conf=0.5, rating=4.3, count=5715),  # not confident
+    })
+    enrich.run(data, TODAY, fetcher, find, 40)
+    platforms = json.loads((data / "ratings" / "ai-146.json").read_text())["platforms"]
+    assert platforms["readmoo"]["status"] == "search_reported"
+    assert platforms["goodreads"]["status"] == "blocked"
+    book = json.loads((data / "weekly-dd99-2026-w42.json").read_text())["books"][0]
+    assert book["ratings"] == [{"platform": "readmoo", "name": "讀墨", "score": 4.7, "count": 141,
+                                "url": READMOO_URL, "source": "search"}]
+
+
+def test_confident_model_match_accepted_when_page_title_confirms(tmp_path):
+    visual_detox = {"title": "視覺排毒：辨識視覺語言背後隱藏的訊息", "author": "瑪琳．唐吉",
+                    "kobo_url": "https://www.kobo.com/tw/zh/ebook/1mb76"}
+    page = GOODREADS_HTML.replace("The Worlds I See: Curiosity, Exploration, and Discovery at the Dawn of AI",
+                                  "The Visual Detox").replace("Fei-Fei Li", "Marine Tanguy")
+    data = seed_data(tmp_path, books=[visual_detox])
+    fetcher = fetcher_with({GOODREADS_URL: (200, page, {})})
+    find, _ = fake_find({"readmoo": found(None),
+                         "goodreads": found(GOODREADS_URL, title="The Visual Detox", author="Marine Tanguy", conf=0.9)})
+    enrich.run(data, TODAY, fetcher, find, 40)
+    entry = json.loads((data / "ratings" / "1mb76.json").read_text())["platforms"]["goodreads"]
+    assert entry["status"] == "ok" and entry["score"] == 4.3
+
+
+def test_model_match_rejected_when_page_title_differs(tmp_path):
+    data = seed_data(tmp_path, books=[{**BOOK, "title": "視覺排毒", "author": "瑪琳．唐吉"}])
+    fetcher = fetcher_with({GOODREADS_URL: (200, GOODREADS_HTML, {})})
+    find, _ = fake_find({"readmoo": found(None),
+                         "goodreads": found(GOODREADS_URL, title="The Visual Detox", conf=0.99, rating=4.1, count=9)})
+    enrich.run(data, TODAY, fetcher, find, 40)
+    entry = json.loads((data / "ratings" / "ai-146.json").read_text())["platforms"]["goodreads"]
+    # the page says "The Worlds I See": the model's claim is contradicted, so its search number is not used
+    assert entry["status"] == "low_confidence"
+    assert json.loads((data / "weekly-dd99-2026-w42.json").read_text())["books"][0]["ratings"] == []
+
+
+def test_refresh_ignores_ttl(tmp_path):
+    data = seed_data(tmp_path)
+    fetcher = fetcher_with({READMOO_URL: (200, READMOO_HTML, {}), GOODREADS_URL: (200, GOODREADS_HTML, {})})
+    find, calls = fake_find(FOUND)
+    enrich.run(data, TODAY, fetcher, find, 40)
+    enrich.run(data, TODAY, fetcher, find, 40, refresh=True)
+    assert calls == ["readmoo", "goodreads", "readmoo", "goodreads"]
 
 
 def test_enrich_without_api_key_uses_overrides_only(tmp_path):

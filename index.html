@@ -32,10 +32,13 @@ a { color:var(--accent); }
 .price { font-size:.9rem; margin-top:.2rem; }
 .price b { color:var(--hot); }
 .price del { color:var(--meta); margin-left:.4rem; }
+.price .note { color:var(--meta); margin-left:.5rem; font-size:.82rem; }
+.price .regular { color:var(--text); font-weight:600; }
 .ratings { font-size:.82rem; margin-top:.2rem; color:var(--meta); }
 .ratings a { color:inherit; text-decoration:none; margin-right:.7rem; white-space:nowrap; }
 .ratings a:hover { color:var(--accent); }
 .ratings b { color:var(--text); }
+.ratings a.search b { font-weight:400; }
 .code { font-family:ui-monospace,Menlo,monospace; font-weight:700; }
 details summary { cursor:pointer; color:var(--meta); font-size:.9rem; margin:.8rem 0 .2rem; }
 footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
@@ -102,12 +105,30 @@ footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
     const valid = (Array.isArray(ratings) ? ratings : [])
       .filter((r) => Number.isFinite(r.score) && safeUrl(r.url));
     if (!valid.length) return null;
-    return h('p', { class: 'ratings' }, valid.map((r) => h('a', { href: r.url, target: '_blank', rel: 'noopener',
-      title: `${r.name} ${r.score}（${formatCount(r.count)} 人評分）` },
-      '⭐ ', h('b', {}, r.score.toFixed(1)), ` ${r.name}（${formatCount(r.count)}）`)));
+    return h('p', { class: 'ratings' }, valid.map((r) => {
+      const fromSearch = r.source === 'search';
+      const tip = `${r.name} ${r.score}（${formatCount(r.count)} 人評分）`
+        + (fromSearch ? '：取自搜尋結果，未直接讀取該頁' : '');
+      return h('a', { href: r.url, target: '_blank', rel: 'noopener', title: tip, class: fromSearch ? 'search' : null },
+        '⭐ ', h('b', {}, `${fromSearch ? '≈' : ''}${r.score.toFixed(1)}`),
+        ` ${r.name}（${formatCount(r.count)}${fromSearch ? '・搜尋' : ''}）`);
+    }));
   };
 
-  const bookCard = (book, { badge, state }) => {
+  // 99 books are NT$99 only on their sale day; other days show the regular price.
+  const priceLine = (book, today) => {
+    if (!Number.isFinite(book.sale_price)) return null;
+    const list = Number.isFinite(book.list_price) && book.list_price > book.sale_price ? book.list_price : null;
+    const onSale = !book.sale_date || book.sale_date === today;
+    if (onSale) {
+      return h('p', { class: 'price' }, h('b', {}, `NT$${book.sale_price}`), list ? h('del', {}, `NT$${list}`) : null);
+    }
+    const when = `${mmdd(book.sale_date)}（${weekday(book.sale_date)}）`;
+    const note = book.sale_date > today ? `${when} 限定 NT$${book.sale_price}` : `${when} 已結束 NT$${book.sale_price}`;
+    return h('p', { class: 'price' }, list ? h('span', { class: 'regular' }, `NT$${list}`) : null, h('span', { class: 'note' }, note));
+  };
+
+  const bookCard = (book, { badge, state, today }) => {
     const kobo = safeUrl(book.kobo_url);
     const titleEl = kobo ? h('a', { href: kobo, target: '_blank', rel: 'noopener' }, book.title) : book.title;
     const byline = [book.author, book.publisher].filter(Boolean).join(' ｜ ');
@@ -117,8 +138,7 @@ footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
       h('div', { class: 'body' },
         h('h4', {}, badge ? h('span', { class: 'badge' }, badge) : null, titleEl),
         byline ? h('p', { class: 'meta' }, byline) : null,
-        Number.isFinite(book.sale_price) ? h('p', { class: 'price' }, h('b', {}, `NT$${book.sale_price}`),
-          Number.isFinite(book.list_price) && book.list_price > book.sale_price ? h('del', {}, `NT$${book.list_price}`) : null) : null,
+        priceLine(book, today),
         ratingsLine(book.ratings),
         book.description ? h('p', { class: 'desc' }, book.description) : null,
         h('p', { class: 'links' },
@@ -150,11 +170,11 @@ footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
     return h('section', { tabindex: '0', 'aria-label': list.label },
       listHeader(list, today),
       todays.length ? [h('h3', { class: 'group' }, '🔥 今日 NT$99'),
-        todays.map((b) => bookCard(b, { badge: badge(b), state: 'today' }))] : null,
+        todays.map((b) => bookCard(b, { badge: badge(b), state: 'today', today }))] : null,
       upcoming.length ? [h('h3', { class: 'group' }, '⏳ 接下來'),
-        upcoming.map((b) => bookCard(b, { badge: badge(b) }))] : null,
+        upcoming.map((b) => bookCard(b, { badge: badge(b), today }))] : null,
       past.length ? h('details', {}, h('summary', {}, `已結束（${past.length}）`),
-        past.map((b) => bookCard(b, { badge: badge(b), state: 'past' }))) : null);
+        past.map((b) => bookCard(b, { badge: badge(b), state: 'past', today }))) : null);
   };
 
   const render8585 = (list, today) => {
@@ -162,7 +182,7 @@ footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
     return h('section', { tabindex: '0', 'aria-label': list.label },
       listHeader(list, today),
       list.promo_code ? h('p', {}, '結帳折扣碼：', h('span', { class: 'code' }, list.promo_code)) : null,
-      books.map((b) => bookCard(b, { badge: b.rank ? `#${b.rank}` : null })));
+      books.map((b) => bookCard(b, { badge: b.rank ? `#${b.rank}` : null, today })));
   };
 
   // For each kind: the list whose period contains today, else the newest one that has started.
