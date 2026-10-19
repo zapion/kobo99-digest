@@ -64,7 +64,8 @@
           "name": "Goodreads",
           "score": 4.53,
           "count": 487,
-          "url": "https://www.goodreads.com/book/show/19196313"
+          "url": "https://www.goodreads.com/book/show/19196313",
+          "source": "page"
         }
       ]
     },
@@ -98,7 +99,8 @@
           "name": "Goodreads",
           "score": 3.32,
           "count": 1270,
-          "url": "https://www.goodreads.com/book/show/214152294"
+          "url": "https://www.goodreads.com/book/show/214152294",
+          "source": "page"
         }
       ]
     },
