@@ -15,7 +15,10 @@ global.Utilities = {
   newBlob: (data) => blob(typeof data === 'string' ? Buffer.from(data, 'utf8') : Buffer.from(data)),
   base64Encode: (bytes) => Buffer.from(bytes).toString('base64'),
   base64Decode: (text) => [...Buffer.from(text, 'base64')],
-  base64DecodeWebSafe: (text) => [...Buffer.from(text, 'base64url')],
+  base64DecodeWebSafe: (text) => {
+    if (text.length % 4) throw new Error('無法解碼字串。');  // like Apps Script: needs padding
+    return [...Buffer.from(text, 'base64url')];
+  },
 };
 global.ScriptApp = { getOAuthToken: () => 'oauth' };
 global.Logger = { log: () => {} };
@@ -85,6 +88,14 @@ test('findHtml walks multipart payloads', () => {
   ] };
   assert.equal(code.findHtml(payload), '<p>哈囉</p>');
   assert.equal(code.findHtml({ mimeType: 'text/plain', body: { data: 'eA' } }), '');
+});
+
+test('findHtml accepts decoded byte arrays (advanced service) and unpadded base64url', () => {
+  const bytes = [...Buffer.from('<p>位元組</p>')];
+  assert.equal(code.findHtml({ mimeType: 'text/html', body: { data: bytes } }), '<p>位元組</p>');
+  const unpadded = Buffer.from('<p>ab</p>').toString('base64url');
+  assert.ok(!unpadded.endsWith('='));
+  assert.equal(code.findHtml({ mimeType: 'text/html', body: { data: unpadded } }), '<p>ab</p>');
 });
 
 test('fetchKoboEmails maps Gmail API messages', () => {

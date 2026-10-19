@@ -85,9 +85,16 @@ function fetchKoboEmails() {
   });
 }
 
+/** The advanced service may return body.data as decoded bytes or as unpadded base64url text. */
+function decodeBody(data) {
+  if (typeof data !== 'string') return Utilities.newBlob(data).getDataAsString('UTF-8');
+  const padded = data + '='.repeat((4 - (data.length % 4)) % 4);
+  return Utilities.newBlob(Utilities.base64DecodeWebSafe(padded)).getDataAsString('UTF-8');
+}
+
 function findHtml(part) {
   if (part.mimeType === 'text/html' && part.body && part.body.data) {
-    return Utilities.newBlob(Utilities.base64DecodeWebSafe(part.body.data)).getDataAsString('UTF-8');
+    return decodeBody(part.body.data);
   }
   for (const child of part.parts || []) {
     const html = findHtml(child);
