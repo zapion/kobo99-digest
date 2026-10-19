@@ -8,15 +8,17 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "fetched_at": "2026-10-19T09:27:38+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
-      "status": "blocked",
-      "url": "https://www.goodreads.com/book/show/143094974-the-wind-in-the-willow",
-      "detail": "www.goodreads.com already blocked us this run"
+      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "status": "search_reported",
+      "url": "https://www.goodreads.com/book/show/809304.The_Wind_in_the_Willows",
+      "matched_title": "The Wind in the Willows",
+      "score": 4.03,
+      "count": 249563
     }
   }
 }

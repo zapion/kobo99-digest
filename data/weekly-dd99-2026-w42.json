@@ -19,7 +19,16 @@
       "sale_date": "2026-10-15",
       "list_price": 450,
       "sale_price": 99,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.3,
+          "count": 5709,
+          "url": "https://www.goodreads.com/book/show/203579002-the-worlds-i-see",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "超高齡社會的消費行為學：為熟齡者消除「不安、不滿、不便」，就是商機所在！",
@@ -32,7 +41,16 @@
       "sale_date": "2026-10-16",
       "list_price": 300,
       "sale_price": 99,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.67,
+          "count": 3,
+          "url": "https://www.goodreads.com/book/show/29105581",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "霍金传",
@@ -45,7 +63,16 @@
       "sale_date": "2026-10-16",
       "list_price": 235,
       "sale_price": 99,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.7,
+          "count": 185,
+          "url": "https://www.goodreads.com/book/show/57689848",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "告白者（普立茲獎得主阮越清《同情者》全新續作）",
@@ -58,7 +85,16 @@
       "sale_date": "2026-10-17",
       "list_price": 336,
       "sale_price": 99,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.96,
+          "count": 12905,
+          "url": "https://www.goodreads.com/book/show/52260627-the-committed",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "超圖解電動車的構造與原理：驅動方式×發展趨勢，通盤了解產業鏈的現況及展望",
@@ -84,7 +120,16 @@
       "sale_date": "2026-10-19",
       "list_price": 254,
       "sale_price": 99,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.0,
+          "count": 4,
+          "url": "https://www.goodreads.com/book/show/138222130-55-seventeen-the-8",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "柳林風聲：年度暢銷書《蛤蟆先生去看心理師》故事原型，英國百年經典文學之作",
@@ -97,7 +142,16 @@
       "sale_date": "2026-10-20",
       "list_price": 266,
       "sale_price": 99,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.03,
+          "count": 249563,
+          "url": "https://www.goodreads.com/book/show/809304.The_Wind_in_the_Willows",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "思考致富：全球銷售七千萬冊，洛克菲勒、福特、卡內基的財富締造機密",
@@ -110,7 +164,16 @@
       "sale_date": "2026-10-21",
       "list_price": 238,
       "sale_price": 99,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.16,
+          "count": 394297,
+          "url": "https://www.goodreads.com/book/show/18823371-think-and-grow-rich",
+          "source": "search"
+        }
+      ]
     }
   ]
 }

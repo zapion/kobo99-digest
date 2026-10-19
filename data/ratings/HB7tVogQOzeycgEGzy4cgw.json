@@ -2,45 +2,23 @@
   "kobo_id": "HB7tVogQOzeycgEGzy4cgw",
   "title": "不懂權謀的人，無法做大事：馬基維利教你如何在職場上出人頭地",
   "hints": {
-    "original_title": "（未在 readmoo.com 找到原文書名；本次搜尋未發現該書之 readmoo 商品頁）",
-    "original_author": "Mark Powell； Jonathan Gifford"
+    "original_title": "Machiavellian Intelligence: How to Survive and Rise in the Modern Corporation",
+    "original_author": "Jonathan Gifford, Mark Powell"
   },
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "fetched_at": "2026-10-19T09:27:38+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.goodreads.com/book/show/36985704-machiavellian-intelligence",
-          "title": "Machiavellian Intelligence: How to Survive and Rise in the Modern Corporation",
-          "authors": [
-            "Jonathan Gifford",
-            "Mark Powell"
-          ]
-        },
-        {
-          "url": "https://www.goodreads.com/book/show/50718700",
-          "title": "馬基維利，請教我如何出人頭地：不懂權謀的人，根本無法做大事",
-          "authors": [
-            "馬克‧鮑威爾",
-            "強納森‧季福德"
-          ]
-        },
-        {
-          "url": "https://www.goodreads.com/book/show/44153485-corporate-intelligence",
-          "title": "Corporate Intelligence: How to Survive and Rise in the Modern Corporation",
-          "authors": [
-            "Mark Powell",
-            "Jonathan Gifford"
-          ]
-        }
-      ]
+      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/36985704-machiavellian-intelligence",
+      "matched_title": "Machiavellian Intelligence: How to Survive and Rise in the Modern Corporation",
+      "score": 4.1,
+      "count": 41
     }
   }
 }

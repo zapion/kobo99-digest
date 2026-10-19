@@ -3,20 +3,22 @@
   "title": "AI科學家李飛飛的視界之旅",
   "hints": {
     "original_title": "The Worlds I See: Curiosity, Exploration, and Discovery at the Dawn of AI",
-    "original_author": "李飛飛（Fei‑Fei Li）"
+    "original_author": "Fei-Fei Li"
   },
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "fetched_at": "2026-10-19T09:27:38+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
-      "status": "blocked",
+      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "status": "search_reported",
       "url": "https://www.goodreads.com/book/show/203579002-the-worlds-i-see",
-      "detail": "www.goodreads.com already blocked us this run"
+      "matched_title": "The Worlds I See: Curiosity, Exploration, and Discovery at the Dawn of AI",
+      "score": 4.3,
+      "count": 5709
     }
   }
 }

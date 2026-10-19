@@ -2,23 +2,23 @@
   "kobo_id": "_1Xk_Ms1LTyAWnmCT65bSA",
   "title": "告白者（普立茲獎得主阮越清《同情者》全新續作）",
   "hints": {
-    "original_title": "(not confirmed on readmoo.com)",
-    "original_author": "Viet Thanh Nguyen (阮越清)"
+    "original_title": "The Committed",
+    "original_author": "Viet Thanh Nguyen"
   },
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
-      "status": "blocked",
-      "url": "https://readmoo.com/book/210271286000101",
-      "detail": "readmoo.com already blocked us this run"
+      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
-      "status": "blocked",
-      "url": "https://www.goodreads.com/book/show/49578513-the-committed",
-      "detail": "www.goodreads.com already blocked us this run"
+      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "status": "search_reported",
+      "url": "https://www.goodreads.com/book/show/52260627-the-committed",
+      "matched_title": "The Committed",
+      "score": 3.96,
+      "count": 12905
     }
   }
 }

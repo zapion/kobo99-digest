@@ -19,7 +19,16 @@
       "rank": 1,
       "list_price": 255,
       "sale_price": 217,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.1,
+          "count": 41,
+          "url": "https://www.goodreads.com/book/show/36985704-machiavellian-intelligence",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "中年理財：給上有老，下有小，不敢倒下的你，重建人生的財務主導權",
@@ -45,7 +54,16 @@
       "rank": 3,
       "list_price": 272,
       "sale_price": 231,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.74,
+          "count": 501,
+          "url": "https://www.goodreads.com/book/show/40962310-parent-yourself-again",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "意想不到的靈媒：一位前美國軍方高層，還有她的通靈工作",
@@ -64,7 +82,7 @@
           "name": "Goodreads",
           "score": 4.53,
           "count": 487,
-          "url": "https://www.goodreads.com/book/show/19196313",
+          "url": "https://www.goodreads.com/book/show/19196313-messages-of-hope",
           "source": "page"
         }
       ]
@@ -80,7 +98,16 @@
       "rank": 5,
       "list_price": 315,
       "sale_price": 267,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.3,
+          "count": 106,
+          "url": "https://www.goodreads.com/book/show/128657339-the-visual-detox",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "超級代理效應：AI全面賦能時代！矽谷傳奇創業家霍夫曼寫給每個人的關鍵行動原則",
@@ -98,9 +125,9 @@
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 3.32,
-          "count": 1270,
+          "count": 1252,
           "url": "https://www.goodreads.com/book/show/214152294",
-          "source": "page"
+          "source": "search"
         }
       ]
     },
@@ -115,7 +142,16 @@
       "rank": 7,
       "list_price": 282,
       "sale_price": 240,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.95,
+          "count": 19,
+          "url": "https://www.goodreads.com/book/show/216783717",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "曉星：2026本屋大賞入圍作！湊佳苗自認最喜歡的一部作品！",
@@ -128,7 +164,16 @@
       "rank": 8,
       "list_price": 285,
       "sale_price": 242,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.28,
+          "count": 36,
+          "url": "https://www.goodreads.com/book/show/243018339",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "你的情緒，90％由血糖決定：日本漢方營養醫學專家親授，穩定血糖、調節自律神經，告別莫名疲倦、焦躁易怒、夜夜淺眠，找回情緒與身體的最佳狀態",
@@ -154,7 +199,16 @@
       "rank": 10,
       "list_price": 272,
       "sale_price": 231,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.07,
+          "count": 1796283,
+          "url": "https://www.goodreads.com/book/show/62630160.Never_Lie",
+          "source": "search"
+        }
+      ]
     }
   ]
 }

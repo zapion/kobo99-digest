@@ -8,14 +8,14 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "fetched_at": "2026-10-19T09:27:38+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "fetched_at": "2026-10-19T09:27:38+00:00",
       "status": "ok",
-      "url": "https://www.goodreads.com/book/show/19196313",
+      "url": "https://www.goodreads.com/book/show/19196313-messages-of-hope",
       "matched_title": "Messages of Hope: The Metaphysical Memoir of a Most Unexpected Medium",
       "score": 4.53,
       "count": 487

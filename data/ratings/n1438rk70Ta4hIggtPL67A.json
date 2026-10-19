@@ -2,21 +2,23 @@
   "kobo_id": "n1438rk70Ta4hIggtPL67A",
   "title": "霍金传",
   "hints": {
-    "original_title": "(無法在 readmoo.com 上確認原文書名)",
-    "original_author": "Charles Seife (查尔斯·塞费)"
+    "original_title": "Hawking Hawking: The Selling of a Scientific Celebrity",
+    "original_author": "Charles Seife"
   },
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "fetched_at": "2026-10-19T09:27:38+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
-      "status": "blocked",
+      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "status": "search_reported",
       "url": "https://www.goodreads.com/book/show/57689848",
-      "detail": "www.goodreads.com already blocked us this run"
+      "matched_title": "Hawking Hawking: The Selling of a Scientific Celebrity",
+      "score": 3.7,
+      "count": 185
     }
   }
 }

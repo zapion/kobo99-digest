@@ -8,12 +8,14 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "status": "blocked",
+      "url": "https://readmoo.com/book/210499825000101",
+      "detail": "readmoo.com returned 403"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "fetched_at": "2026-10-19T09:27:38+00:00",
       "status": "not_found"
     }
   }

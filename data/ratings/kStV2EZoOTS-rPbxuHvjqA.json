@@ -3,27 +3,22 @@
   "title": "自我養育：用渴望被愛的方式愛自己，父母給不了的，可以自己給",
   "hints": {
     "original_title": "自我養育：用渴望被愛的方式愛自己，父母給不了的，可以自己給",
-    "original_author": "陳永康（Yong Kang Chan）"
+    "original_author": "陳永康"
   },
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "fetched_at": "2026-10-19T09:27:38+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T08:38:23+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.goodreads.com/book/show/40962310",
-          "title": "Parent Yourself Again: Love Yourself the Way You Have Always Wanted to Be Loved (Self-Compassion Book 3)",
-          "authors": [
-            "Yong Kang Chan"
-          ]
-        }
-      ]
+      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/40962310-parent-yourself-again",
+      "matched_title": "Parent Yourself Again: Love Yourself the Way You Have Always Wanted to Be Loved (Self-Compassion Book 3)",
+      "score": 3.74,
+      "count": 501
     }
   }
 }
