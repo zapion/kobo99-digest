@@ -15,36 +15,31 @@ The page (`index.html`) loads `data/manifest.json`, picks the list whose period 
 Taipei date, and highlights today's NT$99 book in the browser; no daily job is needed. When a list's
 period has passed and nothing newer exists, it shows an "expired" notice linking to the Kobo blog.
 
-Data comes from two sources, merged per book by Kobo product id (`src/store.py`):
+Data comes from two sources, merged per book by Kobo product id:
 
 | Source | When | Gives |
 |---|---|---|
-| **Gmail (automatic)** – `src/mail_ingest.py` | launchd Thu/Mon 10:30 (+ at login) | books, list/sale prices, sale dates, promo code |
+| **Apps Script (automatic)** – `appsscript/Code.gs` | Google time triggers, Thu/Mon ~10:30 Taipei | books, list/sale prices, sale dates, promo code |
 | **Bookmarklet (backup)** – `src/ingest.py` | manual | full titles, author, publisher, HK links |
 
-The 99 email only shows each book's weekday in banner images (「星期四限定」), so those are read with
-macOS Vision OCR (`scripts/ocr_bars.swift`). Tracking links in the email are never stored; product
-links are rebuilt from the product id in each cover image. If ingest fails, a macOS notification asks
-you to use the bookmarklet.
+The Apps Script reads the latest 【今日 99】/【本週精選】 newsletter from Gmail (read-only), reads the
+99 email's weekday banners (「星期四限定」) with Drive OCR, merges into `data/*.json` through the
+GitHub contents API, and commits only when something changed. Tracking links are never stored;
+product links are rebuilt from the product id in each cover image. On failure the trigger throws,
+and Google emails you: use the bookmarklet backup that week.
 
-## Setup
+Merge rules live in both `appsscript/Code.gs` (`mergeLists`) and `src/store.py`; keep them in sync.
 
-1. Gmail app password (needs 2-Step Verification): https://myaccount.google.com/apppasswords →
-   name it `kobo99` → copy the 16 characters into `.env`:
+## Apps Script setup
 
-```bash
-GMAIL_USER=you@gmail.com
-GMAIL_APP_PASSWORD=abcdefghijklmnop
-```
-
-2. Test once, then install the schedule (also compiles the OCR helper into `bin/`):
-
-```bash
-python3 src/mail_ingest.py && git status --short data
-scripts/install_launchagent.sh
-```
-
-Logs: `logs/auto_update.log`.
+1. https://script.google.com → New project → Project Settings → tick "Show appsscript.json".
+2. Paste `appsscript/appsscript.json` and `appsscript/Code.gs` (replace the defaults).
+   Scopes are limited to `gmail.readonly`, `drive.file` (only its own temp OCR docs),
+   external requests, and triggers.
+3. Project Settings → Script properties → `GITHUB_TOKEN` = fine-grained PAT with
+   Contents read/write on `zapion/kobo99-digest` only.
+4. Run `runIngest` once (authorise), check the log, then run `installTriggers` once.
+5. Triggers page → each trigger → failure notifications: "Notify me immediately".
 
 ## Bookmarklet backup (Brave)
 
@@ -54,11 +49,11 @@ to the bookmarks bar (`⌘⇧B`). On the Kobo blog post click it, then run `scri
 ## Development
 
 ```bash
-python3 -m pytest tests --cov=src          # all tests
+python3 -m pytest tests --cov=src          # bookmarklet ingest + store
+node --test appsscript/test                 # Apps Script logic (fake Apps Script globals)
 python3 scripts/build_bookmarklet.py       # rebuild install.html after editing extract.js
 python3 -m http.server 8099                # preview; add ?date=YYYY-MM-DD to simulate a day
-python3 src/mail_ingest.py --eml a.eml      # parse saved emails without Gmail
 ```
 
-Git push auth uses a repo-local credential helper that reads `GITHUB_TOKEN` from `.env`
+Local git push (bookmarklet backup) uses a repo-local credential helper that reads `GITHUB_TOKEN` from `.env`
 (fine-grained PAT, Contents read/write on this repo only).
