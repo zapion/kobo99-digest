@@ -29,6 +29,9 @@ a { color:var(--accent); }
 .desc { font-size:.88rem; margin-top:.3rem; }
 .links { font-size:.82rem; margin-top:.3rem; }
 .links a { margin-right:.8rem; }
+.price { font-size:.9rem; margin-top:.2rem; }
+.price b { color:var(--hot); }
+.price del { color:var(--meta); margin-left:.4rem; }
 .code { font-family:ui-monospace,Menlo,monospace; font-weight:700; }
 details summary { cursor:pointer; color:var(--meta); font-size:.9rem; margin:.8rem 0 .2rem; }
 footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
@@ -83,6 +86,8 @@ footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
       h('div', { class: 'body' },
         h('h4', {}, badge ? h('span', { class: 'badge' }, badge) : null, titleEl),
         byline ? h('p', { class: 'meta' }, byline) : null,
+        Number.isFinite(book.sale_price) ? h('p', { class: 'price' }, h('b', {}, `NT$${book.sale_price}`),
+          Number.isFinite(book.list_price) && book.list_price > book.sale_price ? h('del', {}, `NT$${book.list_price}`) : null) : null,
         book.description ? h('p', { class: 'desc' }, book.description) : null,
         h('p', { class: 'links' },
           kobo ? h('a', { href: kobo, target: '_blank', rel: 'noopener' }, 'Kobo 台灣') : null,

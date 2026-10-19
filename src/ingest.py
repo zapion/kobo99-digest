@@ -14,10 +14,11 @@ import shutil
 import sys
 from pathlib import Path
 
+from store import update_manifest, write_list  # noqa: F401  (update_manifest re-exported for callers)
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 DOWNLOADS_GLOB = "weekly-*-*-w*.json"
-MANIFEST_NAME = "manifest.json"
 
 SLUG_RE = re.compile(r"/blog/(weekly-(dd99|8585)-(\d{4})-w(\d{1,2}))/?$")
 PERIOD_RE = re.compile(r"[（(]\s*(\d{1,2})/(\d{1,2})\s*[-－~～]\s*(\d{1,2})/(\d{1,2})\s*[)）]")
@@ -29,6 +30,7 @@ AUTHOR_MAIN_ROLE_RE = re.compile(r"\s*[@＠]著")
 AUTHOR_OTHER_ROLE_RE = re.compile(r"\s*[@＠](\S+?)(?=[、,，]|$)")
 KOBO_HOST_PREFIX = "https://www.kobo.com/"
 KIND_LABELS = {"dd99": "一週99書單", "8585": "本週精選書單"}
+BLOG_URL_PREFIX = "https://www.kobo.com/zh/blog/"
 
 
 class IngestError(ValueError):
@@ -134,25 +136,6 @@ def parse_payload(payload: object) -> dict:
         "promo_code": promo[1] if promo else None,
         "books": [_parse_book(item, kind, start, end) for item in items if isinstance(item, dict)],
     }
-
-
-def update_manifest(manifest: dict, book_list: dict) -> dict:
-    entry = {k: book_list[k] for k in ("slug", "kind", "label", "title", "period_start", "period_end")}
-    others = [e for e in manifest.get("lists", []) if e.get("slug") != entry["slug"]]
-    lists = sorted([*others, entry], key=lambda e: e["period_start"], reverse=True)
-    return {"lists": lists}
-
-
-def write_list(book_list: dict, data_dir: Path) -> Path:
-    data_dir.mkdir(parents=True, exist_ok=True)
-    list_path = data_dir / f"{book_list['slug']}.json"
-    list_path.write_text(json.dumps(book_list, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    manifest_path = data_dir / MANIFEST_NAME
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
-    manifest_path.write_text(
-        json.dumps(update_manifest(manifest, book_list), ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-    )
-    return list_path
 
 
 def ingest_file(path: Path, data_dir: Path) -> dict:
