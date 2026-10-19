@@ -1,0 +1,22 @@
+{
+  "kobo_id": "SikWFo-B6DegnSHRvFWAqQ",
+  "title": "別對我說謊",
+  "hints": {
+    "original_title": "(not found on readmoo.com)",
+    "original_author": "Freida McFadden"
+  },
+  "platforms": {
+    "readmoo": {
+      "platform": "readmoo",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "not_found"
+    },
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "blocked",
+      "url": "https://www.goodreads.com/book/show/62080187-never-lie",
+      "detail": "www.goodreads.com already blocked us this run"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kobo_id": "zcPpACscIjOJ9pRZVCVZcA",
+  "title": "超高齡社會的消費行為學：為熟齡者消除「不安、不滿、不便」，就是商機所在！",
+  "hints": {
+    "original_title": "未在 Readmoo 找到（需要進一步網路比對以確認原文日文書名）",
+    "original_author": "村田裕之（Hiroyuki Murata）"
+  },
+  "platforms": {
+    "readmoo": {
+      "platform": "readmoo",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "not_found"
+    },
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "blocked",
+      "url": "https://www.goodreads.com/book/show/29105581",
+      "detail": "www.goodreads.com already blocked us this run"
+    }
+  }
+}

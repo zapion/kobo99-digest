@@ -1,0 +1,22 @@
+{
+  "kobo_id": "jJ6inmB9YjCGDlHmAduB_Q",
+  "title": "柳林風聲：年度暢銷書《蛤蟆先生去看心理師》故事原型，英國百年經典文學之作",
+  "hints": {
+    "original_title": "The Wind in the Willows",
+    "original_author": "Kenneth Grahame"
+  },
+  "platforms": {
+    "readmoo": {
+      "platform": "readmoo",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "not_found"
+    },
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "blocked",
+      "url": "https://www.goodreads.com/book/show/143094974-the-wind-in-the-willow",
+      "detail": "www.goodreads.com already blocked us this run"
+    }
+  }
+}

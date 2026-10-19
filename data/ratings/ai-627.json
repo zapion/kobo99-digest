@@ -1,0 +1,26 @@
+{
+  "kobo_id": "ai-627",
+  "title": "超級代理效應：AI全面賦能時代！矽谷傳奇創業家霍夫曼寫給每個人的關鍵行動原則",
+  "hints": {
+    "original_title": "Superagency",
+    "original_author": "Reid Hoffman, Greg Beato"
+  },
+  "platforms": {
+    "readmoo": {
+      "platform": "readmoo",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "blocked",
+      "url": "https://readmoo.com/book/210491343000101",
+      "detail": "readmoo.com returned 403"
+    },
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/214152294",
+      "matched_title": "Superagency: What Could Possibly Go Right with Our AI Future",
+      "score": 3.32,
+      "count": 1270
+    }
+  }
+}

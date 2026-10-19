@@ -1,0 +1,22 @@
+{
+  "kobo_id": "8Xa4LHOkrjm3RL4D0c3ftw",
+  "title": "思考致富：全球銷售七千萬冊，洛克菲勒、福特、卡內基的財富締造機密",
+  "hints": {
+    "original_title": "Think and Grow Rich",
+    "original_author": "Napoleon Hill"
+  },
+  "platforms": {
+    "readmoo": {
+      "platform": "readmoo",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "not_found"
+    },
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "blocked",
+      "url": "https://www.goodreads.com/book/show/1011.Think_Grow_Rich",
+      "detail": "www.goodreads.com already blocked us this run"
+    }
+  }
+}

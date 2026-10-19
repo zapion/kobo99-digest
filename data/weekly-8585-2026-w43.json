@@ -18,7 +18,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/9b252412-887f-4f76-82fd-0b0a06277a91/300/300/False/HB7tVogQOzeycgEGzy4cgw.jpg",
       "rank": 1,
       "list_price": 255,
-      "sale_price": 217
+      "sale_price": 217,
+      "ratings": []
     },
     {
       "title": "中年理財：給上有老，下有小，不敢倒下的你，重建人生的財務主導權",
@@ -30,7 +31,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/6d4fc088-1253-4d30-aa53-ed76c6168b71/300/300/False/vHOtzg2XlzKy4W4I5bAl0w.jpg",
       "rank": 2,
       "list_price": 287,
-      "sale_price": 244
+      "sale_price": 244,
+      "ratings": []
     },
     {
       "title": "自我養育：用渴望被愛的方式愛自己，父母給不了的，可以自己給",
@@ -42,7 +44,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/e783d215-323d-402d-8147-822c1e93ed15/300/300/False/kStV2EZoOTS-rPbxuHvjqA.jpg",
       "rank": 3,
       "list_price": 272,
-      "sale_price": 231
+      "sale_price": 231,
+      "ratings": []
     },
     {
       "title": "意想不到的靈媒：一位前美國軍方高層，還有她的通靈工作",
@@ -54,7 +57,16 @@
       "cover_url": "https://cdn.kobo.com/book-images/6203d93d-239d-48e1-9cc9-ccd75119d2d9/300/300/False/72E5oeOdvD2fwf2EV9Vvqw.jpg",
       "rank": 4,
       "list_price": 303,
-      "sale_price": 258
+      "sale_price": 258,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.53,
+          "count": 487,
+          "url": "https://www.goodreads.com/book/show/19196313"
+        }
+      ]
     },
     {
       "title": "視覺排毒：辨識視覺語言背後隱藏的訊息，擺脫視覺操控、重拾身心平衡",
@@ -66,7 +78,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/0e27bb40-cfdd-424a-b293-c57f0929f43d/300/300/False/1mb76Ea5MTWhcZfdgAJqoQ.jpg",
       "rank": 5,
       "list_price": 315,
-      "sale_price": 267
+      "sale_price": 267,
+      "ratings": []
     },
     {
       "title": "超級代理效應：AI全面賦能時代！矽谷傳奇創業家霍夫曼寫給每個人的關鍵行動原則",
@@ -78,7 +91,16 @@
       "cover_url": "https://cdn.kobo.com/book-images/304ae9ad-7e90-4261-8651-ea6716cf7213/300/300/False/ai-627.jpg",
       "rank": 6,
       "list_price": 319,
-      "sale_price": 271
+      "sale_price": 271,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.32,
+          "count": 1270,
+          "url": "https://www.goodreads.com/book/show/214152294"
+        }
+      ]
     },
     {
       "title": "阿爾卑斯看臺的母親",
@@ -90,7 +112,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/a0bfe0d6-30b3-45d4-b497-96ed3a7e83fc/300/300/False/top2-3.jpg",
       "rank": 7,
       "list_price": 282,
-      "sale_price": 240
+      "sale_price": 240,
+      "ratings": []
     },
     {
       "title": "曉星：2026本屋大賞入圍作！湊佳苗自認最喜歡的一部作品！",
@@ -102,7 +125,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/5e5bbb03-bb1e-4ece-8ad7-b164226ead6a/300/300/False/yl1-z1l9wzKNKKjz7PoOtg.jpg",
       "rank": 8,
       "list_price": 285,
-      "sale_price": 242
+      "sale_price": 242,
+      "ratings": []
     },
     {
       "title": "你的情緒，90％由血糖決定：日本漢方營養醫學專家親授，穩定血糖、調節自律神經，告別莫名疲倦、焦躁易怒、夜夜淺眠，找回情緒與身體的最佳狀態",
@@ -114,7 +138,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/53c6b4ce-df6f-42d3-9ee8-85a49bdafab3/300/300/False/VrjcuJ0k1juJT_i8aYoY3A.jpg",
       "rank": 9,
       "list_price": 287,
-      "sale_price": 244
+      "sale_price": 244,
+      "ratings": []
     },
     {
       "title": "別對我說謊",
@@ -126,7 +151,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/8e5c9c3b-8de1-4d55-9bd7-1d3e09a1d4bb/300/300/False/SikWFo-B6DegnSHRvFWAqQ.jpg",
       "rank": 10,
       "list_price": 272,
-      "sale_price": 231
+      "sale_price": 231,
+      "ratings": []
     }
   ]
 }

@@ -1,0 +1,22 @@
+{
+  "kobo_id": "yl1-z1l9wzKNKKjz7PoOtg",
+  "title": "曉星：2026本屋大賞入圍作！湊佳苗自認最喜歡的一部作品！",
+  "hints": {
+    "original_author": "湊かなえ",
+    "original_title": "暁星"
+  },
+  "platforms": {
+    "readmoo": {
+      "platform": "readmoo",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "not_found"
+    },
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-19T08:38:23+00:00",
+      "status": "blocked",
+      "url": "https://www.goodreads.com/book/show/243018339",
+      "detail": "www.goodreads.com returned 202 (challenge page)"
+    }
+  }
+}
