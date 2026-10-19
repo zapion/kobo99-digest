@@ -2,14 +2,15 @@
  * Kobo weekly lists → GitHub Pages, run by Apps Script time triggers (Thu/Mon 10:30 Asia/Taipei).
  *
  * Reads the latest 【今日 99】/【本週精選】 newsletter from Gmail (read-only), reads the 99 email's
- * weekday banners with Drive OCR, merges into data/<slug>.json + data/manifest.json in the
- * GitHub repo (keeping fields the blog bookmarklet added), and commits only when data changed.
+ * weekday banners with Drive OCR and commits the parsed list to data/inbox/<slug>.json.
+ * A GitHub Actions workflow (Python) then merges it into data/ and fetches ratings.
+ * Each parsed list is committed once: a fingerprint per slug is kept in script properties.
  *
  * Setup: see README "Apps Script". Script property GITHUB_TOKEN = fine-grained PAT with
  * Contents read/write on GITHUB_REPO only.
  *
- * Pure helpers (parse/merge/date) have no Apps Script dependencies and are unit-tested in Node
- * (appsscript/test). Keep src/store.py's merge rules in sync with mergeLists().
+ * Pure helpers (parse/date) have no Apps Script dependencies and are unit-tested in Node
+ * (appsscript/test).
  */
 
 const GITHUB_REPO = 'zapion/kobo99-digest';
@@ -31,9 +32,6 @@ const PERIOD_RE = /(\d{1,2})\/(\d{1,2})\s*[-－~～]\s*(\d{1,2})\/(\d{1,2})/;
 const PROMO_RE = /輸入\s*([A-Za-z]+\d+)/;
 const WEEKDAY_RE = /星期([一二三四五六日天])/g;
 const WEEKDAYS = { 一: 0, 二: 1, 三: 2, 四: 3, 五: 4, 六: 5, 日: 6, 天: 6 };
-const EBOOK_ID_RE = /\/ebook\/([^/?#]+)/;
-const LONGER_WINS_FIELDS = ['title', 'description'];
-const MANIFEST_FIELDS = ['slug', 'kind', 'label', 'title', 'period_start', 'period_end'];
 
 // ── Entry points ─────────────────────────────────────────────────────────────
 
@@ -48,8 +46,8 @@ function runIngest() {
   kinds.sort().forEach((kind) => {
     try {
       const bookList = parseEmail(latest[kind], ocrBanners);
-      const changed = publishList(bookList, token);
-      Logger.log('%s: %s (%s books)', bookList.slug, changed ? 'published' : 'unchanged', bookList.books.length);
+      const changed = publishInbox(bookList, token, PropertiesService.getScriptProperties());
+      Logger.log('%s: %s (%s books)', bookList.slug, changed ? 'sent to inbox' : 'unchanged', bookList.books.length);
     } catch (error) {
       errors.push(`${kind}: ${error.message}`);
     }
@@ -175,35 +173,32 @@ function githubFetch(path, token, options) {
   return JSON.parse(response.getContentText());
 }
 
-function readJson(path, token) {
+function existingSha(path, token) {
   const file = githubFetch(`${path}?ref=${GITHUB_BRANCH}`, token);
-  if (!file) return { data: null, sha: null };
-  const text = Utilities.newBlob(Utilities.base64Decode(file.content.replace(/\n/g, ''))).getDataAsString('UTF-8');
-  return { data: JSON.parse(text), sha: file.sha };
+  return file ? file.sha : null;
 }
 
-function writeJson(path, data, sha, message, token) {
+function fingerprint(text) {
+  return Utilities.base64Encode(Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, text, Utilities.Charset.UTF_8));
+}
+
+/** Commit the parsed list to data/inbox/ unless this exact list was already sent. */
+function publishInbox(bookList, token, properties) {
+  const text = `${JSON.stringify(bookList, null, 2)}\n`;
+  const key = `published:${bookList.slug}`;
+  const digest = fingerprint(text);
+  if (properties.getProperty(key) === digest) return false;
+  const path = `data/inbox/${bookList.slug}.json`;
   const body = {
-    message,
+    message: `data: ${bookList.slug} (email)`,
     branch: GITHUB_BRANCH,
-    content: Utilities.base64Encode(Utilities.newBlob(`${JSON.stringify(data, null, 2)}\n`).getBytes()),
+    content: Utilities.base64Encode(Utilities.newBlob(text).getBytes()),
   };
+  const sha = existingSha(path, token);
   if (sha) body.sha = sha;
   githubFetch(path, token, { method: 'put', contentType: 'application/json', payload: JSON.stringify(body) });
-}
-
-/** Merge into the repo copy; returns false when nothing changed (no commit). */
-function publishList(bookList, token) {
-  const listPath = `data/${bookList.slug}.json`;
-  const current = readJson(listPath, token);
-  const stored = mergeLists(current.data, bookList);
-  const manifestFile = readJson('data/manifest.json', token);
-  const manifest = updateManifest(manifestFile.data || {}, stored);
-  const listChanged = JSON.stringify(stored) !== JSON.stringify(current.data);
-  const manifestChanged = JSON.stringify(manifest) !== JSON.stringify(manifestFile.data);
-  if (listChanged) writeJson(listPath, stored, current.sha, `data: ${bookList.slug} (email)`, token);
-  if (manifestChanged) writeJson('data/manifest.json', manifest, manifestFile.sha, `data: manifest for ${bookList.slug}`, token);
-  return listChanged || manifestChanged;
+  properties.setProperty(key, digest);
+  return true;
 }
 
 // ── Pure helpers (unit-tested in Node) ───────────────────────────────────────
@@ -396,49 +391,9 @@ function parseEmail(email, readBanners) {
   return makeList(kind, start, end, email.subject, dated, null);
 }
 
-function ebookId(url) {
-  const match = (url || '').match(EBOOK_ID_RE);
-  return match ? match[1] : '';
-}
-
-function isEmpty(value) {
-  return value === null || value === undefined || value === '';
-}
-
-function mergeBook(oldBook, newBook) {
-  const merged = { ...oldBook };
-  Object.entries(newBook).forEach(([key, value]) => {
-    if (isEmpty(value)) return;
-    const current = merged[key];
-    if (LONGER_WINS_FIELDS.includes(key) && typeof current === 'string' && current.length > String(value).length) return;
-    merged[key] = value;
-  });
-  return merged;
-}
-
-function mergeLists(oldList, newList) {
-  if (!oldList) return newList;
-  const oldBooks = new Map((oldList.books || []).map((b) => [ebookId(b.kobo_url), b]));
-  const newIds = new Set(newList.books.map((b) => ebookId(b.kobo_url)));
-  const books = newList.books.map((b) => mergeBook(oldBooks.get(ebookId(b.kobo_url)) || {}, b));
-  const leftovers = [...oldBooks].filter(([id]) => !newIds.has(id)).map(([, b]) => b);
-  const { books: _oldBooks, ...oldHeader } = oldList;
-  const { books: _newBooks, ...newHeader } = newList;
-  const header = mergeBook(oldHeader, newHeader);
-  return { ...header, title: oldList.title || newList.title, books: [...books, ...leftovers] };
-}
-
-function updateManifest(manifest, bookList) {
-  const entry = Object.fromEntries(MANIFEST_FIELDS.map((k) => [k, bookList[k]]));
-  const others = (manifest.lists || []).filter((e) => e.slug !== entry.slug);
-  const lists = [...others, entry].sort((a, b) => b.period_start.localeCompare(a.period_start));
-  return { lists };
-}
-
 if (typeof module !== 'undefined') {
   module.exports = {
     taipeiDate, addDays, weekday, isoWeek, decodeEntities, textById, classify, latestPerKind,
-    parseBooks, barGroups, periodNear, parseEmail, mergeLists, mergeBook, updateManifest, ebookId,
-    findHtml, publishList, runIngest, fetchKoboEmails, ocrImage,
+    parseBooks, barGroups, periodNear, parseEmail, findHtml, publishInbox, runIngest, fetchKoboEmails, ocrImage,
   };
 }

@@ -14,6 +14,9 @@ const blob = (bytes, type = 'image/jpeg') => ({
 global.Utilities = {
   newBlob: (data) => blob(typeof data === 'string' ? Buffer.from(data, 'utf8') : Buffer.from(data)),
   base64Encode: (bytes) => Buffer.from(bytes).toString('base64'),
+  computeDigest: (_alg, text) => [...require('node:crypto').createHash('sha256').update(text, 'utf8').digest()],
+  DigestAlgorithm: { SHA_256: 'sha256' },
+  Charset: { UTF_8: 'utf8' },
   base64Decode: (text) => [...Buffer.from(text, 'base64')],
   base64DecodeWebSafe: (text) => {
     if (text.length % 4) throw new Error('無法解碼字串。');  // like Apps Script: needs padding
@@ -29,8 +32,8 @@ function response(code, body) {
   return { getResponseCode: () => code, getContentText: () => (typeof body === 'string' ? body : JSON.stringify(body)) };
 }
 
-/** Fake GitHub contents API backed by an in-memory repo; records PUTs. */
-function fakeGithub(files) {
+/** Fake GitHub contents API: existing paths answer GET with a sha; PUTs are recorded. */
+function fakeGithub(existing = []) {
   const puts = [];
   global.UrlFetchApp = {
     fetch: (url, options = {}) => {
@@ -40,12 +43,15 @@ function fakeGithub(files) {
         puts.push({ path: filePath, sha: body.sha, data: JSON.parse(Buffer.from(body.content, 'base64').toString('utf8')) });
         return response(201, { content: {} });
       }
-      if (!(filePath in files)) return response(404, { message: 'Not Found' });
-      const content = Buffer.from(`${JSON.stringify(files[filePath], null, 2)}\n`).toString('base64');
-      return response(200, { content, sha: `sha-${filePath}` });
+      return existing.includes(filePath) ? response(200, { sha: `sha-${filePath}` }) : response(404, { message: 'Not Found' });
     },
   };
   return puts;
+}
+
+function fakeProperties() {
+  const store = {};
+  return { getProperty: (k) => store[k] ?? null, setProperty: (k, v) => { store[k] = v; }, store };
 }
 
 const LIST = {
@@ -54,32 +60,30 @@ const LIST = {
   books: [{ title: 'A', kobo_url: 'https://www.kobo.com/tw/zh/ebook/A', sale_price: 1, rank: 1 }],
 };
 
-test('publishList creates list + manifest when the repo has neither', () => {
-  const puts = fakeGithub({});
-  assert.equal(code.publishList(LIST, 'tok'), true);
-  assert.deepEqual(puts.map((p) => [p.path, p.sha]), [['data/weekly-8585-2026-w43.json', undefined], ['data/manifest.json', undefined]]);
-  assert.equal(puts[1].data.lists[0].slug, LIST.slug);
-});
-
-test('publishList is a no-op when merged data is unchanged', () => {
-  const manifest = code.updateManifest({}, LIST);
-  const puts = fakeGithub({ 'data/weekly-8585-2026-w43.json': LIST, 'data/manifest.json': manifest });
-  assert.equal(code.publishList(LIST, 'tok'), false);
-  assert.deepEqual(puts, []);
-});
-
-test('publishList updates existing file with its sha and keeps blog fields', () => {
-  const existing = { ...LIST, books: [{ ...LIST.books[0], title: 'A longer blog title', author: 'X', sale_price: undefined }] };
-  const puts = fakeGithub({ 'data/weekly-8585-2026-w43.json': existing, 'data/manifest.json': code.updateManifest({}, LIST) });
-  assert.equal(code.publishList(LIST, 'tok'), true);
+test('publishInbox commits the parsed list once, then skips identical reruns', () => {
+  const props = fakeProperties();
+  const puts = fakeGithub();
+  assert.equal(code.publishInbox(LIST, 'tok', props), true);
+  assert.deepEqual(puts.map((p) => [p.path, p.sha]), [['data/inbox/weekly-8585-2026-w43.json', undefined]]);
+  assert.deepEqual(puts[0].data, LIST);
+  assert.equal(code.publishInbox(LIST, 'tok', props), false);
   assert.equal(puts.length, 1);
-  assert.equal(puts[0].sha, 'sha-data/weekly-8585-2026-w43.json');
-  assert.deepEqual([puts[0].data.books[0].title, puts[0].data.books[0].author, puts[0].data.books[0].sale_price], ['A longer blog title', 'X', 1]);
 });
 
-test('GitHub errors surface with status', () => {
+test('publishInbox resends when the list changed and reuses an unprocessed inbox sha', () => {
+  const props = fakeProperties();
+  fakeGithub();
+  code.publishInbox(LIST, 'tok', props);
+  const puts = fakeGithub(['data/inbox/weekly-8585-2026-w43.json']);
+  assert.equal(code.publishInbox({ ...LIST, promo_code: 'WK2' }, 'tok', props), true);
+  assert.equal(puts[0].sha, 'sha-data/inbox/weekly-8585-2026-w43.json');
+});
+
+test('GitHub errors surface with status and do not record the fingerprint', () => {
+  const props = fakeProperties();
   global.UrlFetchApp = { fetch: () => response(401, { message: 'Bad credentials' }) };
-  assert.throws(() => code.publishList(LIST, 'tok'), /GitHub 401/);
+  assert.throws(() => code.publishInbox(LIST, 'tok', props), /GitHub 401/);
+  assert.deepEqual(props.store, {});
 });
 
 test('findHtml walks multipart payloads', () => {

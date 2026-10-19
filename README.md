@@ -15,31 +15,62 @@ The page (`index.html`) loads `data/manifest.json`, picks the list whose period 
 Taipei date, and highlights today's NT$99 book in the browser; no daily job is needed. When a list's
 period has passed and nothing newer exists, it shows an "expired" notice linking to the Kobo blog.
 
-Data comes from two sources, merged per book by Kobo product id:
+Pipeline:
 
-| Source | When | Gives |
-|---|---|---|
-| **Apps Script (automatic)** – `appsscript/Code.gs` | Google time triggers, Thu/Mon ~10:30 Taipei | books, list/sale prices, sale dates, promo code |
-| **Bookmarklet (backup)** – `src/ingest.py` | manual | full titles, author, publisher, HK links |
+```
+Apps Script (Thu/Mon ~10:30)        bookmarklet + scripts/update.sh (backup)
+  Gmail → parse + Drive OCR                 blog post → src/ingest.py
+  → data/inbox/<slug>.json                  → data/<slug>.json
+              \                              /
+               └─ push to data/** ─ GitHub Actions (.github/workflows/build-data.yml)
+                    1. src/build_data.py  merge inbox → data/<slug>.json + manifest (src/store.py)
+                    2. src/enrich.py      讀墨 / Goodreads ratings → data/ratings/<kobo_id>.json
+                    3. commit → GitHub Pages redeploys
+```
 
-The Apps Script reads the latest 【今日 99】/【本週精選】 newsletter from Gmail (read-only), reads the
-99 email's weekday banners (「星期四限定」) with Drive OCR, merges into `data/*.json` through the
-GitHub contents API, and commits only when something changed. Tracking links are never stored;
-product links are rebuilt from the product id in each cover image. On failure the trigger throws,
-and Google emails you: use the bookmarklet backup that week.
+Merging is per book by Kobo product id: the email contributes prices, sale dates and the promo
+code; the bookmarklet contributes full titles, author, publisher and HK links.
 
-Merge rules live in both `appsscript/Code.gs` (`mergeLists`) and `src/store.py`; keep them in sync.
+### Ratings (`src/enrich.py`)
+
+For each book in lists ending within the last 14 days, per platform:
+
+1. URL from `data/rating_overrides.json` (`{"<kobo_id>": {"readmoo": "...", "goodreads": "..."}}`),
+   otherwise OpenAI web search restricted to that domain proposes up to 3 candidate URLs.
+   The model never supplies a rating; its URLs must match an allowlist
+   (`readmoo.com/book/<id>`, `goodreads.com/book/show/<id>`).
+2. `src/rating_fetch.py` fetches the page: robots.txt and Crawl-delay are obeyed (≥10 s between
+   requests per host), the User-Agent is honest, and any bot challenge (Cloudflare, AWS WAF) or
+   403/429 marks the platform `blocked` for this run. No attempt is made to get around it.
+3. Title/author on the page must match the Kobo book (overrides skip this check); the score comes
+   from the page's JSON-LD / schema.org data.
+
+Results are cached per book with a TTL by status (ok 30 d, blocked 7 d, not found 14 d).
+Only verified (`ok`) ratings appear on the page. 博客來 and Amazon are not fetched (bot
+protection / robots.txt); the page links to a 博客來 search instead. Goodreads often answers with
+an AWS WAF challenge, so expect it to be `blocked` some weeks; fix a wrong match with an override.
 
 ## Apps Script setup
 
 1. https://script.google.com → New project → Project Settings → tick "Show appsscript.json".
 2. Paste `appsscript/appsscript.json` and `appsscript/Code.gs` (replace the defaults).
+   It only writes `data/inbox/`; merging and ratings happen in GitHub Actions.
    Scopes are limited to `gmail.readonly`, `drive.file` (only its own temp OCR docs),
    external requests, and triggers.
 3. Project Settings → Script properties → `GITHUB_TOKEN` = fine-grained PAT with
    Contents read/write on `zapion/kobo99-digest` only.
 4. Run `runIngest` once (authorise), check the log, then run `installTriggers` once.
 5. Triggers page → each trigger → failure notifications: "Notify me immediately".
+
+## GitHub Actions setup
+
+Repository → Settings → Secrets and variables → Actions:
+
+- Secret `OPENAI_API_KEY` (needed for URL discovery; without it only overrides are refreshed).
+- Optional variable `OPENAI_MODEL` (default `gpt-5-mini`; must support the `web_search` tool).
+
+Run it by hand from the Actions tab ("build-data" → Run workflow); it also runs on every push
+to `data/**` and weekly on Wednesday to retry blocked/not-found ratings.
 
 ## Bookmarklet backup (Brave)
 
@@ -49,11 +80,11 @@ to the bookmarks bar (`⌘⇧B`). On the Kobo blog post click it, then run `scri
 ## Development
 
 ```bash
-python3 -m pytest tests --cov=src          # bookmarklet ingest + store
+python3 -m pytest tests --cov=src          # ingest, store, inbox merge, ratings
 node --test appsscript/test                 # Apps Script logic (fake Apps Script globals)
 python3 scripts/build_bookmarklet.py       # rebuild install.html after editing extract.js
 python3 -m http.server 8099                # preview; add ?date=YYYY-MM-DD to simulate a day
 ```
 
-Local git push (bookmarklet backup) uses a repo-local credential helper that reads `GITHUB_TOKEN` from `.env`
+Local git push uses a repo-local credential helper that reads `GITHUB_TOKEN` from `.env`
 (fine-grained PAT, Contents read/write on this repo only).

@@ -1,0 +1,51 @@
+# Merge Apps Script inbox drops into data/ and attach 讀墨 / Goodreads ratings.
+# Pushes made with GITHUB_TOKEN do not re-trigger workflows, so there is no loop.
+name: build-data
+
+on:
+  push:
+    branches: [main]
+    paths: ["data/**"]
+  schedule:
+    - cron: "0 4 * * 3"   # Wed 12:00 Taipei: retry anything blocked/not found earlier in the week
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-data
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Merge inbox
+        run: python3 src/build_data.py
+
+      - name: Fetch ratings
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+        run: python3 src/enrich.py
+
+      - name: Commit data
+        run: |
+          git add data
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data: merge inbox + ratings"
+          git pull --rebase origin main
+          git push origin main
