@@ -21,6 +21,8 @@ global.Utilities = {
   },
 };
 global.ScriptApp = { getOAuthToken: () => 'oauth' };
+const sleeps = [];
+global.Utilities.sleep = (ms) => sleeps.push(ms);
 global.Logger = { log: () => {} };
 
 function response(code, body) {
@@ -127,17 +129,46 @@ test('ocrImage uploads as Google Doc, exports text, trashes the temp file', () =
   assert.deepEqual(calls.map((c) => c[0]), ['get', 'post', 'get', 'patch']);
 });
 
-test('ocrImage still trashes the temp file when export fails', () => {
-  const methods = [];
+function fakeDrive(script) {
+  const calls = [];
   global.UrlFetchApp = { fetch: (url, options = {}) => {
-    methods.push(options.method || 'get');
-    if (!options.method) return { getBlob: () => blob([1]) };
-    if (options.method === 'post') return response(200, { id: 'doc1' });
-    if (url.includes('/export')) return response(500, 'boom');
-    return response(200, {});
+    const step = !options.method ? 'image' : options.method === 'post' ? 'upload' : url.includes('/export') ? 'export' : 'trash';
+    calls.push(step);
+    if (step === 'image') return { getBlob: () => blob([1]) };
+    const queue = script[step] || [];
+    const [code, body] = queue.length > 1 ? queue.shift() : queue[0] || [200, {}];
+    return response(code, body);
   } };
-  assert.throws(() => code.ocrImage('https://shopjp.kobo.com/x/images/bar1.jpg'), /Drive 500/);
-  assert.equal(methods.at(-1), 'patch');
+  return calls;
+}
+
+test('ocrImage retries Drive 5xx/429 with backoff and succeeds', () => {
+  sleeps.length = 0;
+  const calls = fakeDrive({
+    upload: [[500, 'Internal Error'], [429, 'slow down'], [200, { id: 'doc1' }]],
+    export: [[503, 'x'], [200, '星期五加碼']],
+  });
+  assert.equal(code.ocrImage('https://shopjp.kobo.com/x/images/bar2.jpg'), '星期五加碼');
+  assert.deepEqual(calls, ['image', 'upload', 'upload', 'upload', 'export', 'export', 'trash']);
+  assert.deepEqual(sleeps, [1000, 2000, 1000]);
+});
+
+test('ocrImage gives up after max attempts and names the failing step', () => {
+  const calls = fakeDrive({ upload: [[500, 'Internal Error']] });
+  assert.throws(() => code.ocrImage('https://shopjp.kobo.com/x/images/bar1.jpg'), /Drive upload 500/);
+  assert.equal(calls.filter((c) => c === 'upload').length, 4);
+  assert.ok(!calls.includes('trash'), 'nothing to trash when upload failed');
+});
+
+test('ocrImage does not retry 4xx and still trashes after export failure', () => {
+  const calls = fakeDrive({ upload: [[200, { id: 'doc1' }]], export: [[403, 'forbidden']] });
+  assert.throws(() => code.ocrImage('https://shopjp.kobo.com/x/images/bar1.jpg'), /Drive export 403/);
+  assert.deepEqual(calls, ['image', 'upload', 'export', 'trash']);
+});
+
+test('ocrImage ignores a failed trash (temp doc left behind) and returns the text', () => {
+  fakeDrive({ upload: [[200, { id: 'doc1' }]], export: [[200, '星期四']], trash: [[404, 'gone']] });
+  assert.equal(code.ocrImage('https://shopjp.kobo.com/x/images/bar1.jpg'), '星期四');
 });
 
 test('runIngest requires the GitHub token and reports missing mail', () => {

@@ -109,15 +109,30 @@ const DRIVE_API = 'https://www.googleapis.com/drive/v3/files';
 const DRIVE_UPLOAD_URL = 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart';
 const BOUNDARY = 'kobo99-ocr-boundary';
 
-function driveFetch(url, options) {
-  const response = UrlFetchApp.fetch(url, {
-    ...options,
-    headers: { Authorization: `Bearer ${ScriptApp.getOAuthToken()}` },
-    muteHttpExceptions: true,
-  });
-  const code = response.getResponseCode();
-  if (code < 200 || code >= 300) throw new Error(`Drive ${code}: ${response.getContentText().slice(0, 300)}`);
-  return response;
+const DRIVE_MAX_ATTEMPTS = 4;
+const DRIVE_RETRY_BASE_MS = 1000;
+
+function isRetryable(code) {
+  return code === 429 || code >= 500;
+}
+
+/** Drive REST call with retries on 429/5xx (Drive OCR returns sporadic 500s). */
+function driveFetch(url, options, step) {
+  let last = '';
+  for (let attempt = 1; attempt <= DRIVE_MAX_ATTEMPTS; attempt += 1) {
+    const response = UrlFetchApp.fetch(url, {
+      ...options,
+      headers: { Authorization: `Bearer ${ScriptApp.getOAuthToken()}` },
+      muteHttpExceptions: true,
+    });
+    const code = response.getResponseCode();
+    if (code >= 200 && code < 300) return response;
+    last = `Drive ${step} ${code}: ${response.getContentText().slice(0, 300)}`;
+    if (!isRetryable(code) || attempt === DRIVE_MAX_ATTEMPTS) break;
+    Logger.log('%s (attempt %s/%s), retrying', last.split(':')[0], attempt, DRIVE_MAX_ATTEMPTS);
+    Utilities.sleep(DRIVE_RETRY_BASE_MS * 2 ** (attempt - 1));
+  }
+  throw new Error(last);
 }
 
 function ocrImage(url) {
@@ -130,11 +145,15 @@ function ocrImage(url) {
     .concat(Utilities.newBlob(`\r\n--${BOUNDARY}--`).getBytes());
   const fileId = JSON.parse(driveFetch(DRIVE_UPLOAD_URL, {
     method: 'post', contentType: `multipart/related; boundary=${BOUNDARY}`, payload,
-  }).getContentText()).id;
+  }, 'upload').getContentText()).id;
   try {
-    return driveFetch(`${DRIVE_API}/${fileId}/export?mimeType=text/plain`, { method: 'get' }).getContentText();
+    return driveFetch(`${DRIVE_API}/${fileId}/export?mimeType=text/plain`, { method: 'get' }, 'export').getContentText();
   } finally {
-    driveFetch(`${DRIVE_API}/${fileId}`, { method: 'patch', contentType: 'application/json', payload: '{"trashed":true}' });
+    try {
+      driveFetch(`${DRIVE_API}/${fileId}`, { method: 'patch', contentType: 'application/json', payload: '{"trashed":true}' }, 'trash');
+    } catch (error) {
+      Logger.log('Warning: could not trash temp OCR doc %s: %s', fileId, error.message);
+    }
   }
 }
 
