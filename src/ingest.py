@@ -101,7 +101,6 @@ def _parse_book(item: dict, kind: str, start: dt.date, end: dt.date) -> dict:
         "publisher": str(item.get("publisher") or "").strip(),
         "description": str(item.get("description") or "").strip(),
         "kobo_url": kobo_url,
-        "kobo_hk_url": _https_or_empty(item.get("kobo_hk_url")),
         "cover_url": _https_or_empty(item.get("cover_url")),
     }
     if kind == "dd99":

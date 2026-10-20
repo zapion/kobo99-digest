@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch 讀墨 / Goodreads ratings for books in current lists and attach them to data/<slug>.json.
+"""Fetch 讀墨 / Goodreads / Kobo ratings for books in current lists and attach them to data/<slug>.json.
 
 Per book and platform: URL from data/rating_overrides.json, else OpenAI web search proposes
 candidates → we fetch each page politely → verify title/author ourselves → read structured
@@ -29,7 +29,7 @@ DATA_DIR = ROOT / "data"
 RATINGS_DIRNAME = "ratings"
 OVERRIDES_NAME = "rating_overrides.json"
 TAIPEI = ZoneInfo("Asia/Taipei")
-PLATFORM_ORDER = ("readmoo", "goodreads")
+PLATFORM_ORDER = ("readmoo", "goodreads", "kobo")
 # Days before a cached result is retried, by status.
 TTL_DAYS = {"ok": 30, "search_reported": 7, "no_rating": 14, "not_found": 14, "low_confidence": 14,
             "disallowed": 30, "blocked": 7}
@@ -96,6 +96,15 @@ def _search_reported(candidates: list[dict], unreadable: set[str], base: dict) -
     return None
 
 
+def _own_page_entry(book: dict, candidates: list[dict], base: dict) -> dict:
+    """Unfetchable platform whose page we already know (Kobo): only a rating reported for that exact page counts."""
+    own_id = ebook_id(book.get("kobo_url", ""))
+    own = [{**c, "confidence": 1.0} for c in candidates if own_id and ebook_id(c["url"]) == own_id]
+    if not own:
+        return {**base, "status": "not_found"}
+    return _search_reported(own, {c["url"] for c in own}, base) or {**base, "status": "no_rating", "url": own[0]["url"]}
+
+
 def _candidates_for(book: dict, platform: str, find: Discover | None, override: str | None,
                     hints: dict) -> tuple[list[dict] | None, dict]:
     if override:
@@ -120,6 +129,8 @@ def rate_platform(book: dict, platform: str, fetcher: PoliteFetcher, find: Disco
     if candidates is None:
         return None, hints
     base = {"platform": platform, "fetched_at": now}
+    if not PLATFORMS[platform].fetchable:
+        return _own_page_entry(book, candidates, base), hints
     if not candidates:
         return {**base, "status": "not_found"}, hints
     tried, problem = [], None

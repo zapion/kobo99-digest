@@ -254,7 +254,7 @@ def fake_find(results):
 
     def find(book, platform):
         calls.append(platform)
-        return results[platform]
+        return results.get(platform, found(None))
     return find, calls
 
 
@@ -287,7 +287,7 @@ def test_enrich_verifies_and_attaches_ratings_then_uses_cache(tmp_path):
     assert "ratings" not in json.loads((data / "weekly-dd99-2026-w30.json").read_text())["books"][0]
     # second run: everything fresh, no discovery or fetching
     assert enrich.run(data, TODAY, fetcher, find, 40)["enriched"] == 0
-    assert calls == ["readmoo", "goodreads"]
+    assert calls == ["readmoo", "goodreads", "kobo"]
 
 
 def test_enrich_rejects_unverified_pages(tmp_path):
@@ -359,7 +359,7 @@ def test_refresh_ignores_ttl(tmp_path):
     find, calls = fake_find(FOUND)
     enrich.run(data, TODAY, fetcher, find, 40)
     enrich.run(data, TODAY, fetcher, find, 40, refresh=True)
-    assert calls == ["readmoo", "goodreads", "readmoo", "goodreads"]
+    assert calls == ["readmoo", "goodreads", "kobo"] * 2
 
 
 def test_enrich_without_api_key_uses_overrides_only(tmp_path):
@@ -428,3 +428,43 @@ def test_build_data_merges_valid_inbox_and_keeps_invalid(tmp_path):
 def test_build_data_validation(mutate):
     with pytest.raises(build_data.InboxError):
         build_data.validate(mutate(INBOX_LIST))
+
+
+KOBO_URL = "https://www.kobo.com/tw/zh/ebook/ai-146"
+
+
+def test_kobo_uses_search_reported_rating_for_its_own_page_without_fetching(tmp_path):
+    data = seed_data(tmp_path)
+    calls = []
+    fetcher = fetcher_with({}, calls)
+    find, _ = fake_find({"kobo": {"candidates": [
+        {"url": "https://www.kobo.com/tw/zh/ebook/other-book", "title": "x", "author": "", "confidence": 1.0,
+         "rating": 2.0, "rating_count": 3},
+        {"url": KOBO_URL, "title": "AI科學家", "author": "", "confidence": 0.5, "rating": 4.5, "rating_count": 12},
+    ], "original_title": "", "original_author": ""}})
+    enrich.run(data, TODAY, fetcher, find, 40)
+    entry = json.loads((data / "ratings" / "ai-146.json").read_text())["platforms"]["kobo"]
+    assert entry["status"] == "search_reported" and entry["score"] == 4.5 and entry["url"] == KOBO_URL
+    assert not any("kobo.com" in url for url in calls)
+    book = json.loads((data / "weekly-dd99-2026-w42.json").read_text())["books"][0]
+    assert {"platform": "kobo", "name": "Kobo", "score": 4.5, "count": 12, "url": KOBO_URL,
+            "source": "search"} in book["ratings"]
+
+
+def test_kobo_without_rating_for_its_page_is_no_rating(tmp_path):
+    data = seed_data(tmp_path)
+    find, _ = fake_find({"kobo": found(KOBO_URL, rating=None, count=None)})
+    enrich.run(data, TODAY, fetcher_with({}), find, 40)
+    assert json.loads((data / "ratings" / "ai-146.json").read_text())["platforms"]["kobo"]["status"] == "no_rating"
+
+
+def test_kobo_discovery_prompt_names_the_exact_page():
+    sent = {}
+
+    def post(body, key):
+        sent.update(body)
+        return {"output": [{"type": "message", "content": [{"type": "output_text", "text": json.dumps(
+            {"candidates": [], "original_title": "", "original_author": ""})}]}]}
+    rating_discover.discover(BOOK, "kobo", "k", post=post)
+    assert KOBO_URL in sent["input"]
+    assert sent["tools"][0]["filters"]["allowed_domains"] == ["kobo.com"]

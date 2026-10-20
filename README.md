@@ -45,8 +45,18 @@ For each book in lists ending within the last 14 days, per platform:
 3. Title/author on the page must match the Kobo book (overrides skip this check); the score comes
    from the page's JSON-LD / schema.org data.
 
-Results are cached per book with a TTL by status (ok 30 d, blocked 7 d, not found 14 d).
-Only verified (`ok`) ratings appear on the page. 博客來 and Amazon are not fetched (bot
+When a candidate page cannot be read (blocked), a rating the search results showed for a
+confident match is kept as `search_reported` and shown as "≈x.x（…・搜尋）".
+
+Kobo's own rating: kobo.com is behind a Cloudflare challenge, so its page is never fetched. Search
+is asked for the book's exact Kobo Taiwan URL, and only a rating reported for that URL is used
+(always shown as "搜尋").
+
+Readmoo's robots.txt blocks AI crawlers (GPTBot etc.) and `/search/`, so OpenAI search rarely
+finds its book pages, and its WAF answers 403 to GitHub Actions IPs. Add Readmoo URLs by hand in
+`data/rating_overrides.json` (`{"<kobo_id>": {"readmoo": "https://readmoo.com/book/<id>"}}`).
+
+Results are cached per book with a TTL by status (ok 30 d, blocked 7 d, not found 14 d). 博客來 and Amazon are not fetched (bot
 protection / robots.txt); the page links to a 博客來 search instead. Goodreads often answers with
 an AWS WAF challenge, so expect it to be `blocked` some weeks; fix a wrong match with an override.
 

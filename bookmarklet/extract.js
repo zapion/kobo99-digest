@@ -25,7 +25,6 @@
       pending = { heading, description: text(el.querySelector('p')) };
       return;
     }
-    const hk = [...el.querySelectorAll('a')].find((a) => /HK/.test(a.textContent));
     items.push({
       heading: pending ? pending.heading : '',
       description: pending ? pending.description : '',
@@ -33,7 +32,6 @@
       author: text(el.querySelector('.author')),
       publisher: text(el.querySelector('a[href*="Imprint"]')) || publisherFromText(el),
       kobo_url: (el.querySelector('.book-block__link') || {}).href || '',
-      kobo_hk_url: hk ? hk.href : '',
       cover_url: (el.querySelector('img') || {}).src || '',
     });
     pending = null;

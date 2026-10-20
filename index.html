@@ -132,7 +132,6 @@ footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
     const kobo = safeUrl(book.kobo_url);
     const titleEl = kobo ? h('a', { href: kobo, target: '_blank', rel: 'noopener' }, book.title) : book.title;
     const byline = [book.author, book.publisher].filter(Boolean).join(' ｜ ');
-    const hk = safeUrl(book.kobo_hk_url);
     return h('div', { class: `card ${state || ''}` },
       safeUrl(book.cover_url) ? h('img', { src: book.cover_url, alt: '', loading: 'lazy' }) : null,
       h('div', { class: 'body' },
@@ -143,7 +142,6 @@ footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
         book.description ? h('p', { class: 'desc' }, book.description) : null,
         h('p', { class: 'links' },
           kobo ? h('a', { href: kobo, target: '_blank', rel: 'noopener' }, 'Kobo 台灣') : null,
-          hk ? h('a', { href: hk, target: '_blank', rel: 'noopener' }, 'Kobo 香港') : null,
           h('a', { href: booksSearchUrl(book.title), target: '_blank', rel: 'noopener' }, '博客來搜尋'))));
   };
 

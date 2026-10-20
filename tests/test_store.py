@@ -12,7 +12,6 @@ BLOG_BOOK = {
     "publisher": "如果出版",
     "description": "完整的部落格介紹文字",
     "kobo_url": "https://www.kobo.com/tw/zh/ebook/HB7?utm_source=twblog",
-    "kobo_hk_url": "https://www.kobo.com/hk/zh/ebook/HB7",
     "rank": 1,
 }
 EMAIL_BOOK = {

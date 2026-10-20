@@ -33,7 +33,9 @@ class Platform:
     name: str
     domain: str
     url_re: re.Pattern
-    hint: str
+    hint: str  # "{kobo_url}" is replaced with the book's Kobo page
+    # False: never fetch the page ourselves (bot protection); only a search-reported rating is used.
+    fetchable: bool = True
 
 
 PLATFORMS = {
@@ -44,6 +46,10 @@ PLATFORMS = {
         "goodreads", "Goodreads", "goodreads.com", re.compile(r"^https://www\.goodreads\.com/book/show/(\d+)"),
         "the book on goodreads.com, preferring the original-language edition with the most ratings "
         "(URL form https://www.goodreads.com/book/show/<id>)"),
+    "kobo": Platform(
+        "kobo", "Kobo", "kobo.com", re.compile(r"^https://www\.kobo\.com/tw/zh/ebook/([^/?#]+)$"),
+        "the Kobo Taiwan page {kobo_url} itself and the star rating and number of ratings shown on it",
+        fetchable=False),
 }
 
 SCHEMA = {
@@ -86,7 +92,7 @@ def canonical_url(platform: Platform, url: str) -> str | None:
 def _prompt(book: dict, platform: Platform) -> str:
     main_title = re.split(r"[：:（(【]", book.get("title", ""), maxsplit=1)[0].strip()
     return (
-        f"Find {platform.hint}.\n"
+        f"Find {platform.hint.replace('{kobo_url}', book.get('kobo_url', ''))}.\n"
         f"Book (Traditional Chinese edition sold on Kobo Taiwan):\n"
         f"- title: {book.get('title', '')}\n- short title: {main_title}\n- author: {book.get('author', '')}\n"
         f"- publisher: {book.get('publisher', '')}\n"

@@ -19,7 +19,6 @@ def item(heading: str, title: str, **extra) -> dict:
         "author": "由 李飛飛（Fei-Fei Li）＠著",
         "publisher": "天下文化",
         "kobo_url": KOBO + "x?utm_source=twblog",
-        "kobo_hk_url": "https://www.kobo.com/hk/zh/ebook/x",
         "cover_url": "https://kobo-blog.transforms.svdcdn.com/c.jpeg",
         **extra,
     }
@@ -114,10 +113,10 @@ def test_invalid_payloads_are_rejected(mutate, message):
         ingest.parse_payload(mutate(DD99))
 
 
-def test_non_https_cover_and_hk_links_are_dropped():
-    data = {**DD99, "items": [item("10/15", "《A》", cover_url="javascript:x", kobo_hk_url="http://x")]}
+def test_non_https_cover_is_dropped_and_hk_link_not_stored():
+    data = {**DD99, "items": [item("10/15", "《A》", cover_url="javascript:x", kobo_hk_url="https://x")]}
     book = ingest.parse_payload(data)["books"][0]
-    assert book["cover_url"] == "" and book["kobo_hk_url"] == ""
+    assert book["cover_url"] == "" and "kobo_hk_url" not in book
 
 
 def test_manifest_replaces_same_slug_and_sorts_newest_first():
