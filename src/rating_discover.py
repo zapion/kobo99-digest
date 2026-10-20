@@ -1,4 +1,4 @@
-"""Find candidate book-page URLs on rating sites with OpenAI web search (Responses API).
+"""Find candidate book-page URLs on rating sites with Claude's web search tool (Messages API).
 
 The model proposes candidate URLs, says how sure it is that each is the same book, and reports the
 rating it saw in search results. enrich.py fetches and verifies each page itself; the reported
@@ -16,8 +16,14 @@ import urllib.error
 import urllib.request
 from dataclasses import dataclass
 
-OPENAI_URL = "https://api.openai.com/v1/responses"
-DEFAULT_MODEL = "gpt-5-mini"
+API_URL = "https://api.anthropic.com/v1/messages"
+API_VERSION = "2023-06-01"
+DEFAULT_MODEL = "claude-haiku-5-5"
+WEB_SEARCH_TOOL = "web_search_20250305"
+REPORT_TOOL = "report_candidates"
+MAX_SEARCHES = 4  # per book and platform; $10 per 1,000 searches
+MAX_TOKENS = 2048
+MAX_TURNS = 4  # pause_turn continuations plus one nudge to report
 TIMEOUT_SECONDS = 120
 MAX_ATTEMPTS = 3
 RETRY_BASE_SECONDS = 5
@@ -95,7 +101,7 @@ SCHEMA = {
 
 
 class DiscoveryError(RuntimeError):
-    """OpenAI call failed or returned something unusable."""
+    """The Claude call failed or returned something unusable."""
 
 
 def canonical_url(platform: Platform, url: str) -> str | None:
@@ -121,7 +127,8 @@ def _prompt(book: dict, platform: Platform) -> str:
         f"ratings shown for it in the search results or page (null if you did not see them; never estimate).\n"
         f"original_title / original_author: the book's original title and author in the original language and "
         f"script (e.g. English or Japanese for translations, the Chinese title for books written in Chinese); "
-        f"empty string if unsure. Put no notes or explanations in any field. Return no candidates rather than guessing."
+        f"empty string if unsure. Put no notes or explanations in any field. Return no candidates rather than guessing.\n"
+        f"Use only URLs that appeared in your search results. When done, call {REPORT_TOOL} once."
     )
 
 
@@ -140,57 +147,85 @@ def _number_or_none(value: object, kind=float):
     return number if number >= 0 else None
 
 
-def _output_text(payload: dict) -> str:
-    for item in payload.get("output", []):
-        if item.get("type") == "message":
-            for part in item.get("content", []):
-                if part.get("type") == "output_text":
-                    return part.get("text", "")
-    raise DiscoveryError("OpenAI response had no output_text")
+def _report(content: list) -> dict | None:
+    for block in content:
+        if block.get("type") == "tool_use" and block.get("name") == REPORT_TOOL:
+            return block.get("input") if isinstance(block.get("input"), dict) else None
+    return None
+
+
+def _result_urls(platform: Platform, content: list) -> set[str]:
+    """Canonical URLs of every search result Claude was shown."""
+    urls = set()
+    for block in content:
+        results = block.get("content") if block.get("type") == "web_search_tool_result" else None
+        for result in results if isinstance(results, list) else []:
+            if canonical := canonical_url(platform, str(result.get("url", ""))):
+                urls.add(canonical)
+    return urls
 
 
 def _post(body: dict, api_key: str) -> dict:
     data = json.dumps(body).encode()
     last: Exception | None = None
     for attempt in range(1, MAX_ATTEMPTS + 1):
-        request = urllib.request.Request(OPENAI_URL, data=data, method="POST", headers={
-            "Authorization": f"Bearer {api_key}", "Content-Type": "application/json"})
+        request = urllib.request.Request(API_URL, data=data, method="POST", headers={
+            "x-api-key": api_key, "anthropic-version": API_VERSION, "content-type": "application/json"})
         try:
             with urllib.request.urlopen(request, timeout=TIMEOUT_SECONDS) as resp:
                 return json.loads(resp.read().decode())
         except urllib.error.HTTPError as error:
             detail = error.read().decode(errors="replace")[:300]
-            last = DiscoveryError(f"OpenAI HTTP {error.code}: {detail}")
+            last = DiscoveryError(f"Claude API HTTP {error.code}: {detail}")
             if error.code not in RETRYABLE:
                 raise last from error
         except (urllib.error.URLError, http.client.HTTPException, OSError, ValueError) as error:
             # dropped/partial responses (IncompleteRead, resets, truncated JSON) are worth another try
-            last = DiscoveryError(f"OpenAI unreachable: {error!r}")
+            last = DiscoveryError(f"Claude API unreachable: {error!r}")
         if attempt < MAX_ATTEMPTS:
             time.sleep(RETRY_BASE_SECONDS * attempt)
-    raise last or DiscoveryError("OpenAI call failed")
+    raise last or DiscoveryError("Claude API call failed")
+
+
+def _ask(platform: Platform, prompt: str, api_key: str, model: str, post) -> tuple[dict, set[str]]:
+    """Let Claude search, then collect its report_candidates call and the URLs it was shown."""
+    tools = [
+        {"type": WEB_SEARCH_TOOL, "name": "web_search", "max_uses": MAX_SEARCHES, "allowed_domains": list(platform.domains)},
+        {"name": REPORT_TOOL, "description": "Report the book pages found.", "input_schema": SCHEMA, "strict": True},
+    ]
+    messages, seen, forced = [{"role": "user", "content": prompt}], set(), False
+    for _turn in range(MAX_TURNS):
+        body = {"model": model, "max_tokens": MAX_TOKENS, "messages": messages, "tools": tools}
+        if forced:
+            body["tool_choice"] = {"type": "tool", "name": REPORT_TOOL}
+        response = post(body, api_key)
+        content = response.get("content") if isinstance(response.get("content"), list) else []
+        seen |= _result_urls(platform, content)
+        report = _report(content)
+        if report is not None:
+            return report, seen
+        messages = [*messages, {"role": "assistant", "content": content}]
+        if response.get("stop_reason") != "pause_turn":  # finished without reporting: ask for the report
+            messages.append({"role": "user", "content": f"Call {REPORT_TOOL} now (empty list if nothing was found)."})
+            forced = True
+    raise DiscoveryError(f"Claude did not call {REPORT_TOOL}")
 
 
 def discover(book: dict, platform_key: str, api_key: str, model: str | None = None, post=_post) -> dict:
     """Return {"candidates": [{url, title, author, confidence, rating, rating_count}], "original_title", "original_author"}.
 
-    Candidate URLs are allowlisted and canonical; hints that look like notes are dropped.
+    Candidate URLs are allowlisted, canonical and must have appeared in the search results;
+    hints that look like notes are dropped.
     """
     platform = PLATFORMS[platform_key]
-    body = {
-        "model": model or os.getenv("OPENAI_MODEL") or DEFAULT_MODEL,
-        "input": _prompt(book, platform),
-        "tools": [{"type": "web_search", "filters": {"allowed_domains": list(platform.domains)}}],
-        "text": {"format": {"type": "json_schema", "name": "book_pages", "schema": SCHEMA, "strict": True}},
-    }
-    try:
-        result = json.loads(_output_text(post(body, api_key)))
-    except json.JSONDecodeError as error:
-        raise DiscoveryError(f"OpenAI returned invalid JSON: {error}") from error
+    result, seen = _ask(platform, _prompt(book, platform), api_key,
+                        model or os.getenv("CLAUDE_MODEL") or DEFAULT_MODEL, post)
     candidates: list[dict] = []
     for raw in result.get("candidates", [])[:MAX_CANDIDATES]:
+        if not isinstance(raw, dict):
+            continue
         url = canonical_url(platform, str(raw.get("url", "")))
-        if not url or any(c["url"] == url for c in candidates):
+        if not url or url not in seen or any(c["url"] == url for c in candidates):
             continue
         rating = _number_or_none(raw.get("rating"))
         candidates.append({

@@ -38,8 +38,8 @@ jobs:
 
       - name: Fetch ratings
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
           ENRICH_REFRESH: ${{ inputs.refresh }}
           ENRICH_TIME_BUDGET_MINUTES: "40"
           PYTHONUNBUFFERED: "1"  # show progress live, and keep it if the step is cut short

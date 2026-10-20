@@ -173,9 +173,15 @@ def test_fetch_robots_server_error_means_stay_away():
 
 # ── discover ─────────────────────────────────────────────────────────────────
 
-def openai_payload(result: dict) -> dict:
-    return {"output": [{"type": "web_search_call"},
-                       {"type": "message", "content": [{"type": "output_text", "text": json.dumps(result)}]}]}
+def claude_payload(result: dict, shown=None, stop="tool_use") -> dict:
+    """A Messages API response: search results Claude was shown, then its report_candidates call."""
+    shown = [c["url"] for c in result.get("candidates", [])] if shown is None else shown
+    return {"stop_reason": stop, "content": [
+        {"type": "server_tool_use", "id": "s1", "name": "web_search", "input": {"query": "q"}},
+        {"type": "web_search_tool_result", "tool_use_id": "s1",
+         "content": [{"type": "web_search_result", "url": u, "title": "t"} for u in shown]},
+        {"type": "tool_use", "id": "t1", "name": "report_candidates", "input": result},
+    ]}
 
 
 def cand(url, title="t", author="a", conf=0.9, rating=None, count=None):
@@ -187,7 +193,7 @@ def test_discover_filters_to_allowlisted_canonical_urls_and_cleans_fields():
 
     def post(body, key):
         sent.update(body)
-        return openai_payload({"candidates": [
+        return claude_payload({"candidates": [
             cand(READMOO_URL + "?utm=x", rating=4.7, count=141, conf=1.7),
             cand("https://readmoo.com/search/keyword?q=x"),
             cand("https://evil.example/book/1"),
@@ -198,9 +204,11 @@ def test_discover_filters_to_allowlisted_canonical_urls_and_cleans_fields():
     assert result["candidates"] == [{"url": READMOO_URL, "title": "t", "author": "a", "confidence": 1.0,
                                      "rating": 4.7, "rating_count": 141}]
     assert (result["original_title"], result["original_author"]) == ("The Worlds I See", "Fei-Fei Li")
-    assert sent["tools"] == [{"type": "web_search", "filters": {"allowed_domains": ["readmoo.com"]}}]
-    assert sent["text"]["format"]["strict"] is True
-    assert "short title: AI科學家李飛飛的視界之旅" in sent["input"]
+    search, report = sent["tools"]
+    assert search == {"type": "web_search_20250305", "name": "web_search", "max_uses": 4, "allowed_domains": ["readmoo.com"]}
+    assert report["name"] == "report_candidates" and report["strict"] is True
+    assert sent["model"] == "m"
+    assert "short title: AI科學家李飛飛的視界之旅" in sent["messages"][0]["content"]
 
 
 @pytest.mark.parametrize(
@@ -208,13 +216,13 @@ def test_discover_filters_to_allowlisted_canonical_urls_and_cleans_fields():
     ["（未在 readmoo.com 找到原文書名；本次搜尋未發現）", "(not found on readmoo.com)", "x" * 200, "unknown", ""],
 )
 def test_discover_drops_noise_hints(hint):
-    post = lambda body, key: openai_payload({"candidates": [], "original_title": hint, "original_author": hint})
+    post = lambda body, key: claude_payload({"candidates": [], "original_title": hint, "original_author": hint})
     result = rating_discover.discover(BOOK, "goodreads", "k", post=post)
     assert result == {"candidates": [], "original_title": "", "original_author": ""}
 
 
 def test_discover_rejects_impossible_ratings():
-    post = lambda body, key: openai_payload({"candidates": [cand(GOODREADS_URL, rating=8.5, count=-3)],
+    post = lambda body, key: claude_payload({"candidates": [cand(GOODREADS_URL, rating=8.5, count=-3)],
                                              "original_title": "", "original_author": ""})
     candidate = rating_discover.discover(BOOK, "goodreads", "k", post=post)["candidates"][0]
     assert (candidate["rating"], candidate["rating_count"]) == (None, None)
@@ -222,10 +230,32 @@ def test_discover_rejects_impossible_ratings():
 
 def test_discover_rejects_unusable_responses():
     with pytest.raises(rating_discover.DiscoveryError):
-        rating_discover.discover(BOOK, "goodreads", "k", post=lambda b, k: {"output": []})
-    bad = {"output": [{"type": "message", "content": [{"type": "output_text", "text": "not json"}]}]}
+        rating_discover.discover(BOOK, "goodreads", "k", post=lambda b, k: {"content": [], "stop_reason": "end_turn"})
     with pytest.raises(rating_discover.DiscoveryError):
-        rating_discover.discover(BOOK, "goodreads", "k", post=lambda b, k: bad)
+        rating_discover.discover(BOOK, "goodreads", "k", post=lambda b, k: {"error": "x"})
+
+
+def test_discover_drops_urls_not_seen_in_search_results():
+    post = lambda body, key: claude_payload({"candidates": [cand(GOODREADS_URL, rating=4.3, count=5)],
+                                             "original_title": "", "original_author": ""}, shown=[])
+    assert rating_discover.discover(BOOK, "goodreads", "k", post=post)["candidates"] == []
+
+
+def test_discover_continues_pause_turn_and_asks_for_report():
+    bodies = []
+    result = {"candidates": [cand(GOODREADS_URL)], "original_title": "", "original_author": ""}
+    first = {"stop_reason": "pause_turn", "content": claude_payload(result)["content"][:2]}
+    second = {"stop_reason": "end_turn", "content": [{"type": "text", "text": "Found it."}]}
+    third = {"stop_reason": "tool_use", "content": [claude_payload(result)["content"][2]]}
+    replies = iter([first, second, third])
+
+    def post(body, key):
+        bodies.append(json.loads(json.dumps(body)))
+        return next(replies)
+    found_pages = rating_discover.discover(BOOK, "goodreads", "k", post=post)
+    assert [c["url"] for c in found_pages["candidates"]] == [GOODREADS_URL]  # seen in the paused turn
+    assert [len(b["messages"]) for b in bodies] == [1, 2, 4]
+    assert "tool_choice" not in bodies[1] and bodies[2]["tool_choice"] == {"type": "tool", "name": "report_candidates"}
 
 
 # ── enrich ───────────────────────────────────────────────────────────────────
@@ -464,11 +494,10 @@ def test_kobo_discovery_prompt_names_the_exact_page():
 
     def post(body, key):
         sent.update(body)
-        return {"output": [{"type": "message", "content": [{"type": "output_text", "text": json.dumps(
-            {"candidates": [], "original_title": "", "original_author": ""})}]}]}
+        return claude_payload({"candidates": [], "original_title": "", "original_author": ""})
     rating_discover.discover(BOOK, "kobo", "k", post=post)
-    assert KOBO_URL in sent["input"]
-    assert sent["tools"][0]["filters"]["allowed_domains"] == ["kobo.com"]
+    assert KOBO_URL in sent["messages"][0]["content"]
+    assert sent["tools"][0]["allowed_domains"] == ["kobo.com"]
 
 
 # ── 博客來 / Amazon (search only) ──────────────────────────────────────────────

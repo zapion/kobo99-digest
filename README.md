@@ -36,7 +36,8 @@ code; the bookmarklet contributes full titles, author, publisher and HK links.
 For each book in lists ending within the last 14 days, per platform:
 
 1. URL from `data/rating_overrides.json` (`{"<kobo_id>": {"readmoo": "...", "goodreads": "..."}}`),
-   otherwise OpenAI web search restricted to that domain proposes up to 3 candidate URLs.
+   otherwise Claude's web search tool, restricted to that domain, proposes up to 3 candidate URLs
+   (each must have appeared in the search results).
    The model never supplies a rating; its URLs must match an allowlist
    (`readmoo.com/book/<id>`, `goodreads.com/book/show/<id>`).
 2. `src/rating_fetch.py` fetches the page: robots.txt and Crawl-delay are obeyed (≥10 s between
@@ -78,8 +79,9 @@ an AWS WAF challenge, so expect it to be `blocked` some weeks; fix a wrong match
 
 Repository → Settings → Secrets and variables → Actions:
 
-- Secret `OPENAI_API_KEY` (needed for URL discovery; without it only overrides are refreshed).
-- Optional variable `OPENAI_MODEL` (default `gpt-5-mini`; must support the `web_search` tool).
+- Secret `ANTHROPIC_API_KEY` (needed for URL discovery; without it only overrides are refreshed).
+- Optional variable `CLAUDE_MODEL` (default `claude-haiku-5-5`; must support the web search tool).
+  Web search costs $10 per 1,000 searches plus tokens; at most 4 searches per book and platform.
 
 Run it by hand from the Actions tab ("build-data" → Run workflow); it also runs on every push
 to `data/**` and weekly on Wednesday to retry blocked/not-found ratings.

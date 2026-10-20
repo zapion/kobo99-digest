@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Fetch Kobo / 博客來 / 讀墨 / Goodreads / Amazon ratings for books in current lists and attach them to data/<slug>.json.
 
-Per book and platform: URL from data/rating_overrides.json, else OpenAI web search proposes
+Per book and platform: URL from data/rating_overrides.json, else Claude web search proposes
 candidates → we fetch each page politely → verify title/author ourselves → read structured
 rating. Results are cached in data/ratings/<kobo_id>.json with a TTL per status.
 
-Env: OPENAI_API_KEY (needed for discovery; without it only overrides/cached URLs are refreshed),
-OPENAI_MODEL (optional), ENRICH_REFRESH=1 (ignore cache TTLs), ENRICH_MAX_BOOKS,
+Env: ANTHROPIC_API_KEY (needed for discovery; without it only overrides/cached URLs are refreshed),
+CLAUDE_MODEL (optional), ENRICH_REFRESH=1 (ignore cache TTLs), ENRICH_MAX_BOOKS,
 ENRICH_PLATFORMS (comma list; default all), ENRICH_TIME_BUDGET_MINUTES. Platforms still unrated fall back to kobo99.com's numbers.
 """
 
@@ -256,7 +256,7 @@ def _stale_books(lists: list[dict], caches: dict, overrides: dict, today: dt.dat
 
 def _enrich_all(books: list[dict], caches: dict, enrich_one: Callable[[dict, dict], dict],
                 deadline: float | None, workers: int, save: Callable[[dict], None]) -> None:
-    """Enrich books in parallel (OpenAI search is the slow part) and save each one as soon as it is done.
+    """Enrich books in parallel (web search is the slow part) and save each one as soon as it is done.
 
     Books not started by the deadline are skipped; a book that fails is logged and left for the next run.
     """
@@ -324,10 +324,10 @@ def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover |
 
 
 def main() -> int:
-    api_key = os.getenv("OPENAI_API_KEY", "")
+    api_key = os.getenv("ANTHROPIC_API_KEY", "")
     find = (lambda book, platform: discover(book, platform, api_key)) if api_key else None
     if find is None:
-        print("[warn] OPENAI_API_KEY not set: only overrides are refreshed.", file=sys.stderr)
+        print("[warn] ANTHROPIC_API_KEY not set: only overrides are refreshed.", file=sys.stderr)
     today = dt.datetime.now(TAIPEI).date()
     refresh = os.getenv("ENRICH_REFRESH", "").lower() in ("1", "true", "yes")
     fetcher = PoliteFetcher()
