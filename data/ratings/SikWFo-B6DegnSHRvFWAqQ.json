@@ -8,23 +8,63 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T01:36:01+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "search_reported",
-      "url": "https://www.goodreads.com/book/show/62630160.Never_Lie",
+      "url": "https://www.goodreads.com/book/show/244838197-never-lie",
       "matched_title": "Never Lie",
-      "score": 4.07,
-      "count": 1796283
+      "score": 4.08,
+      "count": 1757340
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "no_rating",
       "url": "https://www.kobo.com/tw/zh/ebook/SikWFo-B6DegnSHRvFWAqQ"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-20T06:19:40+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 3.8,
+        "count": 5,
+        "url": "https://www.kobo.com/tw/zh/ebook/SikWFo-B6DegnSHRvFWAqQ"
+      },
+      "books": {
+        "score": 3.0,
+        "count": 7,
+        "url": "https://www.books.com.tw/products/E050331314"
+      },
+      "readmoo": {
+        "score": 4.4,
+        "count": 52,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.07,
+        "count": 1796045,
+        "url": "https://www.goodreads.com/book/show/62080187"
+      },
+      "amazon": {
+        "score": 4.4,
+        "count": 368681,
+        "url": "https://www.amazon.com/dp/B0BBL2ZW73"
+      }
     }
   }
 }

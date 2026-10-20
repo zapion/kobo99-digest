@@ -8,23 +8,51 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T01:36:01+00:00",
-      "status": "ok",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "blocked",
       "url": "https://readmoo.com/book/210499825000101",
-      "matched_title": "你的情緒，90％由血糖決定：日本漢方營養醫學專家親授，穩定血糖、調節自律神經，告別莫名疲倦、焦躁易怒、夜夜淺眠，找回情緒與身體的最佳狀態",
-      "score": 5.0,
-      "count": 3
+      "detail": "readmoo.com already blocked us this run"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "not_found"
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "no_rating",
       "url": "https://www.kobo.com/tw/zh/ebook/VrjcuJ0k1juJT_i8aYoY3A"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-20T06:19:40+00:00",
+    "ratings": {
+      "books": {
+        "score": 5.0,
+        "count": 1,
+        "url": "https://www.books.com.tw/products/E050356225"
+      },
+      "readmoo": {
+        "score": 5.0,
+        "count": 3,
+        "url": "https://kobo99.com/"
+      },
+      "amazon": {
+        "score": 4.3,
+        "count": 110,
+        "url": "https://www.amazon.co.jp/dp/4492048081"
+      }
     }
   }
 }

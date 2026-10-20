@@ -2,29 +2,68 @@
   "kobo_id": "ai-627",
   "title": "超級代理效應：AI全面賦能時代！矽谷傳奇創業家霍夫曼寫給每個人的關鍵行動原則",
   "hints": {
-    "original_title": "Superagency: What Could Possibly Go Right with Our AI Future",
+    "original_title": "SUPERAGENCY: What Could Possibly Go Right with Our AI Future",
     "original_author": "Reid Hoffman, Greg Beato"
   },
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T01:36:01+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "search_reported",
-      "url": "https://www.goodreads.com/book/show/214152294",
+      "url": "https://www.goodreads.com/book/show/216336470-superagency",
       "matched_title": "Superagency: What Could Possibly Go Right with Our AI Future",
-      "score": 3.32,
-      "count": 1252
+      "score": 3.33,
+      "count": 1244
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "no_rating",
       "url": "https://www.kobo.com/tw/zh/ebook/ai-627"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.com/dp/B0D5WMKV9H",
+      "matched_title": "Superagency: What Could Possibly Go Right with Our AI Future",
+      "score": 4.4,
+      "count": 382
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-20T06:19:40+00:00",
+    "ratings": {
+      "books": {
+        "score": 3.0,
+        "count": 2,
+        "url": "https://www.books.com.tw/products/E050348566"
+      },
+      "readmoo": {
+        "score": 5.0,
+        "count": 1,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.32,
+        "count": 1270,
+        "url": "https://www.goodreads.com/book/show/216336470"
+      },
+      "amazon": {
+        "score": 4.4,
+        "count": 384,
+        "url": "https://www.amazon.com/dp/B0D886ZQHY"
+      }
     }
   }
 }

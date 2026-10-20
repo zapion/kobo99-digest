@@ -8,12 +8,12 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T01:36:01+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "search_reported",
       "url": "https://www.goodreads.com/book/show/29105581",
       "matched_title": "成功するシニアビジネスの教科書 「超高齢社会」をビジネスチャンスにする“技術\"",
@@ -22,9 +22,39 @@
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "no_rating",
       "url": "https://www.kobo.com/tw/zh/ebook/zcPpACscIjOJ9pRZVCVZcA"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-20T06:19:40+00:00",
+    "ratings": {
+      "readmoo": {
+        "score": 4.0,
+        "count": 12,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.67,
+        "count": 3,
+        "url": "https://www.goodreads.com/book/show/29105581"
+      },
+      "amazon": {
+        "score": 3.5,
+        "count": 56,
+        "url": "https://www.amazon.co.jp/dp/B079Y1KWSF"
+      }
     }
   }
 }

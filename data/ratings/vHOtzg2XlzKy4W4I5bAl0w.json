@@ -8,19 +8,44 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T01:36:01+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "not_found"
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "no_rating",
       "url": "https://www.kobo.com/tw/zh/ebook/vHOtzg2XlzKy4W4I5bAl0w"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-20T06:19:40+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 4.0,
+        "count": 1,
+        "url": "https://www.kobo.com/tw/zh/ebook/vHOtzg2XlzKy4W4I5bAl0w"
+      },
+      "readmoo": {
+        "score": 5.0,
+        "count": 3,
+        "url": "https://kobo99.com/"
+      }
     }
   }
 }

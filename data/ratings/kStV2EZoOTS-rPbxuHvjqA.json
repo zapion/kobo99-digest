@@ -2,29 +2,69 @@
   "kobo_id": "kStV2EZoOTS-rPbxuHvjqA",
   "title": "自我養育：用渴望被愛的方式愛自己，父母給不了的，可以自己給",
   "hints": {
-    "original_title": "自我養育：用渴望被愛的方式愛自己，父母給不了的，可以自己給",
-    "original_author": "陳永康"
+    "original_title": "Parent Yourself Again: Love Yourself the Way You Have Always Wanted to Be Loved",
+    "original_author": "Yong Kang Chan"
   },
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T01:36:01+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "ok",
-      "url": "https://www.goodreads.com/book/show/40962310-parent-yourself-again",
+      "url": "https://www.goodreads.com/book/show/40962310",
       "matched_title": "Parent Yourself Again: Love Yourself the Way You Have Always Wanted to Be Loved (Self-Compassion Book 3)",
       "score": 3.74,
       "count": 501
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "no_rating",
       "url": "https://www.kobo.com/tw/zh/ebook/kStV2EZoOTS-rPbxuHvjqA"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/CN11845040",
+          "title": "自我養育",
+          "authors": [
+            "（新加坡） 陳永康  肖心怡"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-20T06:19:40+00:00",
+    "ratings": {
+      "readmoo": {
+        "score": 5.0,
+        "count": 1,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.74,
+        "count": 501,
+        "url": "https://www.goodreads.com/book/show/40962310"
+      },
+      "amazon": {
+        "score": 4.4,
+        "count": 743,
+        "url": "https://www.amazon.com/dp/B07FP3KW25"
+      }
     }
   }
 }

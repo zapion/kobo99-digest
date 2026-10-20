@@ -8,12 +8,12 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T01:36:01+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "search_reported",
       "url": "https://www.goodreads.com/book/show/243018339",
       "matched_title": "暁星",
@@ -22,9 +22,58 @@
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "no_rating",
       "url": "https://www.kobo.com/tw/zh/ebook/yl1-z1l9wzKNKKjz7PoOtg"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011027707",
+          "title": "人類標本：湊佳苗自認「寫出了最好的作品」的傑作，黑暗小說女王出道15週年紀念作",
+          "authors": [
+            "湊佳苗"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.co.jp/dp/4575248568",
+      "matched_title": "暁星",
+      "score": 4.2,
+      "count": 545
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-20T06:19:40+00:00",
+    "ratings": {
+      "books": {
+        "score": 5.0,
+        "count": 8,
+        "url": "https://www.books.com.tw/products/E050347844"
+      },
+      "readmoo": {
+        "score": 4.2,
+        "count": 33,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.29,
+        "count": 36,
+        "url": "https://www.goodreads.com/book/show/243018339"
+      },
+      "amazon": {
+        "score": 4.2,
+        "count": 553,
+        "url": "https://www.amazon.co.jp/dp/B0FWLWKYHC"
+      }
     }
   }
 }

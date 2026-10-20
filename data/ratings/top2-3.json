@@ -8,12 +8,12 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T01:36:01+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "search_reported",
       "url": "https://www.goodreads.com/book/show/216783717",
       "matched_title": "アルプス席の母",
@@ -22,9 +22,44 @@
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "no_rating",
       "url": "https://www.kobo.com/tw/zh/ebook/top2-3"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "status": "not_found"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-20T06:19:40+00:00",
+    "ratings": {
+      "books": {
+        "score": 5.0,
+        "count": 6,
+        "url": "https://www.books.com.tw/products/E050345465"
+      },
+      "readmoo": {
+        "score": 4.4,
+        "count": 10,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.96,
+        "count": 21,
+        "url": "https://www.goodreads.com/book/show/216783717"
+      },
+      "amazon": {
+        "score": 4.6,
+        "count": 980,
+        "url": "https://www.amazon.co.jp/dp/B0CXPMC671"
+      }
     }
   }
 }

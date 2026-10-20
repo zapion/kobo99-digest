@@ -13,18 +13,48 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-19T09:27:38+00:00",
+      "fetched_at": "2026-10-20T06:19:40+00:00",
       "status": "search_reported",
-      "url": "https://www.goodreads.com/book/show/18823371-think-and-grow-rich",
-      "matched_title": "Think and Grow Rich",
+      "url": "https://www.goodreads.com/book/show/34032430",
+      "matched_title": "Think and Grow Rich (An Original 1937 Edition)",
       "score": 4.16,
-      "count": 394297
+      "count": 396166
     },
     "kobo": {
       "platform": "kobo",
       "fetched_at": "2026-10-20T01:12:33+00:00",
       "status": "no_rating",
       "url": "https://www.kobo.com/tw/zh/ebook/8Xa4LHOkrjm3RL4D0c3ftw"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-20T06:19:40+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 4.29,
+        "count": 7,
+        "url": "https://www.kobo.com/tw/zh/ebook/8Xa4LHOkrjm3RL4D0c3ftw"
+      },
+      "books": {
+        "score": 5.0,
+        "count": 3,
+        "url": "https://www.books.com.tw/products/E050228688"
+      },
+      "readmoo": {
+        "score": 4.3,
+        "count": 95,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.16,
+        "count": 397028,
+        "url": "https://www.goodreads.com/book/show/38335207"
+      },
+      "amazon": {
+        "score": 4.6,
+        "count": 492,
+        "url": "https://www.amazon.com/dp/B079K94L8K"
+      }
     }
   }
 }

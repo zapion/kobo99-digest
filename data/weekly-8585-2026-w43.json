@@ -20,12 +20,28 @@
       "sale_price": 217,
       "ratings": [
         {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.3,
+          "count": 3,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 4.1,
           "count": 41,
           "url": "https://www.goodreads.com/book/show/36985704-machiavellian-intelligence",
           "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 42,
+          "url": "https://www.amazon.com/dp/B0777R4JJW",
+          "source": "kobo99"
         }
       ]
     },
@@ -39,7 +55,24 @@
       "rank": 2,
       "list_price": 287,
       "sale_price": 244,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.0,
+          "count": 1,
+          "url": "https://www.kobo.com/tw/zh/ebook/vHOtzg2XlzKy4W4I5bAl0w",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 5.0,
+          "count": 3,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "自我養育：用渴望被愛的方式愛自己，父母給不了的，可以自己給",
@@ -53,12 +86,28 @@
       "sale_price": 231,
       "ratings": [
         {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 3.74,
           "count": 501,
-          "url": "https://www.goodreads.com/book/show/40962310-parent-yourself-again",
+          "url": "https://www.goodreads.com/book/show/40962310",
           "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.4,
+          "count": 743,
+          "url": "https://www.amazon.com/dp/B07FP3KW25",
+          "source": "kobo99"
         }
       ]
     },
@@ -77,7 +126,7 @@
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 4.53,
-          "count": 487,
+          "count": 488,
           "url": "https://www.goodreads.com/book/show/19196313-messages-of-hope",
           "source": "page"
         }
@@ -95,12 +144,36 @@
       "sale_price": 267,
       "ratings": [
         {
+          "platform": "books",
+          "name": "博客來",
+          "score": 3.5,
+          "count": 2,
+          "url": "https://www.books.com.tw/products/E050356689",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.0,
+          "count": 1,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 4.3,
           "count": 106,
           "url": "https://www.goodreads.com/book/show/128657339-the-visual-detox",
           "source": "search"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 27,
+          "url": "https://www.amazon.com/dp/B0C7G6NSVJ",
+          "source": "kobo99"
         }
       ]
     },
@@ -116,11 +189,35 @@
       "sale_price": 271,
       "ratings": [
         {
+          "platform": "books",
+          "name": "博客來",
+          "score": 3.0,
+          "count": 2,
+          "url": "https://www.books.com.tw/products/E050348566",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
-          "score": 3.32,
-          "count": 1252,
-          "url": "https://www.goodreads.com/book/show/214152294",
+          "score": 3.33,
+          "count": 1244,
+          "url": "https://www.goodreads.com/book/show/216336470-superagency",
+          "source": "search"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.4,
+          "count": 382,
+          "url": "https://www.amazon.com/dp/B0D5WMKV9H",
           "source": "search"
         }
       ]
@@ -137,12 +234,36 @@
       "sale_price": 240,
       "ratings": [
         {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 6,
+          "url": "https://www.books.com.tw/products/E050345465",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.4,
+          "count": 10,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 3.95,
           "count": 19,
           "url": "https://www.goodreads.com/book/show/216783717",
           "source": "search"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 980,
+          "url": "https://www.amazon.co.jp/dp/B0CXPMC671",
+          "source": "kobo99"
         }
       ]
     },
@@ -158,11 +279,35 @@
       "sale_price": 242,
       "ratings": [
         {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 8,
+          "url": "https://www.books.com.tw/products/E050347844",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.2,
+          "count": 33,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 4.28,
           "count": 36,
           "url": "https://www.goodreads.com/book/show/243018339",
+          "source": "search"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.2,
+          "count": 545,
+          "url": "https://www.amazon.co.jp/dp/4575248568",
           "source": "search"
         }
       ]
@@ -179,12 +324,28 @@
       "sale_price": 244,
       "ratings": [
         {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://www.books.com.tw/products/E050356225",
+          "source": "kobo99"
+        },
+        {
           "platform": "readmoo",
           "name": "讀墨",
           "score": 5.0,
           "count": 3,
-          "url": "https://readmoo.com/book/210499825000101",
-          "source": "page"
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.3,
+          "count": 110,
+          "url": "https://www.amazon.co.jp/dp/4492048081",
+          "source": "kobo99"
         }
       ]
     },
@@ -200,12 +361,44 @@
       "sale_price": 231,
       "ratings": [
         {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 3.8,
+          "count": 5,
+          "url": "https://www.kobo.com/tw/zh/ebook/SikWFo-B6DegnSHRvFWAqQ",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 3.0,
+          "count": 7,
+          "url": "https://www.books.com.tw/products/E050331314",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.4,
+          "count": 52,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
-          "score": 4.07,
-          "count": 1796283,
-          "url": "https://www.goodreads.com/book/show/62630160.Never_Lie",
+          "score": 4.08,
+          "count": 1757340,
+          "url": "https://www.goodreads.com/book/show/244838197-never-lie",
           "source": "search"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.4,
+          "count": 368681,
+          "url": "https://www.amazon.com/dp/B0BBL2ZW73",
+          "source": "kobo99"
         }
       ]
     }
