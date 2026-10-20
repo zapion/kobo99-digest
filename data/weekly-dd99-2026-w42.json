@@ -33,7 +33,7 @@
           "score": 4.5,
           "count": 12,
           "url": "https://www.books.com.tw/products/E050192498",
-          "source": "kobo99"
+          "source": "search"
         },
         {
           "platform": "readmoo",
@@ -47,9 +47,9 @@
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 4.3,
-          "count": 5709,
-          "url": "https://www.goodreads.com/book/show/203579002-the-worlds-i-see",
-          "source": "search"
+          "count": 5715,
+          "url": "https://www.goodreads.com/book/show/216796802",
+          "source": "page"
         },
         {
           "platform": "amazon",
@@ -86,7 +86,7 @@
           "score": 3.67,
           "count": 3,
           "url": "https://www.goodreads.com/book/show/29105581",
-          "source": "search"
+          "source": "kobo99"
         },
         {
           "platform": "amazon",
@@ -112,10 +112,10 @@
         {
           "platform": "goodreads",
           "name": "Goodreads",
-          "score": 3.7,
-          "count": 187,
+          "score": 3.72,
+          "count": 191,
           "url": "https://www.goodreads.com/book/show/54817579-hawking-hawking",
-          "source": "search"
+          "source": "page"
         },
         {
           "platform": "amazon",
@@ -261,17 +261,17 @@
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 4.03,
-          "count": 249650,
-          "url": "https://www.goodreads.com/book/show/3656401",
-          "source": "search"
+          "count": 249721,
+          "url": "https://www.goodreads.com/book/show/5659.The_Wind_in_the_Willows",
+          "source": "page"
         },
         {
           "platform": "amazon",
           "name": "Amazon",
-          "score": 4.8,
-          "count": 6,
-          "url": "https://www.amazon.com/dp/0684180006",
-          "source": "kobo99"
+          "score": 4.0,
+          "count": 2,
+          "url": "https://www.amazon.co.jp/dp/B0BR83W6Z5",
+          "source": "search"
         }
       ]
     },
@@ -298,9 +298,9 @@
           "platform": "books",
           "name": "博客來",
           "score": 5.0,
-          "count": 3,
+          "count": 1,
           "url": "https://www.books.com.tw/products/E050228688",
-          "source": "kobo99"
+          "source": "search"
         },
         {
           "platform": "readmoo",

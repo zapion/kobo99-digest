@@ -2,12 +2,13 @@
   "kobo_id": "O05EwxH6CjKtdey-mC1_mg",
   "title": "超圖解電動車的構造與原理：驅動方式×發展趨勢，通盤了解產業鏈的現況及展望",
   "hints": {
-    "original_author": "川邊謙一"
+    "original_author": "川辺 謙一",
+    "original_title": "図解まるわかり 電気自動車のしくみ"
   },
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
       "status": "not_found"
     },
     "goodreads": {
@@ -23,13 +24,15 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0011003805"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.co.jp/dp/4798176036"
     }
   },
   "kobo99": {

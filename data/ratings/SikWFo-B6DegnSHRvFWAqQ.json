@@ -8,7 +8,7 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
       "status": "not_found"
     },
     "goodreads": {
@@ -33,8 +33,9 @@
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/1728296161"
     }
   },
   "kobo99": {

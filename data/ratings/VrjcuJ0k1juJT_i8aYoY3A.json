@@ -15,18 +15,17 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
       "status": "not_found"
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "no_rating",
-      "url": "https://www.kobo.com/tw/zh/ebook/VrjcuJ0k1juJT_i8aYoY3A"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
       "status": "not_found"
     },
     "amazon": {

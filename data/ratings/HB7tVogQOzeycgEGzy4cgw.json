@@ -8,12 +8,14 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "blocked",
+      "url": "https://readmoo.com/book/210107824000101",
+      "detail": "readmoo.com returned 403"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
       "status": "ok",
       "url": "https://www.goodreads.com/book/show/36985704-machiavellian-intelligence",
       "matched_title": "Machiavellian Intelligence: How to Survive and Rise in the Modern Corporation",
@@ -22,14 +24,23 @@
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "no_rating",
-      "url": "https://www.kobo.com/tw/zh/ebook/HB7tVogQOzeycgEGzy4cgw"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0010982730",
+          "title": "不懂權謀的人，無法做大事：馬基維利教你如何在職場上出人頭地",
+          "authors": [
+            "馬克‧鮑威爾,強納森‧季福德"
+          ],
+          "confidence": 0.95
+        }
+      ]
     },
     "amazon": {
       "platform": "amazon",

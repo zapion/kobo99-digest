@@ -8,42 +8,27 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "ok",
-      "url": "https://www.goodreads.com/book/show/40962310",
-      "matched_title": "Parent Yourself Again: Love Yourself the Way You Have Always Wanted to Be Loved (Self-Compassion Book 3)",
-      "score": 3.74,
-      "count": 501
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "not_found"
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "no_rating",
-      "url": "https://www.kobo.com/tw/zh/ebook/kStV2EZoOTS-rPbxuHvjqA"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/CN11845040",
-          "title": "自我養育",
-          "authors": [
-            "（新加坡） 陳永康  肖心怡"
-          ],
-          "confidence": 0.9
-        }
-      ]
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "not_found"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
       "status": "not_found"
     }
   },

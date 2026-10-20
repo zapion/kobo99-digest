@@ -2,21 +2,19 @@
   "kobo_id": "1mb76Ea5MTWhcZfdgAJqoQ",
   "title": "視覺排毒：辨識視覺語言背後隱藏的訊息，擺脫視覺操控、重拾身心平衡",
   "hints": {
-    "original_title": "The Visual Detox: How to Consume Media Without Letting It Consume You",
+    "original_title": "The Visual Detox: How to Consume Media Without Letting it Consume You",
     "original_author": "Marine Tanguy"
   },
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "blocked",
-      "url": "https://readmoo.com/book/210501954000101",
-      "detail": "readmoo.com returned 403"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "search_reported",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "ok",
       "url": "https://www.goodreads.com/book/show/128657339-the-visual-detox",
       "matched_title": "The Visual Detox: How to Consume Media Without Letting It Consume You",
       "score": 4.3,
@@ -35,8 +33,18 @@
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/1529912644",
+          "title": "The Visual Detox: How to Consume Media Without Letting it Consume You",
+          "authors": [
+            "Tanguy, Marine"
+          ],
+          "confidence": 0.9
+        }
+      ]
     }
   },
   "kobo99": {

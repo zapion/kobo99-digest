@@ -13,18 +13,27 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "search_reported",
-      "url": "https://www.goodreads.com/book/show/3656401",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/5659.The_Wind_in_the_Willows",
       "matched_title": "The Wind in the Willows",
       "score": 4.03,
-      "count": 249650
+      "count": 249721
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
       "status": "no_rating",
       "url": "https://www.kobo.com/tw/zh/ebook/jJ6inmB9YjCGDlHmAduB_Q"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.co.jp/dp/B0BR83W6Z5",
+      "matched_title": "柳林風聲: 年度暢銷書《蛤蟆先生去看心理師》故事原型,英國百年經典文學之作 (Traditional Chinese Edition) Kindle版",
+      "score": 4.0,
+      "count": 2
     }
   },
   "kobo99": {

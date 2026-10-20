@@ -8,23 +8,18 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
       "status": "not_found"
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "search_reported",
-      "url": "https://www.goodreads.com/book/show/243018339",
-      "matched_title": "暁星",
-      "score": 4.28,
-      "count": 36
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "not_found"
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "no_rating",
-      "url": "https://www.kobo.com/tw/zh/ebook/yl1-z1l9wzKNKKjz7PoOtg"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "not_found"
     },
     "books": {
       "platform": "books",
@@ -43,12 +38,9 @@
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "search_reported",
-      "url": "https://www.amazon.co.jp/dp/4575248568",
-      "matched_title": "暁星",
-      "score": 4.2,
-      "count": 545
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.co.jp/dp/B0FWLWKYHC"
     }
   },
   "kobo99": {

@@ -13,12 +13,12 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "search_reported",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "ok",
       "url": "https://www.goodreads.com/book/show/54817579-hawking-hawking",
       "matched_title": "Hawking Hawking: The Selling of a Scientific Celebrity",
-      "score": 3.7,
-      "count": 187
+      "score": 3.72,
+      "count": 191
     },
     "kobo": {
       "platform": "kobo",
@@ -28,13 +28,24 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/CN11777530",
+          "title": "霍金傳",
+          "authors": [
+            "（美）查爾斯·塞費"
+          ],
+          "confidence": 0.85
+        }
+      ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/1541618378"
     }
   },
   "kobo99": {

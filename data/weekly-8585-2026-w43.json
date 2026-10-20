@@ -99,7 +99,7 @@
           "score": 3.74,
           "count": 501,
           "url": "https://www.goodreads.com/book/show/40962310",
-          "source": "page"
+          "source": "kobo99"
         },
         {
           "platform": "amazon",
@@ -165,7 +165,7 @@
           "score": 4.3,
           "count": 106,
           "url": "https://www.goodreads.com/book/show/128657339-the-visual-detox",
-          "source": "search"
+          "source": "page"
         },
         {
           "platform": "amazon",
@@ -207,18 +207,18 @@
         {
           "platform": "goodreads",
           "name": "Goodreads",
-          "score": 3.33,
-          "count": 1244,
+          "score": 3.32,
+          "count": 1270,
           "url": "https://www.goodreads.com/book/show/216336470-superagency",
-          "source": "search"
+          "source": "page"
         },
         {
           "platform": "amazon",
           "name": "Amazon",
           "score": 4.4,
-          "count": 382,
-          "url": "https://www.amazon.com/dp/B0D5WMKV9H",
-          "source": "search"
+          "count": 384,
+          "url": "https://www.amazon.com/dp/B0D886ZQHY",
+          "source": "kobo99"
         }
       ]
     },
@@ -297,18 +297,18 @@
         {
           "platform": "goodreads",
           "name": "Goodreads",
-          "score": 4.28,
+          "score": 4.29,
           "count": 36,
           "url": "https://www.goodreads.com/book/show/243018339",
-          "source": "search"
+          "source": "kobo99"
         },
         {
           "platform": "amazon",
           "name": "Amazon",
           "score": 4.2,
-          "count": 545,
-          "url": "https://www.amazon.co.jp/dp/4575248568",
-          "source": "search"
+          "count": 553,
+          "url": "https://www.amazon.co.jp/dp/B0FWLWKYHC",
+          "source": "kobo99"
         }
       ]
     },

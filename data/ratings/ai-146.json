@@ -13,23 +13,26 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "search_reported",
-      "url": "https://www.goodreads.com/book/show/203579002-the-worlds-i-see",
-      "matched_title": "The Worlds I See: Curiosity, Exploration, and Discovery at the Dawn of AI",
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/216796802",
+      "matched_title": "Worlds I See",
       "score": 4.3,
-      "count": 5709
+      "count": 5715
     },
     "kobo": {
       "platform": "kobo",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "no_rating",
-      "url": "https://www.kobo.com/tw/zh/ebook/ai-146"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "status": "search_reported",
+      "url": "https://www.books.com.tw/products/E050192498",
+      "matched_title": "AI科學家李飛飛的視界之旅 (電子書)",
+      "score": 4.5,
+      "count": 12
     },
     "amazon": {
       "platform": "amazon",
