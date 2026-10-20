@@ -54,7 +54,9 @@ is asked for the book's exact Kobo Taiwan URL, and only a rating reported for th
 
 Readmoo's robots.txt blocks AI crawlers (GPTBot etc.) and `/search/`, so OpenAI search rarely
 finds its book pages, and its WAF answers 403 to GitHub Actions IPs. Add Readmoo URLs by hand in
-`data/rating_overrides.json` (`{"<kobo_id>": {"readmoo": "https://readmoo.com/book/<id>"}}`).
+`data/rating_overrides.json` (`{"<kobo_id>": {"readmoo": "https://readmoo.com/book/<id>"}}`),
+then run `python3 src/enrich.py` on your own machine (no OpenAI key needed for overrides) and
+`scripts/publish_data.sh`; the cached `ok` result is kept by Actions for 30 days.
 
 Results are cached per book with a TTL by status (ok 30 d, blocked 7 d, not found 14 d). 博客來 and Amazon are not fetched (bot
 protection / robots.txt); the page links to a 博客來 search instead. Goodreads often answers with
