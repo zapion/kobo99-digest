@@ -14,6 +14,12 @@
       "platform": "goodreads",
       "fetched_at": "2026-10-19T09:27:38+00:00",
       "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/O05EwxH6CjKtdey-mC1_mg"
     }
   }
 }

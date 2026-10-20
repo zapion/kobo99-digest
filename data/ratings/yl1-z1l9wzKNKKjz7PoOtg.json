@@ -19,6 +19,12 @@
       "matched_title": "暁星",
       "score": 4.28,
       "count": 36
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/yl1-z1l9wzKNKKjz7PoOtg"
     }
   }
 }

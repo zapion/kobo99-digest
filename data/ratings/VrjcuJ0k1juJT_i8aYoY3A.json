@@ -2,8 +2,8 @@
   "kobo_id": "VrjcuJ0k1juJT_i8aYoY3A",
   "title": "你的情緒，90％由血糖決定：日本漢方營養醫學專家親授，穩定血糖、調節自律神經，告別莫名疲倦、焦躁易怒、夜夜淺眠，找回情緒與身體的最佳狀態",
   "hints": {
-    "original_title": "（在 Readmoo 上未顯示原文書名；Readmoo 上的中文書名為「你的情緒，90％由血糖決定」）",
-    "original_author": "小池雅美 (小池雅美)"
+    "original_title": "気分の9割は血糖値",
+    "original_author": "小池雅美"
   },
   "platforms": {
     "readmoo": {
@@ -17,6 +17,12 @@
       "platform": "goodreads",
       "fetched_at": "2026-10-19T09:27:38+00:00",
       "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/VrjcuJ0k1juJT_i8aYoY3A"
     }
   }
 }

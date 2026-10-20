@@ -19,6 +19,12 @@
       "matched_title": "アルプス席の母",
       "score": 3.95,
       "count": 19
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/top2-3"
     }
   }
 }

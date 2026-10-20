@@ -19,6 +19,12 @@
       "matched_title": "The Wind in the Willows",
       "score": 4.03,
       "count": 249563
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/jJ6inmB9YjCGDlHmAduB_Q"
     }
   }
 }

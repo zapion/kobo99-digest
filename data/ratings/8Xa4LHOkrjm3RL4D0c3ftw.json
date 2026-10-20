@@ -19,6 +19,12 @@
       "matched_title": "Think and Grow Rich",
       "score": 4.16,
       "count": 394297
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/8Xa4LHOkrjm3RL4D0c3ftw"
     }
   }
 }

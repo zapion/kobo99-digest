@@ -2,7 +2,7 @@
   "kobo_id": "55-seventeenthe-8",
   "title": "就算長大了，也還是會難過：不完美也沒關係，擁抱自己的55個溫暖練習（人氣韓團SEVENTEEN成員THE 8推薦）",
   "hints": {
-    "original_title": "就算長大了，也還是會難過：不完美也沒關係，擁抱自己的55個溫暖練習（人氣韓團SEVENTEEN成員THE 8推薦）",
+    "original_title": "아무것도 모른 채 어른이 되었다",
     "original_author": "安賢貞"
   },
   "platforms": {
@@ -19,6 +19,12 @@
       "matched_title": "就算長大了，也還是會難過：不完美也沒關係，擁抱自己的55個溫暖練習（人氣韓團SEVENTEEN成員THE 8推薦）",
       "score": 4.0,
       "count": 4
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/55-seventeenthe-8"
     }
   }
 }

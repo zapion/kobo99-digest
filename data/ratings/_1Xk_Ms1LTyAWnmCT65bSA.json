@@ -19,6 +19,12 @@
       "matched_title": "The Committed",
       "score": 3.96,
       "count": 12905
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/_1Xk_Ms1LTyAWnmCT65bSA"
     }
   }
 }

@@ -2,8 +2,8 @@
   "kobo_id": "zcPpACscIjOJ9pRZVCVZcA",
   "title": "超高齡社會的消費行為學：為熟齡者消除「不安、不滿、不便」，就是商機所在！",
   "hints": {
-    "original_title": "成功するシニアビジネスの教科書 「超高齢社会」をビジネスチャンスにする“技術\"",
-    "original_author": "村田 裕之"
+    "original_title": "成功するシニアビジネスの教科書―「超高齢社会」をビジネスチャンスにする技術",
+    "original_author": "村田裕之"
   },
   "platforms": {
     "readmoo": {
@@ -19,6 +19,12 @@
       "matched_title": "成功するシニアビジネスの教科書 「超高齢社会」をビジネスチャンスにする“技術\"",
       "score": 3.67,
       "count": 3
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/zcPpACscIjOJ9pRZVCVZcA"
     }
   }
 }

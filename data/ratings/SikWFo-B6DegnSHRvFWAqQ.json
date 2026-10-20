@@ -19,6 +19,12 @@
       "matched_title": "Never Lie",
       "score": 4.07,
       "count": 1796283
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-10-20T01:12:33+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/SikWFo-B6DegnSHRvFWAqQ"
     }
   }
 }
