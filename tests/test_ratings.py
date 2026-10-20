@@ -656,7 +656,8 @@ def test_openai_partial_response_is_retried(monkeypatch):
 
     monkeypatch.setattr(rating_discover.urllib.request, "urlopen", lambda request, timeout: Partial())
     monkeypatch.setattr(rating_discover.time, "sleep", lambda s: None)
-    assert rating_discover._post({"x": 1}, "key") == {"ok": True}
+    from rate_limit import RateLimiter
+    assert rating_discover._post({"x": 1}, "key", RateLimiter(400_000, 3)) == {"ok": True}
     assert len(attempts) == 2
 
 
@@ -680,18 +681,25 @@ def test_one_failing_book_does_not_lose_the_others(tmp_path):
     assert [p.name for p in (data / "ratings").iterdir()] == ["ai-146.json"]
 
 
-def test_rate_limit_waits_for_retry_after(monkeypatch):
-    waits, attempts = [], []
+def test_rate_limit_cools_down_every_worker_and_records_usage(monkeypatch):
+    from rate_limit import RateLimiter
+    clock, sleeps, attempts = [0.0], [], []
+
+    def fake_sleep(seconds):
+        sleeps.append(seconds)
+        clock[0] += seconds
+    limiter = RateLimiter(400_000, 3, clock=lambda: clock[0], sleep=fake_sleep, jitter=lambda: 0.5)
 
     def urlopen(request, timeout):
         attempts.append(1)
         if len(attempts) == 1:
             raise urllib.error.HTTPError(request.full_url, 429, "rate", {"retry-after": "17"}, io.BytesIO(b"slow down"))
-        return FakeResponse(200, json.dumps({"ok": True}))
+        return FakeResponse(200, json.dumps({"ok": True, "usage": {"input_tokens": 30_000, "cache_creation_input_tokens": 5}}))
     monkeypatch.setattr(rating_discover.urllib.request, "urlopen", urlopen)
-    monkeypatch.setattr(rating_discover.time, "sleep", waits.append)
-    assert rating_discover._post({}, "k") == {"ok": True}
-    assert waits == [17.0]
+    monkeypatch.setattr(rating_discover.time, "sleep", lambda s: pytest.fail("must wait in the shared limiter"))
+    assert rating_discover._post({}, "k", limiter)["ok"] is True
+    assert sleeps == [17.5]  # retry-after plus jitter, enforced for all workers by the limiter
+    assert list(limiter._used) == [(17.5, 30_005)] and limiter._reserved == {}
 
 
 @pytest.mark.parametrize("attempt, header, expected", [(1, None, 5), (2, "bad", 10), (1, "999", 90), (1, "0", 1)])

@@ -16,6 +16,8 @@ import urllib.error
 import urllib.request
 from dataclasses import dataclass
 
+from rate_limit import RateLimiter
+
 API_URL = "https://api.anthropic.com/v1/messages"
 API_VERSION = "2023-06-01"
 DEFAULT_MODEL = "claude-haiku-5-5"
@@ -29,6 +31,11 @@ MAX_ATTEMPTS = 6
 RETRY_BASE_SECONDS = 5
 MAX_RETRY_WAIT_SECONDS = 90
 RETRYABLE = frozenset({429, 500, 502, 503, 504, 529})  # 429 rate limit, 529 overloaded
+COOL_DOWN_STATUSES = frozenset({429, 529})  # pause every worker, not only the one that was refused
+# Share of the org's input-token rate limit we allow ourselves (default: 80% of 500k/min).
+INPUT_TOKENS_PER_MINUTE = int(os.getenv("CLAUDE_INPUT_TPM") or 400_000)
+MAX_IN_FLIGHT = 3
+LIMITER = RateLimiter(INPUT_TOKENS_PER_MINUTE, MAX_IN_FLIGHT)
 MAX_CANDIDATES = 3
 MAX_HINT_CHARS = 120
 # Models sometimes stuff explanations into fields; such hints are dropped.
@@ -175,27 +182,42 @@ def _retry_wait(attempt: int, retry_after: str | None) -> float:
     return min(max(wait, 1.0), MAX_RETRY_WAIT_SECONDS)
 
 
-def _post(body: dict, api_key: str) -> dict:
+def _input_tokens(payload: dict) -> int:
+    """Tokens that count toward the input rate limit (cache reads do not)."""
+    usage = payload.get("usage") if isinstance(payload.get("usage"), dict) else {}
+    return sum(int(usage.get(k) or 0) for k in ("input_tokens", "cache_creation_input_tokens"))
+
+
+def _post(body: dict, api_key: str, limiter: RateLimiter | None = None) -> dict:
+    limiter = limiter or LIMITER
     data = json.dumps(body).encode()
     last: Exception | None = None
     for attempt in range(1, MAX_ATTEMPTS + 1):
-        retry_after = None
         request = urllib.request.Request(API_URL, data=data, method="POST", headers={
             "x-api-key": api_key, "anthropic-version": API_VERSION, "content-type": "application/json"})
+        ticket, used, wait = limiter.acquire(), 0, None
         try:
             with urllib.request.urlopen(request, timeout=TIMEOUT_SECONDS) as resp:
-                return json.loads(resp.read().decode())
+                payload = json.loads(resp.read().decode())
+            used = _input_tokens(payload)
+            return payload
         except urllib.error.HTTPError as error:
             detail = error.read().decode(errors="replace")[:300]
             last = DiscoveryError(f"Claude API HTTP {error.code}: {detail}")
             if error.code not in RETRYABLE:
                 raise last from error
-            retry_after = (error.headers or {}).get("retry-after")
+            wait = _retry_wait(attempt, (error.headers or {}).get("retry-after"))
+            if error.code in COOL_DOWN_STATUSES:
+                limiter.cool_down(wait)  # acquire() makes every worker wait, with jitter
+                wait = None
         except (urllib.error.URLError, http.client.HTTPException, OSError, ValueError) as error:
             # dropped/partial responses (IncompleteRead, resets, truncated JSON) are worth another try
             last = DiscoveryError(f"Claude API unreachable: {error!r}")
-        if attempt < MAX_ATTEMPTS:
-            time.sleep(_retry_wait(attempt, retry_after))
+            wait = _retry_wait(attempt, None)
+        finally:
+            limiter.release(ticket, used)
+        if attempt < MAX_ATTEMPTS and wait:
+            time.sleep(wait)
     raise last or DiscoveryError("Claude API call failed")
 
 
