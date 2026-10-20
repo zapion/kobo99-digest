@@ -48,21 +48,15 @@ For each book in lists ending within the last 14 days, per platform:
 When a candidate page cannot be read (blocked), a rating the search results showed for a
 confident match is kept as `search_reported` and shown as "≈x.x（…・搜尋）".
 
-Kobo's own rating: kobo.com is behind a Cloudflare challenge, so its page is never fetched. Search
-is asked for the book's exact Kobo Taiwan URL, and only a rating reported for that URL is used
-(always shown as "搜尋").
+Platforms: Kobo, 博客來, 讀墨, Goodreads, Amazon (shown in that order), all from GitHub Actions.
+Goodreads and Readmoo pages are read when reachable. Kobo (Cloudflare), 博客來 and Amazon are never
+fetched: search is asked for the book's page, and only a rating reported for the exact Kobo URL, or
+for a 博客來 / Amazon page whose title and author match ours (or the original's), is used.
+Readmoo answers 403 to Actions IPs and blocks AI crawlers, so it is mostly search-reported or empty.
 
-Readmoo is rated from your own machine, not Actions: its WAF answers 403 to GitHub Actions IPs,
-its robots.txt blocks AI crawlers (so OpenAI search rarely finds it) and its own `/search/`
-(incl. the suggest API). Run:
-
-    scripts/readmoo_local.sh
-
-It pulls, rates the current books on Readmoo only, and pushes `data/`. Book pages come from
-`data/rating_overrides.json` (`{"<kobo_id>": {"readmoo": "https://readmoo.com/book/<id>"}}`),
-then a URL already cached for the book, then Brave Search if `BRAVE_API_KEY` is in `.env`
-(free key: https://api-dashboard.search.brave.com). Pages are fetched with Crawl-delay 10 s and
-title + author must match. Actions only updates Goodreads and Kobo (`ENRICH_PLATFORMS`).
+Fallback: `src/kobo99_fallback.py` reads kobo99.com's public JSON (`data/latest.json` and the
+本週精選 theme file; robots.txt allows it) and fills in platforms we could not rate, shown as
+"≈x.x（…・kobo99）". Only score and count are kept; its tracking/affiliate links are never stored.
 
 Results are cached per book with a TTL by status (ok 30 d, blocked 7 d, not found 14 d). 博客來 and Amazon are not fetched (bot
 protection / robots.txt); the page links to a 博客來 search instead. Goodreads often answers with

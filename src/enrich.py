@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch 讀墨 / Goodreads / Kobo ratings for books in current lists and attach them to data/<slug>.json.
+"""Fetch Kobo / 博客來 / 讀墨 / Goodreads / Amazon ratings for books in current lists and attach them to data/<slug>.json.
 
 Per book and platform: URL from data/rating_overrides.json, else OpenAI web search proposes
 candidates → we fetch each page politely → verify title/author ourselves → read structured
@@ -7,7 +7,7 @@ rating. Results are cached in data/ratings/<kobo_id>.json with a TTL per status.
 
 Env: OPENAI_API_KEY (needed for discovery; without it only overrides/cached URLs are refreshed),
 OPENAI_MODEL (optional), ENRICH_REFRESH=1 (ignore cache TTLs), ENRICH_MAX_BOOKS,
-ENRICH_PLATFORMS (comma list; default goodreads,kobo — Readmoo runs locally via readmoo_local.py).
+ENRICH_PLATFORMS (comma list; default all). Platforms still unrated fall back to kobo99.com's numbers.
 """
 
 from __future__ import annotations
@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Callable
 from zoneinfo import ZoneInfo
 
+import kobo99_fallback
 from rating_discover import PLATFORMS, DiscoveryError, canonical_url, discover
 from rating_extract import authors_match, extract_rating, page_identity, titles_match
 from rating_fetch import Blocked, Disallowed, NotFound, PoliteFetcher
@@ -30,9 +31,9 @@ DATA_DIR = ROOT / "data"
 RATINGS_DIRNAME = "ratings"
 OVERRIDES_NAME = "rating_overrides.json"
 TAIPEI = ZoneInfo("Asia/Taipei")
-PLATFORM_ORDER = ("readmoo", "goodreads", "kobo")
-# Readmoo answers 403 to GitHub Actions IPs and blocks AI crawlers; it is rated by src/readmoo_local.py.
-ACTIONS_PLATFORMS = ("goodreads", "kobo")
+# Goodreads first: it finds the original title/author that later platforms (Amazon) search with.
+PLATFORM_ORDER = ("goodreads", "readmoo", "books", "amazon", "kobo")
+DISPLAY_ORDER = ("kobo", "books", "readmoo", "goodreads", "amazon")
 # Days before a cached result is retried, by status.
 TTL_DAYS = {"ok": 30, "search_reported": 7, "no_rating": 14, "not_found": 14, "low_confidence": 14,
             "disallowed": 30, "blocked": 7}
@@ -108,6 +109,21 @@ def _own_page_entry(book: dict, candidates: list[dict], base: dict) -> dict:
     return _search_reported(own, {c["url"] for c in own}, base) or {**base, "status": "no_rating", "url": own[0]["url"]}
 
 
+def _title_checked_entry(book: dict, candidates: list[dict], hints: dict, base: dict) -> dict:
+    """Unfetchable platform found by search: the reported title/author must match ours (or the original's)."""
+    titles = [t for t in (book.get("title"), hints.get("original_title")) if t]
+    authors = [a for a in (book.get("author"), hints.get("original_author")) if a]
+    matching = [c for c in candidates
+                if any(titles_match(t, c["title"]) for t in titles)
+                and (not c["author"] or any(authors_match(a, [c["author"]]) for a in authors))]
+    if not matching:
+        tried = [{"url": c["url"], "title": c["title"], "authors": [c["author"]], "confidence": c["confidence"]}
+                 for c in candidates]
+        return {**base, "status": "low_confidence", "tried": tried} if candidates else {**base, "status": "not_found"}
+    return (_search_reported(matching, {c["url"] for c in matching}, base)
+            or {**base, "status": "no_rating", "url": matching[0]["url"]})
+
+
 def _candidates_for(book: dict, platform: str, find: Discover | None, override: str | None,
                     hints: dict) -> tuple[list[dict] | None, dict]:
     if override:
@@ -133,7 +149,9 @@ def rate_platform(book: dict, platform: str, fetcher: PoliteFetcher, find: Disco
         return None, hints
     base = {"platform": platform, "fetched_at": now}
     if not PLATFORMS[platform].fetchable:
-        return _own_page_entry(book, candidates, base), hints
+        if platform == "kobo":
+            return _own_page_entry(book, candidates, base), hints
+        return _title_checked_entry(book, candidates, hints, base), hints
     if not candidates:
         return {**base, "status": "not_found"}, hints
     tried, problem = [], None
@@ -170,9 +188,9 @@ def rate_platform(book: dict, platform: str, fetcher: PoliteFetcher, find: Disco
 
 
 def platforms_from_env(value: str) -> tuple[str, ...]:
-    """ENRICH_PLATFORMS="a,b" → known platforms in that order; empty → ACTIONS_PLATFORMS."""
+    """ENRICH_PLATFORMS="a,b" → known platforms in that order; empty → all."""
     names = [name.strip() for name in value.split(",") if name.strip()]
-    return tuple(name for name in names if name in PLATFORMS) if names else ACTIONS_PLATFORMS
+    return tuple(name for name in names if name in PLATFORMS) if names else PLATFORM_ORDER
 
 
 def enrich_book(book: dict, cache: dict, fetcher: PoliteFetcher, find: Discover | None,
@@ -191,18 +209,34 @@ def enrich_book(book: dict, cache: dict, fetcher: PoliteFetcher, find: Discover 
     return {"kobo_id": ebook_id(book["kobo_url"]), "title": book.get("title", ""), "hints": hints, "platforms": platforms}
 
 
+def _public(key: str, entry: dict, source: str) -> dict:
+    return {"platform": key, "name": PLATFORMS[key].name.split(" ")[0], "score": entry["score"],
+            "count": entry["count"], "url": entry["url"], "source": source}
+
+
 def public_ratings(cache: dict) -> list[dict]:
-    """What the page shows: ratings read from the page ("page") or, failing that, from search results ("search")."""
-    return [
-        {"platform": key, "name": PLATFORMS[key].name.split(" ")[0], "score": e["score"], "count": e["count"],
-         "url": e["url"], "source": "page" if e["status"] == "ok" else "search"}
-        for key in PLATFORM_ORDER
-        if (e := cache.get("platforms", {}).get(key)) and e.get("status") in SHOWN_STATUSES
-    ]
+    """What the page shows per platform: read from the page ("page"), from search results ("search"),
+    or failing both, kobo99.com's number ("kobo99")."""
+    fallback = cache.get("kobo99", {}).get("ratings", {})
+    shown = []
+    for key in DISPLAY_ORDER:
+        entry = cache.get("platforms", {}).get(key)
+        if entry and entry.get("status") in SHOWN_STATUSES:
+            shown.append(_public(key, entry, "page" if entry["status"] == "ok" else "search"))
+        elif key in fallback:
+            shown.append(_public(key, fallback[key], "kobo99"))
+    return shown
+
+
+def with_fallback(cache: dict, ratings: dict | None, now: str) -> dict:
+    """Keep the latest kobo99 numbers in the cache, so they survive weeks kobo99 is unreachable."""
+    if not ratings or cache.get("kobo99", {}).get("ratings") == ratings:
+        return cache
+    return {**cache, "kobo99": {"fetched_at": now, "ratings": ratings}}
 
 
 def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover | None, max_books: int,
-        refresh: bool = False, platforms: tuple[str, ...] = PLATFORM_ORDER) -> dict:
+        refresh: bool = False, platforms: tuple[str, ...] = PLATFORM_ORDER, fallback: dict | None = None) -> dict:
     """Update the given platforms; ratings of every platform already cached are still published."""
     ratings_dir = data_dir / RATINGS_DIRNAME
     overrides = _read_json(data_dir / OVERRIDES_NAME, {})
@@ -229,6 +263,10 @@ def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover |
                     stats["enriched"] += 1
             else:
                 stats["cached"] += 1
+            merged = with_fallback(cache, (fallback or {}).get(kobo_id), now)
+            if kobo_id and merged is not cache:
+                _write_json(cache_path, {"kobo_id": kobo_id, "title": book.get("title", ""), **merged})
+                cache = merged
             books.append({**book, "ratings": public_ratings(cache)})
         if books != book_list["books"]:
             _write_json(list_path, {**book_list, "books": books})
@@ -243,8 +281,11 @@ def main() -> int:
         print("[warn] OPENAI_API_KEY not set: only overrides are refreshed.", file=sys.stderr)
     today = dt.datetime.now(TAIPEI).date()
     refresh = os.getenv("ENRICH_REFRESH", "").lower() in ("1", "true", "yes")
-    stats = run(DATA_DIR, today, PoliteFetcher(), find, int(os.getenv("ENRICH_MAX_BOOKS", MAX_BOOKS_PER_RUN)), refresh,
-                platforms_from_env(os.getenv("ENRICH_PLATFORMS", "")))
+    fetcher = PoliteFetcher()
+    fallback = kobo99_fallback.load(fetcher)
+    print(f"kobo99 fallback: {len(fallback)} books")
+    stats = run(DATA_DIR, today, fetcher, find, int(os.getenv("ENRICH_MAX_BOOKS", MAX_BOOKS_PER_RUN)), refresh,
+                platforms_from_env(os.getenv("ENRICH_PLATFORMS", "")), fallback)
     print(json.dumps(stats))
     return 0
 

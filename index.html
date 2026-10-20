@@ -67,6 +67,7 @@ footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
   <footer>
     資料整理自 <a href="https://www.kobo.com/zh/blog">Kobo 官方部落格</a>，價格與優惠以 Kobo 官網為準。
     一週99每週四更新、本週精選每週一更新。
+    評分標「≈」者非直接讀取該平台頁面：「搜尋」取自搜尋結果，「kobo99」取自 <a href="https://kobo99.com/">kobo99.com</a>。
   </footer>
 </div>
 <script>
@@ -101,17 +102,22 @@ footer { margin:2.5rem 0 1rem; font-size:.75rem; color:var(--meta); }
   const booksSearchUrl = (title) => `${BOOKS_SEARCH}${encodeURIComponent(title.split(/[：:（(]/)[0])}/cat/all`;
   const formatCount = (n) => Number(n).toLocaleString('en-US');
 
+  // Ratings we did not read from the platform's own page.
+  const INDIRECT_SOURCES = {
+    search: { label: '搜尋', tip: '取自搜尋結果，未直接讀取該頁' },
+    kobo99: { label: 'kobo99', tip: '取自 kobo99.com 整理的數字' },
+  };
+
   const ratingsLine = (ratings) => {
     const valid = (Array.isArray(ratings) ? ratings : [])
       .filter((r) => Number.isFinite(r.score) && safeUrl(r.url));
     if (!valid.length) return null;
     return h('p', { class: 'ratings' }, valid.map((r) => {
-      const fromSearch = r.source === 'search';
-      const tip = `${r.name} ${r.score}（${formatCount(r.count)} 人評分）`
-        + (fromSearch ? '：取自搜尋結果，未直接讀取該頁' : '');
-      return h('a', { href: r.url, target: '_blank', rel: 'noopener', title: tip, class: fromSearch ? 'search' : null },
-        '⭐ ', h('b', {}, `${fromSearch ? '≈' : ''}${r.score.toFixed(1)}`),
-        ` ${r.name}（${formatCount(r.count)}${fromSearch ? '・搜尋' : ''}）`);
+      const indirect = INDIRECT_SOURCES[r.source];
+      const tip = `${r.name} ${r.score}（${formatCount(r.count)} 人評分）` + (indirect ? `：${indirect.tip}` : '');
+      return h('a', { href: r.url, target: '_blank', rel: 'noopener', title: tip, class: indirect ? 'search' : null },
+        '⭐ ', h('b', {}, `${indirect ? '≈' : ''}${r.score.toFixed(1)}`),
+        ` ${r.name}（${formatCount(r.count)}${indirect ? `・${indirect.label}` : ''}）`);
     }));
   };
 

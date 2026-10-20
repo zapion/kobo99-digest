@@ -31,25 +31,39 @@ HINT_NOISE = ("readmoo", "goodreads", "not found", "未在", "無法", "找不�
 class Platform:
     key: str
     name: str
-    domain: str
+    domains: tuple[str, ...]
     url_re: re.Pattern
     hint: str  # "{kobo_url}" is replaced with the book's Kobo page
     # False: never fetch the page ourselves (bot protection); only a search-reported rating is used.
     fetchable: bool = True
+    # Canonical URL built from url_re groups; None keeps the URL minus query/fragment.
+    canonical: str | None = None
 
 
 PLATFORMS = {
     "readmoo": Platform(
-        "readmoo", "讀墨 Readmoo", "readmoo.com", re.compile(r"^https://readmoo\.com/book/(\d{6,})$"),
+        "readmoo", "讀墨 Readmoo", ("readmoo.com",), re.compile(r"^https://readmoo\.com/book/(\d{6,})$"),
         "the Traditional Chinese ebook edition on readmoo.com (URL form https://readmoo.com/book/<digits>)"),
     "goodreads": Platform(
-        "goodreads", "Goodreads", "goodreads.com", re.compile(r"^https://www\.goodreads\.com/book/show/(\d+)"),
+        "goodreads", "Goodreads", ("goodreads.com",), re.compile(r"^https://www\.goodreads\.com/book/show/(\d+)"),
         "the book on goodreads.com, preferring the original-language edition with the most ratings "
         "(URL form https://www.goodreads.com/book/show/<id>)"),
     "kobo": Platform(
-        "kobo", "Kobo", "kobo.com", re.compile(r"^https://www\.kobo\.com/tw/zh/ebook/([^/?#]+)$"),
+        "kobo", "Kobo", ("kobo.com",), re.compile(r"^https://www\.kobo\.com/tw/zh/ebook/([^/?#]+)$"),
         "the Kobo Taiwan page {kobo_url} itself and the star rating and number of ratings shown on it",
         fetchable=False),
+    "books": Platform(
+        "books", "博客來", ("books.com.tw",),
+        re.compile(r"^https://www\.books\.com\.tw/(?:[^?#]*/)?products/([A-Z0-9]{10})(?:/|$)"),
+        "the ebook (or else print) edition of this Traditional Chinese book on books.com.tw "
+        "(URL form https://www.books.com.tw/products/<id>)",
+        fetchable=False, canonical="https://www.books.com.tw/products/{0}"),
+    "amazon": Platform(
+        "amazon", "Amazon", ("amazon.com", "amazon.co.jp"),
+        re.compile(r"^https://www\.amazon\.(com|co\.jp)/(?:[^?#]*/)?(?:dp|gp/product)/([A-Z0-9]{10})(?:/|$)"),
+        "the book on amazon.com (or amazon.co.jp for Japanese originals): the original-language edition for "
+        "translations, else the Chinese edition (URL form https://www.amazon.com/dp/<ASIN>)",
+        fetchable=False, canonical="https://www.amazon.{0}/dp/{1}"),
 }
 
 SCHEMA = {
@@ -86,7 +100,10 @@ class DiscoveryError(RuntimeError):
 def canonical_url(platform: Platform, url: str) -> str | None:
     """Strip query/fragment and keep only allowlisted book URLs."""
     base = url.split("#", 1)[0].split("?", 1)[0].rstrip("/")
-    return base if platform.url_re.match(base) else None
+    match = platform.url_re.match(base)
+    if not match:
+        return None
+    return platform.canonical.format(*match.groups()) if platform.canonical else base
 
 
 def _prompt(book: dict, platform: Platform) -> str:
@@ -97,7 +114,7 @@ def _prompt(book: dict, platform: Platform) -> str:
         f"- title: {book.get('title', '')}\n- short title: {main_title}\n- author: {book.get('author', '')}\n"
         f"- publisher: {book.get('publisher', '')}\n"
         f"Search with the short title and the author. Translated books often use a different title on "
-        f"{platform.domain}; search the original title too.\n"
+        f"{' / '.join(platform.domains)}; search the original title too.\n"
         f"Return up to {MAX_CANDIDATES} book-page URLs exactly as found, best first. For each: the title and author "
         f"shown on that page, your confidence (0-1) that it is the same work, and the average rating and number of "
         f"ratings shown for it in the search results or page (null if you did not see them; never estimate).\n"
@@ -161,7 +178,7 @@ def discover(book: dict, platform_key: str, api_key: str, model: str | None = No
     body = {
         "model": model or os.getenv("OPENAI_MODEL") or DEFAULT_MODEL,
         "input": _prompt(book, platform),
-        "tools": [{"type": "web_search", "filters": {"allowed_domains": [platform.domain]}}],
+        "tools": [{"type": "web_search", "filters": {"allowed_domains": list(platform.domains)}}],
         "text": {"format": {"type": "json_schema", "name": "book_pages", "schema": SCHEMA, "strict": True}},
     }
     try:

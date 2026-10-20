@@ -265,8 +265,9 @@ def found(url, title="", author="", conf=0.9, rating=None, count=None, original_
 
 
 FOUND = {
-    "readmoo": found(READMOO_URL, original_title="The Worlds I See", original_author="Fei-Fei Li"),
-    "goodreads": found(GOODREADS_URL),
+    "readmoo": found(READMOO_URL),
+    # Goodreads runs first and supplies the original title/author hints.
+    "goodreads": found(GOODREADS_URL, original_title="The Worlds I See", original_author="Fei-Fei Li"),
 }
 
 
@@ -287,7 +288,7 @@ def test_enrich_verifies_and_attaches_ratings_then_uses_cache(tmp_path):
     assert "ratings" not in json.loads((data / "weekly-dd99-2026-w30.json").read_text())["books"][0]
     # second run: everything fresh, no discovery or fetching
     assert enrich.run(data, TODAY, fetcher, find, 40)["enriched"] == 0
-    assert calls == ["readmoo", "goodreads", "kobo"]
+    assert calls == list(enrich.PLATFORM_ORDER)
 
 
 def test_enrich_rejects_unverified_pages(tmp_path):
@@ -359,7 +360,7 @@ def test_refresh_ignores_ttl(tmp_path):
     find, calls = fake_find(FOUND)
     enrich.run(data, TODAY, fetcher, find, 40)
     enrich.run(data, TODAY, fetcher, find, 40, refresh=True)
-    assert calls == ["readmoo", "goodreads", "kobo"] * 2
+    assert calls == list(enrich.PLATFORM_ORDER) * 2
 
 
 def test_enrich_without_api_key_uses_overrides_only(tmp_path):
@@ -468,3 +469,113 @@ def test_kobo_discovery_prompt_names_the_exact_page():
     rating_discover.discover(BOOK, "kobo", "k", post=post)
     assert KOBO_URL in sent["input"]
     assert sent["tools"][0]["filters"]["allowed_domains"] == ["kobo.com"]
+
+
+# ── 博客來 / Amazon (search only) ──────────────────────────────────────────────
+
+BOOKS_URL = "https://www.books.com.tw/products/E050192498"
+AMAZON_URL = "https://www.amazon.com/dp/B0BPQSLVL6"
+
+
+@pytest.mark.parametrize("platform, raw, expected", [
+    ("books", "https://www.books.com.tw/exep/assp.php/books99/products/E050192498?utm_source=x", BOOKS_URL),
+    ("books", BOOKS_URL + "/", BOOKS_URL),
+    ("books", "https://www.books.com.tw/search?q=x", None),
+    ("amazon", "https://www.amazon.com/-/zh_TW/Dr-Fei-Fei-Li-ebook/dp/B0BPQSLVL6/ref=sr_1_1?x=1", AMAZON_URL),
+    ("amazon", "https://www.amazon.co.jp/gp/product/B079Y1KWSF/ref=x", "https://www.amazon.co.jp/dp/B079Y1KWSF"),
+    ("amazon", "https://www.amazon.evil.com/dp/B0BPQSLVL6", None),
+])
+def test_canonical_urls_drop_tracking(platform, raw, expected):
+    assert rating_discover.canonical_url(rating_discover.PLATFORMS[platform], raw) == expected
+
+
+def test_search_only_platforms_need_matching_title_and_are_never_fetched(tmp_path):
+    data = seed_data(tmp_path)
+    calls = []
+    find, _ = fake_find({
+        "goodreads": found(None, original_title="The Worlds I See", original_author="Fei-Fei Li"),
+        "books": found(BOOKS_URL, title="AI科學家李飛飛的視界之旅", author="李飛飛", conf=0.9, rating=4.5, count=12),
+        "amazon": found(AMAZON_URL, title="Some Other Book", author="Fei-Fei Li", conf=0.95, rating=4.6, count=1518),
+    })
+    enrich.run(data, TODAY, fetcher_with({}, calls), find, 40)
+    platforms = json.loads((data / "ratings" / "ai-146.json").read_text())["platforms"]
+    assert platforms["books"]["status"] == "search_reported" and platforms["books"]["score"] == 4.5
+    assert platforms["amazon"]["status"] == "low_confidence"
+    assert not any("books.com.tw" in c or "amazon" in c for c in calls)
+
+
+def test_amazon_matches_original_title_hint(tmp_path):
+    data = seed_data(tmp_path)
+    find, _ = fake_find({
+        "goodreads": found(None, original_title="The Worlds I See", original_author="Fei-Fei Li"),
+        "amazon": found(AMAZON_URL, title="The Worlds I See: Curiosity", author="Fei-Fei Li", conf=0.9,
+                        rating=4.6, count=1518),
+    })
+    enrich.run(data, TODAY, fetcher_with({}), find, 40)
+    entry = json.loads((data / "ratings" / "ai-146.json").read_text())["platforms"]["amazon"]
+    assert entry["status"] == "search_reported" and entry["url"] == AMAZON_URL
+
+
+# ── kobo99 fallback ───────────────────────────────────────────────────────────
+
+import kobo99_fallback
+
+K99_BOOK = {"title": "AI科學家", "kobo_url": "https://www.kobo.com/tw/zh/ebook/ai-146?sId=tracking", "ratings": {
+    "kobo": {"score": 4.77, "count": 13, "url": "https://www.kobo.com/tw/zh/ebook/ai-146?sId=tracking"},
+    "books_com": {"score": 4.5, "count": 12, "url": "https://www.books.com.tw/exep/assp.php/books99/products/E050192498?utm=1"},
+    "readmoo": {"score": 4.7, "count": 141, "url": "https://moo.im/a/8eJMOU"},
+    "goodreads": {"score": None, "count": 0, "url": ""},
+    "amazon_com": {"score": 9, "count": 5, "url": ""},
+}}
+
+
+def test_kobo99_ratings_drop_tracking_links_and_bad_numbers():
+    ratings = kobo99_fallback.ratings_by_book([K99_BOOK, {"kobo_url": ""}, "junk"])
+    assert ratings == {"ai-146": {
+        "kobo": {"score": 4.77, "count": 13, "url": KOBO_URL},
+        "books": {"score": 4.5, "count": 12, "url": BOOKS_URL},
+        "readmoo": {"score": 4.7, "count": 141, "url": "https://kobo99.com/"},
+    }}
+
+
+def test_kobo99_ratings_accept_python_literal_strings():
+    book = {**K99_BOOK, "ratings": str(K99_BOOK["ratings"])}
+    assert kobo99_fallback.ratings_by_book([book])["ai-146"]["kobo"]["score"] == 4.77
+    assert kobo99_fallback.ratings_by_book([{**K99_BOOK, "ratings": "not python"}]) == {}
+
+
+def test_kobo99_load_reads_latest_and_promo_themes_only():
+    themes = [{"file": "theme_1.json", "promo_code": "WK"}, {"file": "theme_2.json"},
+              {"file": "../secret.json", "promo_code": "X"}, {"file": "theme_3.json", "promo_code": "Y", "hidden": True}]
+    calls = []
+    fetcher = fetcher_with({
+        "https://kobo99.com/robots.txt": (200, "User-agent: *\nAllow: /\n", {}),
+        "https://kobo99.com/data/latest.json": (200, json.dumps({"books": [K99_BOOK]}), {}),
+        "https://kobo99.com/data/themes.json": (200, json.dumps(themes), {}),
+        "https://kobo99.com/data/theme_1.json": (200, json.dumps({"books": [
+            {**K99_BOOK, "kobo_url": "https://www.kobo.com/tw/zh/ebook/HB7"}]}), {}),
+    }, calls)
+    ratings = kobo99_fallback.load(fetcher)
+    assert set(ratings) == {"ai-146", "HB7"}
+    assert [c for c in calls if "theme_" in c] == ["https://kobo99.com/data/theme_1.json"]
+
+
+def test_kobo99_load_survives_errors():
+    assert kobo99_fallback.load(fetcher_with({"https://kobo99.com/data/latest.json": (200, "{", {})})) == {}
+
+
+def test_fallback_fills_only_missing_platforms_and_persists(tmp_path):
+    data = seed_data(tmp_path)
+    fetcher = fetcher_with({GOODREADS_URL: (200, GOODREADS_HTML, {})})
+    find, _ = fake_find({"goodreads": FOUND["goodreads"]})
+    fallback = kobo99_fallback.ratings_by_book([{**K99_BOOK, "ratings": {
+        **K99_BOOK["ratings"], "goodreads": {"score": 1.0, "count": 1, "url": GOODREADS_URL}}}])
+    enrich.run(data, TODAY, fetcher, find, 40, fallback=fallback)
+    ratings = json.loads((data / "weekly-dd99-2026-w42.json").read_text())["books"][0]["ratings"]
+    assert [(r["platform"], r["source"]) for r in ratings] == [
+        ("kobo", "kobo99"), ("books", "kobo99"), ("readmoo", "kobo99"), ("goodreads", "page")]
+    assert next(r for r in ratings if r["platform"] == "goodreads")["score"] == 4.3  # ours wins
+    # kobo99 unreachable next run: its last numbers are kept
+    enrich.run(data, TODAY, fetcher, find, 40, fallback={})
+    again = json.loads((data / "weekly-dd99-2026-w42.json").read_text())["books"][0]["ratings"]
+    assert again == ratings
