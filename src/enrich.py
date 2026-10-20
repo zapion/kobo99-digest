@@ -7,7 +7,7 @@ rating. Results are cached in data/ratings/<kobo_id>.json with a TTL per status.
 
 Env: ANTHROPIC_API_KEY (needed for discovery; without it only overrides/cached URLs are refreshed),
 CLAUDE_MODEL (optional), ENRICH_REFRESH=1 (ignore cache TTLs), ENRICH_MAX_BOOKS,
-ENRICH_PLATFORMS (comma list; default all), ENRICH_TIME_BUDGET_MINUTES. Platforms still unrated fall back to kobo99.com's numbers.
+ENRICH_PLATFORMS (comma list; default goodreads,books,amazon), ENRICH_TIME_BUDGET_MINUTES. Platforms still unrated fall back to kobo99.com's numbers.
 """
 
 from __future__ import annotations
@@ -36,6 +36,9 @@ TAIPEI = ZoneInfo("Asia/Taipei")
 # Goodreads first: it finds the original title/author that later platforms (Amazon) search with.
 PLATFORM_ORDER = ("goodreads", "readmoo", "books", "amazon", "kobo")
 DISPLAY_ORDER = ("kobo", "books", "readmoo", "goodreads", "amazon")
+# Searched by default. Kobo and Readmoo pages almost never show up with a rating in web search,
+# so their numbers come from the kobo99 fallback unless ENRICH_PLATFORMS asks for them.
+SEARCH_PLATFORMS = ("goodreads", "books", "amazon")
 # Days before a cached result is retried, by status.
 TTL_DAYS = {"ok": 30, "search_reported": 7, "no_rating": 14, "not_found": 14, "low_confidence": 14,
             "disallowed": 30, "blocked": 7}
@@ -44,7 +47,7 @@ MIN_MODEL_CONFIDENCE = 0.85
 SHOWN_STATUSES = frozenset({"ok", "search_reported"})
 ACTIVE_WINDOW_DAYS = 14
 MAX_BOOKS_PER_RUN = 40
-WORKERS = 6  # books looked up at once; each book's platforms stay sequential (hints flow between them)
+WORKERS = 3  # books looked up at once (search results are large; stay under the input-token rate limit); each book's platforms stay sequential (hints flow between them)
 TIME_BUDGET_MINUTES = 40  # stop starting books after this, so the workflow can still commit
 
 Discover = Callable[[dict, str], dict]
@@ -192,9 +195,9 @@ def rate_platform(book: dict, platform: str, fetcher: PoliteFetcher, find: Disco
 
 
 def platforms_from_env(value: str) -> tuple[str, ...]:
-    """ENRICH_PLATFORMS="a,b" → known platforms in that order; empty → all."""
-    names = [name.strip() for name in value.split(",") if name.strip()]
-    return tuple(name for name in names if name in PLATFORMS) if names else PLATFORM_ORDER
+    """ENRICH_PLATFORMS="a,b" → known platforms in processing order; empty → SEARCH_PLATFORMS."""
+    names = {name.strip() for name in value.split(",") if name.strip()}
+    return tuple(p for p in PLATFORM_ORDER if p in names) if names else SEARCH_PLATFORMS
 
 
 def enrich_book(book: dict, cache: dict, fetcher: PoliteFetcher, find: Discover | None,

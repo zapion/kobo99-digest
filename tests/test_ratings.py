@@ -205,7 +205,7 @@ def test_discover_filters_to_allowlisted_canonical_urls_and_cleans_fields():
                                      "rating": 4.7, "rating_count": 141}]
     assert (result["original_title"], result["original_author"]) == ("The Worlds I See", "Fei-Fei Li")
     search, report = sent["tools"]
-    assert search == {"type": "web_search_20250305", "name": "web_search", "max_uses": 4, "allowed_domains": ["readmoo.com"]}
+    assert search == {"type": "web_search_20250305", "name": "web_search", "max_uses": 3, "allowed_domains": ["readmoo.com"]}
     assert report["name"] == "report_candidates" and report["strict"] is True
     assert sent["model"] == "m"
     assert "short title: AI科學家李飛飛的視界之旅" in sent["messages"][0]["content"]
@@ -678,3 +678,27 @@ def test_one_failing_book_does_not_lose_the_others(tmp_path):
     stats = enrich.run(data, TODAY, fetcher_with({}), find, 40, platforms=("books",), workers=2)
     assert stats["enriched"] == 1
     assert [p.name for p in (data / "ratings").iterdir()] == ["ai-146.json"]
+
+
+def test_rate_limit_waits_for_retry_after(monkeypatch):
+    waits, attempts = [], []
+
+    def urlopen(request, timeout):
+        attempts.append(1)
+        if len(attempts) == 1:
+            raise urllib.error.HTTPError(request.full_url, 429, "rate", {"retry-after": "17"}, io.BytesIO(b"slow down"))
+        return FakeResponse(200, json.dumps({"ok": True}))
+    monkeypatch.setattr(rating_discover.urllib.request, "urlopen", urlopen)
+    monkeypatch.setattr(rating_discover.time, "sleep", waits.append)
+    assert rating_discover._post({}, "k") == {"ok": True}
+    assert waits == [17.0]
+
+
+@pytest.mark.parametrize("attempt, header, expected", [(1, None, 5), (2, "bad", 10), (1, "999", 90), (1, "0", 1)])
+def test_retry_wait(attempt, header, expected):
+    assert rating_discover._retry_wait(attempt, header) == expected
+
+
+def test_platforms_from_env():
+    assert enrich.platforms_from_env("") == ("goodreads", "books", "amazon")
+    assert enrich.platforms_from_env("kobo, bogus,goodreads") == ("goodreads", "kobo")

@@ -81,7 +81,7 @@ Repository → Settings → Secrets and variables → Actions:
 
 - Secret `ANTHROPIC_API_KEY` (needed for URL discovery; without it only overrides are refreshed).
 - Optional variable `CLAUDE_MODEL` (default `claude-haiku-5-5`; must support the web search tool).
-  Web search costs $10 per 1,000 searches plus tokens; at most 4 searches per book and platform.
+  Web search costs $10 per 1,000 searches plus tokens; at most 3 searches per book and platform; Goodreads, 博客來 and Amazon are searched by default (`ENRICH_PLATFORMS`), Kobo and 讀墨 come from the kobo99 fallback.
 
 Run it by hand from the Actions tab ("build-data" → Run workflow); it also runs on every push
 to `data/**` and weekly on Wednesday to retry blocked/not-found ratings.

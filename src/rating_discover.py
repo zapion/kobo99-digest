@@ -21,13 +21,14 @@ API_VERSION = "2023-06-01"
 DEFAULT_MODEL = "claude-haiku-5-5"
 WEB_SEARCH_TOOL = "web_search_20250305"
 REPORT_TOOL = "report_candidates"
-MAX_SEARCHES = 4  # per book and platform; $10 per 1,000 searches
+MAX_SEARCHES = 3  # per book and platform; each result page counts as input tokens; $10 per 1,000 searches
 MAX_TOKENS = 2048
 MAX_TURNS = 4  # pause_turn continuations plus one nudge to report
 TIMEOUT_SECONDS = 120
-MAX_ATTEMPTS = 3
+MAX_ATTEMPTS = 6
 RETRY_BASE_SECONDS = 5
-RETRYABLE = frozenset({429, 500, 502, 503, 504})
+MAX_RETRY_WAIT_SECONDS = 90
+RETRYABLE = frozenset({429, 500, 502, 503, 504, 529})  # 429 rate limit, 529 overloaded
 MAX_CANDIDATES = 3
 MAX_HINT_CHARS = 120
 # Models sometimes stuff explanations into fields; such hints are dropped.
@@ -165,10 +166,20 @@ def _result_urls(platform: Platform, content: list) -> set[str]:
     return urls
 
 
+def _retry_wait(attempt: int, retry_after: str | None) -> float:
+    """Seconds to wait: the API's retry-after when given, else linear backoff; capped."""
+    try:
+        wait = float(retry_after) if retry_after else RETRY_BASE_SECONDS * attempt
+    except ValueError:
+        wait = RETRY_BASE_SECONDS * attempt
+    return min(max(wait, 1.0), MAX_RETRY_WAIT_SECONDS)
+
+
 def _post(body: dict, api_key: str) -> dict:
     data = json.dumps(body).encode()
     last: Exception | None = None
     for attempt in range(1, MAX_ATTEMPTS + 1):
+        retry_after = None
         request = urllib.request.Request(API_URL, data=data, method="POST", headers={
             "x-api-key": api_key, "anthropic-version": API_VERSION, "content-type": "application/json"})
         try:
@@ -179,11 +190,12 @@ def _post(body: dict, api_key: str) -> dict:
             last = DiscoveryError(f"Claude API HTTP {error.code}: {detail}")
             if error.code not in RETRYABLE:
                 raise last from error
+            retry_after = (error.headers or {}).get("retry-after")
         except (urllib.error.URLError, http.client.HTTPException, OSError, ValueError) as error:
             # dropped/partial responses (IncompleteRead, resets, truncated JSON) are worth another try
             last = DiscoveryError(f"Claude API unreachable: {error!r}")
         if attempt < MAX_ATTEMPTS:
-            time.sleep(RETRY_BASE_SECONDS * attempt)
+            time.sleep(_retry_wait(attempt, retry_after))
     raise last or DiscoveryError("Claude API call failed")
 
 
