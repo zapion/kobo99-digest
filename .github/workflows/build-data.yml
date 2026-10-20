@@ -1,4 +1,4 @@
-# Merge Apps Script inbox drops into data/ and attach 讀墨 / Goodreads ratings.
+# Merge Apps Script inbox drops into data/ and attach Kobo / 博客來 / 讀墨 / Goodreads / Amazon ratings.
 # Pushes made with GITHUB_TOKEN do not re-trigger workflows, so there is no loop.
 name: build-data
 
@@ -25,7 +25,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -41,9 +41,12 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           ENRICH_REFRESH: ${{ inputs.refresh }}
+          ENRICH_TIME_BUDGET_MINUTES: "40"
+          PYTHONUNBUFFERED: "1"  # show progress live, and keep it if the step is cut short
         run: python3 src/enrich.py
 
       - name: Commit data
+        if: always()  # keep whatever ratings were saved, even after a timeout or failure
         run: |
           git add data
           if git diff --cached --quiet; then

@@ -17,7 +17,7 @@ from dataclasses import dataclass
 
 OPENAI_URL = "https://api.openai.com/v1/responses"
 DEFAULT_MODEL = "gpt-5-mini"
-TIMEOUT_SECONDS = 180
+TIMEOUT_SECONDS = 120
 MAX_ATTEMPTS = 3
 RETRY_BASE_SECONDS = 5
 RETRYABLE = frozenset({429, 500, 502, 503, 504})

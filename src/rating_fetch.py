@@ -7,6 +7,7 @@ and treat any bot challenge / 403 / 429 as "blocked" for this run instead of wor
 from __future__ import annotations
 
 import re
+import threading
 import time
 import urllib.error
 import urllib.request
@@ -67,6 +68,7 @@ class PoliteFetcher:
         self._robots: dict[str, urllib.robotparser.RobotFileParser] = {}
         self._last_request: dict[str, float] = {}
         self._blocked_hosts: set[str] = set()
+        self._lock = threading.Lock()  # one request at a time, even when books are enriched in parallel
 
     def _raw_get(self, url: str) -> tuple[int, dict, str]:
         request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept-Language": "zh-TW,en;q=0.8"})
@@ -99,6 +101,10 @@ class PoliteFetcher:
         self._last_request[host] = self._clock()
 
     def get(self, url: str) -> str:
+        with self._lock:
+            return self._get(url)
+
+    def _get(self, url: str) -> str:
         parts = urlsplit(url)
         if parts.scheme != "https" or not parts.hostname:
             raise Disallowed(f"not an https URL: {url}")

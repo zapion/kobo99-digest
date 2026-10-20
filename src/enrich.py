@@ -7,7 +7,7 @@ rating. Results are cached in data/ratings/<kobo_id>.json with a TTL per status.
 
 Env: OPENAI_API_KEY (needed for discovery; without it only overrides/cached URLs are refreshed),
 OPENAI_MODEL (optional), ENRICH_REFRESH=1 (ignore cache TTLs), ENRICH_MAX_BOOKS,
-ENRICH_PLATFORMS (comma list; default all). Platforms still unrated fall back to kobo99.com's numbers.
+ENRICH_PLATFORMS (comma list; default all), ENRICH_TIME_BUDGET_MINUTES. Platforms still unrated fall back to kobo99.com's numbers.
 """
 
 from __future__ import annotations
@@ -16,6 +16,8 @@ import datetime as dt
 import json
 import os
 import sys
+import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Callable
 from zoneinfo import ZoneInfo
@@ -42,6 +44,8 @@ MIN_MODEL_CONFIDENCE = 0.85
 SHOWN_STATUSES = frozenset({"ok", "search_reported"})
 ACTIVE_WINDOW_DAYS = 14
 MAX_BOOKS_PER_RUN = 40
+WORKERS = 6  # books looked up at once; each book's platforms stay sequential (hints flow between them)
+TIME_BUDGET_MINUTES = 40  # stop starting books after this, so the workflow can still commit
 
 Discover = Callable[[dict, str], dict]
 
@@ -235,39 +239,69 @@ def with_fallback(cache: dict, ratings: dict | None, now: str) -> dict:
     return {**cache, "kobo99": {"fetched_at": now, "ratings": ratings}}
 
 
+def _stale_books(lists: list[dict], caches: dict, overrides: dict, today: dt.date, refresh: bool,
+                 platforms: tuple[str, ...]) -> list[dict]:
+    """Unique books (by Kobo id) with at least one platform due for an update."""
+    due: dict[str, dict] = {}
+    for book_list in lists:
+        for book in book_list["books"]:
+            kobo_id = ebook_id(book.get("kobo_url", ""))
+            if not kobo_id or kobo_id in due:
+                continue
+            entries, book_overrides = caches[kobo_id].get("platforms", {}), overrides.get(kobo_id, {})
+            if any(needs_update(entries.get(p), p, book_overrides.get(p), today, refresh) for p in platforms):
+                due[kobo_id] = book
+    return list(due.values())
+
+
+def _enrich_all(books: list[dict], caches: dict, enrich_one: Callable[[dict, dict], dict],
+                deadline: float | None, workers: int) -> dict[str, dict]:
+    """Enrich books in parallel (OpenAI search is the slow part); books not started by the deadline are skipped."""
+    def task(book: dict) -> dict | None:
+        if deadline is not None and time.monotonic() > deadline:
+            return None
+        return enrich_one(book, caches[ebook_id(book["kobo_url"])])
+
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+        results = list(pool.map(task, books))
+    skipped = sum(r is None for r in results)
+    if skipped:
+        print(f"[warn] time budget reached: {skipped} books left for the next run", file=sys.stderr)
+    return {r["kobo_id"]: r for r in results if r is not None}
+
+
 def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover | None, max_books: int,
-        refresh: bool = False, platforms: tuple[str, ...] = PLATFORM_ORDER, fallback: dict | None = None) -> dict:
+        refresh: bool = False, platforms: tuple[str, ...] = PLATFORM_ORDER, fallback: dict | None = None,
+        deadline: float | None = None, workers: int = WORKERS) -> dict:
     """Update the given platforms; ratings of every platform already cached are still published."""
     ratings_dir = data_dir / RATINGS_DIRNAME
     overrides = _read_json(data_dir / OVERRIDES_NAME, {})
     now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
-    budget, stats = max_books, {"enriched": 0, "cached": 0, "lists_updated": 0}
-    for list_path in active_lists(data_dir, today):
-        book_list = _read_json(list_path, None)
-        if not book_list:
-            continue
-        books = []
-        for book in book_list["books"]:
-            kobo_id = ebook_id(book.get("kobo_url", ""))
-            cache_path = ratings_dir / f"{kobo_id}.json"
-            cache = _read_json(cache_path, {})
-            book_overrides = overrides.get(kobo_id, {})
-            stale = any(needs_update(cache.get("platforms", {}).get(p), p, book_overrides.get(p), today, refresh)
-                        for p in platforms)
-            if kobo_id and stale and budget > 0:
-                updated = enrich_book(book, cache, fetcher, find, book_overrides, today, now, refresh, platforms)
-                if updated["platforms"] != cache.get("platforms", {}) or updated["hints"] != cache.get("hints", {}):
-                    _write_json(cache_path, updated)
-                    cache = updated
-                    budget -= 1
-                    stats["enriched"] += 1
-            else:
-                stats["cached"] += 1
-            merged = with_fallback(cache, (fallback or {}).get(kobo_id), now)
-            if kobo_id and merged is not cache:
-                _write_json(cache_path, {"kobo_id": kobo_id, "title": book.get("title", ""), **merged})
-                cache = merged
-            books.append({**book, "ratings": public_ratings(cache)})
+    lists = [(path, data) for path in active_lists(data_dir, today) if (data := _read_json(path, None))]
+    ids = {ebook_id(b.get("kobo_url", "")) for _path, data in lists for b in data["books"]} - {""}
+    caches = {kobo_id: _read_json(ratings_dir / f"{kobo_id}.json", {}) for kobo_id in ids}
+
+    due = _stale_books([data for _path, data in lists], caches, overrides, today, refresh, platforms)[:max_books]
+    enrich_one = lambda book, cache: enrich_book(book, cache, fetcher, find, overrides.get(ebook_id(book["kobo_url"]), {}),
+                                                 today, now, refresh, platforms)
+    stats = {"enriched": 0, "cached": len(ids) - len(due), "lists_updated": 0}
+    for kobo_id, updated in _enrich_all(due, caches, enrich_one, deadline, workers).items():
+        old = caches[kobo_id]
+        if updated["platforms"] != old.get("platforms", {}) or updated["hints"] != old.get("hints", {}):
+            caches[kobo_id] = {**old, **updated}
+            _write_json(ratings_dir / f"{kobo_id}.json", caches[kobo_id])
+            stats["enriched"] += 1
+
+    titles = {ebook_id(b.get("kobo_url", "")): b.get("title", "") for _path, data in lists for b in data["books"]}
+    for kobo_id in ids:
+        merged = with_fallback(caches[kobo_id], (fallback or {}).get(kobo_id), now)
+        if merged is not caches[kobo_id]:
+            caches[kobo_id] = {"kobo_id": kobo_id, "title": titles[kobo_id], **merged}
+            _write_json(ratings_dir / f"{kobo_id}.json", caches[kobo_id])
+
+    for list_path, book_list in lists:
+        books = [{**b, "ratings": public_ratings(caches.get(ebook_id(b.get("kobo_url", "")), {}))}
+                 for b in book_list["books"]]
         if books != book_list["books"]:
             _write_json(list_path, {**book_list, "books": books})
             stats["lists_updated"] += 1
@@ -284,8 +318,9 @@ def main() -> int:
     fetcher = PoliteFetcher()
     fallback = kobo99_fallback.load(fetcher)
     print(f"kobo99 fallback: {len(fallback)} books")
+    deadline = time.monotonic() + float(os.getenv("ENRICH_TIME_BUDGET_MINUTES", TIME_BUDGET_MINUTES)) * 60
     stats = run(DATA_DIR, today, fetcher, find, int(os.getenv("ENRICH_MAX_BOOKS", MAX_BOOKS_PER_RUN)), refresh,
-                platforms_from_env(os.getenv("ENRICH_PLATFORMS", "")), fallback)
+                platforms_from_env(os.getenv("ENRICH_PLATFORMS", "")), fallback, deadline)
     print(json.dumps(stats))
     return 0
 

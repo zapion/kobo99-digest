@@ -579,3 +579,26 @@ def test_fallback_fills_only_missing_platforms_and_persists(tmp_path):
     enrich.run(data, TODAY, fetcher, find, 40, fallback={})
     again = json.loads((data / "weekly-dd99-2026-w42.json").read_text())["books"][0]["ratings"]
     assert again == ratings
+
+
+# ── run: parallel books and time budget ──────────────────────────────────────
+
+def two_books(tmp_path):
+    other = {**BOOK, "title": "中年理財", "kobo_url": "https://www.kobo.com/tw/zh/ebook/HB7"}
+    return seed_data(tmp_path, books=[BOOK, other, BOOK])  # duplicate is looked up once
+
+
+def test_run_enriches_each_book_once_in_parallel(tmp_path):
+    data = two_books(tmp_path)
+    find, calls = fake_find({})
+    stats = enrich.run(data, TODAY, fetcher_with({}), find, 40, platforms=("books",), workers=4)
+    assert stats["enriched"] == 2 and calls == ["books", "books"]
+    assert sorted(p.name for p in (data / "ratings").iterdir()) == ["HB7.json", "ai-146.json"]
+
+
+def test_run_skips_books_after_deadline_and_keeps_them_due(tmp_path):
+    data = two_books(tmp_path)
+    find, calls = fake_find({})
+    stats = enrich.run(data, TODAY, fetcher_with({}), find, 40, platforms=("books",), deadline=0.0)
+    assert stats["enriched"] == 0 and calls == []
+    assert enrich.run(data, TODAY, fetcher_with({}), find, 40, platforms=("books",))["enriched"] == 2
