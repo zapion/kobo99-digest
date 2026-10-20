@@ -52,11 +52,17 @@ Kobo's own rating: kobo.com is behind a Cloudflare challenge, so its page is nev
 is asked for the book's exact Kobo Taiwan URL, and only a rating reported for that URL is used
 (always shown as "搜尋").
 
-Readmoo's robots.txt blocks AI crawlers (GPTBot etc.) and `/search/`, so OpenAI search rarely
-finds its book pages, and its WAF answers 403 to GitHub Actions IPs. Add Readmoo URLs by hand in
+Readmoo is rated from your own machine, not Actions: its WAF answers 403 to GitHub Actions IPs,
+its robots.txt blocks AI crawlers (so OpenAI search rarely finds it) and its own `/search/`
+(incl. the suggest API). Run:
+
+    scripts/readmoo_local.sh
+
+It pulls, rates the current books on Readmoo only, and pushes `data/`. Book pages come from
 `data/rating_overrides.json` (`{"<kobo_id>": {"readmoo": "https://readmoo.com/book/<id>"}}`),
-then run `python3 src/enrich.py` on your own machine (no OpenAI key needed for overrides) and
-`scripts/publish_data.sh`; the cached `ok` result is kept by Actions for 30 days.
+then a URL already cached for the book, then Brave Search if `BRAVE_API_KEY` is in `.env`
+(free key: https://api-dashboard.search.brave.com). Pages are fetched with Crawl-delay 10 s and
+title + author must match. Actions only updates Goodreads and Kobo (`ENRICH_PLATFORMS`).
 
 Results are cached per book with a TTL by status (ok 30 d, blocked 7 d, not found 14 d). 博客來 and Amazon are not fetched (bot
 protection / robots.txt); the page links to a 博客來 search instead. Goodreads often answers with

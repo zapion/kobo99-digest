@@ -6,7 +6,8 @@ candidates → we fetch each page politely → verify title/author ourselves →
 rating. Results are cached in data/ratings/<kobo_id>.json with a TTL per status.
 
 Env: OPENAI_API_KEY (needed for discovery; without it only overrides/cached URLs are refreshed),
-OPENAI_MODEL (optional), ENRICH_REFRESH=1 (ignore cache TTLs), ENRICH_MAX_BOOKS.
+OPENAI_MODEL (optional), ENRICH_REFRESH=1 (ignore cache TTLs), ENRICH_MAX_BOOKS,
+ENRICH_PLATFORMS (comma list; default goodreads,kobo — Readmoo runs locally via readmoo_local.py).
 """
 
 from __future__ import annotations
@@ -30,6 +31,8 @@ RATINGS_DIRNAME = "ratings"
 OVERRIDES_NAME = "rating_overrides.json"
 TAIPEI = ZoneInfo("Asia/Taipei")
 PLATFORM_ORDER = ("readmoo", "goodreads", "kobo")
+# Readmoo answers 403 to GitHub Actions IPs and blocks AI crawlers; it is rated by src/readmoo_local.py.
+ACTIONS_PLATFORMS = ("goodreads", "kobo")
 # Days before a cached result is retried, by status.
 TTL_DAYS = {"ok": 30, "search_reported": 7, "no_rating": 14, "not_found": 14, "low_confidence": 14,
             "disallowed": 30, "blocked": 7}
@@ -166,11 +169,18 @@ def rate_platform(book: dict, platform: str, fetcher: PoliteFetcher, find: Disco
     return {**base, "status": "low_confidence", "tried": tried}, hints
 
 
+def platforms_from_env(value: str) -> tuple[str, ...]:
+    """ENRICH_PLATFORMS="a,b" → known platforms in that order; empty → ACTIONS_PLATFORMS."""
+    names = [name.strip() for name in value.split(",") if name.strip()]
+    return tuple(name for name in names if name in PLATFORMS) if names else ACTIONS_PLATFORMS
+
+
 def enrich_book(book: dict, cache: dict, fetcher: PoliteFetcher, find: Discover | None,
-                overrides: dict, today: dt.date, now: str, refresh: bool = False) -> dict:
+                overrides: dict, today: dt.date, now: str, refresh: bool = False,
+                only: tuple[str, ...] = PLATFORM_ORDER) -> dict:
     platforms = dict(cache.get("platforms", {}))
     hints = dict(cache.get("hints", {}))
-    for platform in PLATFORM_ORDER:
+    for platform in only:
         override = overrides.get(platform)
         if not needs_update(platforms.get(platform), platform, override, today, refresh):
             continue
@@ -192,7 +202,8 @@ def public_ratings(cache: dict) -> list[dict]:
 
 
 def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover | None, max_books: int,
-        refresh: bool = False) -> dict:
+        refresh: bool = False, platforms: tuple[str, ...] = PLATFORM_ORDER) -> dict:
+    """Update the given platforms; ratings of every platform already cached are still published."""
     ratings_dir = data_dir / RATINGS_DIRNAME
     overrides = _read_json(data_dir / OVERRIDES_NAME, {})
     now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
@@ -208,9 +219,9 @@ def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover |
             cache = _read_json(cache_path, {})
             book_overrides = overrides.get(kobo_id, {})
             stale = any(needs_update(cache.get("platforms", {}).get(p), p, book_overrides.get(p), today, refresh)
-                        for p in PLATFORM_ORDER)
+                        for p in platforms)
             if kobo_id and stale and budget > 0:
-                updated = enrich_book(book, cache, fetcher, find, book_overrides, today, now, refresh)
+                updated = enrich_book(book, cache, fetcher, find, book_overrides, today, now, refresh, platforms)
                 if updated["platforms"] != cache.get("platforms", {}) or updated["hints"] != cache.get("hints", {}):
                     _write_json(cache_path, updated)
                     cache = updated
@@ -232,7 +243,8 @@ def main() -> int:
         print("[warn] OPENAI_API_KEY not set: only overrides are refreshed.", file=sys.stderr)
     today = dt.datetime.now(TAIPEI).date()
     refresh = os.getenv("ENRICH_REFRESH", "").lower() in ("1", "true", "yes")
-    stats = run(DATA_DIR, today, PoliteFetcher(), find, int(os.getenv("ENRICH_MAX_BOOKS", MAX_BOOKS_PER_RUN)), refresh)
+    stats = run(DATA_DIR, today, PoliteFetcher(), find, int(os.getenv("ENRICH_MAX_BOOKS", MAX_BOOKS_PER_RUN)), refresh,
+                platforms_from_env(os.getenv("ENRICH_PLATFORMS", "")))
     print(json.dumps(stats))
     return 0
 
