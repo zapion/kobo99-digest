@@ -8,10 +8,12 @@
   "platforms": {
     "readmoo": {
       "platform": "readmoo",
-      "fetched_at": "2026-10-19T09:27:38+00:00",
-      "status": "blocked",
+      "fetched_at": "2026-10-20T01:36:01+00:00",
+      "status": "ok",
       "url": "https://readmoo.com/book/210499825000101",
-      "detail": "readmoo.com returned 403"
+      "matched_title": "你的情緒，90％由血糖決定：日本漢方營養醫學專家親授，穩定血糖、調節自律神經，告別莫名疲倦、焦躁易怒、夜夜淺眠，找回情緒與身體的最佳狀態",
+      "score": 5.0,
+      "count": 3
     },
     "goodreads": {
       "platform": "goodreads",

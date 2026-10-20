@@ -177,7 +177,16 @@
       "rank": 9,
       "list_price": 287,
       "sale_price": 244,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 5.0,
+          "count": 3,
+          "url": "https://readmoo.com/book/210499825000101",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "別對我說謊",
