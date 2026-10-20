@@ -602,3 +602,50 @@ def test_run_skips_books_after_deadline_and_keeps_them_due(tmp_path):
     stats = enrich.run(data, TODAY, fetcher_with({}), find, 40, platforms=("books",), deadline=0.0)
     assert stats["enriched"] == 0 and calls == []
     assert enrich.run(data, TODAY, fetcher_with({}), find, 40, platforms=("books",))["enriched"] == 2
+
+
+# ── resilience ───────────────────────────────────────────────────────────────
+
+import http.client
+
+
+def test_openai_partial_response_is_retried(monkeypatch):
+    attempts = []
+
+    class Partial(io.BytesIO):
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            return False
+
+        def read(self, *args):
+            attempts.append(1)
+            if len(attempts) == 1:
+                raise http.client.IncompleteRead(b"", 45543)
+            return json.dumps({"ok": True}).encode()
+
+    monkeypatch.setattr(rating_discover.urllib.request, "urlopen", lambda request, timeout: Partial())
+    monkeypatch.setattr(rating_discover.time, "sleep", lambda s: None)
+    assert rating_discover._post({"x": 1}, "key") == {"ok": True}
+    assert len(attempts) == 2
+
+
+def test_fetch_network_error_counts_as_blocked():
+    def opener(request, timeout):
+        raise http.client.IncompleteRead(b"", 10)
+    fetcher = rating_fetch.PoliteFetcher(opener=opener, sleep=lambda s: None)
+    with pytest.raises(rating_fetch.Blocked):
+        fetcher.get(GOODREADS_URL)
+
+
+def test_one_failing_book_does_not_lose_the_others(tmp_path):
+    data = two_books(tmp_path)
+
+    def find(book, platform):
+        if book["title"] == "中年理財":
+            raise RuntimeError("boom")
+        return found(None)
+    stats = enrich.run(data, TODAY, fetcher_with({}), find, 40, platforms=("books",), workers=2)
+    assert stats["enriched"] == 1
+    assert [p.name for p in (data / "ratings").iterdir()] == ["ai-146.json"]

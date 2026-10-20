@@ -17,7 +17,7 @@ import json
 import os
 import sys
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Callable
 from zoneinfo import ZoneInfo
@@ -255,19 +255,31 @@ def _stale_books(lists: list[dict], caches: dict, overrides: dict, today: dt.dat
 
 
 def _enrich_all(books: list[dict], caches: dict, enrich_one: Callable[[dict, dict], dict],
-                deadline: float | None, workers: int) -> dict[str, dict]:
-    """Enrich books in parallel (OpenAI search is the slow part); books not started by the deadline are skipped."""
+                deadline: float | None, workers: int, save: Callable[[dict], None]) -> None:
+    """Enrich books in parallel (OpenAI search is the slow part) and save each one as soon as it is done.
+
+    Books not started by the deadline are skipped; a book that fails is logged and left for the next run.
+    """
     def task(book: dict) -> dict | None:
         if deadline is not None and time.monotonic() > deadline:
             return None
         return enrich_one(book, caches[ebook_id(book["kobo_url"])])
 
+    skipped = 0
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        results = list(pool.map(task, books))
-    skipped = sum(r is None for r in results)
+        futures = {pool.submit(task, book): book for book in books}
+        for future in as_completed(futures):
+            try:
+                result = future.result()
+            except Exception as error:  # noqa: BLE001 - one bad book must not lose the others
+                print(f"[error] {futures[future].get('title', '')[:24]}: {error!r}", file=sys.stderr)
+                continue
+            if result is None:
+                skipped += 1
+            else:
+                save(result)
     if skipped:
         print(f"[warn] time budget reached: {skipped} books left for the next run", file=sys.stderr)
-    return {r["kobo_id"]: r for r in results if r is not None}
 
 
 def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover | None, max_books: int,
@@ -285,12 +297,15 @@ def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover |
     enrich_one = lambda book, cache: enrich_book(book, cache, fetcher, find, overrides.get(ebook_id(book["kobo_url"]), {}),
                                                  today, now, refresh, platforms)
     stats = {"enriched": 0, "cached": len(ids) - len(due), "lists_updated": 0}
-    for kobo_id, updated in _enrich_all(due, caches, enrich_one, deadline, workers).items():
-        old = caches[kobo_id]
+
+    def save(updated: dict) -> None:
+        kobo_id, old = updated["kobo_id"], caches[updated["kobo_id"]]
         if updated["platforms"] != old.get("platforms", {}) or updated["hints"] != old.get("hints", {}):
             caches[kobo_id] = {**old, **updated}
             _write_json(ratings_dir / f"{kobo_id}.json", caches[kobo_id])
             stats["enriched"] += 1
+
+    _enrich_all(due, caches, enrich_one, deadline, workers, save)
 
     titles = {ebook_id(b.get("kobo_url", "")): b.get("title", "") for _path, data in lists for b in data["books"]}
     for kobo_id in ids:

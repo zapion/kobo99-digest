@@ -6,6 +6,7 @@ and treat any bot challenge / 403 / 429 as "blocked" for this run instead of wor
 
 from __future__ import annotations
 
+import http.client
 import re
 import threading
 import time
@@ -79,6 +80,9 @@ class PoliteFetcher:
         except urllib.error.HTTPError as error:
             body = error.read(MAX_BYTES).decode("utf-8", errors="replace") if error.fp else ""
             return error.code, dict(error.headers or {}), body
+        except (urllib.error.URLError, http.client.HTTPException, OSError) as error:
+            # timeouts, resets, partial reads: treat like a refusal and leave the host alone this run
+            raise Blocked(f"{request.host} unreachable: {error!r}") from error
 
     def _robots_for(self, origin: str) -> urllib.robotparser.RobotFileParser:
         if origin not in self._robots:

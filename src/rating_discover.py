@@ -7,6 +7,7 @@ rating is only used (and labelled "search") when the page cannot be fetched.
 
 from __future__ import annotations
 
+import http.client
 import json
 import os
 import re
@@ -162,8 +163,9 @@ def _post(body: dict, api_key: str) -> dict:
             last = DiscoveryError(f"OpenAI HTTP {error.code}: {detail}")
             if error.code not in RETRYABLE:
                 raise last from error
-        except (urllib.error.URLError, TimeoutError) as error:
-            last = DiscoveryError(f"OpenAI unreachable: {error}")
+        except (urllib.error.URLError, http.client.HTTPException, OSError, ValueError) as error:
+            # dropped/partial responses (IncompleteRead, resets, truncated JSON) are worth another try
+            last = DiscoveryError(f"OpenAI unreachable: {error!r}")
         if attempt < MAX_ATTEMPTS:
             time.sleep(RETRY_BASE_SECONDS * attempt)
     raise last or DiscoveryError("OpenAI call failed")
