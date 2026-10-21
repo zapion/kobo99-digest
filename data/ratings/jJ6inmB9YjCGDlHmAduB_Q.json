@@ -34,6 +34,21 @@
       "matched_title": "柳林風聲: 年度暢銷書《蛤蟆先生去看心理師》故事原型,英國百年經典文學之作 (Traditional Chinese Edition) Kindle版",
       "score": 4.0,
       "count": 2
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-21T08:59:30+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0010944079",
+          "title": "柳林風聲：年度暢銷書《蛤蟆先生去看心理師》故事原型，英國百年經典文學之作",
+          "authors": [
+            "肯尼斯．葛拉罕, 郭漁"
+          ],
+          "confidence": 0.9
+        }
+      ]
     }
   },
   "kobo99": {
