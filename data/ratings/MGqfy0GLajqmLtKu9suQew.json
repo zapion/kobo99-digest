@@ -1,0 +1,47 @@
+{
+  "kobo_id": "MGqfy0GLajqmLtKu9suQew",
+  "title": "布登布洛克家族",
+  "hints": {
+    "original_title": "Buddenbrooks",
+    "original_author": "Thomas Mann"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/1540205.Buddenbrooks",
+      "matched_title": "Buddenbrooks: Verfall einer Familie",
+      "score": 4.21,
+      "count": 38896
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011021050",
+          "title": "布登布洛克家族（被譽為德國版《紅樓夢》，諾貝爾獎得主托瑪斯．曼奠定文壇地位之作、最偉大的家族史小說）",
+          "authors": [
+            "托瑪斯．曼"
+          ],
+          "confidence": 0.95
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010102048",
+          "title": "布頓柏魯克世家",
+          "authors": [
+            "湯瑪斯．曼"
+          ],
+          "confidence": 0.6
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "not_found"
+    }
+  }
+}

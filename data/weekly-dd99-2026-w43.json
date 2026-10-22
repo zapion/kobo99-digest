@@ -15,7 +15,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/b75953e2-04a3-4270-a3ee-43595b427072/300/300/False/ai-309.jpg",
       "list_price": 520,
       "sale_price": 99,
-      "sale_date": "2026-10-22"
+      "sale_date": "2026-10-22",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.89,
+          "count": 4960,
+          "url": "https://www.goodreads.com/book/show/45024007-the-singularity-is-nearer",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "有錢人教我的致富心態",
@@ -24,7 +34,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/d6e7055d-d774-47cd-846b-7dac7fd44b69/300/300/False/Spvb2VuFcjqMRpjvHqcq2w.jpg",
       "list_price": 266,
       "sale_price": 99,
-      "sale_date": "2026-10-23"
+      "sale_date": "2026-10-23",
+      "ratings": []
     },
     {
       "title": "美好而粗暴的世界",
@@ -33,7 +44,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/9cb49c93-f025-49c0-9cc0-9b018be1c550/300/300/False/d7kSXij2eTWi9oJpLdiDIg.jpg",
       "list_price": 696,
       "sale_price": 99,
-      "sale_date": "2026-10-23"
+      "sale_date": "2026-10-23",
+      "ratings": []
     },
     {
       "title": "布登布洛克家族",
@@ -42,7 +54,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/40cb9bf5-1521-42de-aeb7-8fd65c22222f/300/300/False/MGqfy0GLajqmLtKu9suQew.jpg",
       "list_price": 559,
       "sale_price": 99,
-      "sale_date": "2026-10-24"
+      "sale_date": "2026-10-24",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.21,
+          "count": 38896,
+          "url": "https://www.goodreads.com/book/show/1540205.Buddenbrooks",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "性為什麼存在？",
@@ -51,7 +73,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/7a223d3a-6ad8-4d68-b978-46275f0bd2c7/300/300/False/7EXfb2PYTzCYN0jsVBo45Q.jpg",
       "list_price": 315,
       "sale_price": 99,
-      "sale_date": "2026-10-25"
+      "sale_date": "2026-10-25",
+      "ratings": []
     },
     {
       "title": "未來預演（二版）",
@@ -60,7 +83,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/5a19b99c-1f65-4cf0-8510-bd744bf6f9fd/300/300/False/oxCiRRXMsD21u18076oCTg.jpg",
       "list_price": 349,
       "sale_price": 99,
-      "sale_date": "2026-10-26"
+      "sale_date": "2026-10-26",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.12,
+          "count": 43771,
+          "url": "https://www.goodreads.com/book/show/26109470",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "法國人如何思考？",
@@ -69,7 +102,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/fae633b6-2623-460f-a38a-be85939f8ea4/300/300/False/E3P2i2mBAzasO1FpFV2_2w.jpg",
       "list_price": 400,
       "sale_price": 99,
-      "sale_date": "2026-10-27"
+      "sale_date": "2026-10-27",
+      "ratings": []
     },
     {
       "title": "第三種猩猩",
@@ -78,7 +112,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/1ea97d62-455a-4e95-9917-87fcdc672d80/300/300/False/m4e8GUiI7jWx3FE0RsukLw.jpg",
       "list_price": 315,
       "sale_price": 99,
-      "sale_date": "2026-10-28"
+      "sale_date": "2026-10-28",
+      "ratings": []
     }
   ]
 }

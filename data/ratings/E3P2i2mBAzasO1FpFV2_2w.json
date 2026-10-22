@@ -1,0 +1,36 @@
+{
+  "kobo_id": "E3P2i2mBAzasO1FpFV2_2w",
+  "title": "法國人如何思考？",
+  "hints": {
+    "original_title": "How the French Think",
+    "original_author": "Sudhir Hazareesingh"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0010739619",
+          "title": "法國人如何思考？",
+          "authors": [
+            "蘇迪爾‧哈札里辛格"
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/0465032494"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kobo_id": "7EXfb2PYTzCYN0jsVBo45Q",
+  "title": "性為什麼存在？",
+  "hints": {
+    "original_title": "BEEN THERE DONE THAT：A Rousing History of Sex",
+    "original_author": "Rachel Feltman"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011002707",
+          "title": "性為什麼存在？：那些性事的奇怪冷知識， 比你想像還要獵奇得多",
+          "authors": [
+            "瑞秋．費爾特曼"
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "not_found"
+    }
+  }
+}

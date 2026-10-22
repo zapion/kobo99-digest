@@ -1,0 +1,40 @@
+{
+  "kobo_id": "ai-309",
+  "title": "奇點已近：當人類與AI融合一體",
+  "hints": {
+    "original_title": "The Singularity Is Nearer: When We Merge with AI",
+    "original_author": "Ray Kurzweil"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/45024007-the-singularity-is-nearer",
+      "matched_title": "The Singularity Is Nearer: When We Merge with AI",
+      "score": 3.89,
+      "count": 4960
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011021407",
+          "title": "奇點已近：當人類與AI融合一體",
+          "authors": [
+            "雷．庫茲威爾"
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/0399562761"
+    }
+  }
+}

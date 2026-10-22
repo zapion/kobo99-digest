@@ -1,0 +1,26 @@
+{
+  "kobo_id": "Spvb2VuFcjqMRpjvHqcq2w",
+  "title": "有錢人教我的致富心態",
+  "hints": {
+    "original_title": "お金持ちは合理的",
+    "original_author": "立川健悟"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/E050241221"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "not_found"
+    }
+  }
+}

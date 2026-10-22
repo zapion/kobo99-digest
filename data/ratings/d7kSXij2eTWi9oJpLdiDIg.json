@@ -1,0 +1,45 @@
+{
+  "kobo_id": "d7kSXij2eTWi9oJpLdiDIg",
+  "title": "美好而粗暴的世界",
+  "hints": {
+    "original_author": "Андрей Платонов",
+    "original_title": "Прекрасный и яростный мир"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/CN11784304",
+          "title": "美好而粗暴的世界",
+          "authors": [
+            "（蘇聯）安德烈·普拉東諾夫"
+          ],
+          "confidence": 0.6
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/7532788997",
+          "title": "美好而粗暴的世界(精): 9787532788996: (苏联)安德烈·普拉东诺夫, (Su Lian)An De Lie·Pu La Dong Nuo Fu: Books",
+          "authors": [
+            "(苏联)安德烈·普拉东诺夫 (Author), (Su Lian)An De Lie·Pu La Dong Nuo Fu (Editor)"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    }
+  }
+}

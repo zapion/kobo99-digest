@@ -1,0 +1,31 @@
+{
+  "kobo_id": "oxCiRRXMsD21u18076oCTg",
+  "title": "未來預演（二版）",
+  "hints": {
+    "original_title": "Breaking the Habit of Being Yourself: How to Lose Your Mind and Create a New One",
+    "original_author": "Joe Dispenza"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/26109470",
+      "matched_title": "Breaking the Habit of Being Yourself",
+      "score": 4.12,
+      "count": 43771
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/E070000564"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/B006M7A8JI"
+    }
+  }
+}
