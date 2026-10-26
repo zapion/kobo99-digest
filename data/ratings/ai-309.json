@@ -36,5 +36,35 @@
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/0399562761"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-26T02:31:56+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 4.33,
+        "count": 3,
+        "url": "https://www.kobo.com/tw/zh/ebook/ai-309"
+      },
+      "books": {
+        "score": 4.0,
+        "count": 4,
+        "url": "https://www.books.com.tw/products/E050269072"
+      },
+      "readmoo": {
+        "score": 4.0,
+        "count": 7,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.89,
+        "count": 4960,
+        "url": "https://www.goodreads.com/book/show/45024007"
+      },
+      "amazon": {
+        "score": 4.4,
+        "count": 1720,
+        "url": "https://www.amazon.com/dp/B08Y6FYJVY"
+      }
+    }
   }
 }

@@ -1,0 +1,35 @@
+{
+  "kobo_id": "DM8RfRwTaDO2tmUMfDN1lg",
+  "title": "我不同意你（但我願意聽）",
+  "hints": {
+    "original_title": "I Think You're Wrong (But I'm Listening): A Guide to Grace-Filled Political Conversations",
+    "original_author": "Sarah Stewart Holland, Beth A. Silvers"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011063677",
+          "title": "我不同意你（但我願意聽）：看清事實，找回雅量，政治極化時代最需要的一本書",
+          "authors": [
+            "莎拉．史都華．荷蘭,貝絲．席爾弗斯"
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    }
+  }
+}

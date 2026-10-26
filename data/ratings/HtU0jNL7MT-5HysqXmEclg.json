@@ -1,0 +1,29 @@
+{
+  "kobo_id": "HtU0jNL7MT-5HysqXmEclg",
+  "title": "法醫秦明",
+  "hints": {
+    "original_title": "法医秦明",
+    "original_author": "秦明"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "blocked",
+      "url": "https://www.goodreads.com/book/show/53648301",
+      "detail": "www.goodreads.com returned 202 (challenge page)"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0011055753"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/B011MX0IFU"
+    }
+  }
+}

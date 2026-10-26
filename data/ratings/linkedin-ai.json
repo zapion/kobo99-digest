@@ -1,0 +1,25 @@
+{
+  "kobo_id": "linkedin-ai",
+  "title": "工作大重組",
+  "hints": {
+    "original_title": "Reshuffle: Who Wins When AI Upends Work",
+    "original_author": "Ryan Roslansky, Aneesh Raman"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    }
+  }
+}

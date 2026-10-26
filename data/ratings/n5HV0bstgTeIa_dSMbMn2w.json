@@ -1,0 +1,35 @@
+{
+  "kobo_id": "n5HV0bstgTeIa_dSMbMn2w",
+  "title": "昨年（昨年映像經典版）",
+  "hints": {
+    "original_title": "Yesteryear",
+    "original_author": "Caro Claire Burke"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011061243",
+          "title": "昨年（昨年映像經典版）：讓安‧海瑟薇一口氣讀到天黑的小說！年度話題神作，席捲歐美文壇！",
+          "authors": [
+            "卡蘿．克萊兒．柏克"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    }
+  }
+}

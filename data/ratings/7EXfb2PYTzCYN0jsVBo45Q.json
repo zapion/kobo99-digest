@@ -31,5 +31,20 @@
       "fetched_at": "2026-10-22T02:21:58+00:00",
       "status": "not_found"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-26T02:31:56+00:00",
+    "ratings": {
+      "books": {
+        "score": 5.0,
+        "count": 2,
+        "url": "https://www.books.com.tw/products/E050240618"
+      },
+      "readmoo": {
+        "score": 4.6,
+        "count": 5,
+        "url": "https://kobo99.com/"
+      }
+    }
   }
 }

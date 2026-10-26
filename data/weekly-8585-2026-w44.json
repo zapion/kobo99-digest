@@ -15,7 +15,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/0a14a537-d129-4133-8931-00521f55263e/300/300/False/linkedin-ai.jpg",
       "list_price": 319,
       "sale_price": 271,
-      "rank": 1
+      "rank": 1,
+      "ratings": []
     },
     {
       "title": "為什麼大腦需要交朋友",
@@ -24,7 +25,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/5ea82f9b-862e-40c2-bed7-7f985d292eca/300/300/False/iFxOs4b1wT-PbG3t9CH5Zg.jpg",
       "list_price": 287,
       "sale_price": 244,
-      "rank": 2
+      "rank": 2,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.92,
+          "count": 581,
+          "url": "https://www.goodreads.com/book/show/226744097-why-brains-need-friends",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "劉必榮的領導筆記",
@@ -33,7 +44,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/ea76fb90-b9ee-487c-91be-71e19037c6ac/300/300/False/EG2h9vlLnTulK7xRGgt1Sw.jpg",
       "list_price": 274,
       "sale_price": 233,
-      "rank": 3
+      "rank": 3,
+      "ratings": []
     },
     {
       "title": "麥肯錫百年鉅獻！頂尖CEO的蛻變修煉",
@@ -42,7 +54,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/f7ab1caf-cd80-4a5f-b897-b2d01f5276a8/300/300/False/ceo-95.jpg",
       "list_price": 268,
       "sale_price": 228,
-      "rank": 4
+      "rank": 4,
+      "ratings": []
     },
     {
       "title": "股神的養成",
@@ -51,7 +64,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/5509c335-fd59-48ca-85f5-311ce4f89e65/300/300/False/4FyAZZTjtTyQNPp3TxPIUA.jpg",
       "list_price": 274,
       "sale_price": 233,
-      "rank": 5
+      "rank": 5,
+      "ratings": []
     },
     {
       "title": "我不同意你（但我願意聽）",
@@ -60,7 +74,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/06a46d5a-92e2-4e3c-8d4e-127363f017a8/300/300/False/DM8RfRwTaDO2tmUMfDN1lg.jpg",
       "list_price": 268,
       "sale_price": 228,
-      "rank": 6
+      "rank": 6,
+      "ratings": []
     },
     {
       "title": "孤注一治",
@@ -69,7 +84,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/a94fc78c-1f23-4904-9618-f0ef452a0ff7/300/300/False/j-FUDWcTPj2gdqUaH8uI9A.jpg",
       "list_price": 510,
       "sale_price": 434,
-      "rank": 7
+      "rank": 7,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.99,
+          "count": 131518,
+          "url": "https://www.goodreads.com/book/show/11925514-code-name-verity",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "FBI建立交情的技術",
@@ -78,7 +103,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/b2693286-8d72-489e-99c9-7f3819fc29de/300/300/False/fbi-73.jpg",
       "list_price": 306,
       "sale_price": 260,
-      "rank": 8
+      "rank": 8,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.89,
+          "count": 7964,
+          "url": "https://www.goodreads.com/book/show/21412226-the-like-switch",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "昨年（昨年映像經典版）",
@@ -87,7 +122,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/26f2c8af-5d93-4f92-ac56-ee27260a5415/300/300/False/n5HV0bstgTeIa_dSMbMn2w.jpg",
       "list_price": 310,
       "sale_price": 264,
-      "rank": 9
+      "rank": 9,
+      "ratings": []
     },
     {
       "title": "法醫秦明",
@@ -96,7 +132,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/d17246f8-717f-4ee0-b49c-c5d5da9d9467/300/300/False/HtU0jNL7MT-5HysqXmEclg.jpg",
       "list_price": 323,
       "sale_price": 275,
-      "rank": 10
+      "rank": 10,
+      "ratings": []
     }
   ]
 }

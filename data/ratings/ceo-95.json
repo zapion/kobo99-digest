@@ -1,0 +1,53 @@
+{
+  "kobo_id": "ceo-95",
+  "title": "麥肯錫百年鉅獻！頂尖CEO的蛻變修煉",
+  "hints": {
+    "original_title": "A CEO for All Seasons: Mastering the Cycles of Leadership",
+    "original_author": "Carolyn Dewar, Scott Keller, Vikram Malhotra, Kurt Strovink"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050239609",
+          "title": "博客來-麥肯錫認證的執行長思維：Google、Netflix、Sony、微軟、樂高……67位全球頂尖CEO的卓越之道【全球第一顧問公司麥肯錫官方最新力作．隨書附「卓越CEO的高效工具」】 (電子書)",
+          "authors": [
+            "卡羅琳．杜瓦,斯科特．凱勒,維克拉姆．馬爾霍特拉"
+          ],
+          "confidence": 0.45
+        },
+        {
+          "url": "https://www.books.com.tw/products/0011004192",
+          "title": "博客來-麥肯錫認證的執行長思維：Google、Netflix、Sony、微軟、樂高……67位全球頂尖CEO的卓越之道【全球第一顧問公司麥肯錫官方最新力作．隨書附「卓越CEO的高效工具」】",
+          "authors": [
+            "卡羅琳．杜瓦（Carolyn Dewar）"
+          ],
+          "confidence": 0.4
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/1668098342",
+          "title": "A CEO for All Seasons: Mastering the Cycles of Leadership",
+          "authors": [
+            "Dewar, Carolyn, Keller, Scott, Malhotra, Vikram, Strovink, Kurt"
+          ],
+          "confidence": 0.85
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kobo_id": "iFxOs4b1wT-PbG3t9CH5Zg",
+  "title": "為什麼大腦需要交朋友",
+  "hints": {
+    "original_title": "Why Brains Need Friends: The Neuroscience of Social Connection",
+    "original_author": "Ben Rein"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/226744097-why-brains-need-friends",
+      "matched_title": "Why Brains Need Friends: The Neuroscience of Social Connection",
+      "score": 3.92,
+      "count": 581
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011063203",
+          "title": "為什麼大腦需要交朋友：神經科學家教你用「社交連結」活化大腦",
+          "authors": [
+            "雷恩"
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/059385084X"
+    }
+  }
+}

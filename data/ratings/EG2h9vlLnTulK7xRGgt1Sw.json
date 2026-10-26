@@ -1,0 +1,25 @@
+{
+  "kobo_id": "EG2h9vlLnTulK7xRGgt1Sw",
+  "title": "劉必榮的領導筆記",
+  "hints": {
+    "original_title": "劉必榮的領導筆記",
+    "original_author": "劉必榮"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    }
+  }
+}

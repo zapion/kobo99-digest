@@ -1,0 +1,26 @@
+{
+  "kobo_id": "4FyAZZTjtTyQNPp3TxPIUA",
+  "title": "股神的養成",
+  "hints": {
+    "original_title": "Buffett’s EARLY INVESTMENTS: A new investigation into the decades when Warren Buffett earned his best returns",
+    "original_author": "Brett Gardner"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0011061039"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    }
+  }
+}

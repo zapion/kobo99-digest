@@ -1,0 +1,39 @@
+{
+  "kobo_id": "j-FUDWcTPj2gdqUaH8uI9A",
+  "title": "孤注一治",
+  "hints": {
+    "original_title": "Desperate Remedies: Psychiatry's Turbulent Quest to Cure Mental Illness",
+    "original_author": "Andrew Scull"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/11925514-code-name-verity",
+      "matched_title": "Code Name Verity (Code Name Verity, #1)",
+      "score": 3.99,
+      "count": 131518
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0010327946",
+          "title": "博客來-孤注一擲",
+          "authors": [
+            "蘇．葛拉芙頓"
+          ],
+          "confidence": 0.7
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "status": "not_found"
+    }
+  }
+}
