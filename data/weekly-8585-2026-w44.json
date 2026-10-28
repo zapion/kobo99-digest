@@ -16,7 +16,40 @@
       "list_price": 319,
       "sale_price": 271,
       "rank": 1,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 4.5,
+          "count": 9,
+          "url": "https://www.books.com.tw/products/E050354420",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.0,
+          "count": 2,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.4,
+          "count": 591,
+          "url": "https://www.goodreads.com/book/show/243013855",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.4,
+          "count": 259,
+          "url": "https://www.amazon.com/dp/B0FX519BHF",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "為什麼大腦需要交朋友",
@@ -28,12 +61,36 @@
       "rank": 2,
       "ratings": [
         {
+          "platform": "books",
+          "name": "博客來",
+          "score": 3.0,
+          "count": 1,
+          "url": "https://www.books.com.tw/products/E050357536",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.3,
+          "count": 3,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 3.92,
           "count": 581,
           "url": "https://www.goodreads.com/book/show/226744097-why-brains-need-friends",
           "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.5,
+          "count": 93,
+          "url": "https://www.amazon.com/dp/B0DW3QNLMX",
+          "source": "kobo99"
         }
       ]
     },
@@ -45,7 +102,24 @@
       "list_price": 274,
       "sale_price": 233,
       "rank": 3,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://www.kobo.com/tw/zh/ebook/EG2h9vlLnTulK7xRGgt1Sw",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 5.0,
+          "count": 6,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "麥肯錫百年鉅獻！頂尖CEO的蛻變修煉",
@@ -55,7 +129,24 @@
       "list_price": 268,
       "sale_price": 228,
       "rank": 4,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.16,
+          "count": 1834,
+          "url": "https://www.goodreads.com/book/show/58438620",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 162,
+          "url": "https://www.amazon.co.jp/dp/B0DV6DSYX6",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "股神的養成",
@@ -65,7 +156,40 @@
       "list_price": 274,
       "sale_price": 233,
       "rank": 5,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://www.books.com.tw/products/E050358779",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 2.0,
+          "count": 1,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.27,
+          "count": 345,
+          "url": "https://www.goodreads.com/book/show/203579124",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.5,
+          "count": 193,
+          "url": "https://www.amazon.com/dp/B0HKK775WX",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "我不同意你（但我願意聽）",
@@ -75,7 +199,24 @@
       "list_price": 268,
       "sale_price": 228,
       "rank": 6,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.07,
+          "count": 4851,
+          "url": "https://www.goodreads.com/book/show/40591258",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 1250,
+          "url": "https://www.amazon.com/dp/B07DT3PM3R",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "孤注一治",
@@ -87,12 +228,28 @@
       "rank": 7,
       "ratings": [
         {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 3.99,
           "count": 131518,
           "url": "https://www.goodreads.com/book/show/11925514-code-name-verity",
           "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 199,
+          "url": "https://www.amazon.com/dp/B09X215B3P",
+          "source": "kobo99"
         }
       ]
     },
@@ -112,6 +269,14 @@
           "count": 7964,
           "url": "https://www.goodreads.com/book/show/21412226-the-like-switch",
           "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.8,
+          "count": 17,
+          "url": "https://www.amazon.com/dp/B0FPG27T65",
+          "source": "kobo99"
         }
       ]
     },
@@ -123,7 +288,48 @@
       "list_price": 310,
       "sale_price": 264,
       "rank": 9,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.02,
+          "count": 42,
+          "url": "https://www.kobo.com/tw/zh/ebook/n5HV0bstgTeIa_dSMbMn2w",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 92,
+          "url": "https://www.books.com.tw/products/E050354708",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.1,
+          "count": 167,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.83,
+          "count": 1102995,
+          "url": "https://www.goodreads.com/book/show/238226942",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.1,
+          "count": 134477,
+          "url": "https://www.amazon.com/dp/B0FH1V3D9M",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "法醫秦明",
@@ -133,7 +339,24 @@
       "list_price": 323,
       "sale_price": 275,
       "rank": 10,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 4.5,
+          "count": 4,
+          "url": "https://www.books.com.tw/products/E050345196",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.0,
+          "count": 3,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        }
+      ]
     }
   ]
 }

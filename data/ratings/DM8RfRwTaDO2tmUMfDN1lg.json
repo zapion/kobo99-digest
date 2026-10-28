@@ -31,5 +31,20 @@
       "fetched_at": "2026-10-26T02:31:56+00:00",
       "status": "not_found"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-28T10:09:29+00:00",
+    "ratings": {
+      "goodreads": {
+        "score": 4.07,
+        "count": 4851,
+        "url": "https://www.goodreads.com/book/show/40591258"
+      },
+      "amazon": {
+        "score": 4.6,
+        "count": 1250,
+        "url": "https://www.amazon.com/dp/B07DT3PM3R"
+      }
+    }
   }
 }

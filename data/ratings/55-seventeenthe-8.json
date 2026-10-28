@@ -13,12 +13,8 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "search_reported",
-      "url": "https://www.goodreads.com/book/show/138222130-55-seventeen-the-8",
-      "matched_title": "就算長大了，也還是會難過：不完美也沒關係，擁抱自己的55個溫暖練習（人氣韓團SEVENTEEN成員THE 8推薦）",
-      "score": 4.0,
-      "count": 4
+      "fetched_at": "2026-10-28T10:09:29+00:00",
+      "status": "not_found"
     },
     "kobo": {
       "platform": "kobo",

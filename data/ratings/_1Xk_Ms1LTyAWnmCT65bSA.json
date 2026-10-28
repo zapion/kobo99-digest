@@ -13,12 +13,12 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "search_reported",
-      "url": "https://www.goodreads.com/book/show/59793929-the-committed",
+      "fetched_at": "2026-10-28T10:09:29+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/49578513-the-committed",
       "matched_title": "The Committed",
       "score": 3.96,
-      "count": 12935
+      "count": 13032
     },
     "kobo": {
       "platform": "kobo",

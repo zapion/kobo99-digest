@@ -55,9 +55,9 @@
           "platform": "amazon",
           "name": "Amazon",
           "score": 4.6,
-          "count": 1517,
-          "url": "https://www.amazon.com/dp/1250898102",
-          "source": "search"
+          "count": 1518,
+          "url": "https://www.amazon.com/dp/B0BPQSLVL6",
+          "source": "kobo99"
         }
       ]
     },
@@ -150,9 +150,9 @@
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 3.96,
-          "count": 12935,
-          "url": "https://www.goodreads.com/book/show/59793929-the-committed",
-          "source": "search"
+          "count": 13032,
+          "url": "https://www.goodreads.com/book/show/49578513-the-committed",
+          "source": "page"
         },
         {
           "platform": "amazon",
@@ -217,8 +217,8 @@
           "name": "Goodreads",
           "score": 4.0,
           "count": 4,
-          "url": "https://www.goodreads.com/book/show/138222130-55-seventeen-the-8",
-          "source": "search"
+          "url": "https://www.goodreads.com/book/show/138222130",
+          "source": "kobo99"
         }
       ]
     },
@@ -269,7 +269,7 @@
           "platform": "amazon",
           "name": "Amazon",
           "score": 4.0,
-          "count": 2,
+          "count": 4,
           "url": "https://www.amazon.co.jp/dp/B0BR83W6Z5",
           "source": "search"
         }
@@ -298,9 +298,9 @@
           "platform": "books",
           "name": "博客來",
           "score": 5.0,
-          "count": 1,
+          "count": 3,
           "url": "https://www.books.com.tw/products/E050228688",
-          "source": "search"
+          "source": "kobo99"
         },
         {
           "platform": "readmoo",
@@ -314,9 +314,9 @@
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 4.16,
-          "count": 396166,
-          "url": "https://www.goodreads.com/book/show/34032430",
-          "source": "search"
+          "count": 397497,
+          "url": "https://www.goodreads.com/book/show/30186948-think-and-grow-rich",
+          "source": "page"
         },
         {
           "platform": "amazon",

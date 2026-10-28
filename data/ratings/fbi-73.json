@@ -35,5 +35,20 @@
         }
       ]
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-28T10:09:29+00:00",
+    "ratings": {
+      "goodreads": {
+        "score": 4.21,
+        "count": 30,
+        "url": "https://www.goodreads.com/book/show/241096230"
+      },
+      "amazon": {
+        "score": 4.8,
+        "count": 17,
+        "url": "https://www.amazon.com/dp/B0FPG27T65"
+      }
+    }
   }
 }

@@ -35,5 +35,25 @@
       "fetched_at": "2026-10-26T02:31:56+00:00",
       "status": "not_found"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-28T10:09:29+00:00",
+    "ratings": {
+      "readmoo": {
+        "score": 5.0,
+        "count": 1,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.09,
+        "count": 485,
+        "url": "https://www.goodreads.com/book/show/58885869"
+      },
+      "amazon": {
+        "score": 4.6,
+        "count": 199,
+        "url": "https://www.amazon.com/dp/B09X215B3P"
+      }
+    }
   }
 }

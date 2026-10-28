@@ -15,12 +15,12 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "search_reported",
-      "url": "https://www.goodreads.com/book/show/34032430",
-      "matched_title": "Think and Grow Rich (An Original 1937 Edition)",
+      "fetched_at": "2026-10-28T10:09:29+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/30186948-think-and-grow-rich",
+      "matched_title": "Think and Grow Rich",
       "score": 4.16,
-      "count": 396166
+      "count": 397497
     },
     "kobo": {
       "platform": "kobo",
@@ -29,12 +29,9 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
-      "status": "search_reported",
-      "url": "https://www.books.com.tw/products/E050228688",
-      "matched_title": "思考致富：全球銷售七千萬冊，洛克菲勒、福特、卡內基的財富締造機密 (電子書)",
-      "score": 5.0,
-      "count": 1
+      "fetched_at": "2026-10-28T10:09:29+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0010996861"
     },
     "amazon": {
       "platform": "amazon",

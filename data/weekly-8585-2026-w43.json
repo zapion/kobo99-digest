@@ -252,10 +252,10 @@
         {
           "platform": "goodreads",
           "name": "Goodreads",
-          "score": 3.95,
-          "count": 19,
+          "score": 3.96,
+          "count": 21,
           "url": "https://www.goodreads.com/book/show/216783717",
-          "source": "search"
+          "source": "kobo99"
         },
         {
           "platform": "amazon",
@@ -387,10 +387,10 @@
         {
           "platform": "goodreads",
           "name": "Goodreads",
-          "score": 4.08,
-          "count": 1757340,
-          "url": "https://www.goodreads.com/book/show/244838197-never-lie",
-          "source": "search"
+          "score": 4.07,
+          "count": 1806199,
+          "url": "https://www.goodreads.com/book/show/62080187-never-lie",
+          "source": "page"
         },
         {
           "platform": "amazon",

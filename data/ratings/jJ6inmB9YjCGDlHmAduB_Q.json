@@ -28,12 +28,12 @@
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "fetched_at": "2026-10-28T10:09:29+00:00",
       "status": "search_reported",
       "url": "https://www.amazon.co.jp/dp/B0BR83W6Z5",
-      "matched_title": "柳林風聲: 年度暢銷書《蛤蟆先生去看心理師》故事原型,英國百年經典文學之作 (Traditional Chinese Edition) Kindle版",
+      "matched_title": "柳林風聲: 年度暢銷書《蛤蟆先生去看心理師》故事原型，英國百年經典文學之作 (Traditional Chinese Edition)",
       "score": 4.0,
-      "count": 2
+      "count": 4
     },
     "books": {
       "platform": "books",

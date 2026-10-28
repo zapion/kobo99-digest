@@ -13,12 +13,12 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "search_reported",
-      "url": "https://www.goodreads.com/book/show/244838197-never-lie",
+      "fetched_at": "2026-10-28T10:09:29+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/62080187-never-lie",
       "matched_title": "Never Lie",
-      "score": 4.08,
-      "count": 1757340
+      "score": 4.07,
+      "count": 1806199
     },
     "kobo": {
       "platform": "kobo",
