@@ -87,7 +87,7 @@ Repository → Settings → Secrets and variables → Actions:
   and waits are jittered so workers do not retry on the same tick.
 
 Run it by hand from the Actions tab ("build-data" → Run workflow); it also runs on every push
-to `data/**` and weekly on Wednesday to retry blocked/not-found ratings.
+to `data/**` and on Tuesday and Friday (after the Monday and Thursday lists) to retry blocked/not-found ratings and pick up kobo99.com numbers once it has updated.
 
 ## Bookmarklet backup (Brave)
 

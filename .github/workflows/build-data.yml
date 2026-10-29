@@ -7,7 +7,7 @@ on:
     branches: [main]
     paths: ["data/**"]
   schedule:
-    - cron: "0 4 * * 3"   # Wed 12:00 Taipei: retry anything blocked/not found earlier in the week
+    - cron: "0 4 * * 2,5"   # Tue + Fri 12:00 Taipei: retry what was blocked/not found and pick up kobo99.com numbers once it has updated (after Mon's and Thu's lists)
   workflow_dispatch:
     inputs:
       refresh:
