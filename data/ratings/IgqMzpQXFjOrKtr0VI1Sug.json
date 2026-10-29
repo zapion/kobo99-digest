@@ -1,0 +1,43 @@
+{
+  "kobo_id": "IgqMzpQXFjOrKtr0VI1Sug",
+  "title": "星際效應",
+  "hints": {
+    "original_title": "The Science of Interstellar",
+    "original_author": "Kip Thorne"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/23261448-the-science-of-interstellar",
+      "matched_title": "The Science of Interstellar",
+      "score": 4.3,
+      "count": 7228
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0010932184",
+          "title": "星際效應：電影幕後的科學事實、推測與想像【諾貝爾物理學獎得主寫給大家的天文學通識課】（二版）",
+          "authors": [
+            "基普．索恩"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.com/dp/B07N91KBMX",
+      "matched_title": "星際效應：電影幕後的科學事實、推測與想像【2017諾貝爾物理學獎得主科普力作】 (科學，不思議) (Traditional Chinese Edition) eBook",
+      "score": 4.0,
+      "count": 3
+    }
+  }
+}

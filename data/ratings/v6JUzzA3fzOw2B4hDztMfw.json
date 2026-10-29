@@ -1,0 +1,44 @@
+{
+  "kobo_id": "v6JUzzA3fzOw2B4hDztMfw",
+  "title": "走神",
+  "hints": {
+    "original_title": "Why Our Minds Wander: Understand the Science and Learn How to Focus Your Thoughts",
+    "original_author": "Arnaud Delorme"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.goodreads.com/book/show/42411841"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050263511",
+          "title": "走神：分心的科學，從不由自主到靜觀引導，鍛鍊持久的專注力 (電子書)",
+          "authors": [
+            "阿諾．德洛姆博士"
+          ],
+          "confidence": 0.95
+        },
+        {
+          "url": "https://www.books.com.tw/products/0011018798",
+          "title": "走神：分心的科學，從不由自主到靜觀引導，鍛鍊持久的專注力",
+          "authors": [
+            "阿諾．德洛姆博士"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "not_found"
+    }
+  }
+}

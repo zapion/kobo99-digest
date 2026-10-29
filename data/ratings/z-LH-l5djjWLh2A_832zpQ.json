@@ -1,0 +1,51 @@
+{
+  "kobo_id": "z-LH-l5djjWLh2A_832zpQ",
+  "title": "加密貨幣之王",
+  "hints": {
+    "original_title": "Kings of Crypto: One Startup's Quest to Take Cryptocurrency Out of Silicon Valley and Onto Wall Street",
+    "original_author": "Jeff John Roberts"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/56923515",
+      "matched_title": "Kings of Crypto: Coinbase and the Coming Disruption of Finance",
+      "score": 3.97,
+      "count": 1001
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050118775",
+          "title": "加密貨幣之王：從矽谷到華爾街，虛擬貨幣如何顛覆金融秩序 (電子書)",
+          "authors": [
+            "傑夫．約翰．羅伯茲"
+          ],
+          "confidence": 0.93
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010912603",
+          "title": "加密貨幣之王：從矽谷到華爾街，虛擬貨幣如何顛覆金融秩序",
+          "authors": [
+            "傑夫．約翰．羅伯茲"
+          ],
+          "confidence": 0.85
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.com/dp/B085TRJY8X",
+      "matched_title": "Kings of Crypto: One Startup's Quest to Take Cryptocurrency Out of Silicon Valley and Onto Wall Street",
+      "score": 4.5,
+      "count": 264
+    }
+  }
+}

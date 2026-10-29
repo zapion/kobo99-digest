@@ -1,0 +1,31 @@
+{
+  "kobo_id": "oLirTDMvITCpypIo3a-Ykg",
+  "title": "建安十三年",
+  "hints": {
+    "original_title": "建安十三年",
+    "original_author": "南门太守"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/60790913",
+      "matched_title": "建安十三年 后汉三国的历史大转折与大变局",
+      "score": 5.0,
+      "count": 1
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0010963450"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/B0BXD9VKCQ"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "kobo_id": "JPzZ54MCLDO-dLYck0mnSQ",
+  "title": "時光機器【威爾斯科幻經典四部曲1】",
+  "hints": {
+    "original_title": "The Time Machine",
+    "original_author": "H. G. Wells"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/38194.The_Time_Machine",
+      "matched_title": "The Time Machine: An Invention",
+      "score": 3.89,
+      "count": 583668
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050140470",
+          "title": "時光機器【威爾斯科幻經典四部曲❶】 (電子書)",
+          "authors": [
+            "赫伯特．喬治．威爾斯"
+          ],
+          "confidence": 0.95
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010823466",
+          "title": "時光機器：穿梭時空，回到未來",
+          "authors": [
+            "赫伯特．喬治．威爾斯"
+          ],
+          "confidence": 0.5
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/0553211552",
+          "title": "Time Machine, The",
+          "authors": [
+            "Wells, H.G."
+          ],
+          "confidence": 0.6
+        },
+        {
+          "url": "https://www.amazon.com/dp/B0BBL3G99M",
+          "title": "時光機器【威爾斯科幻經典四部曲❶】: The Time Machine (愛經典 Book 58) (Traditional Chinese Edition) eBook",
+          "authors": [
+            "赫伯特·喬治·威爾斯(Herbert George Wells), 陳震"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    }
+  }
+}

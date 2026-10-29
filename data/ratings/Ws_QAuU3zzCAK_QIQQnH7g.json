@@ -1,0 +1,26 @@
+{
+  "kobo_id": "Ws_QAuU3zzCAK_QIQQnH7g",
+  "title": "桌遊教養全攻略",
+  "hints": {
+    "original_title": "桌遊教養全攻略：從遊戲中培養孩子的專注力、人際力、學習力",
+    "original_author": "陳介宇"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/E050263066"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "not_found"
+    }
+  }
+}

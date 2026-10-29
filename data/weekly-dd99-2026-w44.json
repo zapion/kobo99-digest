@@ -15,7 +15,25 @@
       "cover_url": "https://cdn.kobo.com/book-images/acfb6abe-0799-457f-8049-2c75e47a04e9/300/300/False/awYZAoybGzOa1qVLW83L0A.jpg",
       "list_price": 224,
       "sale_price": 99,
-      "sale_date": "2026-10-29"
+      "sale_date": "2026-10-29",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.78,
+          "count": 11300,
+          "url": "https://www.goodreads.com/book/show/9402297-the-bed-of-procrustes",
+          "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 5,
+          "url": "https://www.amazon.com/dp/B087TRRWZ3",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "加密貨幣之王",
@@ -24,7 +42,25 @@
       "cover_url": "https://cdn.kobo.com/book-images/f8f916dc-7d09-4ac9-b51d-c171dc6831aa/300/300/False/z-LH-l5djjWLh2A_832zpQ.jpg",
       "list_price": 315,
       "sale_price": 99,
-      "sale_date": "2026-10-30"
+      "sale_date": "2026-10-30",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.97,
+          "count": 1001,
+          "url": "https://www.goodreads.com/book/show/56923515",
+          "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.5,
+          "count": 264,
+          "url": "https://www.amazon.com/dp/B085TRJY8X",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "建安十三年",
@@ -33,7 +69,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/73ffb5e6-5846-445e-8da6-358128f21adf/300/300/False/oLirTDMvITCpypIo3a-Ykg.jpg",
       "list_price": 266,
       "sale_price": 99,
-      "sale_date": "2026-10-30"
+      "sale_date": "2026-10-30",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://www.goodreads.com/book/show/60790913",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "時光機器【威爾斯科幻經典四部曲1】",
@@ -42,7 +88,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/729ce93b-b650-4ac4-81c2-ebaff9160205/300/300/False/JPzZ54MCLDO-dLYck0mnSQ.jpg",
       "list_price": 210,
       "sale_price": 99,
-      "sale_date": "2026-10-31"
+      "sale_date": "2026-10-31",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.89,
+          "count": 583668,
+          "url": "https://www.goodreads.com/book/show/38194.The_Time_Machine",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "星際效應",
@@ -51,7 +107,25 @@
       "cover_url": "https://cdn.kobo.com/book-images/1d80ee7b-7410-406f-9626-0ca182e37776/300/300/False/IgqMzpQXFjOrKtr0VI1Sug.jpg",
       "list_price": 630,
       "sale_price": 99,
-      "sale_date": "2026-11-01"
+      "sale_date": "2026-11-01",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.3,
+          "count": 7228,
+          "url": "https://www.goodreads.com/book/show/23261448-the-science-of-interstellar",
+          "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.0,
+          "count": 3,
+          "url": "https://www.amazon.com/dp/B07N91KBMX",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "走神",
@@ -60,7 +134,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/38f8dd8c-ee01-4b41-91d9-84c73beee471/300/300/False/v6JUzzA3fzOw2B4hDztMfw.jpg",
       "list_price": 385,
       "sale_price": 99,
-      "sale_date": "2026-11-02"
+      "sale_date": "2026-11-02",
+      "ratings": []
     },
     {
       "title": "桌遊教養全攻略",
@@ -69,7 +144,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/0437afbb-6416-4fa3-9061-1dde1e3380ec/300/300/False/Ws_QAuU3zzCAK_QIQQnH7g.jpg",
       "list_price": 315,
       "sale_price": 99,
-      "sale_date": "2026-11-03"
+      "sale_date": "2026-11-03",
+      "ratings": []
     },
     {
       "title": "占星與真我",
@@ -78,7 +154,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/b8fd1726-342a-4a4d-8e28-6578dbd0dcb8/300/300/False/0sVKCYFSGzyuP2qC9DlTNQ.jpg",
       "list_price": 410,
       "sale_price": 99,
-      "sale_date": "2026-11-04"
+      "sale_date": "2026-11-04",
+      "ratings": []
     }
   ]
 }

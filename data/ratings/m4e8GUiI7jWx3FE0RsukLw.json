@@ -8,10 +8,12 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
-      "status": "blocked",
-      "url": "https://www.goodreads.com/book/show/10049508",
-      "detail": "www.goodreads.com returned 202 (challenge page)"
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/49234.The_Third_Chimpanzee",
+      "matched_title": "The Third Chimpanzee: The Evolution and Future of the Human Animal",
+      "score": 4.09,
+      "count": 29118
     },
     "books": {
       "platform": "books",

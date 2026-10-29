@@ -1,0 +1,43 @@
+{
+  "kobo_id": "awYZAoybGzOa1qVLW83L0A",
+  "title": "黑天鵝語錄（全新擴充版）",
+  "hints": {
+    "original_title": "The Bed of Procrustes: Philosophical and Practical Aphorisms",
+    "original_author": "Nassim Nicholas Taleb"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/9402297-the-bed-of-procrustes",
+      "matched_title": "The Bed of Procrustes: Philosophical and Practical Aphorisms",
+      "score": 3.78,
+      "count": 11300
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0010855542",
+          "title": "黑天鵝語錄（全新擴充版）：隨機世界的生存指南，未知事物的應對之道",
+          "authors": [
+            "納西姆．尼可拉斯．塔雷伯"
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.com/dp/B087TRRWZ3",
+      "matched_title": "黑天鵝語錄（全新擴充版）: 隨機世界的生存指南，未知事物的應對之道 The Bed of Procrustes: Philosophical and Practical Aphorisms (Traditional Chinese Edition) eBook : 納西姆．尼可拉斯．塔雷伯（Nassim Nicholas Taleb）, 席玉蘋,趙盛慈: Kindle Store",
+      "score": 4.6,
+      "count": 5
+    }
+  }
+}
