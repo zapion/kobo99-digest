@@ -1,0 +1,84 @@
+{
+  "slug": "weekly-dd99-2026-w44",
+  "kind": "dd99",
+  "label": "一週99書單",
+  "url": "https://www.kobo.com/zh/blog/weekly-dd99-2026-w44",
+  "title": "【今日 99】1000天的安全，不保證1001天！《黑天鵝語錄》帶你對抗虛假、蠢俗，跨越思考局限！限時99元，購書去",
+  "period_start": "2026-10-29",
+  "period_end": "2026-11-04",
+  "promo_code": null,
+  "books": [
+    {
+      "title": "黑天鵝語錄（全新擴充版）",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/awYZAoybGzOa1qVLW83L0A",
+      "cover_url": "https://cdn.kobo.com/book-images/acfb6abe-0799-457f-8049-2c75e47a04e9/300/300/False/awYZAoybGzOa1qVLW83L0A.jpg",
+      "list_price": 224,
+      "sale_price": 99,
+      "sale_date": "2026-10-29"
+    },
+    {
+      "title": "加密貨幣之王",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/z-LH-l5djjWLh2A_832zpQ",
+      "cover_url": "https://cdn.kobo.com/book-images/f8f916dc-7d09-4ac9-b51d-c171dc6831aa/300/300/False/z-LH-l5djjWLh2A_832zpQ.jpg",
+      "list_price": 315,
+      "sale_price": 99,
+      "sale_date": "2026-10-30"
+    },
+    {
+      "title": "建安十三年",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/oLirTDMvITCpypIo3a-Ykg",
+      "cover_url": "https://cdn.kobo.com/book-images/73ffb5e6-5846-445e-8da6-358128f21adf/300/300/False/oLirTDMvITCpypIo3a-Ykg.jpg",
+      "list_price": 266,
+      "sale_price": 99,
+      "sale_date": "2026-10-30"
+    },
+    {
+      "title": "時光機器【威爾斯科幻經典四部曲1】",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/JPzZ54MCLDO-dLYck0mnSQ",
+      "cover_url": "https://cdn.kobo.com/book-images/729ce93b-b650-4ac4-81c2-ebaff9160205/300/300/False/JPzZ54MCLDO-dLYck0mnSQ.jpg",
+      "list_price": 210,
+      "sale_price": 99,
+      "sale_date": "2026-10-31"
+    },
+    {
+      "title": "星際效應",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/IgqMzpQXFjOrKtr0VI1Sug",
+      "cover_url": "https://cdn.kobo.com/book-images/1d80ee7b-7410-406f-9626-0ca182e37776/300/300/False/IgqMzpQXFjOrKtr0VI1Sug.jpg",
+      "list_price": 630,
+      "sale_price": 99,
+      "sale_date": "2026-11-01"
+    },
+    {
+      "title": "走神",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/v6JUzzA3fzOw2B4hDztMfw",
+      "cover_url": "https://cdn.kobo.com/book-images/38f8dd8c-ee01-4b41-91d9-84c73beee471/300/300/False/v6JUzzA3fzOw2B4hDztMfw.jpg",
+      "list_price": 385,
+      "sale_price": 99,
+      "sale_date": "2026-11-02"
+    },
+    {
+      "title": "桌遊教養全攻略",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/Ws_QAuU3zzCAK_QIQQnH7g",
+      "cover_url": "https://cdn.kobo.com/book-images/0437afbb-6416-4fa3-9061-1dde1e3380ec/300/300/False/Ws_QAuU3zzCAK_QIQQnH7g.jpg",
+      "list_price": 315,
+      "sale_price": 99,
+      "sale_date": "2026-11-03"
+    },
+    {
+      "title": "占星與真我",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/0sVKCYFSGzyuP2qC9DlTNQ",
+      "cover_url": "https://cdn.kobo.com/book-images/b8fd1726-342a-4a4d-8e28-6578dbd0dcb8/300/300/False/0sVKCYFSGzyuP2qC9DlTNQ.jpg",
+      "list_price": 410,
+      "sale_price": 99,
+      "sale_date": "2026-11-04"
+    }
+  ]
+}
