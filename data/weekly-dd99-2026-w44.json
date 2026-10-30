@@ -18,6 +18,30 @@
       "sale_date": "2026-10-29",
       "ratings": [
         {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.4,
+          "count": 9,
+          "url": "https://www.kobo.com/tw/zh/ebook/awYZAoybGzOa1qVLW83L0A",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://www.books.com.tw/products/E050067443",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.5,
+          "count": 24,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 3.78,
@@ -44,6 +68,30 @@
       "sale_price": 99,
       "sale_date": "2026-10-30",
       "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.4,
+          "count": 16,
+          "url": "https://www.kobo.com/tw/zh/ebook/z-LH-l5djjWLh2A_832zpQ",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 4.0,
+          "count": 5,
+          "url": "https://www.books.com.tw/products/E050118775",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.5,
+          "count": 66,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
         {
           "platform": "goodreads",
           "name": "Goodreads",
@@ -72,6 +120,14 @@
       "sale_date": "2026-10-30",
       "ratings": [
         {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.7,
+          "count": 3,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 5.0,
@@ -91,12 +147,44 @@
       "sale_date": "2026-10-31",
       "ratings": [
         {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.3,
+          "count": 3,
+          "url": "https://www.kobo.com/tw/zh/ebook/JPzZ54MCLDO-dLYck0mnSQ",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 4.5,
+          "count": 1,
+          "url": "https://www.books.com.tw/products/E050140470",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.2,
+          "count": 28,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 3.89,
           "count": 583668,
           "url": "https://www.goodreads.com/book/show/38194.The_Time_Machine",
           "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.3,
+          "count": 26237,
+          "url": "https://www.amazon.com/dp/B073QRYR6G",
+          "source": "kobo99"
         }
       ]
     },
@@ -109,6 +197,22 @@
       "sale_price": 99,
       "sale_date": "2026-11-01",
       "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 7,
+          "url": "https://www.books.com.tw/products/E050139697",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.6,
+          "count": 12,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
         {
           "platform": "goodreads",
           "name": "Goodreads",
@@ -135,7 +239,40 @@
       "list_price": 385,
       "sale_price": 99,
       "sale_date": "2026-11-02",
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 3.0,
+          "count": 1,
+          "url": "https://www.books.com.tw/products/E050263511",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 3.0,
+          "count": 1,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.62,
+          "count": 13,
+          "url": "https://www.goodreads.com/book/show/120446408",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.4,
+          "count": 20,
+          "url": "https://www.amazon.com/dp/B0CTTBTFMV",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "桌遊教養全攻略",
@@ -145,7 +282,32 @@
       "list_price": 315,
       "sale_price": 99,
       "sale_date": "2026-11-03",
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://www.kobo.com/tw/zh/ebook/Ws_QAuU3zzCAK_QIQQnH7g",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 5,
+          "url": "https://www.books.com.tw/products/E050263066",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.3,
+          "count": 3,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "占星與真我",
@@ -155,7 +317,40 @@
       "list_price": 410,
       "sale_price": 99,
       "sale_date": "2026-11-04",
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.0,
+          "count": 7,
+          "url": "https://www.kobo.com/tw/zh/ebook/0sVKCYFSGzyuP2qC9DlTNQ",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 2,
+          "url": "https://www.books.com.tw/products/E050059462",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.3,
+          "count": 8,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://www.goodreads.com/book/show/169596072",
+          "source": "kobo99"
+        }
+      ]
     }
   ]
 }

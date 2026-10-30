@@ -39,5 +39,30 @@
       "fetched_at": "2026-10-29T02:21:58+00:00",
       "status": "not_found"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-30T10:37:53+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 4.0,
+        "count": 7,
+        "url": "https://www.kobo.com/tw/zh/ebook/0sVKCYFSGzyuP2qC9DlTNQ"
+      },
+      "books": {
+        "score": 5.0,
+        "count": 2,
+        "url": "https://www.books.com.tw/products/E050059462"
+      },
+      "readmoo": {
+        "score": 4.3,
+        "count": 8,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 5.0,
+        "count": 1,
+        "url": "https://www.goodreads.com/book/show/169596072"
+      }
+    }
   }
 }

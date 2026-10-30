@@ -47,5 +47,35 @@
       "score": 4.5,
       "count": 264
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-10-30T10:37:53+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 4.4,
+        "count": 16,
+        "url": "https://www.kobo.com/tw/zh/ebook/z-LH-l5djjWLh2A_832zpQ"
+      },
+      "books": {
+        "score": 4.0,
+        "count": 5,
+        "url": "https://www.books.com.tw/products/E050118775"
+      },
+      "readmoo": {
+        "score": 4.5,
+        "count": 66,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.97,
+        "count": 1001,
+        "url": "https://www.goodreads.com/book/show/56274031"
+      },
+      "amazon": {
+        "score": 4.5,
+        "count": 297,
+        "url": "https://www.amazon.com/dp/B085TRJY8X"
+      }
+    }
   }
 }
