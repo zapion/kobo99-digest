@@ -1,0 +1,35 @@
+{
+  "kobo_id": "620A0eddoDW_RUIxeulyCA",
+  "title": "臺北故事",
+  "hints": {
+    "original_title": "Taipei Story",
+    "original_author": "R.F. Kuang"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011060640",
+          "title": "臺北故事",
+          "authors": [
+            "匡靈秀"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "not_found"
+    }
+  }
+}

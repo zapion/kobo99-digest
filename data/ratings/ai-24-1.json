@@ -1,0 +1,26 @@
+{
+  "kobo_id": "ai-24-1",
+  "title": "工作者必備・AI法則",
+  "hints": {
+    "original_title": "How to AI: Cut Through the Hype. Master the Basics. Transform Your Work.",
+    "original_author": "Christopher Mims"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/B0F6MKZ1DH"
+    }
+  }
+}

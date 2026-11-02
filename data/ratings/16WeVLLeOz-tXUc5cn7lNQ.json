@@ -1,0 +1,39 @@
+{
+  "kobo_id": "16WeVLLeOz-tXUc5cn7lNQ",
+  "title": "植物妻子",
+  "hints": {
+    "original_title": "내 여자의 열매",
+    "original_author": "한강"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/29957046",
+      "matched_title": "내 여자의 열매",
+      "score": 4.05,
+      "count": 244
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011059440",
+          "title": "植物妻子【諾貝爾文學獎得主韓江「植物性抗爭」的序曲，與《素食者》相互輝映的短篇集】",
+          "authors": [
+            "韓江"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "not_found"
+    }
+  }
+}

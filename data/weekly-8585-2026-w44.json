@@ -355,6 +355,14 @@
           "count": 3,
           "url": "https://kobo99.com/",
           "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.02,
+          "count": 623,
+          "url": "https://www.goodreads.com/book/show/53648301",
+          "source": "page"
         }
       ]
     }

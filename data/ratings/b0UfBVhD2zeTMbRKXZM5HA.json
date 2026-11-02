@@ -1,0 +1,49 @@
+{
+  "kobo_id": "b0UfBVhD2zeTMbRKXZM5HA",
+  "title": "超乎常理的款待式領導",
+  "hints": {
+    "original_title": "Unreasonable Hospitality: The Remarkable Power of Giving People More Than They Expect",
+    "original_author": "Will Guidara"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/60018618-unreasonable-hospitality",
+      "matched_title": "Unreasonable Hospitality: The Remarkable Power of Giving People More Than They Expect",
+      "score": 4.39,
+      "count": 47541
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011057517",
+          "title": "超乎常理的款待式領導：打造卓越團隊的實戰策略",
+          "authors": [
+            "威爾．吉達拉"
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/B0F2HM3LWY",
+          "title": "超乎常理的款待：世界第一名餐廳的服務精神",
+          "authors": [
+            "威爾‧吉達拉"
+          ],
+          "confidence": 0.5
+        }
+      ]
+    }
+  }
+}

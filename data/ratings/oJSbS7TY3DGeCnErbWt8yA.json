@@ -1,0 +1,22 @@
+{
+  "kobo_id": "oJSbS7TY3DGeCnErbWt8yA",
+  "title": "哎呦！我的身體",
+  "hints": {},
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "not_found"
+    }
+  }
+}

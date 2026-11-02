@@ -15,7 +15,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/cb9abe98-bc73-4ae2-82a8-0dfef42ec259/300/300/False/ai-24-1.jpg",
       "list_price": 298,
       "sale_price": 253,
-      "rank": 1
+      "rank": 1,
+      "ratings": []
     },
     {
       "title": "深度提問",
@@ -24,7 +25,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/bef6c38e-9d66-4de2-b807-4cc01e34b9b7/300/300/False/6-ai.jpg",
       "list_price": 287,
       "sale_price": 244,
-      "rank": 2
+      "rank": 2,
+      "ratings": []
     },
     {
       "title": "走出金錢焦慮",
@@ -33,7 +35,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/b72f3b4b-ba9e-43d1-9ab8-83d6bcea160d/300/300/False/qAzVF5JcxTizNIVmmD1IHg.jpg",
       "list_price": 226,
       "sale_price": 192,
-      "rank": 3
+      "rank": 3,
+      "ratings": []
     },
     {
       "title": "超乎常理的款待式領導",
@@ -42,7 +45,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/d3fcb97e-bf56-4a44-9c39-e42813ad2cee/300/300/False/b0UfBVhD2zeTMbRKXZM5HA.jpg",
       "list_price": 446,
       "sale_price": 379,
-      "rank": 4
+      "rank": 4,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.39,
+          "count": 47541,
+          "url": "https://www.goodreads.com/book/show/60018618-unreasonable-hospitality",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "好好退休",
@@ -51,7 +64,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/e4d795cd-8ac8-4101-8d68-06183b5d033f/300/300/False/Kvdr29nHfzq34FZe4UpwfQ.jpg",
       "list_price": 335,
       "sale_price": 285,
-      "rank": 5
+      "rank": 5,
+      "ratings": []
     },
     {
       "title": "生命美好",
@@ -60,7 +74,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/0dc6f723-fb00-4a8f-b67a-f28d37835054/300/300/False/Ops47tplrDGr1oLagayAvA.jpg",
       "list_price": 250,
       "sale_price": 212,
-      "rank": 6
+      "rank": 6,
+      "ratings": []
     },
     {
       "title": "脆弱的一瞬",
@@ -69,7 +84,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/8556c80d-6e92-42f9-9e84-aeabafe7f496/300/300/False/plfJRKOHdjCFxpOP7XYiKg.jpg",
       "list_price": 345,
       "sale_price": 293,
-      "rank": 7
+      "rank": 7,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.13,
+          "count": 371,
+          "url": "https://www.goodreads.com/book/show/75593818-our-fragile-moment",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "哎呦！我的身體",
@@ -78,7 +103,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/501470a7-9478-4722-baaa-baea24a73485/300/300/False/oJSbS7TY3DGeCnErbWt8yA.jpg",
       "list_price": 306,
       "sale_price": 260,
-      "rank": 8
+      "rank": 8,
+      "ratings": []
     },
     {
       "title": "植物妻子",
@@ -87,7 +113,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/5fe5f0a3-86fd-4225-b593-c6a887213336/300/300/False/16WeVLLeOz-tXUc5cn7lNQ.jpg",
       "list_price": 268,
       "sale_price": 228,
-      "rank": 9
+      "rank": 9,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.05,
+          "count": 244,
+          "url": "https://www.goodreads.com/book/show/29957046",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "臺北故事",
@@ -96,7 +132,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/cb5fd15e-b979-4e19-8eb5-38dc2af1f6ca/300/300/False/620A0eddoDW_RUIxeulyCA.jpg",
       "list_price": 298,
       "sale_price": 253,
-      "rank": 10
+      "rank": 10,
+      "ratings": []
     }
   ]
 }

@@ -8,10 +8,12 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
-      "status": "blocked",
+      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "status": "ok",
       "url": "https://www.goodreads.com/book/show/53648301",
-      "detail": "www.goodreads.com returned 202 (challenge page)"
+      "matched_title": "尸语者【热播剧《法医秦明之读心者》影视原著小说！由施磊执导，张耀、汤敏领衔主演！现象级悬疑品牌“法医秦明”系列开山之作！为生者权，替死者言！】 (法医秦明.万象卷 1) (Chinese Edition)",
+      "score": 4.02,
+      "count": 623
     },
     "books": {
       "platform": "books",
