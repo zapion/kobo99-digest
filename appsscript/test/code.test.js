@@ -108,3 +108,11 @@ test('date helpers', () => {
   assert.deepEqual(code.isoWeek('2027-01-01'), { year: 2026, week: 53 });
   assert.deepEqual(code.isoWeek('2026-12-28'), { year: 2026, week: 53 });
 });
+
+test('cover URLs with a quality segment (…/353/569/90/False/id.jpg) still parse', () => {
+  const html = bookHtml(1, 'HB7tVogQOzeycgEGzy4cgw', 'T', '255', '217')
+    .replace('/1200/1200/False/', '/353/569/90/False/');
+  const [book] = code.parseBooks(html);
+  assert.equal(book.kobo_url, 'https://www.kobo.com/tw/zh/ebook/HB7tVogQOzeycgEGzy4cgw');
+  assert.equal(book.cover_url, 'https://cdn.kobo.com/book-images/abc-123/300/300/False/HB7tVogQOzeycgEGzy4cgw.jpg');
+});

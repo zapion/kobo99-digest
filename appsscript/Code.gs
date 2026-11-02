@@ -24,7 +24,7 @@ const TAIPEI_OFFSET_MS = 8 * 3600 * 1000; // Asia/Taipei has no DST.
 const SENDER_DOMAIN_RE = /@(?:[\w-]+\.)*kobo\.com>?$/i;
 const SUBJECT_KINDS = [['【本週精選】', '8585'], ['【今日 99】', 'dd99'], ['【今日99】', 'dd99']];
 const KIND_LABELS = { dd99: '一週99書單', 8585: '本週精選書單' };
-const COVER_RE = /^https:\/\/cdn\.kobo\.com\/book-images\/[\w-]+\/\d+\/\d+\/\w+\/([A-Za-z0-9_-]+)\.(?:jpg|png)$/;
+const COVER_RE = /^https:\/\/cdn\.kobo\.com\/book-images\/[\w-]+\/\d+\/\d+\/(?:\d+\/)?\w+\/([A-Za-z0-9_-]+)\.(?:jpg|png)$/;
 const COVER_SIZE = 300;
 const BAR_HOSTS = ['shopjp.kobo.com', 'static.cdn.responsys.net'];
 const BAR_PATH_RE = /\/images\/bar\d+\.(?:jpg|png)$/;
@@ -291,7 +291,7 @@ function parseBooks(html) {
       title,
       description: textById(html, `book${n}-description`),
       kobo_url: `https://www.kobo.com/tw/zh/ebook/${coverMatch[1]}`,
-      cover_url: cover.replace(/\/\d+\/\d+\/(\w+)\/([^/]+)$/, `/${COVER_SIZE}/${COVER_SIZE}/$1/$2`),
+      cover_url: cover.replace(/\/\d+\/\d+\/(?:\d+\/)?(\w+)\/([^/]+)$/, `/${COVER_SIZE}/${COVER_SIZE}/$1/$2`),
       list_price: numberOf(textById(html, `book${n}-list-price`)),
       sale_price: numberOf(textById(html, `book${n}-sell-price`)),
     };
