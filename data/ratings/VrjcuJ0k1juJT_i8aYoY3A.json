@@ -15,7 +15,7 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "fetched_at": "2026-11-03T11:30:16+00:00",
       "status": "not_found"
     },
     "kobo": {
@@ -25,13 +25,17 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "fetched_at": "2026-11-03T11:30:16+00:00",
       "status": "not_found"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-03T11:30:16+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.co.jp/dp/4492048081",
+      "matched_title": "気分の9割は血糖値 : 小池 雅美: Japanese Books",
+      "score": 4.3,
+      "count": 101
     }
   },
   "kobo99": {

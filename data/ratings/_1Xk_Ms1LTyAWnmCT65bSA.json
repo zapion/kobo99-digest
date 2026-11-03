@@ -28,14 +28,18 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "fetched_at": "2026-11-03T11:30:16+00:00",
       "status": "no_rating",
       "url": "https://www.books.com.tw/products/E050161886"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-03T11:30:16+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.com/dp/0802157068",
+      "matched_title": "The Committed: 9780802157065: Nguyen, Viet Thanh: Books",
+      "score": 4.3,
+      "count": 1821
     }
   },
   "kobo99": {

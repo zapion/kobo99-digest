@@ -13,8 +13,12 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-03T11:30:16+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/40962310-parent-yourself-again",
+      "matched_title": "Parent Yourself Again: Love Yourself the Way You Have Always Wanted to Be Loved (Self-Compassion Book 3)",
+      "score": 3.74,
+      "count": 502
     },
     "kobo": {
       "platform": "kobo",
@@ -23,13 +27,14 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "fetched_at": "2026-11-03T11:30:16+00:00",
       "status": "not_found"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-03T11:30:16+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/B07FP3KW25"
     }
   },
   "kobo99": {

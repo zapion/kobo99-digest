@@ -13,7 +13,7 @@
     },
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "fetched_at": "2026-11-03T11:30:16+00:00",
       "status": "not_found"
     },
     "kobo": {
@@ -23,24 +23,18 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/0011027707",
-          "title": "人類標本：湊佳苗自認「寫出了最好的作品」的傑作，黑暗小說女王出道15週年紀念作",
-          "authors": [
-            "湊佳苗"
-          ],
-          "confidence": 0.8
-        }
-      ]
+      "fetched_at": "2026-11-03T11:30:16+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0011057544"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
-      "status": "no_rating",
-      "url": "https://www.amazon.co.jp/dp/B0FWLWKYHC"
+      "fetched_at": "2026-11-03T11:30:16+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.co.jp/dp/B0G1BTJF7S",
+      "matched_title": "暁星 eBook",
+      "score": 4.2,
+      "count": 478
     }
   },
   "kobo99": {

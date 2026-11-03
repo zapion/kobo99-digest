@@ -93,8 +93,8 @@
           "name": "Amazon",
           "score": 3.5,
           "count": 56,
-          "url": "https://www.amazon.co.jp/dp/B079Y1KWSF",
-          "source": "kobo99"
+          "url": "https://www.amazon.co.jp/dp/4532319005",
+          "source": "search"
         }
       ]
     },
@@ -157,10 +157,10 @@
         {
           "platform": "amazon",
           "name": "Amazon",
-          "score": 4.2,
-          "count": 41,
-          "url": "https://www.amazon.com/dp/1472152506",
-          "source": "kobo99"
+          "score": 4.3,
+          "count": 1821,
+          "url": "https://www.amazon.com/dp/0802157068",
+          "source": "search"
         }
       ]
     },

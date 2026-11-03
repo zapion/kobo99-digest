@@ -28,22 +28,22 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "fetched_at": "2026-11-03T11:30:16+00:00",
       "status": "low_confidence",
       "tried": [
         {
           "url": "https://www.books.com.tw/products/CN11777530",
-          "title": "霍金傳",
+          "title": "博客來-霍金傳",
           "authors": [
             "（美）查爾斯·塞費"
           ],
-          "confidence": 0.85
+          "confidence": 0.6
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "fetched_at": "2026-11-03T11:30:16+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/1541618378"
     }

@@ -97,9 +97,9 @@
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 3.74,
-          "count": 501,
-          "url": "https://www.goodreads.com/book/show/40962310",
-          "source": "kobo99"
+          "count": 502,
+          "url": "https://www.goodreads.com/book/show/40962310-parent-yourself-again",
+          "source": "page"
         },
         {
           "platform": "amazon",
@@ -261,9 +261,9 @@
           "platform": "amazon",
           "name": "Amazon",
           "score": 4.6,
-          "count": 980,
-          "url": "https://www.amazon.co.jp/dp/B0CXPMC671",
-          "source": "kobo99"
+          "count": 982,
+          "url": "https://www.amazon.co.jp/dp/4093867135",
+          "source": "search"
         }
       ]
     },
@@ -306,9 +306,9 @@
           "platform": "amazon",
           "name": "Amazon",
           "score": 4.2,
-          "count": 553,
-          "url": "https://www.amazon.co.jp/dp/B0FWLWKYHC",
-          "source": "kobo99"
+          "count": 478,
+          "url": "https://www.amazon.co.jp/dp/B0G1BTJF7S",
+          "source": "search"
         }
       ]
     },
@@ -343,9 +343,9 @@
           "platform": "amazon",
           "name": "Amazon",
           "score": 4.3,
-          "count": 110,
+          "count": 101,
           "url": "https://www.amazon.co.jp/dp/4492048081",
-          "source": "kobo99"
+          "source": "search"
         }
       ]
     },

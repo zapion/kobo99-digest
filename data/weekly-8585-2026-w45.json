@@ -16,7 +16,40 @@
       "list_price": 298,
       "sale_price": 253,
       "rank": 1,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 4.5,
+          "count": 5,
+          "url": "https://www.books.com.tw/products/E050357893",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.68,
+          "count": 174,
+          "url": "https://www.goodreads.com/book/show/232207607",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.2,
+          "count": 57,
+          "url": "https://www.amazon.com/dp/B0F6MHTCCW",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "深度提問",
@@ -26,7 +59,16 @@
       "list_price": 287,
       "sale_price": 244,
       "rank": 2,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 3.5,
+          "count": 1,
+          "url": "https://www.books.com.tw/products/E050358439",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "走出金錢焦慮",
@@ -36,7 +78,24 @@
       "list_price": 226,
       "sale_price": 192,
       "rank": 3,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 3.5,
+          "count": 6,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 1214,
+          "url": "https://www.amazon.co.jp/dp/4022520841",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "超乎常理的款待式領導",
@@ -54,6 +113,14 @@
           "count": 47541,
           "url": "https://www.goodreads.com/book/show/60018618-unreasonable-hospitality",
           "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.8,
+          "count": 126,
+          "url": "https://www.amazon.com/dp/B0FKS4BV4W",
+          "source": "kobo99"
         }
       ]
     },
@@ -65,7 +132,48 @@
       "list_price": 335,
       "sale_price": 285,
       "rank": 5,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 3.0,
+          "count": 2,
+          "url": "https://www.kobo.com/tw/zh/ebook/Kvdr29nHfzq34FZe4UpwfQ",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 4.5,
+          "count": 5,
+          "url": "https://www.books.com.tw/products/0011054746",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.8,
+          "count": 4,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.3,
+          "count": 1743,
+          "url": "https://www.goodreads.com/book/show/202922751-how-to-retire",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 951,
+          "url": "https://www.amazon.com/dp/B0HKK4P8F7",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "生命美好",
@@ -75,7 +183,48 @@
       "list_price": 250,
       "sale_price": 212,
       "rank": 6,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.3,
+          "count": 3,
+          "url": "https://www.kobo.com/tw/zh/ebook/Ops47tplrDGr1oLagayAvA",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 10,
+          "url": "https://www.books.com.tw/products/E050353100",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.9,
+          "count": 45,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.65,
+          "count": 45261,
+          "url": "https://www.goodreads.com/book/show/236066320",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.7,
+          "count": 4667,
+          "url": "https://www.amazon.com/dp/B0FCFCCK86",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "脆弱的一瞬",
@@ -87,12 +236,28 @@
       "rank": 7,
       "ratings": [
         {
+          "platform": "books",
+          "name": "博客來",
+          "score": 3.5,
+          "count": 1,
+          "url": "https://www.books.com.tw/products/E050342857",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 4.13,
           "count": 371,
           "url": "https://www.goodreads.com/book/show/75593818-our-fragile-moment",
           "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 184,
+          "url": "https://www.amazon.com/dp/B0BRJ6SCFM",
+          "source": "kobo99"
         }
       ]
     },
@@ -104,7 +269,24 @@
       "list_price": 306,
       "sale_price": 260,
       "rank": 8,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.9,
+          "count": 136,
+          "url": "https://www.goodreads.com/book/show/212192470",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.2,
+          "count": 328,
+          "url": "https://www.amazon.com/dp/B0D2SLWRC3",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "植物妻子",
@@ -115,6 +297,22 @@
       "sale_price": 228,
       "rank": 9,
       "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 21,
+          "url": "https://www.books.com.tw/products/E050349709",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.7,
+          "count": 3,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
         {
           "platform": "goodreads",
           "name": "Goodreads",
@@ -133,7 +331,48 @@
       "list_price": 298,
       "sale_price": 253,
       "rank": 10,
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.0,
+          "count": 1,
+          "url": "https://www.kobo.com/tw/zh/ebook/620A0eddoDW_RUIxeulyCA",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 4.0,
+          "count": 9,
+          "url": "https://www.books.com.tw/products/E050355827",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.2,
+          "count": 43,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.6,
+          "count": 18929,
+          "url": "https://www.goodreads.com/book/show/247546631",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 3.9,
+          "count": 646,
+          "url": "https://www.amazon.com/dp/B0GBZS9FMG",
+          "source": "kobo99"
+        }
+      ]
     }
   ]
 }

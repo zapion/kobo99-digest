@@ -3,7 +3,7 @@
   "title": "不懂權謀的人，無法做大事：馬基維利教你如何在職場上出人頭地",
   "hints": {
     "original_title": "Machiavellian Intelligence: How to Survive and Rise in the Modern Corporation",
-    "original_author": "Mark Powell, Jonathan Gifford"
+    "original_author": "Jonathan Gifford, Mark Powell"
   },
   "platforms": {
     "readmoo": {
@@ -29,7 +29,7 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-20T06:46:36+00:00",
+      "fetched_at": "2026-11-03T11:30:16+00:00",
       "status": "low_confidence",
       "tried": [
         {
@@ -38,14 +38,40 @@
           "authors": [
             "馬克‧鮑威爾,強納森‧季福德"
           ],
-          "confidence": 0.95
+          "confidence": 0.9
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010820494",
+          "title": "馬基維利，請教我如何出人頭地：不懂權謀的人，根本無法做大事",
+          "authors": [
+            "原文作者: Mark Powell, Jonathan Gifford（頁面未列中文作者）"
+          ],
+          "confidence": 0.5
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-20T06:19:40+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-03T11:30:16+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/1911498509",
+          "title": "Machiavellian Intelligence: How to Survive and Rise in the Modern Corporation",
+          "authors": [
+            "Jonathan Gifford (Author), Mark Powell (Author)"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "url": "https://www.amazon.com/dp/B07RW7HQG5",
+          "title": "馬基維利，請教我如何出人頭地：不懂權謀的人，根本無法做大事 (Start+) (Traditional Chinese Edition) eBook",
+          "authors": [
+            "馬克‧鮑威爾(Mark Powell), 強納森‧季福德(Jonathan Gifford), 吳緯疆"
+          ],
+          "confidence": 0.9
+        }
+      ]
     }
   },
   "kobo99": {

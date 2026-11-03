@@ -18,5 +18,35 @@
       "fetched_at": "2026-11-02T07:35:22+00:00",
       "status": "not_found"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-03T11:30:16+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 3.0,
+        "count": 2,
+        "url": "https://www.kobo.com/tw/zh/ebook/Kvdr29nHfzq34FZe4UpwfQ"
+      },
+      "books": {
+        "score": 4.5,
+        "count": 5,
+        "url": "https://www.books.com.tw/products/0011054746"
+      },
+      "readmoo": {
+        "score": 4.8,
+        "count": 4,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.3,
+        "count": 1743,
+        "url": "https://www.goodreads.com/book/show/202922751-how-to-retire"
+      },
+      "amazon": {
+        "score": 4.6,
+        "count": 951,
+        "url": "https://www.amazon.com/dp/B0HKK4P8F7"
+      }
+    }
   }
 }
