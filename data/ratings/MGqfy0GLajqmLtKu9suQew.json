@@ -17,7 +17,7 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "low_confidence",
       "tried": [
         {
@@ -26,7 +26,7 @@
           "authors": [
             "托瑪斯．曼"
           ],
-          "confidence": 0.95
+          "confidence": 0.97
         },
         {
           "url": "https://www.books.com.tw/products/0010102048",
@@ -34,14 +34,18 @@
           "authors": [
             "湯瑪斯．曼"
           ],
-          "confidence": 0.6
+          "confidence": 0.7
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.com/dp/B00IT2OV1K",
+      "matched_title": "Buddenbrooks",
+      "score": 4.4,
+      "count": 7
     }
   },
   "kobo99": {

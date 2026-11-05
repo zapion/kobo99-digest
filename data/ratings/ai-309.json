@@ -17,7 +17,7 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "low_confidence",
       "tried": [
         {
@@ -26,13 +26,13 @@
           "authors": [
             "雷．庫茲威爾"
           ],
-          "confidence": 0.95
+          "confidence": 0.97
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/0399562761"
     }

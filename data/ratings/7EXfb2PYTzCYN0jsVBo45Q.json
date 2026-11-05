@@ -2,18 +2,18 @@
   "kobo_id": "7EXfb2PYTzCYN0jsVBo45Q",
   "title": "性為什麼存在？",
   "hints": {
-    "original_title": "BEEN THERE DONE THAT：A Rousing History of Sex",
-    "original_author": "Rachel Feltman"
+    "original_title": "Married Love",
+    "original_author": "Marie Carmichael Stopes"
   },
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "low_confidence",
       "tried": [
         {
@@ -22,14 +22,40 @@
           "authors": [
             "瑞秋．費爾特曼"
           ],
-          "confidence": 0.95
+          "confidence": 0.93
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/B013PQN0JS",
+          "title": "Married Love; Or, Love in Marriage (Dodo Press) by Marie Carmichael Stopes (18-Dec-2009) Paperback",
+          "authors": [
+            "Marie Stopes"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "url": "https://www.amazon.com/dp/B0CT58MBDW",
+          "title": "性的尊重：感情經營×親密互動×慾望滿足，二十世紀優生學專家瑪麗．史托普斯談婚姻中的「性」 (Traditional Chinese Edition) - Kindle edition by [英]瑪麗．史托普斯（Marie Stopes）, 徐海幈. Self-Help Kindle eBooks @ Amazon.com.",
+          "authors": [
+            "[英]瑪麗．史托普斯（Marie Stopes）, 徐海幈"
+          ],
+          "confidence": 0.6
+        },
+        {
+          "url": "https://www.amazon.com/dp/B00951LQOY",
+          "title": "Married Love: Dr. Marie C. Stopes: Amazon.com: Books",
+          "authors": [
+            "Dr. Marie C. Stopes"
+          ],
+          "confidence": 0.6
+        }
+      ]
     }
   },
   "kobo99": {

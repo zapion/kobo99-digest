@@ -1,0 +1,36 @@
+{
+  "kobo_id": "Ij08Z7cqwjGpxHDWbTFpbw",
+  "title": "惡魔浮生錄（普立茲小說獎與女性文學獎雙冠鉅著）",
+  "hints": {
+    "original_title": "Demon Copperhead",
+    "original_author": "Barbara Kingsolver"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011038007",
+          "title": "惡魔浮生錄（普立茲小說獎與女性文學獎雙冠鉅著）",
+          "authors": [
+            "芭芭拉．金索沃"
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/0063251981"
+    }
+  }
+}

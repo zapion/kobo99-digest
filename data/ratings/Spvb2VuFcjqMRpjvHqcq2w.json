@@ -8,18 +8,21 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
-      "status": "no_rating",
-      "url": "https://www.books.com.tw/products/E050241221"
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "search_reported",
+      "url": "https://www.books.com.tw/products/0011005237",
+      "matched_title": "有錢人教我的致富心態：學有錢人這樣想錢、生錢、存錢、花錢，他從月光族變身資產3億富翁！",
+      "score": 4.5,
+      "count": 8
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "not_found"
     }
   },

@@ -1,0 +1,47 @@
+{
+  "kobo_id": "jcesSP30-jGRoZQpwNJA3A",
+  "title": "勝出99%人的成癮式學習法",
+  "hints": {
+    "original_title": "偏差値95の勉強法",
+    "original_author": "安川康介"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/120999560-99",
+          "title": "Goodreads",
+          "authors": [],
+          "confidence": 0.95
+        }
+      ]
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "search_reported",
+      "url": "https://www.books.com.tw/products/0010936238",
+      "matched_title": "勝出99%人的成癮式學習法：同步提升邏輯思維、記憶力和專注力，輕鬆成為「會學習的人」",
+      "score": 4.5,
+      "count": 2
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/B0FCNH3JPF",
+          "title": "上瘾式学习：科学的自学成才法 (Chinese Edition)",
+          "authors": [
+            "[日]安川康介"
+          ],
+          "confidence": 0.3
+        }
+      ]
+    }
+  }
+}

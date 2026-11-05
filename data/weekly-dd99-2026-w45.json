@@ -15,7 +15,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/832cbf78-6989-4f89-bf4f-6f266a720f51/300/300/False/EI-7hWd-0zydZBJnzunKvg.jpg",
       "list_price": 338,
       "sale_price": 99,
-      "sale_date": "2026-11-05"
+      "sale_date": "2026-11-05",
+      "ratings": []
     },
     {
       "title": "誤判",
@@ -24,7 +25,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/9b547148-2bc1-4bee-9daf-d1d4ddbed555/300/300/False/DozvpmMMkDGAOCtpC762kg.jpg",
       "list_price": 616,
       "sale_price": 99,
-      "sale_date": "2026-11-06"
+      "sale_date": "2026-11-06",
+      "ratings": []
     },
     {
       "title": "今天也要好好写手账啊",
@@ -33,7 +35,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/4a62f346-fe1b-4f89-ae9e-2f21edd32068/300/300/False/qEpAJYls6Dq-VSnrVg5bcA.jpg",
       "list_price": 240,
       "sale_price": 99,
-      "sale_date": "2026-11-06"
+      "sale_date": "2026-11-06",
+      "ratings": []
     },
     {
       "title": "惡魔浮生錄（普立茲小說獎與女性文學獎雙冠鉅著）",
@@ -42,7 +45,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/cc4b6ad4-9dc5-487d-a1e2-5a5d857257dc/300/300/False/Ij08Z7cqwjGpxHDWbTFpbw.jpg",
       "list_price": 525,
       "sale_price": 99,
-      "sale_date": "2026-11-07"
+      "sale_date": "2026-11-07",
+      "ratings": []
     },
     {
       "title": "實驗吧！我要瘋狂養生",
@@ -51,7 +55,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/37fcdef6-a5f0-4b85-94e4-9c3d369b9db5/300/300/False/101-netflix.jpg",
       "list_price": 315,
       "sale_price": 99,
-      "sale_date": "2026-11-08"
+      "sale_date": "2026-11-08",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.28,
+          "count": 1377,
+          "url": "https://www.goodreads.com/book/show/34451942-wellmania",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "勝出99%人的成癮式學習法",
@@ -60,7 +74,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/c9393d77-9aa6-463f-9e5b-7d62cdd36ac4/300/300/False/jcesSP30-jGRoZQpwNJA3A.jpg",
       "list_price": 237,
       "sale_price": 99,
-      "sale_date": "2026-11-09"
+      "sale_date": "2026-11-09",
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 4.5,
+          "count": 2,
+          "url": "https://www.books.com.tw/products/0010936238",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "健康占星全書",
@@ -69,7 +93,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/3d86f28d-bd0b-4cf1-bfe9-eac79ce35570/300/300/False/wxSLXfPwgjuW0emToXuYSg.jpg",
       "list_price": 406,
       "sale_price": 99,
-      "sale_date": "2026-11-10"
+      "sale_date": "2026-11-10",
+      "ratings": []
     },
     {
       "title": "極簡法國史",
@@ -78,7 +103,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/73b09ceb-3ec6-4220-920b-dc8cce740512/300/300/False/-gKT8GJNkDyL5QE-qH4zew.jpg",
       "list_price": 245,
       "sale_price": 99,
-      "sale_date": "2026-11-11"
+      "sale_date": "2026-11-11",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.72,
+          "count": 334,
+          "url": "https://www.goodreads.com/book/show/207606803-the-shortest-history-of-france",
+          "source": "page"
+        }
+      ]
     }
   ]
 }

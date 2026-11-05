@@ -1,0 +1,40 @@
+{
+  "kobo_id": "101-netflix",
+  "title": "實驗吧！我要瘋狂養生",
+  "hints": {
+    "original_title": "Wellmania: Extreme Misadventures in the Search for Wellness",
+    "original_author": "Brigid Delaney"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/34451942-wellmania",
+      "matched_title": "Wellmania: Misadventures in the Search for Wellness",
+      "score": 3.28,
+      "count": 1377
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050167614",
+          "title": "實驗吧！我要瘋狂養生：厭世記者親身嘗試101天斷食、瑜伽、冥想，一場變健康的大冒險（Netflix影集《養生狂女子》原型故事） (電子書)",
+          "authors": [
+            "布里吉德‧迪蘭尼"
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/1771643706"
+    }
+  }
+}

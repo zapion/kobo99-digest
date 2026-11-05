@@ -54,8 +54,8 @@
           "name": "Amazon",
           "score": 4.6,
           "count": 5,
-          "url": "https://www.amazon.com/dp/B087TRRWZ3",
-          "source": "search"
+          "url": "https://www.amazon.co.jp/dp/B087TRRWZ3",
+          "source": "kobo99"
         }
       ]
     },
@@ -104,8 +104,8 @@
           "platform": "amazon",
           "name": "Amazon",
           "score": 4.5,
-          "count": 264,
-          "url": "https://www.amazon.com/dp/B085TRJY8X",
+          "count": 286,
+          "url": "https://www.amazon.co.jp/dp/1647820189",
           "source": "search"
         }
       ]
@@ -224,10 +224,10 @@
         {
           "platform": "amazon",
           "name": "Amazon",
-          "score": 4.0,
-          "count": 3,
-          "url": "https://www.amazon.com/dp/B07N91KBMX",
-          "source": "search"
+          "score": 4.7,
+          "count": 2514,
+          "url": "https://www.amazon.com/dp/0393351378",
+          "source": "kobo99"
         }
       ]
     },

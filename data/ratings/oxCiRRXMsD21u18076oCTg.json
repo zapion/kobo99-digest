@@ -17,15 +17,41 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
-      "status": "no_rating",
-      "url": "https://www.books.com.tw/products/E070000564"
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050161448",
+          "title": "未來預演（二版）：切斷情緒成癮神經鏈結，四週改變慣性腦迴路，換一個新未來 (電子書)",
+          "authors": [
+            "喬‧迪斯本札"
+          ],
+          "confidence": 0.95
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010956582",
+          "title": "未來預演（二版）：切斷情緒成癮神經鏈結，四週改變慣性腦迴路，換一個新未來",
+          "authors": [
+            "喬‧迪斯本札"
+          ],
+          "confidence": 0.85
+        }
+      ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
-      "status": "no_rating",
-      "url": "https://www.amazon.com/dp/B006M7A8JI"
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/1401938094",
+          "title": "Breaking The Habit of Being Yourself: How to Lose Your Mind and Create a New One",
+          "authors": [
+            "Dispenza, Dr Joe"
+          ],
+          "confidence": 0.8
+        }
+      ]
     }
   },
   "kobo99": {

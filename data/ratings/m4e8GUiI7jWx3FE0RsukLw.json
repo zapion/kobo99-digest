@@ -2,7 +2,7 @@
   "kobo_id": "m4e8GUiI7jWx3FE0RsukLw",
   "title": "第三種猩猩",
   "hints": {
-    "original_title": "The Third Chimpanzee",
+    "original_title": "The Third Chimpanzee: On the Evolution and Future of the Human Animal",
     "original_author": "Jared Diamond"
   },
   "platforms": {
@@ -17,16 +17,24 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "low_confidence",
       "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050183085",
+          "title": "第三種猩猩：人類的身世與未來〔問世20週年紀念版〕 (電子書)",
+          "authors": [
+            "賈德．戴蒙"
+          ],
+          "confidence": 0.8
+        },
         {
           "url": "https://www.books.com.tw/products/0010635796",
           "title": "第三種猩猩：人類的身世與未來〔問世20週年紀念版〕",
           "authors": [
             "賈德．戴蒙"
           ],
-          "confidence": 0.8
+          "confidence": 0.7
         },
         {
           "url": "https://www.books.com.tw/products/0010790321",
@@ -34,40 +42,15 @@
           "authors": [
             "賈德．戴蒙,麗貝卡．斯特福夫"
           ],
-          "confidence": 0.55
-        },
-        {
-          "url": "https://www.books.com.tw/products/0010007963",
-          "title": "第三種猩猩：人類的身世及未來",
-          "authors": [
-            "賈德．戴蒙"
-          ],
-          "confidence": 0.45
+          "confidence": 0.4
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-22T02:21:58+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.amazon.com/dp/0060984031",
-          "title": "Third Chimpanzee, The",
-          "authors": [
-            "Jared Diamond"
-          ],
-          "confidence": 0.7
-        },
-        {
-          "url": "https://www.amazon.com/dp/B01FGIHRGK",
-          "title": "Third Chimpanzee, The by Jared Diamond (1992-10-23)",
-          "authors": [
-            "Jared Diamond"
-          ],
-          "confidence": 0.5
-        }
-      ]
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/1780747489"
     }
   },
   "kobo99": {

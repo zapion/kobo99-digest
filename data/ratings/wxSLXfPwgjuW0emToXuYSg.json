@@ -1,0 +1,43 @@
+{
+  "kobo_id": "wxSLXfPwgjuW0emToXuYSg",
+  "title": "健康占星全書",
+  "hints": {
+    "original_title": "Your Body and the Stars: The Zodiac As Your Wellness Guide",
+    "original_author": "Stephanie Marango, Rebecca Gordon"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050197993",
+          "title": "健康占星全書：12星座的身心靈功課，校準能量的72個生活練習 (電子書)",
+          "authors": [
+            "史蒂芬妮．莫倫歌,麗貝卡．戈登"
+          ],
+          "confidence": 0.97
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010772947",
+          "title": "你的身體就是12星座：占星這樣教我們健康養生",
+          "authors": [
+            "史蒂芬妮．莫倫歌,麗貝卡．戈登"
+          ],
+          "confidence": 0.6
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "not_found"
+    }
+  }
+}

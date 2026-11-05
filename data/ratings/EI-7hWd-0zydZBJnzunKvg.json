@@ -1,0 +1,44 @@
+{
+  "kobo_id": "EI-7hWd-0zydZBJnzunKvg",
+  "title": "聰明簡潔的溝通",
+  "hints": {
+    "original_title": "Smart Brevity: The Power of Saying More with Less",
+    "original_author": "Jim VandeHei, Mike Allen, Roy Schwartz"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050162760",
+          "title": "聰明簡潔的溝通：200字寫重點， 26秒贏得注意力 (電子書)",
+          "authors": [
+            "吉姆．范德海,麥克．艾倫,羅伊．史瓦茲"
+          ],
+          "confidence": 0.95
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010958366",
+          "title": "聰明簡潔的溝通：200 字寫重點，26 秒贏得注意力",
+          "authors": [
+            "吉姆．范德海,麥克．艾倫,羅伊．史瓦茲"
+          ],
+          "confidence": 0.85
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/6263552182"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kobo_id": "-gKT8GJNkDyL5QE-qH4zew",
+  "title": "極簡法國史",
+  "hints": {
+    "original_title": "一冊でわかるフランス史",
+    "original_author": "福井憲彦"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/207606803-the-shortest-history-of-france",
+      "matched_title": "The Shortest History of France: From Roman Gaul to Revolution and Cultural Radiance―A Global Story for Our Times (The Shortest History Series)",
+      "score": 3.72,
+      "count": 334
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0010922486",
+          "title": "極簡法國史",
+          "authors": [
+            "福井憲彥"
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/B08MTFLDRY",
+          "title": "你一定爱读的极简法国史 (Chinese Edition) eBook",
+          "authors": [
+            "帕米利, 孙,骞骞"
+          ],
+          "confidence": 0.45
+        }
+      ]
+    }
+  }
+}

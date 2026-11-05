@@ -81,8 +81,8 @@
           "name": "博客來",
           "score": 4.5,
           "count": 8,
-          "url": "https://www.books.com.tw/products/E050241221",
-          "source": "kobo99"
+          "url": "https://www.books.com.tw/products/0011005237",
+          "source": "search"
         },
         {
           "platform": "readmoo",
@@ -110,7 +110,16 @@
       "list_price": 696,
       "sale_price": 99,
       "sale_date": "2026-10-23",
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.74,
+          "count": 76,
+          "url": "https://www.goodreads.com/book/show/17837977",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "布登布洛克家族",
@@ -148,10 +157,10 @@
         {
           "platform": "amazon",
           "name": "Amazon",
-          "score": 4.3,
-          "count": 1442,
-          "url": "https://www.amazon.com/dp/B0BS9JPFLC",
-          "source": "kobo99"
+          "score": 4.4,
+          "count": 7,
+          "url": "https://www.amazon.com/dp/B00IT2OV1K",
+          "source": "search"
         }
       ]
     },

@@ -1,0 +1,43 @@
+{
+  "kobo_id": "DozvpmMMkDGAOCtpC762kg",
+  "title": "誤判",
+  "hints": {
+    "original_title": "Tune In: How to Make Smarter Decisions in a Noisy World",
+    "original_author": "Nuala Walsh"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011024949",
+          "title": "誤判：如何在喧鬧世界中篩選正確訊息，校正解讀，做出更明智的決策",
+          "authors": [
+            "努沃．爾許"
+          ],
+          "confidence": 0.5
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010798184",
+          "title": "誤判：法國冤案事件簿",
+          "authors": [
+            "Jacques Verqès"
+          ],
+          "confidence": 0.15
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "not_found"
+    }
+  }
+}

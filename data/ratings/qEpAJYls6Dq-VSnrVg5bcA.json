@@ -1,0 +1,36 @@
+{
+  "kobo_id": "qEpAJYls6Dq-VSnrVg5bcA",
+  "title": "今天也要好好写手账啊",
+  "hints": {
+    "original_title": "今天也要好好写手账啊",
+    "original_author": "不是闷"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/CN11751947",
+          "title": "今天也要好好寫手賬啊",
+          "authors": [
+            "不是悶"
+          ],
+          "confidence": 0.7
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/752173887X"
+    }
+  }
+}

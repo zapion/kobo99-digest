@@ -40,12 +40,12 @@
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "search_reported",
-      "url": "https://www.amazon.com/dp/B085TRJY8X",
+      "url": "https://www.amazon.co.jp/dp/1647820189",
       "matched_title": "Kings of Crypto: One Startup's Quest to Take Cryptocurrency Out of Silicon Valley and Onto Wall Street",
       "score": 4.5,
-      "count": 264
+      "count": 286
     }
   },
   "kobo99": {
