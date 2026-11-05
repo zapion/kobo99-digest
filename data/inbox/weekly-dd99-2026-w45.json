@@ -1,0 +1,84 @@
+{
+  "slug": "weekly-dd99-2026-w45",
+  "kind": "dd99",
+  "label": "一週99書單",
+  "url": "https://www.kobo.com/zh/blog/weekly-dd99-2026-w45",
+  "title": "【今日 99】1/3的郵件其實都沒人開？利用《聰明簡潔的溝通》在26秒贏得注意力！限時99元，購書去",
+  "period_start": "2026-11-05",
+  "period_end": "2026-11-11",
+  "promo_code": null,
+  "books": [
+    {
+      "title": "聰明簡潔的溝通",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/EI-7hWd-0zydZBJnzunKvg",
+      "cover_url": "https://cdn.kobo.com/book-images/832cbf78-6989-4f89-bf4f-6f266a720f51/300/300/False/EI-7hWd-0zydZBJnzunKvg.jpg",
+      "list_price": 338,
+      "sale_price": 99,
+      "sale_date": "2026-11-05"
+    },
+    {
+      "title": "誤判",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/DozvpmMMkDGAOCtpC762kg",
+      "cover_url": "https://cdn.kobo.com/book-images/9b547148-2bc1-4bee-9daf-d1d4ddbed555/300/300/False/DozvpmMMkDGAOCtpC762kg.jpg",
+      "list_price": 616,
+      "sale_price": 99,
+      "sale_date": "2026-11-06"
+    },
+    {
+      "title": "今天也要好好写手账啊",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/qEpAJYls6Dq-VSnrVg5bcA",
+      "cover_url": "https://cdn.kobo.com/book-images/4a62f346-fe1b-4f89-ae9e-2f21edd32068/300/300/False/qEpAJYls6Dq-VSnrVg5bcA.jpg",
+      "list_price": 240,
+      "sale_price": 99,
+      "sale_date": "2026-11-06"
+    },
+    {
+      "title": "惡魔浮生錄（普立茲小說獎與女性文學獎雙冠鉅著）",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/Ij08Z7cqwjGpxHDWbTFpbw",
+      "cover_url": "https://cdn.kobo.com/book-images/cc4b6ad4-9dc5-487d-a1e2-5a5d857257dc/300/300/False/Ij08Z7cqwjGpxHDWbTFpbw.jpg",
+      "list_price": 525,
+      "sale_price": 99,
+      "sale_date": "2026-11-07"
+    },
+    {
+      "title": "實驗吧！我要瘋狂養生",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/101-netflix",
+      "cover_url": "https://cdn.kobo.com/book-images/37fcdef6-a5f0-4b85-94e4-9c3d369b9db5/300/300/False/101-netflix.jpg",
+      "list_price": 315,
+      "sale_price": 99,
+      "sale_date": "2026-11-08"
+    },
+    {
+      "title": "勝出99%人的成癮式學習法",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/jcesSP30-jGRoZQpwNJA3A",
+      "cover_url": "https://cdn.kobo.com/book-images/c9393d77-9aa6-463f-9e5b-7d62cdd36ac4/300/300/False/jcesSP30-jGRoZQpwNJA3A.jpg",
+      "list_price": 237,
+      "sale_price": 99,
+      "sale_date": "2026-11-09"
+    },
+    {
+      "title": "健康占星全書",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/wxSLXfPwgjuW0emToXuYSg",
+      "cover_url": "https://cdn.kobo.com/book-images/3d86f28d-bd0b-4cf1-bfe9-eac79ce35570/300/300/False/wxSLXfPwgjuW0emToXuYSg.jpg",
+      "list_price": 406,
+      "sale_price": 99,
+      "sale_date": "2026-11-10"
+    },
+    {
+      "title": "極簡法國史",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/-gKT8GJNkDyL5QE-qH4zew",
+      "cover_url": "https://cdn.kobo.com/book-images/73b09ceb-3ec6-4220-920b-dc8cce740512/300/300/False/-gKT8GJNkDyL5QE-qH4zew.jpg",
+      "list_price": 245,
+      "sale_price": 99,
+      "sale_date": "2026-11-11"
+    }
+  ]
+}
