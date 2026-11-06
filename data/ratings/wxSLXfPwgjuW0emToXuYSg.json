@@ -39,5 +39,25 @@
       "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "not_found"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-06T11:42:24+00:00",
+    "ratings": {
+      "books": {
+        "score": 4.5,
+        "count": 1,
+        "url": "https://www.books.com.tw/products/E050197993"
+      },
+      "goodreads": {
+        "score": 3.59,
+        "count": 54,
+        "url": "https://www.goodreads.com/book/show/30163955"
+      },
+      "amazon": {
+        "score": 4.3,
+        "count": 121,
+        "url": "https://www.amazon.com/dp/B010MHAA9G"
+      }
+    }
   }
 }

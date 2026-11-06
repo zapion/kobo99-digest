@@ -36,5 +36,30 @@
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/1771643706"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-06T11:42:24+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 4.0,
+        "count": 3,
+        "url": "https://www.kobo.com/tw/zh/ebook/101-netflix"
+      },
+      "readmoo": {
+        "score": 3.9,
+        "count": 27,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.28,
+        "count": 1377,
+        "url": "https://www.goodreads.com/book/show/34451942"
+      },
+      "amazon": {
+        "score": 3.6,
+        "count": 40,
+        "url": "https://www.amazon.com/dp/B07959TC4Y"
+      }
+    }
   }
 }

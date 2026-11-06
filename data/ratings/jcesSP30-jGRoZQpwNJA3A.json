@@ -43,5 +43,25 @@
         }
       ]
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-06T11:42:24+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 4.3,
+        "count": 34,
+        "url": "https://www.kobo.com/tw/zh/ebook/jcesSP30-jGRoZQpwNJA3A"
+      },
+      "books": {
+        "score": 4.5,
+        "count": 4,
+        "url": "https://www.books.com.tw/products/E050143063"
+      },
+      "readmoo": {
+        "score": 4.3,
+        "count": 59,
+        "url": "https://kobo99.com/"
+      }
+    }
   }
 }

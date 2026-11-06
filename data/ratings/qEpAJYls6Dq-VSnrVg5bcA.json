@@ -32,5 +32,20 @@
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/752173887X"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-06T11:42:24+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 5.0,
+        "count": 1,
+        "url": "https://www.kobo.com/tw/zh/ebook/qEpAJYls6Dq-VSnrVg5bcA"
+      },
+      "goodreads": {
+        "score": 3.22,
+        "count": 9,
+        "url": "https://www.goodreads.com/book/show/63144620"
+      }
+    }
   }
 }

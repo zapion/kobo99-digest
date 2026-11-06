@@ -16,7 +16,48 @@
       "list_price": 338,
       "sale_price": 99,
       "sale_date": "2026-11-05",
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.3,
+          "count": 22,
+          "url": "https://www.kobo.com/tw/zh/ebook/EI-7hWd-0zydZBJnzunKvg",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 11,
+          "url": "https://www.books.com.tw/products/E050162760",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.3,
+          "count": 90,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.9,
+          "count": 10847,
+          "url": "https://www.goodreads.com/book/show/59891634",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.5,
+          "count": 2946,
+          "url": "https://www.amazon.com/dp/B09TGMK8G6",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "誤判",
@@ -26,7 +67,40 @@
       "list_price": 616,
       "sale_price": 99,
       "sale_date": "2026-11-06",
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 4.5,
+          "count": 2,
+          "url": "https://www.books.com.tw/products/E050274828",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.0,
+          "count": 3,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.32,
+          "count": 126,
+          "url": "https://www.goodreads.com/book/show/127278715",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.4,
+          "count": 62,
+          "url": "https://www.amazon.com/dp/B0C1PCCMXB",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "今天也要好好写手账啊",
@@ -36,7 +110,24 @@
       "list_price": 240,
       "sale_price": 99,
       "sale_date": "2026-11-06",
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://www.kobo.com/tw/zh/ebook/qEpAJYls6Dq-VSnrVg5bcA",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.22,
+          "count": 9,
+          "url": "https://www.goodreads.com/book/show/63144620",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "惡魔浮生錄（普立茲小說獎與女性文學獎雙冠鉅著）",
@@ -46,7 +137,48 @@
       "list_price": 525,
       "sale_price": 99,
       "sale_date": "2026-11-07",
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.7,
+          "count": 3,
+          "url": "https://www.kobo.com/tw/zh/ebook/Ij08Z7cqwjGpxHDWbTFpbw",
+          "source": "kobo99"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 5,
+          "url": "https://www.books.com.tw/products/E050308636",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.5,
+          "count": 119,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.46,
+          "count": 926302,
+          "url": "https://www.goodreads.com/book/show/60194162",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 159051,
+          "url": "https://www.amazon.com/dp/B09QMHZ53K",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "實驗吧！我要瘋狂養生",
@@ -58,12 +190,36 @@
       "sale_date": "2026-11-08",
       "ratings": [
         {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.0,
+          "count": 3,
+          "url": "https://www.kobo.com/tw/zh/ebook/101-netflix",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 3.9,
+          "count": 27,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 3.28,
           "count": 1377,
           "url": "https://www.goodreads.com/book/show/34451942-wellmania",
           "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 3.6,
+          "count": 40,
+          "url": "https://www.amazon.com/dp/B07959TC4Y",
+          "source": "kobo99"
         }
       ]
     },
@@ -77,12 +233,28 @@
       "sale_date": "2026-11-09",
       "ratings": [
         {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.3,
+          "count": 34,
+          "url": "https://www.kobo.com/tw/zh/ebook/jcesSP30-jGRoZQpwNJA3A",
+          "source": "kobo99"
+        },
+        {
           "platform": "books",
           "name": "博客來",
           "score": 4.5,
           "count": 2,
           "url": "https://www.books.com.tw/products/0010936238",
           "source": "search"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.3,
+          "count": 59,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
         }
       ]
     },
@@ -94,7 +266,32 @@
       "list_price": 406,
       "sale_price": 99,
       "sale_date": "2026-11-10",
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 4.5,
+          "count": 1,
+          "url": "https://www.books.com.tw/products/E050197993",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.59,
+          "count": 54,
+          "url": "https://www.goodreads.com/book/show/30163955",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.3,
+          "count": 121,
+          "url": "https://www.amazon.com/dp/B010MHAA9G",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "極簡法國史",
@@ -106,12 +303,36 @@
       "sale_date": "2026-11-11",
       "ratings": [
         {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.3,
+          "count": 3,
+          "url": "https://www.kobo.com/tw/zh/ebook/-gKT8GJNkDyL5QE-qH4zew",
+          "source": "kobo99"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.5,
+          "count": 8,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 3.72,
           "count": 334,
           "url": "https://www.goodreads.com/book/show/207606803-the-shortest-history-of-france",
           "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.1,
+          "count": 38,
+          "url": "https://www.amazon.com/dp/4309811043",
+          "source": "kobo99"
         }
       ]
     }
