@@ -1,0 +1,30 @@
+{
+  "kobo_id": "1AcCWq_S2DW0d_yH7PP1rA",
+  "title": "荊棘與玫瑰【荊棘與玫瑰系列1】",
+  "hints": {
+    "original_title": "A Court of Thorns and Roses",
+    "original_author": "Sarah J. Maas"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/50659467-a-court-of-thorns-and-roses",
+      "matched_title": "A Court of Thorns and Roses (A Court of Thorns and Roses, #1)",
+      "score": 4.14,
+      "count": 4684181
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/1635575567"
+    }
+  }
+}

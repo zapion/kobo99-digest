@@ -1,0 +1,25 @@
+{
+  "kobo_id": "89iX_nl4MTa8ob8tfLYGpw",
+  "title": "真正會讀書的人，都背得很少",
+  "hints": {
+    "original_title": "真正會讀書的人，都背得很少：只背最少內容也上榜的超強學習術",
+    "original_author": "孫醫燦"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    }
+  }
+}

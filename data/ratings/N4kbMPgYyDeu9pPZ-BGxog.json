@@ -1,0 +1,25 @@
+{
+  "kobo_id": "N4kbMPgYyDeu9pPZ-BGxog",
+  "title": "餘燼冥之島",
+  "hints": {
+    "original_title": "Isles of the Emberdark",
+    "original_author": "Brandon Sanderson"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    }
+  }
+}

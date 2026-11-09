@@ -8,12 +8,12 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "low_confidence",
       "tried": [
         {
@@ -22,13 +22,13 @@
           "authors": [
             "莎拉．史都華．荷蘭,貝絲．席爾弗斯"
           ],
-          "confidence": 0.95
+          "confidence": 0.97
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "not_found"
     }
   },

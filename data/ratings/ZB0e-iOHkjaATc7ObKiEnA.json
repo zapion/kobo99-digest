@@ -1,0 +1,35 @@
+{
+  "kobo_id": "ZB0e-iOHkjaATc7ObKiEnA",
+  "title": "韌性製造",
+  "hints": {
+    "original_title": "Your Life Is Manufactured: How We Make Things, Why It Matters and How We Can Do It Better",
+    "original_author": "Tim Minshall"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011061891",
+          "title": "韌性製造：斷鏈危機下，如何打造「韌性供應鏈」大未來",
+          "authors": [
+            "提姆．敏謝爾"
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    }
+  }
+}

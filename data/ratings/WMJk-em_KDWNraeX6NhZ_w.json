@@ -1,0 +1,40 @@
+{
+  "kobo_id": "WMJk-em_KDWNraeX6NhZ_w",
+  "title": "破壞性創新",
+  "hints": {
+    "original_title": "The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail",
+    "original_author": "Clayton M. Christensen"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/181480255",
+      "matched_title": "The Innovator's Dilemma, with a New Foreword: When New Technologies Cause Great Firms to Fail",
+      "score": 4.04,
+      "count": 63728
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011053053",
+          "title": "破壞性創新：勢不可擋的顛覆力量，在被忽視處創造價值，改變競爭路徑，切換成長新賽道",
+          "authors": [
+            "史考特・安東尼"
+          ],
+          "confidence": 0.9
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/1633691780"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kobo_id": "OAOt_2SkCD-JcGwDiT_dpw",
+  "title": "跳脫反芻思維",
+  "hints": {
+    "original_title": "Rumination Remedies: A Workbook to Free Your Mind From Worry, Regret, and Racing Thoughts",
+    "original_author": "Sheri McGregor"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0011063191"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    }
+  }
+}

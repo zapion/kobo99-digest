@@ -1,0 +1,36 @@
+{
+  "kobo_id": "DD8YXngrdzau8FKQ_dzZqw",
+  "title": "荊棘之路",
+  "hints": {
+    "original_title": "The Path of Thorns",
+    "original_author": "A.G. Slatter"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/221232363",
+          "title": "A tövisek útja",
+          "authors": [
+            "A.G. Slatter",
+            "Piroska F. Nagy"
+          ],
+          "confidence": 0.6
+        }
+      ]
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "not_found"
+    }
+  }
+}

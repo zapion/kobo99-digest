@@ -15,7 +15,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/85d519c4-f731-4c45-b637-4f6a3a177934/300/300/False/NVQgMI1fAj62DrNCukQnRw.jpg",
       "list_price": 287,
       "sale_price": 244,
-      "rank": 1
+      "rank": 1,
+      "ratings": []
     },
     {
       "title": "破壞性創新",
@@ -24,7 +25,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/c1d2ce24-ace2-438a-8ff2-e9ea5469801a/300/300/False/WMJk-em_KDWNraeX6NhZ_w.jpg",
       "list_price": 351,
       "sale_price": 298,
-      "rank": 2
+      "rank": 2,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.04,
+          "count": 63728,
+          "url": "https://www.goodreads.com/book/show/181480255",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "失控的同理心",
@@ -33,7 +44,25 @@
       "cover_url": "https://cdn.kobo.com/book-images/84b910aa-9d3f-49f7-b771-7c70c14c8afe/300/300/False/3OwawrJpLj-37-Blo8Lk7g.jpg",
       "list_price": 272,
       "sale_price": 231,
-      "rank": 3
+      "rank": 3,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.57,
+          "count": 6755,
+          "url": "https://www.goodreads.com/book/show/32018481",
+          "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.3,
+          "count": 668,
+          "url": "https://www.amazon.com/dp/0062339338",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "跳脫反芻思維",
@@ -42,7 +71,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/a4423501-5031-4c82-a923-9086f396918b/300/300/False/OAOt_2SkCD-JcGwDiT_dpw.jpg",
       "list_price": 282,
       "sale_price": 240,
-      "rank": 4
+      "rank": 4,
+      "ratings": []
     },
     {
       "title": "荊棘與玫瑰【荊棘與玫瑰系列1】",
@@ -51,7 +81,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/bde30e57-b19c-4c82-a6f0-89e40d5ce607/300/300/False/1AcCWq_S2DW0d_yH7PP1rA.jpg",
       "list_price": 327,
       "sale_price": 278,
-      "rank": 5
+      "rank": 5,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.14,
+          "count": 4684181,
+          "url": "https://www.goodreads.com/book/show/50659467-a-court-of-thorns-and-roses",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "我只是說真話。",
@@ -60,7 +100,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/9756ef21-808d-495f-9b2b-32139f46deed/300/300/False/dei-3.jpg",
       "list_price": 391,
       "sale_price": 332,
-      "rank": 6
+      "rank": 6,
+      "ratings": []
     },
     {
       "title": "真正會讀書的人，都背得很少",
@@ -69,7 +110,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/311f2c79-6b76-40aa-8884-28d202c4139e/300/300/False/89iX_nl4MTa8ob8tfLYGpw.jpg",
       "list_price": 250,
       "sale_price": 212,
-      "rank": 7
+      "rank": 7,
+      "ratings": []
     },
     {
       "title": "韌性製造",
@@ -78,7 +120,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/e88f7395-a4ee-434b-bfc7-6eb392e3a3ba/300/300/False/ZB0e-iOHkjaATc7ObKiEnA.jpg",
       "list_price": 423,
       "sale_price": 360,
-      "rank": 8
+      "rank": 8,
+      "ratings": []
     },
     {
       "title": "餘燼冥之島",
@@ -87,7 +130,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/fecc4661-3a04-4400-8cd0-3241985785a8/300/300/False/N4kbMPgYyDeu9pPZ-BGxog.jpg",
       "list_price": 543,
       "sale_price": 462,
-      "rank": 9
+      "rank": 9,
+      "ratings": []
     },
     {
       "title": "荊棘之路",
@@ -96,7 +140,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/f19768bb-4070-4a95-92e6-149a902fa33b/300/300/False/DD8YXngrdzau8FKQ_dzZqw.jpg",
       "list_price": 315,
       "sale_price": 267,
-      "rank": 10
+      "rank": 10,
+      "ratings": []
     }
   ]
 }

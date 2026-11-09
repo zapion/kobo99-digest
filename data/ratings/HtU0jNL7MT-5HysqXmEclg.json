@@ -17,13 +17,13 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "no_rating",
       "url": "https://www.books.com.tw/products/0011055753"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/B011MX0IFU"
     }

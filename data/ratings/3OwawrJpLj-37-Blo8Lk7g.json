@@ -1,0 +1,43 @@
+{
+  "kobo_id": "3OwawrJpLj-37-Blo8Lk7g",
+  "title": "失控的同理心",
+  "hints": {
+    "original_title": "Against Empathy: The Case for Rational Compassion",
+    "original_author": "Paul Bloom"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/32018481",
+      "matched_title": "Against Empathy Lib/E: The Case for Rational Compassion",
+      "score": 3.57,
+      "count": 6755
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0010762774",
+          "title": "失控的同理心︰道德判斷的偏誤與理性思考的價值",
+          "authors": [
+            "保羅‧布倫"
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.com/dp/0062339338",
+      "matched_title": "Against Empathy: The Case for Rational Compassion",
+      "score": 4.3,
+      "count": 668
+    }
+  }
+}

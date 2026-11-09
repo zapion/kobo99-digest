@@ -17,7 +17,7 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "low_confidence",
       "tried": [
         {
@@ -26,13 +26,13 @@
           "authors": [
             "雷恩"
           ],
-          "confidence": 0.97
+          "confidence": 0.9
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/059385084X"
     }

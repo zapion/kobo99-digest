@@ -2,8 +2,8 @@
   "kobo_id": "fbi-73",
   "title": "FBI建立交情的技術",
   "hints": {
-    "original_title": "It's Not All About Me: The Top Ten Techniques for Building Quick Rapport with Anyone",
-    "original_author": "Robin Dreeke"
+    "original_title": "The Like Switch: An Ex-FBI Agent's Guide to Influencing, Attracting, and Winning People Over",
+    "original_author": "Jack Schafer, Marvin Karlins"
   },
   "platforms": {
     "goodreads": {
@@ -17,23 +17,14 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "not_found"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.amazon.com/dp/B0FFBNCHP2",
-          "title": "It's Not All About Me, Revised and Updated Edition: The Top Ten Techniques for Building Quick Rapport with Anyone eBook",
-          "authors": [
-            "Dreeke, Robin"
-          ],
-          "confidence": 0.5
-        }
-      ]
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/1476754489"
     }
   },
   "kobo99": {

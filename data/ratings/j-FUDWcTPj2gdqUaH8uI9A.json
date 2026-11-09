@@ -17,23 +17,33 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
+      "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "low_confidence",
       "tried": [
         {
-          "url": "https://www.books.com.tw/products/0010327946",
-          "title": "博客來-孤注一擲",
+          "url": "https://www.books.com.tw/products/0010048984",
+          "title": "孤注一擲",
           "authors": [
-            "蘇．葛拉芙頓"
+            "蘇‧葛拉芙頓"
           ],
-          "confidence": 0.7
+          "confidence": 0.4
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-26T02:31:56+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/067429551X",
+          "title": "Desperate Remedies: Psychiatry’s Turbulent Quest to Cure Mental Illness",
+          "authors": [
+            "Scull, Andrew"
+          ],
+          "confidence": 0.9
+        }
+      ]
     }
   },
   "kobo99": {
