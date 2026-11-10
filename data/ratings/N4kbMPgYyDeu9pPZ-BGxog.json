@@ -21,5 +21,30 @@
       "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "not_found"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-10T11:58:06+00:00",
+    "ratings": {
+      "books": {
+        "score": 5.0,
+        "count": 2,
+        "url": "https://www.books.com.tw/products/E050360267"
+      },
+      "readmoo": {
+        "score": 4.9,
+        "count": 15,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.46,
+        "count": 46950,
+        "url": "https://www.goodreads.com/book/show/210300489"
+      },
+      "amazon": {
+        "score": 4.8,
+        "count": 7700,
+        "url": "https://www.amazon.com/dp/B0DHZYWCN9"
+      }
+    }
   }
 }

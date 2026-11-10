@@ -36,5 +36,35 @@
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/1633691780"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-10T11:58:06+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 3.0,
+        "count": 1,
+        "url": "https://www.kobo.com/tw/zh/ebook/WMJk-em_KDWNraeX6NhZ_w"
+      },
+      "books": {
+        "score": 4.5,
+        "count": 8,
+        "url": "https://www.books.com.tw/products/E050335615"
+      },
+      "readmoo": {
+        "score": 5.0,
+        "count": 2,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.88,
+        "count": 136,
+        "url": "https://www.goodreads.com/book/show/223148084"
+      },
+      "amazon": {
+        "score": 4.2,
+        "count": 64,
+        "url": "https://www.amazon.com/dp/B0DRW959T2"
+      }
+    }
   }
 }
