@@ -1,0 +1,84 @@
+{
+  "slug": "weekly-dd99-2026-w46",
+  "kind": "dd99",
+  "label": "一週99書單",
+  "url": "https://www.kobo.com/zh/blog/weekly-dd99-2026-w46",
+  "title": "【今日 99】該怎樣開口讓人幫你？懂得《好好拜託》讓連幫你的人都快樂才是本事！限時99元，購書去",
+  "period_start": "2026-11-12",
+  "period_end": "2026-11-18",
+  "promo_code": null,
+  "books": [
+    {
+      "title": "好好拜託",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/VE6Q52XO_zO20M4wWG9bmg",
+      "cover_url": "https://cdn.kobo.com/book-images/c468f61f-c678-469a-b8af-7d5b38435833/300/300/False/VE6Q52XO_zO20M4wWG9bmg.jpg",
+      "list_price": 245,
+      "sale_price": 99,
+      "sale_date": "2026-11-12"
+    },
+    {
+      "title": "「矽谷製造」的漢堡肉？科技食物狂熱的真相與代價",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/dx53TdvEAzSR19lKtJ6K9g",
+      "cover_url": "https://cdn.kobo.com/book-images/36924c2b-98d3-4cb6-9906-ec0259d16f92/300/300/False/dx53TdvEAzSR19lKtJ6K9g.jpg",
+      "list_price": 340,
+      "sale_price": 99,
+      "sale_date": "2026-11-13"
+    },
+    {
+      "title": "双重冲击",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/r897xgnRnDOhX7PUkUhe5g",
+      "cover_url": "https://cdn.kobo.com/book-images/de90021c-acde-46d3-b263-11128eaf8af0/300/300/False/r897xgnRnDOhX7PUkUhe5g.jpg",
+      "list_price": 239,
+      "sale_price": 99,
+      "sale_date": "2026-11-13"
+    },
+    {
+      "title": "雲端咕咕國",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/8yYOshqREDqbmb9kVTbnfw",
+      "cover_url": "https://cdn.kobo.com/book-images/38a89efb-998e-43a1-a27d-a93704742e6a/300/300/False/8yYOshqREDqbmb9kVTbnfw.jpg",
+      "list_price": 476,
+      "sale_price": 99,
+      "sale_date": "2026-11-14"
+    },
+    {
+      "title": "物種源始（達爾文二一二歲誕辰紀念版，完整重現寫給所有人的演化論）",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/SSS7TdbqQzyzxlBX5_SnBg",
+      "cover_url": "https://cdn.kobo.com/book-images/4996bf18-5dad-4713-a33c-635eccb8ff95/300/300/False/SSS7TdbqQzyzxlBX5_SnBg.jpg",
+      "list_price": 462,
+      "sale_price": 99,
+      "sale_date": "2026-11-15"
+    },
+    {
+      "title": "有一種勇敢:叫做自己",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/9b28lThLmT-YIuj3o26WSw",
+      "cover_url": "https://cdn.kobo.com/book-images/ecfc610e-7b97-4f4c-b6ec-70dd0cc174d0/300/300/False/9b28lThLmT-YIuj3o26WSw.jpg",
+      "list_price": 406,
+      "sale_price": 99,
+      "sale_date": "2026-11-16"
+    },
+    {
+      "title": "＜經典奇幻文學作家J. R. R. 托爾金1＞霍比特人",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/j-r-r-1",
+      "cover_url": "https://cdn.kobo.com/book-images/884f4d0a-7203-4c8a-8fee-86a0f64d20b4/300/300/False/j-r-r-1.jpg",
+      "list_price": 364,
+      "sale_price": 99,
+      "sale_date": "2026-11-17"
+    },
+    {
+      "title": "55歲開始的Hello Life",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/55hello-life",
+      "cover_url": "https://cdn.kobo.com/book-images/c23cf3cf-912a-40b3-9894-61cd5d5b8ac4/300/300/False/55hello-life.jpg",
+      "list_price": 266,
+      "sale_price": 99,
+      "sale_date": "2026-11-18"
+    }
+  ]
+}
