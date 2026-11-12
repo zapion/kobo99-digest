@@ -17,7 +17,7 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "low_confidence",
       "tried": [
         {
@@ -29,35 +29,27 @@
           "confidence": 0.95
         },
         {
-          "url": "https://www.books.com.tw/products/0010823466",
-          "title": "時光機器：穿梭時空，回到未來",
+          "url": "https://www.books.com.tw/products/0010924211",
+          "title": "時光機器（精裝版）",
           "authors": [
             "赫伯特．喬治．威爾斯"
           ],
-          "confidence": 0.5
+          "confidence": 0.6
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "low_confidence",
       "tried": [
-        {
-          "url": "https://www.amazon.com/dp/0553211552",
-          "title": "Time Machine, The",
-          "authors": [
-            "Wells, H.G."
-          ],
-          "confidence": 0.6
-        },
         {
           "url": "https://www.amazon.com/dp/B0BBL3G99M",
           "title": "時光機器【威爾斯科幻經典四部曲❶】: The Time Machine (愛經典 Book 58) (Traditional Chinese Edition) eBook",
           "authors": [
             "赫伯特·喬治·威爾斯(Herbert George Wells), 陳震"
           ],
-          "confidence": 0.9
+          "confidence": 0.85
         }
       ]
     }

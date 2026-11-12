@@ -1,0 +1,31 @@
+{
+  "kobo_id": "55hello-life",
+  "title": "55歲開始的Hello Life",
+  "hints": {
+    "original_title": "55歳からのハローライフ",
+    "original_author": "村上 龍"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/25351287-55",
+      "matched_title": "55歳からのハローライフ",
+      "score": 3.91,
+      "count": 40
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0010913621"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.co.jp/dp/4344022866"
+    }
+  }
+}

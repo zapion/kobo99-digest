@@ -1,0 +1,22 @@
+{
+  "kobo_id": "9b28lThLmT-YIuj3o26WSw",
+  "title": "有一種勇敢:叫做自己",
+  "hints": {},
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "not_found"
+    }
+  }
+}

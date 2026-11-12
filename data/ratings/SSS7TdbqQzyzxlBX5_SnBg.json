@@ -1,0 +1,40 @@
+{
+  "kobo_id": "SSS7TdbqQzyzxlBX5_SnBg",
+  "title": "物種源始（達爾文二一二歲誕辰紀念版，完整重現寫給所有人的演化論）",
+  "hints": {
+    "original_title": "On the Origin of Species",
+    "original_author": "Charles Darwin"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/5550904",
+      "matched_title": "On the Origin of Species",
+      "score": 4.01,
+      "count": 125225
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0010885345",
+          "title": "物種源始（達爾文二一二歲誕辰紀念版，完整重現寫給所有人的演化論）",
+          "authors": [
+            "達爾文"
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/1841939897"
+    }
+  }
+}

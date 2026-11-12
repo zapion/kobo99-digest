@@ -1,0 +1,27 @@
+{
+  "kobo_id": "r897xgnRnDOhX7PUkUhe5g",
+  "title": "双重冲击",
+  "hints": {
+    "original_title": "双重冲击",
+    "original_author": "李晓"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/CN11747745"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/B09WHVGXQ5"
+    }
+  }
+}

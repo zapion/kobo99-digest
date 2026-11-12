@@ -1,0 +1,40 @@
+{
+  "kobo_id": "dx53TdvEAzSR19lKtJ6K9g",
+  "title": "「矽谷製造」的漢堡肉？科技食物狂熱的真相與代價",
+  "hints": {
+    "original_title": "Technically Food: Inside Silicon Valley's Mission to Change What We Eat",
+    "original_author": "Larissa Zimberoff"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/51075388-technically-food",
+      "matched_title": "Technically Food: Inside Silicon Valley's Mission to Change What We Eat",
+      "score": 3.57,
+      "count": 311
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0010907445",
+          "title": "「矽谷製造」的漢堡肉？科技食物狂熱的真相與代價",
+          "authors": [
+            "拉里莎．津貝洛夫"
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/1419747096"
+    }
+  }
+}

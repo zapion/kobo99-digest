@@ -2,7 +2,7 @@
   "kobo_id": "z-LH-l5djjWLh2A_832zpQ",
   "title": "加密貨幣之王",
   "hints": {
-    "original_title": "Kings of Crypto: One Startup's Quest to Take Cryptocurrency Out of Silicon Valley and Onto Wall Street",
+    "original_title": "Kings of Crypto",
     "original_author": "Jeff John Roberts"
   },
   "platforms": {
@@ -17,7 +17,7 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "low_confidence",
       "tried": [
         {
@@ -26,7 +26,7 @@
           "authors": [
             "傑夫．約翰．羅伯茲"
           ],
-          "confidence": 0.93
+          "confidence": 0.95
         },
         {
           "url": "https://www.books.com.tw/products/0010912603",
@@ -34,13 +34,13 @@
           "authors": [
             "傑夫．約翰．羅伯茲"
           ],
-          "confidence": 0.85
+          "confidence": 0.8
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "search_reported",
       "url": "https://www.amazon.co.jp/dp/1647820189",
       "matched_title": "Kings of Crypto: One Startup's Quest to Take Cryptocurrency Out of Silicon Valley and Onto Wall Street",

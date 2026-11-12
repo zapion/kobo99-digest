@@ -2,18 +2,18 @@
   "kobo_id": "0sVKCYFSGzyuP2qC9DlTNQ",
   "title": "占星與真我",
   "hints": {
-    "original_title": "Astrology and the Authentic Self: Integrating Traditional and Modern Astrology to Uncover the Essence of the Birth Chart",
+    "original_title": "Astrology and the Authentic Self",
     "original_author": "Demetra George"
   },
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "low_confidence",
       "tried": [
         {
@@ -22,7 +22,7 @@
           "authors": [
             "迪米特拉‧喬治"
           ],
-          "confidence": 0.97
+          "confidence": 0.95
         },
         {
           "url": "https://www.books.com.tw/products/0010838188",
@@ -30,14 +30,15 @@
           "authors": [
             "迪米特拉‧喬治"
           ],
-          "confidence": 0.9
+          "confidence": 0.8
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/B00A7EWANE"
     }
   },
   "kobo99": {

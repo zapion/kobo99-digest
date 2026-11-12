@@ -1,0 +1,51 @@
+{
+  "kobo_id": "VE6Q52XO_zO20M4wWG9bmg",
+  "title": "好好拜託",
+  "hints": {
+    "original_title": "Reinforcements: How to Get People to Help You",
+    "original_author": "Heidi Grant"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/39085801-reinforcements",
+      "matched_title": "Reinforcements: How to Get People to Help You",
+      "score": 3.8,
+      "count": 299
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050041684",
+          "title": "好好拜託：哥倫比亞大學最受歡迎的社會心理課，讓人幫你是優勢，連幫你的人都快樂才是本事！ (電子書)",
+          "authors": [
+            "海蒂．格蘭特"
+          ],
+          "confidence": 0.95
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010816786",
+          "title": "好好拜託：哥倫比亞大學最受歡迎的社會心理課， 讓人幫你是優勢，連幫你的人都快樂才是本事！",
+          "authors": [
+            "海蒂．格蘭特"
+          ],
+          "confidence": 0.95
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "search_reported",
+      "url": "https://www.amazon.com/dp/B07PDS87P3",
+      "matched_title": "好好拜託：哥倫比亞大學最受歡迎的社會心理課， 讓人幫你是優勢，連幫你的人都快樂才是本事！ (Traditional Chinese Edition) eBook : 海蒂·格蘭特(Heidi Grant): Kindle Store",
+      "score": 4.6,
+      "count": 6
+    }
+  }
+}

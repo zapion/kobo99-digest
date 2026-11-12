@@ -1,0 +1,56 @@
+{
+  "kobo_id": "8yYOshqREDqbmb9kVTbnfw",
+  "title": "雲端咕咕國",
+  "hints": {
+    "original_title": "Cloud Cuckoo Land",
+    "original_author": "Anthony Doerr"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/59131600-cloud-cuckoo-land",
+      "matched_title": "Cloud Cuckoo Land",
+      "score": 4.24,
+      "count": 287765
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050239911",
+          "title": "雲端咕咕國 (電子書)",
+          "authors": [
+            "安東尼．杜爾"
+          ],
+          "confidence": 0.97
+        },
+        {
+          "url": "https://www.books.com.tw/products/0011003209",
+          "title": "雲端咕咕國",
+          "authors": [
+            "安東尼．杜爾"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "url": "https://www.books.com.tw/products/0011003190",
+          "title": "雲端咕咕國（作者親簽版）",
+          "authors": [
+            "安東尼．杜爾"
+          ],
+          "confidence": 0.6
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.co.jp/dp/0008478295"
+    }
+  }
+}

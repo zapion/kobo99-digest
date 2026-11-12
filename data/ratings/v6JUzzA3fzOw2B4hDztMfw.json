@@ -3,18 +3,17 @@
   "title": "走神",
   "hints": {
     "original_title": "Why Our Minds Wander: Understand the Science and Learn How to Focus Your Thoughts",
-    "original_author": "Arnaud Delorme"
+    "original_author": "Arnaud Delorme Ph.D."
   },
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
-      "status": "no_rating",
-      "url": "https://www.goodreads.com/book/show/42411841"
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "low_confidence",
       "tried": [
         {
@@ -37,7 +36,7 @@
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "not_found"
     }
   },

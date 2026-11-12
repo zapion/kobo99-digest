@@ -15,7 +15,25 @@
       "cover_url": "https://cdn.kobo.com/book-images/c468f61f-c678-469a-b8af-7d5b38435833/300/300/False/VE6Q52XO_zO20M4wWG9bmg.jpg",
       "list_price": 245,
       "sale_price": 99,
-      "sale_date": "2026-11-12"
+      "sale_date": "2026-11-12",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.8,
+          "count": 299,
+          "url": "https://www.goodreads.com/book/show/39085801-reinforcements",
+          "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 6,
+          "url": "https://www.amazon.com/dp/B07PDS87P3",
+          "source": "search"
+        }
+      ]
     },
     {
       "title": "「矽谷製造」的漢堡肉？科技食物狂熱的真相與代價",
@@ -24,7 +42,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/36924c2b-98d3-4cb6-9906-ec0259d16f92/300/300/False/dx53TdvEAzSR19lKtJ6K9g.jpg",
       "list_price": 340,
       "sale_price": 99,
-      "sale_date": "2026-11-13"
+      "sale_date": "2026-11-13",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.57,
+          "count": 311,
+          "url": "https://www.goodreads.com/book/show/51075388-technically-food",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "双重冲击",
@@ -33,7 +61,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/de90021c-acde-46d3-b263-11128eaf8af0/300/300/False/r897xgnRnDOhX7PUkUhe5g.jpg",
       "list_price": 239,
       "sale_price": 99,
-      "sale_date": "2026-11-13"
+      "sale_date": "2026-11-13",
+      "ratings": []
     },
     {
       "title": "雲端咕咕國",
@@ -42,7 +71,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/38a89efb-998e-43a1-a27d-a93704742e6a/300/300/False/8yYOshqREDqbmb9kVTbnfw.jpg",
       "list_price": 476,
       "sale_price": 99,
-      "sale_date": "2026-11-14"
+      "sale_date": "2026-11-14",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.24,
+          "count": 287765,
+          "url": "https://www.goodreads.com/book/show/59131600-cloud-cuckoo-land",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "物種源始（達爾文二一二歲誕辰紀念版，完整重現寫給所有人的演化論）",
@@ -51,7 +90,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/4996bf18-5dad-4713-a33c-635eccb8ff95/300/300/False/SSS7TdbqQzyzxlBX5_SnBg.jpg",
       "list_price": 462,
       "sale_price": 99,
-      "sale_date": "2026-11-15"
+      "sale_date": "2026-11-15",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.01,
+          "count": 125225,
+          "url": "https://www.goodreads.com/book/show/5550904",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "有一種勇敢:叫做自己",
@@ -60,7 +109,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/ecfc610e-7b97-4f4c-b6ec-70dd0cc174d0/300/300/False/9b28lThLmT-YIuj3o26WSw.jpg",
       "list_price": 406,
       "sale_price": 99,
-      "sale_date": "2026-11-16"
+      "sale_date": "2026-11-16",
+      "ratings": []
     },
     {
       "title": "＜經典奇幻文學作家J. R. R. 托爾金1＞霍比特人",
@@ -69,7 +119,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/884f4d0a-7203-4c8a-8fee-86a0f64d20b4/300/300/False/j-r-r-1.jpg",
       "list_price": 364,
       "sale_price": 99,
-      "sale_date": "2026-11-17"
+      "sale_date": "2026-11-17",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.3,
+          "count": 4667879,
+          "url": "https://www.goodreads.com/book/show/5907.The_Hobbit_or_There_and_Back_Again",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "55歲開始的Hello Life",
@@ -78,7 +138,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/c23cf3cf-912a-40b3-9894-61cd5d5b8ac4/300/300/False/55hello-life.jpg",
       "list_price": 266,
       "sale_price": 99,
-      "sale_date": "2026-11-18"
+      "sale_date": "2026-11-18",
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.91,
+          "count": 40,
+          "url": "https://www.goodreads.com/book/show/25351287-55",
+          "source": "page"
+        }
+      ]
     }
   ]
 }

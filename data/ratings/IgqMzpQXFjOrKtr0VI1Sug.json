@@ -17,16 +17,24 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "low_confidence",
       "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050139697",
+          "title": "星際效應：電影幕後的科學事實、推測與想像【諾貝爾物理學獎得主寫給大家的天文學通識課】 (電子書)",
+          "authors": [
+            "基普．索恩"
+          ],
+          "confidence": 0.93
+        },
         {
           "url": "https://www.books.com.tw/products/0010932184",
           "title": "星際效應：電影幕後的科學事實、推測與想像【諾貝爾物理學獎得主寫給大家的天文學通識課】（二版）",
           "authors": [
             "基普．索恩"
           ],
-          "confidence": 0.9
+          "confidence": 0.8
         }
       ]
     },

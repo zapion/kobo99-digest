@@ -1,0 +1,48 @@
+{
+  "kobo_id": "j-r-r-1",
+  "title": "＜經典奇幻文學作家J. R. R. 托爾金1＞霍比特人",
+  "hints": {
+    "original_title": "The Hobbit",
+    "original_author": "J.R.R. Tolkien"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/5907.The_Hobbit_or_There_and_Back_Again",
+      "matched_title": "The Hobbit, or There and Back Again",
+      "score": 4.3,
+      "count": 4667879
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050205641",
+          "title": "＜經典奇幻文學作家J. R. R. 托爾金1＞霍比特人 (電子書)",
+          "authors": [
+            "托爾金"
+          ],
+          "confidence": 0.97
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010983917",
+          "title": "＜經典奇幻文學作家J. R. R. 托爾金1＞霍比特人",
+          "authors": [
+            "托爾金"
+          ],
+          "confidence": 0.93
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/054792822X"
+    }
+  }
+}

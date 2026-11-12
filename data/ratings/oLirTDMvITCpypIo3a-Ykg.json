@@ -17,13 +17,38 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
-      "status": "no_rating",
-      "url": "https://www.books.com.tw/products/0010963450"
+      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0010968928",
+          "title": "建安十三年（全二冊）",
+          "authors": [
+            "鋒雲"
+          ],
+          "confidence": 0.6
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010963450",
+          "title": "建安十三年（上）：東漢亂世的籌謀與布局",
+          "authors": [
+            "鋒雲"
+          ],
+          "confidence": 0.45
+        },
+        {
+          "url": "https://www.books.com.tw/products/0010965882",
+          "title": "建安十三年（下）：三分天下的轉折與變局",
+          "authors": [
+            "鋒雲"
+          ],
+          "confidence": 0.4
+        }
+      ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-10-29T02:21:58+00:00",
+      "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/B0BXD9VKCQ"
     }
