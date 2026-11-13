@@ -44,5 +44,35 @@
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/054792822X"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-13T11:45:09+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 5.0,
+        "count": 2,
+        "url": "https://www.kobo.com/tw/zh/ebook/j-r-r-1"
+      },
+      "books": {
+        "score": 3.5,
+        "count": 6,
+        "url": "https://www.books.com.tw/products/E050205641"
+      },
+      "readmoo": {
+        "score": 4.8,
+        "count": 6,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.3,
+        "count": 4667907,
+        "url": "https://www.goodreads.com/book/show/5907"
+      },
+      "amazon": {
+        "score": 4.7,
+        "count": 82736,
+        "url": "https://www.amazon.com/dp/B0079KT81G"
+      }
+    }
   }
 }
