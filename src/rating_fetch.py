@@ -49,7 +49,7 @@ def _default_opener(request: urllib.request.Request, timeout: float):
 CHALLENGE_HEADERS = {"cf-mitigated": None, "x-amzn-waf-action": frozenset({"challenge", "captcha", "block"})}
 
 
-def _is_challenge(headers: dict, body: str) -> bool:
+def is_challenge(headers: dict, body: str) -> bool:
     for key, value in headers.items():
         expected = CHALLENGE_HEADERS.get(key.lower(), ())
         if expected is None or str(value).strip().lower() in expected:
@@ -67,6 +67,7 @@ class PoliteFetcher:
         self._sleep = sleep
         self._clock = clock
         self._robots: dict[str, urllib.robotparser.RobotFileParser] = {}
+        self._third_party_robots: dict[str, urllib.robotparser.RobotFileParser] = {}
         self._last_request: dict[str, float] = {}
         self._blocked_hosts: set[str] = set()
         self._lock = threading.Lock()  # one request at a time, even when books are enriched in parallel
@@ -108,6 +109,28 @@ class PoliteFetcher:
         with self._lock:
             return self._get(url)
 
+    def robots_allow(self, url: str) -> bool:
+        """robots.txt verdict for a page that is read through a third party (Apify) instead of by us.
+
+        False only when robots.txt could be read and disallows the URL; a robots.txt we cannot
+        read (challenge, error, network) does not count as a refusal here.
+        """
+        parts = urlsplit(url)
+        if parts.scheme != "https" or not parts.hostname:
+            return False
+        origin = f"https://{parts.hostname}"
+        with self._lock:
+            if origin not in self._third_party_robots:
+                parser = urllib.robotparser.RobotFileParser(f"{origin}/robots.txt")
+                try:
+                    status, headers, body = self._raw_get(f"{origin}/robots.txt")
+                    readable = status < 400 and not is_challenge(headers, body)
+                except Blocked:
+                    readable = False
+                parser.parse(body.splitlines() if readable else [])
+                self._third_party_robots[origin] = parser
+            return self._third_party_robots[origin].can_fetch(ROBOTS_AGENT, url)
+
     def _get(self, url: str) -> str:
         parts = urlsplit(url)
         if parts.scheme != "https" or not parts.hostname:
@@ -123,7 +146,7 @@ class PoliteFetcher:
         status, headers, body = self._raw_get(url)
         if status in (404, 410):
             raise NotFound(url)
-        challenged = _is_challenge(headers, body)
+        challenged = is_challenge(headers, body)
         if status in BLOCK_STATUSES or challenged or status >= 400:
             self._blocked_hosts.add(host)
             raise Blocked(f"{host} returned {status}{' (challenge page)' if challenged else ''}")

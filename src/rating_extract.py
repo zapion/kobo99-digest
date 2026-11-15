@@ -1,7 +1,8 @@
 """Pull ratings and book identity out of book pages via structured data, plus title matching.
 
-JSON-LD (Goodreads) is tried first, then schema.org microdata (Readmoo). Both are far more
-stable than CSS selectors; if neither is present the page is treated as having no rating.
+JSON-LD (Goodreads, 博客來) is tried first, with the schema.org JSON Kobo keeps in its ratings
+widget attribute, then schema.org microdata (Readmoo). All are far more stable than CSS
+selectors; if none is present the page is treated as having no rating.
 """
 
 from __future__ import annotations
@@ -14,6 +15,14 @@ import unicodedata
 LD_JSON_RE = re.compile(r'<script[^>]+type="application/ld\+json"[^>]*>(.*?)</script>', re.S | re.I)
 MICRO_VALUE_RE = re.compile(r'itemprop="ratingValue"[^>]*?(?:content|data-score)="([\d.]+)"', re.I)
 MICRO_COUNT_RE = re.compile(r'itemprop="ratingCount"[^>]*>\s*([\d,]+)\s*<', re.I)
+# Kobo: <div data-kobo-gizmo="RatingAndReviewWidget" data-kobo-gizmo-config="{escaped JSON}">, whose
+# googleBook / googleProduct values are schema.org JSON documents stored as strings.
+KOBO_GIZMO_RE = re.compile(r'data-kobo-gizmo-config="([^"]*)"', re.I)
+KOBO_GIZMO_KEYS = ("googleBook", "googleProduct")
+# Kobo, once its ratings widget has rendered: <section class="overall-rating-container"
+# data-rating-value="4.33" data-total-ratings="3">. Other books' star widgets on the page lack this class.
+KOBO_WIDGET_RE = re.compile(
+    r'class="overall-rating-container"[^>]*?data-rating-value="([\d.]+)"[^>]*?data-total-ratings="([\d,]+)"', re.I)
 OG_TITLE_RE = re.compile(r'<meta[^>]+property="og:title"[^>]+content="([^"]*)"', re.I)
 READMOO_OG_RE = re.compile(r"^(.*?)\s+-\s+(.*?)\s*\|\s*Readmoo", re.S)
 SUBTITLE_SPLIT_RE = re.compile(r"[：:（(【\[—–\-]")
@@ -21,13 +30,34 @@ NON_WORD_RE = re.compile(r"[\W_]+", re.UNICODE)
 MIN_TITLE_CHARS = 2
 
 
-def _ld_objects(html: str) -> list[dict]:
-    objects: list[dict] = []
-    for block in LD_JSON_RE.findall(html):
+def _kobo_gizmo_documents(html: str) -> list[object]:
+    """schema.org documents embedded in Kobo's widget config attributes."""
+    documents: list[object] = []
+    for raw in KOBO_GIZMO_RE.findall(html):
         try:
-            data = json.loads(html_lib.unescape(block.strip()))
+            config = json.loads(html_lib.unescape(raw))
         except json.JSONDecodeError:
             continue
+        for key in KOBO_GIZMO_KEYS:
+            value = config.get(key) if isinstance(config, dict) else None
+            if isinstance(value, str):
+                try:
+                    documents.append(json.loads(value))
+                except json.JSONDecodeError:
+                    continue
+    return documents
+
+
+def _ld_objects(html: str) -> list[dict]:
+    documents: list[object] = []
+    for block in LD_JSON_RE.findall(html):
+        try:
+            documents.append(json.loads(html_lib.unescape(block.strip())))
+        except json.JSONDecodeError:
+            continue
+    documents += _kobo_gizmo_documents(html)
+    objects: list[dict] = []
+    for data in documents:
         stack = data if isinstance(data, list) else [data]
         for item in stack:
             if isinstance(item, dict):
@@ -54,6 +84,9 @@ def extract_rating(html: str) -> dict | None:
     if value:
         count = MICRO_COUNT_RE.search(html)
         return {"score": float(value[1]), "count": int(count[1].replace(",", "")) if count else 0}
+    widget = KOBO_WIDGET_RE.search(html)
+    if widget and int(widget[2].replace(",", "")) > 0:  # an unrated book renders the widget with zeros
+        return {"score": float(widget[1]), "count": int(widget[2].replace(",", ""))}
     return None
 
 

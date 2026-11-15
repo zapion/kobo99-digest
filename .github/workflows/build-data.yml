@@ -41,6 +41,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
           CLAUDE_INPUT_TPM: ${{ vars.CLAUDE_INPUT_TPM }}  # optional; default 400000 (80% of 500k/min)
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          APIFY_BUDGET_USD: ${{ vars.APIFY_BUDGET_USD }}
+          APIFY_PLATFORMS: ${{ vars.APIFY_PLATFORMS }}
           ENRICH_REFRESH: ${{ inputs.refresh }}
           ENRICH_TIME_BUDGET_MINUTES: "40"
           PYTHONUNBUFFERED: "1"  # show progress live, and keep it if the step is cut short

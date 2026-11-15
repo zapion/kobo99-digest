@@ -7,7 +7,11 @@ rating. Results are cached in data/ratings/<kobo_id>.json with a TTL per status.
 
 Env: ANTHROPIC_API_KEY (needed for discovery; without it only overrides/cached URLs are refreshed),
 CLAUDE_MODEL (optional), ENRICH_REFRESH=1 (ignore cache TTLs), ENRICH_MAX_BOOKS,
-ENRICH_PLATFORMS (comma list; default goodreads,books,amazon), ENRICH_TIME_BUDGET_MINUTES. Platforms still unrated fall back to kobo99.com's numbers.
+ENRICH_PLATFORMS (comma list; default goodreads,books,amazon, plus kobo when Apify reads it),
+ENRICH_TIME_BUDGET_MINUTES. Platforms still unrated fall back to kobo99.com's numbers.
+
+Optional: APIFY_TOKEN lets pages we cannot fetch ourselves (Kobo, 博客來, Amazon, a blocked Readmoo)
+be read through Apify instead; APIFY_PLATFORMS (comma list) and APIFY_BUDGET_USD (per run) limit it.
 """
 
 from __future__ import annotations
@@ -23,6 +27,7 @@ from typing import Callable
 from zoneinfo import ZoneInfo
 
 import kobo99_fallback
+from apify_fetch import DEFAULT_BUDGET_USD, DEFAULT_PLATFORMS, ApifyError, ApifyReader
 from rating_discover import PLATFORMS, DiscoveryError, canonical_url, discover
 from rating_extract import authors_match, extract_rating, page_identity, titles_match
 from rating_fetch import Blocked, Disallowed, NotFound, PoliteFetcher
@@ -47,6 +52,7 @@ MIN_MODEL_CONFIDENCE = 0.85
 SHOWN_STATUSES = frozenset({"ok", "search_reported"})
 ACTIVE_WINDOW_DAYS = 14
 MAX_BOOKS_PER_RUN = 40
+APIFY_MAX_PAGES = 2  # candidate pages read through Apify per book and platform (each one is paid for)
 WORKERS = 3  # books looked up at once (search results are large; stay under the input-token rate limit); each book's platforms stay sequential (hints flow between them)
 TIME_BUDGET_MINUTES = 40  # stop starting books after this, so the workflow can still commit
 
@@ -131,31 +137,94 @@ def _title_checked_entry(book: dict, candidates: list[dict], hints: dict, base: 
             or {**base, "status": "no_rating", "url": matching[0]["url"]})
 
 
-def _candidates_for(book: dict, platform: str, find: Discover | None, override: str | None,
-                    hints: dict) -> tuple[list[dict] | None, dict]:
+def _candidate(url: str, confidence: float, **flags) -> dict:
+    """A page nobody described to us: it has to pass our own title/author check."""
+    return {"url": url, "title": "", "author": "", "confidence": confidence, "rating": None, "rating_count": None, **flags}
+
+
+def _candidates_for(book: dict, platform: str, find: Discover | None, override: str | None, hints: dict,
+                    own_page: bool = False, extra_url: str | None = None) -> tuple[list[dict] | None, dict]:
+    """Candidate pages, best first. own_page: the book's Kobo page is the only candidate (no search).
+
+    extra_url: a page someone else matched to this book (kobo99.com); added last, never trusted.
+    """
+    spec = PLATFORMS[platform]
     if override:
-        url = canonical_url(PLATFORMS[platform], override)
-        return ([{"url": url, "title": "", "author": "", "confidence": 1.0, "rating": None, "rating_count": None}]
-                if url else []), hints
+        url = canonical_url(spec, override)
+        return ([_candidate(url, 1.0)] if url else []), hints
+    if own_page:
+        url = canonical_url(spec, book.get("kobo_url", ""))
+        return ([_candidate(url, 1.0)] if url else []), hints
+    extra = canonical_url(spec, extra_url) if extra_url else None
+    extras = [_candidate(extra, 0.0, extra=True)] if extra else []
     if find is None:
-        return None, hints
+        return extras or None, hints
     try:
         found = find(book, platform)
     except DiscoveryError as error:
         print(f"[warn] discovery {platform} for {book.get('title')}: {error}", file=sys.stderr)
-        return None, hints
+        return extras or None, hints
     new_hints = {k: found.get(k) for k in ("original_title", "original_author") if found.get(k)}
-    return found["candidates"], {**hints, **new_hints}
+    candidates = found["candidates"]
+    return [*candidates, *(e for e in extras if all(c["url"] != e["url"] for c in candidates))], {**hints, **new_hints}
+
+
+def _apify_entry(book: dict, platform: str, candidates: list[dict], hints: dict, base: dict,
+                 apify: ApifyReader, fetcher: PoliteFetcher, trusted: bool) -> dict | None:
+    """Read candidate pages through Apify and verify them like pages we fetched ourselves.
+
+    None: Apify could not be used (budget spent, error, challenge page), so the caller falls back.
+    """
+    own_page = platform == "kobo"
+    # Confident model matches first, then the page kobo99 points at, then the rest.
+    ordered = sorted(candidates, key=lambda c: 0 if c["confidence"] >= MIN_MODEL_CONFIDENCE else 1 if c.get("extra") else 2)
+    tried, disallowed = [], None
+    for candidate in ordered[:APIFY_MAX_PAGES]:
+        url = candidate["url"]
+        if not fetcher.robots_allow(url):
+            disallowed = disallowed or url
+            continue
+        try:
+            page = apify.read(platform, url)
+        except NotFound:
+            continue
+        except (Blocked, ApifyError) as error:
+            print(f"[warn] apify {platform} for {book.get('title', '')[:24]}: {error}", file=sys.stderr)
+            return None
+        if own_page:
+            matches = titles_match(book.get("title", ""), page["title"])
+        else:
+            matches = trusted or _verified(book, platform, page, hints, candidate)
+        if not matches:
+            tried.append({"url": url, "title": page["title"], "authors": page["authors"],
+                          "confidence": candidate["confidence"]})
+            continue
+        if not page["rating"]:
+            return {**base, "status": "no_rating", "url": url, "via": "apify"}
+        return {**base, "status": "ok", "url": url, "matched_title": page["title"], **page["rating"], "via": "apify"}
+    if tried:
+        return {**base, "status": "low_confidence", "tried": tried}
+    return {**base, "status": "disallowed", "url": disallowed} if disallowed else {**base, "status": "not_found"}
 
 
 def rate_platform(book: dict, platform: str, fetcher: PoliteFetcher, find: Discover | None,
-                  override: str | None, hints: dict, now: str) -> tuple[dict | None, dict]:
-    """Return (cache entry or None when discovery is unavailable, updated hints)."""
-    candidates, hints = _candidates_for(book, platform, find, override, hints)
+                  override: str | None, hints: dict, now: str, apify: ApifyReader | None = None,
+                  extra_url: str | None = None) -> tuple[dict | None, dict]:
+    """Return (cache entry or None when nothing could be looked up this run, updated hints)."""
+    fetchable = PLATFORMS[platform].fetchable
+    via_apify = apify is not None and apify.handles(platform) and apify.has_budget(platform)
+    own_page = via_apify and platform == "kobo"
+    candidates, hints = _candidates_for(book, platform, find, override, hints, own_page,
+                                        extra_url if fetchable or via_apify else None)
     if candidates is None:
         return None, hints
     base = {"platform": platform, "fetched_at": now}
-    if not PLATFORMS[platform].fetchable:
+    if not fetchable:
+        if via_apify:
+            entry = _apify_entry(book, platform, candidates, hints, base, apify, fetcher, bool(override))
+            if entry or own_page:
+                return entry, hints  # own page unread: leave it for the next run instead of guessing
+            candidates = [c for c in candidates if not c.get("extra")]
         if platform == "kobo":
             return _own_page_entry(book, candidates, base), hints
         return _title_checked_entry(book, candidates, hints, base), hints
@@ -174,6 +243,11 @@ def rate_platform(book: dict, platform: str, fetcher: PoliteFetcher, find: Disco
             problem = problem or {"status": "disallowed", "url": url}
             continue
         except Blocked as error:
+            if via_apify:  # the pages we could not read ourselves, through Apify
+                unread = [c for c in candidates if c["url"] in unreadable]
+                entry = _apify_entry(book, platform, unread, hints, base, apify, fetcher, bool(override))
+                if entry:
+                    return entry, hints
             problem = {"status": "blocked", "url": url, "detail": str(error)}
             break  # the host refuses us for the rest of this run
         unreadable.discard(url)
@@ -194,22 +268,37 @@ def rate_platform(book: dict, platform: str, fetcher: PoliteFetcher, find: Disco
     return {**base, "status": "low_confidence", "tried": tried}, hints
 
 
-def platforms_from_env(value: str) -> tuple[str, ...]:
-    """ENRICH_PLATFORMS="a,b" → known platforms in processing order; empty → SEARCH_PLATFORMS."""
+def platforms_from_env(value: str, apify: ApifyReader | None = None) -> tuple[str, ...]:
+    """ENRICH_PLATFORMS="a,b" → known platforms in processing order; empty → SEARCH_PLATFORMS,
+    plus Kobo when Apify can read its page (that needs no search)."""
     names = {name.strip() for name in value.split(",") if name.strip()}
-    return tuple(p for p in PLATFORM_ORDER if p in names) if names else SEARCH_PLATFORMS
+    if not names:
+        names = {*SEARCH_PLATFORMS, *(("kobo",) if apify is not None and apify.handles("kobo") else ())}
+    return tuple(p for p in PLATFORM_ORDER if p in names)
+
+
+def apify_from_env(env: dict) -> ApifyReader | None:
+    """ApifyReader when APIFY_TOKEN is set; APIFY_PLATFORMS and APIFY_BUDGET_USD narrow it."""
+    token = (env.get("APIFY_TOKEN") or "").strip()
+    if not token:
+        return None
+    names = {name.strip() for name in (env.get("APIFY_PLATFORMS") or "").split(",") if name.strip()}
+    platforms = tuple(p for p in PLATFORMS if p in names) if names else DEFAULT_PLATFORMS
+    return ApifyReader(token, float(env.get("APIFY_BUDGET_USD") or DEFAULT_BUDGET_USD), platforms)
 
 
 def enrich_book(book: dict, cache: dict, fetcher: PoliteFetcher, find: Discover | None,
                 overrides: dict, today: dt.date, now: str, refresh: bool = False,
-                only: tuple[str, ...] = PLATFORM_ORDER) -> dict:
+                only: tuple[str, ...] = PLATFORM_ORDER, apify: ApifyReader | None = None,
+                extra_urls: dict | None = None) -> dict:
     platforms = dict(cache.get("platforms", {}))
     hints = dict(cache.get("hints", {}))
     for platform in only:
         override = overrides.get(platform)
         if not needs_update(platforms.get(platform), platform, override, today, refresh):
             continue
-        entry, hints = rate_platform(book, platform, fetcher, find, override, hints, now)
+        entry, hints = rate_platform(book, platform, fetcher, find, override, hints, now, apify,
+                                     (extra_urls or {}).get(platform))
         if entry:
             platforms[platform] = entry
             print(f"{book.get('title', '')[:24]} | {platform}: {entry['status']} {entry.get('score', '')} {entry.get('url', '')}")
@@ -285,9 +374,15 @@ def _enrich_all(books: list[dict], caches: dict, enrich_one: Callable[[dict, dic
         print(f"[warn] time budget reached: {skipped} books left for the next run", file=sys.stderr)
 
 
+def _fallback_urls(cache: dict, fresh: dict | None) -> dict:
+    """{platform: url} of the pages kobo99.com matched to a book (this run's numbers, else the cached ones)."""
+    ratings = fresh or cache.get("kobo99", {}).get("ratings", {})
+    return {platform: rating["url"] for platform, rating in ratings.items() if rating.get("url")}
+
+
 def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover | None, max_books: int,
         refresh: bool = False, platforms: tuple[str, ...] = PLATFORM_ORDER, fallback: dict | None = None,
-        deadline: float | None = None, workers: int = WORKERS) -> dict:
+        deadline: float | None = None, workers: int = WORKERS, apify: ApifyReader | None = None) -> dict:
     """Update the given platforms; ratings of every platform already cached are still published."""
     ratings_dir = data_dir / RATINGS_DIRNAME
     overrides = _read_json(data_dir / OVERRIDES_NAME, {})
@@ -297,8 +392,9 @@ def run(data_dir: Path, today: dt.date, fetcher: PoliteFetcher, find: Discover |
     caches = {kobo_id: _read_json(ratings_dir / f"{kobo_id}.json", {}) for kobo_id in ids}
 
     due = _stale_books([data for _path, data in lists], caches, overrides, today, refresh, platforms)[:max_books]
-    enrich_one = lambda book, cache: enrich_book(book, cache, fetcher, find, overrides.get(ebook_id(book["kobo_url"]), {}),
-                                                 today, now, refresh, platforms)
+    enrich_one = lambda book, cache: enrich_book(
+        book, cache, fetcher, find, overrides.get(ebook_id(book["kobo_url"]), {}), today, now, refresh, platforms,
+        apify, _fallback_urls(cache, (fallback or {}).get(ebook_id(book["kobo_url"]))))
     stats = {"enriched": 0, "cached": len(ids) - len(due), "lists_updated": 0}
 
     def save(updated: dict) -> None:
@@ -334,11 +430,14 @@ def main() -> int:
     today = dt.datetime.now(TAIPEI).date()
     refresh = os.getenv("ENRICH_REFRESH", "").lower() in ("1", "true", "yes")
     fetcher = PoliteFetcher()
+    apify = apify_from_env(dict(os.environ))
     fallback = kobo99_fallback.load(fetcher)
     print(f"kobo99 fallback: {len(fallback)} books")
     deadline = time.monotonic() + float(os.getenv("ENRICH_TIME_BUDGET_MINUTES", TIME_BUDGET_MINUTES)) * 60
     stats = run(DATA_DIR, today, fetcher, find, int(os.getenv("ENRICH_MAX_BOOKS", MAX_BOOKS_PER_RUN)), refresh,
-                platforms_from_env(os.getenv("ENRICH_PLATFORMS", "")), fallback, deadline)
+                platforms_from_env(os.getenv("ENRICH_PLATFORMS", ""), apify), fallback, deadline, apify=apify)
+    if apify is not None:
+        stats = {**stats, "apify_calls": apify.calls, "apify_usd_estimate": round(apify.spent, 4)}
     print(json.dumps(stats))
     return 0
 
