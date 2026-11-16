@@ -32,12 +32,13 @@
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "search_reported",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
       "url": "https://www.amazon.com/dp/0062339338",
       "matched_title": "Against Empathy: The Case for Rational Compassion",
-      "score": 4.3,
-      "count": 668
+      "score": 4.2,
+      "count": 1215,
+      "via": "apify"
     }
   },
   "kobo99": {

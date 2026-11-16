@@ -20,6 +20,13 @@
       "platform": "amazon",
       "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/89iX_nl4MTa8ob8tfLYGpw",
+      "via": "apify"
     }
   },
   "kobo99": {

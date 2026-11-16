@@ -5,18 +5,33 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
       "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050358439",
+      "matched_title": "深度提問：拒絕思考外包！運用 6 大提問框架，破解 AI 演算法的平庸陷阱，建立不可替代的深度洞察力 (電子書)",
+      "score": 3.5,
+      "count": 1,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
       "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/6-ai",
+      "matched_title": "深度提問：拒絕思考外包！運用 6 大提問框架，破解 AI 演算法的平庸陷阱，建立不可替代的深度洞察力",
+      "score": 5.0,
+      "count": 1,
+      "via": "apify"
     }
   },
   "kobo99": {

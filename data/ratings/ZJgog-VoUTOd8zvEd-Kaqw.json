@@ -1,0 +1,40 @@
+{
+  "kobo_id": "ZJgog-VoUTOd8zvEd-Kaqw",
+  "title": "我們現在能分手了嗎？",
+  "hints": {
+    "original_title": "もう別れてもいいですか",
+    "original_author": "垣谷美雨"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050361010",
+      "matched_title": "我們現在能分手了嗎？（席捲日本女性讀者，「這根本就是我」共鳴話題書！） (電子書)",
+      "score": 5.0,
+      "count": 1,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/ZJgog-VoUTOd8zvEd-Kaqw",
+      "matched_title": "我們現在能分手了嗎？（席捲日本女性讀者，「這根本就是我」共鳴話題書！）",
+      "score": 4.67,
+      "count": 3,
+      "via": "apify"
+    }
+  }
+}

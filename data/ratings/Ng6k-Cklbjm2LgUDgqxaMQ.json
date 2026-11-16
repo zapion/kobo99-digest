@@ -1,0 +1,40 @@
+{
+  "kobo_id": "Ng6k-Cklbjm2LgUDgqxaMQ",
+  "title": "船長的晚餐",
+  "hints": {
+    "original_title": "Captain's Dinner",
+    "original_author": "Adam Cohen"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B0DXD5K14B",
+      "matched_title": "Captain's Dinner: A Shipwreck, An Act of Cannibalism, and a Murder Trial That Changed Legal History",
+      "score": 4.4,
+      "count": 157,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/Ng6k-Cklbjm2LgUDgqxaMQ",
+      "matched_title": "船長的晚餐：食人船難與改寫歷史的謀殺審判",
+      "score": 4.0,
+      "count": 1,
+      "via": "apify"
+    }
+  }
+}

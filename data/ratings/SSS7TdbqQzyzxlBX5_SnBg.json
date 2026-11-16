@@ -35,6 +35,16 @@
       "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/1841939897"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/SSS7TdbqQzyzxlBX5_SnBg",
+      "matched_title": "物種源始（達爾文二一二歲誕辰紀念版，完整重現寫給所有人的演化論）",
+      "score": 5.0,
+      "count": 3,
+      "via": "apify"
     }
   },
   "kobo99": {

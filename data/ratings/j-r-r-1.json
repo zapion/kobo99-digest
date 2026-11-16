@@ -43,6 +43,16 @@
       "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/054792822X"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/j-r-r-1",
+      "matched_title": "＜經典奇幻文學作家J. R. R. 托爾金1＞霍比特人",
+      "score": 5.0,
+      "count": 2,
+      "via": "apify"
     }
   },
   "kobo99": {

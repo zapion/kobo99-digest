@@ -1,0 +1,46 @@
+{
+  "kobo_id": "VDZ2zHKh0TqZh7N0PAVnvg",
+  "title": "聰明人才懂的清晰思考",
+  "hints": {
+    "original_title": "Think Clearly: Eight Simple Rules to Succeed in the Data Age",
+    "original_author": "Kiko Llaneras"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/122781472-clear-thinking",
+      "matched_title": "Clear Thinking: Turning Ordinary Moments into Extraordinary Results",
+      "score": 4.14,
+      "count": 11978
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011062965",
+          "title": "聰明人才懂的清晰思考：簡單算計搞定複雜數據世界的八大法則",
+          "authors": [
+            "奇科．亞內拉斯"
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/VDZ2zHKh0TqZh7N0PAVnvg",
+      "via": "apify"
+    }
+  }
+}

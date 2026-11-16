@@ -31,6 +31,16 @@
       "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/0063251981"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/Ij08Z7cqwjGpxHDWbTFpbw",
+      "matched_title": "惡魔浮生錄（普立茲小說獎與女性文學獎雙冠鉅著）",
+      "score": 4.75,
+      "count": 4,
+      "via": "apify"
     }
   },
   "kobo99": {

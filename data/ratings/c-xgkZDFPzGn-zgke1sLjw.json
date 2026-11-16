@@ -1,0 +1,29 @@
+{
+  "kobo_id": "c-xgkZDFPzGn-zgke1sLjw",
+  "title": "駕馭幸運",
+  "hints": {},
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/c-xgkZDFPzGn-zgke1sLjw",
+      "via": "apify"
+    }
+  }
+}

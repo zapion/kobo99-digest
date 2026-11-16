@@ -35,6 +35,16 @@
       "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/1419747096"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/dx53TdvEAzSR19lKtJ6K9g",
+      "matched_title": "「矽谷製造」的漢堡肉？科技食物狂熱的真相與代價",
+      "score": 5.0,
+      "count": 1,
+      "via": "apify"
     }
   },
   "kobo99": {

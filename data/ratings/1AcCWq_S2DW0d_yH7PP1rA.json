@@ -25,6 +25,16 @@
       "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/1635575567"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/1AcCWq_S2DW0d_yH7PP1rA",
+      "matched_title": "荊棘與玫瑰【荊棘與玫瑰系列1】",
+      "score": 4.5,
+      "count": 2,
+      "via": "apify"
     }
   },
   "kobo99": {

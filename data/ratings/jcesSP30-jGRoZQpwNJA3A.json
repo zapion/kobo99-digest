@@ -42,6 +42,16 @@
           "confidence": 0.3
         }
       ]
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/jcesSP30-jGRoZQpwNJA3A",
+      "matched_title": "勝出99%人的成癮式學習法",
+      "score": 4.24,
+      "count": 37,
+      "via": "apify"
     }
   },
   "kobo99": {

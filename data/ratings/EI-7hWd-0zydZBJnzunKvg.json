@@ -39,6 +39,16 @@
       "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/6263552182"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/EI-7hWd-0zydZBJnzunKvg",
+      "matched_title": "聰明簡潔的溝通：200字寫重點，26秒贏得注意力",
+      "score": 4.32,
+      "count": 22,
+      "via": "apify"
     }
   },
   "kobo99": {

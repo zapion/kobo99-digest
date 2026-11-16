@@ -8,19 +8,44 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/232207607",
+      "matched_title": "How to AI: Cut Through the Hype. Master the Basics. Transform Your Work.",
+      "score": 3.69,
+      "count": 177
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050357893",
+          "title": "工作者必備・AI法則——24個簡易法則幫助你看穿炒作、掌握基礎、徹底翻轉工作型態 (電子書)",
+          "authors": [
+            "克利斯托福．米姆"
+          ],
+          "confidence": 0.0
+        }
+      ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B0F6MKZ1DH",
+      "matched_title": "How to AI: Cut Through the Hype. Master the Basics. Transform Your Work.",
+      "score": 4.2,
+      "count": 58,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
       "status": "no_rating",
-      "url": "https://www.amazon.com/dp/B0F6MKZ1DH"
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-24-1",
+      "via": "apify"
     }
   },
   "kobo99": {

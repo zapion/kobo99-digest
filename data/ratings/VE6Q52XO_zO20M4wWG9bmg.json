@@ -46,6 +46,16 @@
       "matched_title": "好好拜託：哥倫比亞大學最受歡迎的社會心理課， 讓人幫你是優勢，連幫你的人都快樂才是本事！ (Traditional Chinese Edition) eBook : 海蒂·格蘭特(Heidi Grant): Kindle Store",
       "score": 4.6,
       "count": 6
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/VE6Q52XO_zO20M4wWG9bmg",
+      "matched_title": "好好拜託：哥倫比亞大學最受歡迎的社會心理課，讓人幫你是優勢，連幫你的人都快樂才是本事！",
+      "score": 4.33,
+      "count": 9,
+      "via": "apify"
     }
   },
   "kobo99": {

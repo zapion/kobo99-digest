@@ -1,0 +1,30 @@
+{
+  "kobo_id": "vn6YGXio_j-Ts_KHbmphQA",
+  "title": "惡意是怎麼形成的？",
+  "hints": {
+    "original_title": "Dark Factor - Die Essenz des Bösen in uns",
+    "original_author": "Benjamin E. Hilbig, Morten Moshagen, Ingo Zettler"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011058800",
+      "matched_title": "惡意是怎麼形成的？：從霸凌、劈腿到仇恨言論，歷時15年、全球超過250萬筆研究數據，心理學家教你揪出身邊有問題的人！",
+      "score": 5.0,
+      "count": 4,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    }
+  }
+}

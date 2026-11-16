@@ -35,6 +35,16 @@
       "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/1633691780"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/WMJk-em_KDWNraeX6NhZ_w",
+      "matched_title": "破壞性創新：勢不可擋的顛覆力量，在被忽視處創造價值，改變競爭路徑，切換成長新賽道",
+      "score": 3.0,
+      "count": 1,
+      "via": "apify"
     }
   },
   "kobo99": {

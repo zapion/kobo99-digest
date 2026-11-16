@@ -15,7 +15,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/ecdde72e-64fc-45c3-985d-7185c883c330/300/300/False/T6zo1rG7xzGuYXDmhy_ysg.jpg",
       "list_price": 287,
       "sale_price": 244,
-      "rank": 1
+      "rank": 1,
+      "ratings": []
     },
     {
       "title": "存在感",
@@ -24,7 +25,25 @@
       "cover_url": "https://cdn.kobo.com/book-images/789746ab-c4b1-4f85-976a-c413dcab9e49/300/300/False/xnAOk9kVHjKCEE9q4wbHhQ.jpg",
       "list_price": 287,
       "sale_price": 244,
-      "rank": 2
+      "rank": 2,
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 3,
+          "url": "https://www.books.com.tw/products/0011063337",
+          "source": "page"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 3.52,
+          "count": 2758,
+          "url": "https://www.goodreads.com/book/show/18498555-executive-presence",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "聰明人才懂的清晰思考",
@@ -33,7 +52,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/d74556e2-98a8-4d66-b842-96aed3701875/300/300/False/VDZ2zHKh0TqZh7N0PAVnvg.jpg",
       "list_price": 351,
       "sale_price": 298,
-      "rank": 3
+      "rank": 3,
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.14,
+          "count": 11978,
+          "url": "https://www.goodreads.com/book/show/122781472-clear-thinking",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "迷你退休",
@@ -42,7 +71,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/f1095dae-adb9-423f-93a5-abfeddc14d3d/300/300/False/zgWGYwsmmD2EwSYncwmPog.jpg",
       "list_price": 322,
       "sale_price": 274,
-      "rank": 4
+      "rank": 4,
+      "ratings": []
     },
     {
       "title": "我們現在能分手了嗎？",
@@ -51,7 +81,25 @@
       "cover_url": "https://cdn.kobo.com/book-images/e1862fda-b5ea-4caa-b208-6b6960a8e446/300/300/False/ZJgog-VoUTOd8zvEd-Kaqw.jpg",
       "list_price": 268,
       "sale_price": 228,
-      "rank": 5
+      "rank": 5,
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.67,
+          "count": 3,
+          "url": "https://www.kobo.com/tw/zh/ebook/ZJgog-VoUTOd8zvEd-Kaqw",
+          "source": "page"
+        },
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://www.books.com.tw/products/E050361010",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "駕馭幸運",
@@ -60,7 +108,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/2582de96-269b-47e6-8dab-e1afa324499a/300/300/False/c-xgkZDFPzGn-zgke1sLjw.jpg",
       "list_price": 310,
       "sale_price": 264,
-      "rank": 6
+      "rank": 6,
+      "ratings": []
     },
     {
       "title": "船長的晚餐",
@@ -69,7 +118,25 @@
       "cover_url": "https://cdn.kobo.com/book-images/1901de7b-d233-4f77-9f92-1d343018580f/300/300/False/Ng6k-Cklbjm2LgUDgqxaMQ.jpg",
       "list_price": 425,
       "sale_price": 361,
-      "rank": 7
+      "rank": 7,
+      "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 4.0,
+          "count": 1,
+          "url": "https://www.kobo.com/tw/zh/ebook/Ng6k-Cklbjm2LgUDgqxaMQ",
+          "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.4,
+          "count": 157,
+          "url": "https://www.amazon.com/dp/B0DXD5K14B",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "惡意是怎麼形成的？",
@@ -78,7 +145,17 @@
       "cover_url": "https://cdn.kobo.com/book-images/5130bf0d-d48e-4ec2-8db4-c90bd0fd364d/300/300/False/vn6YGXio_j-Ts_KHbmphQA.jpg",
       "list_price": 289,
       "sale_price": 246,
-      "rank": 8
+      "rank": 8,
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 5.0,
+          "count": 4,
+          "url": "https://www.books.com.tw/products/0011058800",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "金錢治療",
@@ -87,7 +164,25 @@
       "cover_url": "https://cdn.kobo.com/book-images/ef50d10b-1cf8-49c4-aef0-f5176163192c/300/300/False/ZC2OuKLXPz-miARamf0AbA.jpg",
       "list_price": 375,
       "sale_price": 319,
-      "rank": 9
+      "rank": 9,
+      "ratings": [
+        {
+          "platform": "books",
+          "name": "博客來",
+          "score": 4.0,
+          "count": 3,
+          "url": "https://www.books.com.tw/products/E050351035",
+          "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.4,
+          "count": 54,
+          "url": "https://www.amazon.com/dp/1788708172",
+          "source": "page"
+        }
+      ]
     },
     {
       "title": "笑與幽默",
@@ -96,7 +191,8 @@
       "cover_url": "https://cdn.kobo.com/book-images/c0500494-f1b4-4f9a-a48b-df15330680ea/300/300/False/rfxGnD4iPjKH2gKWSrjdjw.jpg",
       "list_price": 327,
       "sale_price": 278,
-      "rank": 10
+      "rank": 10,
+      "ratings": []
     }
   ]
 }

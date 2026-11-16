@@ -1,0 +1,31 @@
+{
+  "kobo_id": "zgWGYwsmmD2EwSYncwmPog",
+  "title": "迷你退休",
+  "hints": {},
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0010751724",
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/zgWGYwsmmD2EwSYncwmPog",
+      "via": "apify"
+    }
+  }
+}

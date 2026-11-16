@@ -1,0 +1,42 @@
+{
+  "kobo_id": "ZC2OuKLXPz-miARamf0AbA",
+  "title": "金錢治療",
+  "hints": {
+    "original_title": "Money on Your Mind: The Psychology Behind Your Financial Habits",
+    "original_author": "Vicky Reynal"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050351035",
+      "matched_title": "金錢治療——看懂金錢習慣背後的情緒與創傷，修復你與金錢的關係 (電子書)",
+      "score": 4.0,
+      "count": 3,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/1788708172",
+      "matched_title": "Money on Your Mind: The Psychology Behind Your Financial Habits",
+      "score": 4.4,
+      "count": 54,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/ZC2OuKLXPz-miARamf0AbA",
+      "via": "apify"
+    }
+  }
+}

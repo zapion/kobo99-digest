@@ -31,6 +31,16 @@
       "platform": "amazon",
       "fetched_at": "2026-11-09T02:31:58+00:00",
       "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/DD8YXngrdzau8FKQ_dzZqw",
+      "matched_title": "荊棘之路【澳洲「南極光獎」得獎作！獲獎無數的澳洲奇幻小說家首部來台著作】",
+      "score": 4.0,
+      "count": 2,
+      "via": "apify"
     }
   },
   "kobo99": {

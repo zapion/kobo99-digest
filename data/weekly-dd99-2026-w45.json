@@ -20,10 +20,10 @@
         {
           "platform": "kobo",
           "name": "Kobo",
-          "score": 4.3,
+          "score": 4.32,
           "count": 22,
           "url": "https://www.kobo.com/tw/zh/ebook/EI-7hWd-0zydZBJnzunKvg",
-          "source": "kobo99"
+          "source": "page"
         },
         {
           "platform": "books",
@@ -117,7 +117,7 @@
           "score": 5.0,
           "count": 1,
           "url": "https://www.kobo.com/tw/zh/ebook/qEpAJYls6Dq-VSnrVg5bcA",
-          "source": "kobo99"
+          "source": "page"
         },
         {
           "platform": "goodreads",
@@ -141,10 +141,10 @@
         {
           "platform": "kobo",
           "name": "Kobo",
-          "score": 4.7,
-          "count": 3,
+          "score": 4.75,
+          "count": 4,
           "url": "https://www.kobo.com/tw/zh/ebook/Ij08Z7cqwjGpxHDWbTFpbw",
-          "source": "kobo99"
+          "source": "page"
         },
         {
           "platform": "books",
@@ -235,10 +235,10 @@
         {
           "platform": "kobo",
           "name": "Kobo",
-          "score": 4.3,
-          "count": 34,
+          "score": 4.24,
+          "count": 37,
           "url": "https://www.kobo.com/tw/zh/ebook/jcesSP30-jGRoZQpwNJA3A",
-          "source": "kobo99"
+          "source": "page"
         },
         {
           "platform": "books",

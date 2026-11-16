@@ -1,0 +1,41 @@
+{
+  "kobo_id": "xnAOk9kVHjKCEE9q4wbHhQ",
+  "title": "存在感",
+  "hints": {
+    "original_title": "Mattering: The Secret to a Life of Deep Connection and Purpose",
+    "original_author": "Jennifer Wallace"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/18498555-executive-presence",
+      "matched_title": "Executive Presence: The Missing Link Between Merit and Success ― A Guide to Looking and Acting Like a Leader",
+      "score": 3.52,
+      "count": 2758
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011063337",
+      "matched_title": "存在感：在疏離時代重建深層連結與自我價值，重啟豐盛人生的終極力量",
+      "score": 5.0,
+      "count": 3,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/xnAOk9kVHjKCEE9q4wbHhQ",
+      "via": "apify"
+    }
+  }
+}

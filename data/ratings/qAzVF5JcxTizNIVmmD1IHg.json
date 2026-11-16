@@ -5,18 +5,35 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
       "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
       "status": "not_found"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.co.jp/dp/4022520841",
+          "title": "お金の不安という幻想　一生働く時代で希望をつかむ８つの視点",
+          "authors": [
+            "田内 学"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/qAzVF5JcxTizNIVmmD1IHg",
+      "via": "apify"
     }
   },
   "kobo99": {

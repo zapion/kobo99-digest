@@ -1,0 +1,42 @@
+{
+  "kobo_id": "T6zo1rG7xzGuYXDmhy_ysg",
+  "title": "會溝通的同事有祕密",
+  "hints": {
+    "original_title": "The Secret Language of Work: Hyper-Helpful Scripts for Every Situation",
+    "original_author": "Erin McGoff"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011063286",
+          "title": "會溝通的同事有祕密：你不只要會做事，還要懂這些職場眉角",
+          "authors": [
+            "艾琳．麥高夫"
+          ],
+          "confidence": 0.97
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-16T02:31:58+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/T6zo1rG7xzGuYXDmhy_ysg",
+      "via": "apify"
+    }
+  }
+}
