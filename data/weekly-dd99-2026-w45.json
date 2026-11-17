@@ -195,7 +195,7 @@
           "score": 4.0,
           "count": 3,
           "url": "https://www.kobo.com/tw/zh/ebook/101-netflix",
-          "source": "kobo99"
+          "source": "page"
         },
         {
           "platform": "readmoo",
@@ -305,10 +305,10 @@
         {
           "platform": "kobo",
           "name": "Kobo",
-          "score": 4.3,
+          "score": 4.33,
           "count": 3,
           "url": "https://www.kobo.com/tw/zh/ebook/-gKT8GJNkDyL5QE-qH4zew",
-          "source": "kobo99"
+          "source": "page"
         },
         {
           "platform": "readmoo",

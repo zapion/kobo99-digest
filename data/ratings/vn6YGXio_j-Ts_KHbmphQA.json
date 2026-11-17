@@ -25,6 +25,41 @@
       "platform": "amazon",
       "fetched_at": "2026-11-16T02:31:58+00:00",
       "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/vn6YGXio_j-Ts_KHbmphQA",
+      "matched_title": "惡意是怎麼形成的？：從霸凌、劈腿到仇恨言論，歷時15年、全球超過250萬筆研究數據，心理學家教你揪出身邊有問題的人！",
+      "score": 1.5,
+      "count": 2,
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-17T12:39:30+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 1.5,
+        "count": 2,
+        "url": "https://www.kobo.com/tw/zh/ebook/vn6YGXio_j-Ts_KHbmphQA"
+      },
+      "books": {
+        "score": 5.0,
+        "count": 4,
+        "url": "https://www.books.com.tw/products/E050354124"
+      },
+      "goodreads": {
+        "score": 4.0,
+        "count": 8,
+        "url": "https://www.goodreads.com/book/show/230604921"
+      },
+      "amazon": {
+        "score": 3.7,
+        "count": 6,
+        "url": "https://www.amazon.com/dp/B0F2VCCHJP"
+      }
     }
   }
 }

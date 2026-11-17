@@ -2,7 +2,7 @@
   "kobo_id": "plfJRKOHdjCFxpOP7XYiKg",
   "title": "脆弱的一瞬",
   "hints": {
-    "original_title": "Our Fragile Moment: How Lessons from Earth's Past Can Help Us Survive the Climate Crisis",
+    "original_title": "Our Fragile Moment",
     "original_author": "Michael E. Mann"
   },
   "platforms": {
@@ -17,13 +17,30 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050342857",
+      "matched_title": "脆弱的一瞬：從冰凍到超高溫時代，重返45億年氣候史，直指人類百年的存亡危機 (電子書)",
+      "score": 3.5,
+      "count": 1,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B0BRJ6SCFM",
+      "matched_title": "Our Fragile Moment: How Lessons from Earth's Past Can Help Us Survive the Climate Crisis",
+      "score": 4.6,
+      "count": 185,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/plfJRKOHdjCFxpOP7XYiKg",
+      "via": "apify"
     }
   },
   "kobo99": {

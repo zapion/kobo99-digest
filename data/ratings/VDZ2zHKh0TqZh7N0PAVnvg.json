@@ -42,5 +42,25 @@
       "url": "https://www.kobo.com/tw/zh/ebook/VDZ2zHKh0TqZh7N0PAVnvg",
       "via": "apify"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-17T12:39:30+00:00",
+    "ratings": {
+      "books": {
+        "score": 4.5,
+        "count": 2,
+        "url": "https://www.books.com.tw/products/E050358447"
+      },
+      "goodreads": {
+        "score": 4.11,
+        "count": 452,
+        "url": "https://www.goodreads.com/book/show/223242502"
+      },
+      "amazon": {
+        "score": 4.5,
+        "count": 14,
+        "url": "https://www.amazon.com/dp/B0D2KS1GZD"
+      }
+    }
   }
 }

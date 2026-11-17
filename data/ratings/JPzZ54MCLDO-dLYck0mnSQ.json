@@ -52,6 +52,16 @@
           "confidence": 0.85
         }
       ]
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/JPzZ54MCLDO-dLYck0mnSQ",
+      "matched_title": "時光機器【威爾斯科幻經典四部曲1】",
+      "score": 4.5,
+      "count": 4,
+      "via": "apify"
     }
   },
   "kobo99": {

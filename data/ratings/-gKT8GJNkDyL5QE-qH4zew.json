@@ -44,6 +44,16 @@
           "confidence": 0.45
         }
       ]
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/-gKT8GJNkDyL5QE-qH4zew",
+      "matched_title": "極簡法國史",
+      "score": 4.33,
+      "count": 3,
+      "via": "apify"
     }
   },
   "kobo99": {

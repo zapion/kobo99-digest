@@ -46,6 +46,16 @@
       "matched_title": "Kings of Crypto: One Startup's Quest to Take Cryptocurrency Out of Silicon Valley and Onto Wall Street",
       "score": 4.5,
       "count": 286
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/z-LH-l5djjWLh2A_832zpQ",
+      "matched_title": "加密貨幣之王：從矽谷到華爾街，虛擬貨幣如何顛覆金融秩序",
+      "score": 4.38,
+      "count": 16,
+      "via": "apify"
     }
   },
   "kobo99": {

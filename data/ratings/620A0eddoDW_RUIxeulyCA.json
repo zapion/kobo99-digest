@@ -8,28 +8,40 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "blocked",
+      "url": "https://www.goodreads.com/book/show/249408365-taipei-story",
+      "detail": "www.goodreads.com returned 202 (challenge page)"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/0011060640",
-          "title": "臺北故事",
-          "authors": [
-            "匡靈秀"
-          ],
-          "confidence": 0.9
-        }
-      ]
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011060640",
+      "matched_title": "臺北故事",
+      "score": 4.0,
+      "count": 9,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B0GBZS9FMG",
+      "matched_title": "Taipei Story: The Profound and Poignant New Novel from the Author of Yellowface and Katabasis",
+      "score": 3.9,
+      "count": 744,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/620A0eddoDW_RUIxeulyCA",
+      "matched_title": "臺北故事",
+      "score": 4.0,
+      "count": 1,
+      "via": "apify"
     }
   },
   "kobo99": {

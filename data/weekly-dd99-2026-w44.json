@@ -20,10 +20,10 @@
         {
           "platform": "kobo",
           "name": "Kobo",
-          "score": 4.4,
-          "count": 9,
+          "score": 3.82,
+          "count": 11,
           "url": "https://www.kobo.com/tw/zh/ebook/awYZAoybGzOa1qVLW83L0A",
-          "source": "kobo99"
+          "source": "page"
         },
         {
           "platform": "books",
@@ -71,10 +71,10 @@
         {
           "platform": "kobo",
           "name": "Kobo",
-          "score": 4.4,
+          "score": 4.38,
           "count": 16,
           "url": "https://www.kobo.com/tw/zh/ebook/z-LH-l5djjWLh2A_832zpQ",
-          "source": "kobo99"
+          "source": "page"
         },
         {
           "platform": "books",
@@ -149,10 +149,10 @@
         {
           "platform": "kobo",
           "name": "Kobo",
-          "score": 4.3,
-          "count": 3,
+          "score": 4.5,
+          "count": 4,
           "url": "https://www.kobo.com/tw/zh/ebook/JPzZ54MCLDO-dLYck0mnSQ",
-          "source": "kobo99"
+          "source": "page"
         },
         {
           "platform": "books",
@@ -197,6 +197,14 @@
       "sale_price": 99,
       "sale_date": "2026-11-01",
       "ratings": [
+        {
+          "platform": "kobo",
+          "name": "Kobo",
+          "score": 5.0,
+          "count": 1,
+          "url": "https://www.kobo.com/tw/zh/ebook/IgqMzpQXFjOrKtr0VI1Sug",
+          "source": "page"
+        },
         {
           "platform": "books",
           "name": "博客來",
@@ -289,7 +297,7 @@
           "score": 5.0,
           "count": 1,
           "url": "https://www.kobo.com/tw/zh/ebook/Ws_QAuU3zzCAK_QIQQnH7g",
-          "source": "kobo99"
+          "source": "page"
         },
         {
           "platform": "books",

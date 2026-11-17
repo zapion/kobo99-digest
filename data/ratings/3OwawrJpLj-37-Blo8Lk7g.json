@@ -39,6 +39,13 @@
       "score": 4.2,
       "count": 1215,
       "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/3OwawrJpLj-37-Blo8Lk7g",
+      "via": "apify"
     }
   },
   "kobo99": {

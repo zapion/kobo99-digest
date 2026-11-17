@@ -21,6 +21,16 @@
       "platform": "amazon",
       "fetched_at": "2026-11-12T02:22:11+00:00",
       "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/Ws_QAuU3zzCAK_QIQQnH7g",
+      "matched_title": "桌遊教養全攻略：從遊戲中培養孩子的專注力、人際力、學習力",
+      "score": 5.0,
+      "count": 1,
+      "via": "apify"
     }
   },
   "kobo99": {

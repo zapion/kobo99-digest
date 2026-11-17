@@ -38,5 +38,30 @@
       "url": "https://www.kobo.com/tw/zh/ebook/ZC2OuKLXPz-miARamf0AbA",
       "via": "apify"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-17T12:39:30+00:00",
+    "ratings": {
+      "books": {
+        "score": 4.0,
+        "count": 3,
+        "url": "https://www.books.com.tw/products/E050351035"
+      },
+      "readmoo": {
+        "score": 3.7,
+        "count": 6,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.08,
+        "count": 214,
+        "url": "https://www.goodreads.com/book/show/226442598"
+      },
+      "amazon": {
+        "score": 4.4,
+        "count": 54,
+        "url": "https://www.amazon.com/dp/B0CSWVF7L1"
+      }
+    }
   }
 }

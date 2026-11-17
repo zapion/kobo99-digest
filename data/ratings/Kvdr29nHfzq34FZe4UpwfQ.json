@@ -5,18 +5,53 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/202922751-how-to-retire",
+          "title": "How to Retire: 20 Lessons For a Happy, Successful, and Wealthy Retirement",
+          "authors": [
+            "Christine Benz"
+          ],
+          "confidence": 0.0
+        }
+      ]
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011054746",
+      "matched_title": "好好退休：頂尖專家教你20堂關於快樂、成功與富足的退休課",
+      "score": 4.5,
+      "count": 6,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/B0HKK4P8F7",
+          "title": "How to Retire: 20 lessons for a happy, successful, and wealthy retirement",
+          "authors": [
+            "Christine Benz"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/Kvdr29nHfzq34FZe4UpwfQ",
+      "matched_title": "好好退休：頂尖專家教你20堂關於快樂、成功與富足的退休課",
+      "score": 3.0,
+      "count": 2,
+      "via": "apify"
     }
   },
   "kobo99": {

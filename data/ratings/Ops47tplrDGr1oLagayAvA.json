@@ -5,18 +5,53 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/236066320",
+          "title": "A Hymn to Life: Shame Has to Change Sides",
+          "authors": [
+            "Gisèle Pelicot"
+          ],
+          "confidence": 0.0
+        }
+      ]
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050353100",
+      "matched_title": "生命美好 (電子書)",
+      "score": 5.0,
+      "count": 10,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-02T07:35:22+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/B0FCFCCK86",
+          "title": "A Hymn to Life: Shame Has to Change Sides",
+          "authors": [
+            "Gisèle Pelicot"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/Ops47tplrDGr1oLagayAvA",
+      "matched_title": "生命美好：該羞愧的人不是我",
+      "score": 4.25,
+      "count": 4,
+      "via": "apify"
     }
   },
   "kobo99": {

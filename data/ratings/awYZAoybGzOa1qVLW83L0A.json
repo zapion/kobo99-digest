@@ -34,6 +34,16 @@
       "platform": "amazon",
       "fetched_at": "2026-11-05T02:21:54+00:00",
       "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-17T12:39:30+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/awYZAoybGzOa1qVLW83L0A",
+      "matched_title": "黑天鵝語錄（全新擴充版）",
+      "score": 3.82,
+      "count": 11,
+      "via": "apify"
     }
   },
   "kobo99": {
