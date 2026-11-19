@@ -1,0 +1,42 @@
+{
+  "kobo_id": "Oyh8j_L5zjO7lKmrOglFGg",
+  "title": "铁马秋风集",
+  "hints": {
+    "original_title": "铁马秋风集",
+    "original_author": "宫玉振"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/CN11743996",
+          "title": "鐵馬秋風集:企業如何向軍隊學打勝仗",
+          "authors": [
+            "宮玉振"
+          ],
+          "confidence": 0.55
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/Oyh8j_L5zjO7lKmrOglFGg",
+      "via": "apify"
+    }
+  }
+}

@@ -8,29 +8,32 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/214866308-demon-copperhead",
+      "matched_title": "Demon Copperhead",
+      "score": 4.46,
+      "count": 932145
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/0011038007",
-          "title": "惡魔浮生錄（普立茲小說獎與女性文學獎雙冠鉅著）",
-          "authors": [
-            "芭芭拉．金索沃"
-          ],
-          "confidence": 0.97
-        }
-      ]
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050308636",
+      "matched_title": "惡魔浮生錄（普立茲小說獎與女性文學獎雙冠鉅著） (電子書)",
+      "score": 5.0,
+      "count": 5,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "no_rating",
-      "url": "https://www.amazon.com/dp/0063251981"
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/0063251922",
+      "matched_title": "Demon Copperhead: A Pulitzer Prize Winner",
+      "score": 4.6,
+      "count": 159658,
+      "via": "apify"
     },
     "kobo": {
       "platform": "kobo",

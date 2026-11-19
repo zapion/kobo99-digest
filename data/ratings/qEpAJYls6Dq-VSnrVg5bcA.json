@@ -8,12 +8,16 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/63144620",
+      "matched_title": "今天也要好好写手账啊",
+      "score": 3.22,
+      "count": 9
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
       "status": "low_confidence",
       "tried": [
         {
@@ -22,15 +26,14 @@
           "authors": [
             "不是悶"
           ],
-          "confidence": 0.7
+          "confidence": 0.6
         }
       ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "no_rating",
-      "url": "https://www.amazon.com/dp/752173887X"
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "not_found"
     },
     "kobo": {
       "platform": "kobo",

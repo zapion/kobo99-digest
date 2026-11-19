@@ -1,0 +1,43 @@
+{
+  "kobo_id": "_cPcqI1SBj-WbSRs33bhmA",
+  "title": "50堂經典哲學思維課",
+  "hints": {
+    "original_title": "50 Philosophy Classics: Thinking, Being, Acting, Seeing",
+    "original_author": "Tom Butler-Bowdon"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/17087629-50-philosophy-classics",
+      "matched_title": "50 Philosophy Classics: Thinking, Being, Acting, Seeing: Profound Insights and Powerful Thinking from Fifty Key Books",
+      "score": 4.1,
+      "count": 1087
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0010965868",
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B09V87Z3TN",
+      "matched_title": "50 Philosophy Classics: Thinking, Being, Acting Seeing - Profound Insights and Powerful Thinking from Fifty Key Books",
+      "score": 4.7,
+      "count": 35,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/_cPcqI1SBj-WbSRs33bhmA",
+      "via": "apify"
+    }
+  }
+}

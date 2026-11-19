@@ -1,0 +1,40 @@
+{
+  "kobo_id": "pW8TCl4BJzuydjymKrwloQ",
+  "title": "論點思考",
+  "hints": {
+    "original_title": "論点思考",
+    "original_author": "内田 和成"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.co.jp/dp/4492556559",
+      "matched_title": "論点思考",
+      "score": 4.4,
+      "count": 1267,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/pW8TCl4BJzuydjymKrwloQ",
+      "matched_title": "論點思考：找到問題的源頭，才能解決正確的問題",
+      "score": 4.0,
+      "count": 4,
+      "via": "apify"
+    }
+  }
+}

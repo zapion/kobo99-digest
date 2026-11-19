@@ -1,0 +1,32 @@
+{
+  "kobo_id": "mbti-mbti-2",
+  "title": "天賦覺醒",
+  "hints": {
+    "original_title": "天賦覺醒",
+    "original_author": "李亮"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011015218",
+      "matched_title": "天賦覺醒：超強MBTI致勝法則，全方位開啟改變的原動力【唯一附贈「MBTI專屬測量表」，隨走隨測！】",
+      "score": 5.0,
+      "count": 1,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/B0DZG4L1GH",
+      "via": "apify"
+    }
+  }
+}

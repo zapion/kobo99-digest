@@ -8,36 +8,37 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/30163955",
+      "matched_title": "Your Body and the Stars: The Zodiac As Your Wellness Guide",
+      "score": 3.59,
+      "count": 54
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/E050197993",
-          "title": "健康占星全書：12星座的身心靈功課，校準能量的72個生活練習 (電子書)",
-          "authors": [
-            "史蒂芬妮．莫倫歌,麗貝卡．戈登"
-          ],
-          "confidence": 0.97
-        },
-        {
-          "url": "https://www.books.com.tw/products/0010772947",
-          "title": "你的身體就是12星座：占星這樣教我們健康養生",
-          "authors": [
-            "史蒂芬妮．莫倫歌,麗貝卡．戈登"
-          ],
-          "confidence": 0.6
-        }
-      ]
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050197993",
+      "matched_title": "健康占星全書：12星座的身心靈功課，校準能量的72個生活練習 (電子書)",
+      "score": 4.5,
+      "count": 1,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/B010MHAA9G",
+          "title": "Your Body and the Stars: The Zodiac As Your Wellness Guide",
+          "authors": [
+            "Stephanie Marango MD"
+          ],
+          "confidence": 0.0
+        }
+      ]
     },
     "kobo": {
       "platform": "kobo",

@@ -3,7 +3,7 @@
   "title": "好好拜託",
   "hints": {
     "original_title": "Reinforcements: How to Get People to Help You",
-    "original_author": "Heidi Grant"
+    "original_author": "Heidi Grant Halvorson"
   },
   "platforms": {
     "goodreads": {
@@ -40,12 +40,13 @@
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-12T02:22:11+00:00",
-      "status": "search_reported",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
       "url": "https://www.amazon.com/dp/B07PDS87P3",
-      "matched_title": "好好拜託：哥倫比亞大學最受歡迎的社會心理課， 讓人幫你是優勢，連幫你的人都快樂才是本事！ (Traditional Chinese Edition) eBook : 海蒂·格蘭特(Heidi Grant): Kindle Store",
+      "matched_title": "好好拜託：哥倫比亞大學最受歡迎的社會心理課， 讓人幫你是優勢，連幫你的人都快樂才是本事！ (Traditional Chinese Edition)",
       "score": 4.6,
-      "count": 6
+      "count": 6,
+      "via": "apify"
     },
     "kobo": {
       "platform": "kobo",

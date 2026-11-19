@@ -17,24 +17,20 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/E050167614",
-          "title": "實驗吧！我要瘋狂養生：厭世記者親身嘗試101天斷食、瑜伽、冥想，一場變健康的大冒險（Netflix影集《養生狂女子》原型故事） (電子書)",
-          "authors": [
-            "布里吉德‧迪蘭尼"
-          ],
-          "confidence": 0.97
-        }
-      ]
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/E050167614",
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "no_rating",
-      "url": "https://www.amazon.com/dp/1771643706"
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/1771643706",
+      "matched_title": "Wellmania: Extreme Misadventures in the Search for Wellness",
+      "score": 3.6,
+      "count": 40,
+      "via": "apify"
     },
     "kobo": {
       "platform": "kobo",

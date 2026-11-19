@@ -1,0 +1,41 @@
+{
+  "kobo_id": "QDk-dgOZtT2_d9sxc7Yq4g",
+  "title": "從小致富",
+  "hints": {
+    "original_title": "RICH KIDS",
+    "original_author": "Tom Corley"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/23444779-rich-kids",
+      "matched_title": "Rich Kids: How to Raise Our Children to Be Happy and Successful in Life",
+      "score": 4.22,
+      "count": 166
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050115522",
+      "matched_title": "從小致富：教導孩子正確的富人心態、培養正向習慣，帶領他走向富裕人生 (電子書)",
+      "score": 4.0,
+      "count": 1,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/QDk-dgOZtT2_d9sxc7Yq4g",
+      "via": "apify"
+    }
+  }
+}

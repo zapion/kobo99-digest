@@ -1,0 +1,49 @@
+{
+  "kobo_id": "cE5CQeH2xzmDj5MwgDZlyA",
+  "title": "都柏林人（二十世紀必讀經典文學:短篇小說集之最）",
+  "hints": {
+    "original_title": "Dubliners",
+    "original_author": "James Joyce"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/11012.Dubliners",
+      "matched_title": "Dubliners",
+      "score": 3.83,
+      "count": 188107
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0010873186",
+      "matched_title": "都柏林人（二十世紀必讀經典文學，短篇小說集之最）",
+      "score": 5.0,
+      "count": 2,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/0140186476",
+      "matched_title": "Dubliners (Twentieth-Century Classics)",
+      "score": 4.4,
+      "count": 867,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/cE5CQeH2xzmDj5MwgDZlyA",
+      "matched_title": "都柏林人（二十世紀必讀經典文學，短篇小說集之最）",
+      "score": 3.0,
+      "count": 2,
+      "via": "apify"
+    }
+  }
+}

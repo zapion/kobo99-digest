@@ -1,0 +1,37 @@
+{
+  "kobo_id": "F-GGm9yiTDKhhMQqIzLP-w",
+  "title": "一位外科醫師的修煉（改版）",
+  "hints": {
+    "original_title": "Complications: A Surgeon's Notes on an Imperfect Science",
+    "original_author": "Atul Gawande"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050052527",
+      "matched_title": "一位外科醫師的修煉（改版） (電子書)",
+      "score": 4.5,
+      "count": 1,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/F-GGm9yiTDKhhMQqIzLP-w",
+      "via": "apify"
+    }
+  }
+}

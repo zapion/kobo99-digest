@@ -2,8 +2,8 @@
   "kobo_id": "-gKT8GJNkDyL5QE-qH4zew",
   "title": "極簡法國史",
   "hints": {
-    "original_title": "一冊でわかるフランス史",
-    "original_author": "福井憲彦"
+    "original_title": "A Short History of France",
+    "original_author": "Mary Platt Parmele"
   },
   "platforms": {
     "goodreads": {
@@ -17,33 +17,20 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/0010922486",
-          "title": "極簡法國史",
-          "authors": [
-            "福井憲彥"
-          ],
-          "confidence": 0.97
-        }
-      ]
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0010922486",
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-05T02:21:54+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.amazon.com/dp/B08MTFLDRY",
-          "title": "你一定爱读的极简法国史 (Chinese Edition) eBook",
-          "authors": [
-            "帕米利, 孙,骞骞"
-          ],
-          "confidence": 0.45
-        }
-      ]
+      "fetched_at": "2026-11-19T02:22:13+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B004TQGQY0",
+      "matched_title": "A Short History of France",
+      "score": 3.8,
+      "count": 45,
+      "via": "apify"
     },
     "kobo": {
       "platform": "kobo",
