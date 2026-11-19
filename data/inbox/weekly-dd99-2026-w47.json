@@ -1,0 +1,84 @@
+{
+  "slug": "weekly-dd99-2026-w47",
+  "kind": "dd99",
+  "label": "一週99書單",
+  "url": "https://www.kobo.com/zh/blog/weekly-dd99-2026-w47",
+  "title": "【今日 99】《凝視死亡》作者經典之作！《一位外科醫師的修煉》勇敢面對每個醫師都可能有的噩夢！限時99元，購書去",
+  "period_start": "2026-11-19",
+  "period_end": "2026-11-25",
+  "promo_code": null,
+  "books": [
+    {
+      "title": "一位外科醫師的修煉（改版）",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/F-GGm9yiTDKhhMQqIzLP-w",
+      "cover_url": "https://cdn.kobo.com/book-images/ca63c062-5427-4ac4-b5f8-6ad58459bb15/300/300/False/F-GGm9yiTDKhhMQqIzLP-w.jpg",
+      "list_price": 285,
+      "sale_price": 99,
+      "sale_date": "2026-11-19"
+    },
+    {
+      "title": "論點思考",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/pW8TCl4BJzuydjymKrwloQ",
+      "cover_url": "https://cdn.kobo.com/book-images/2a0fac72-3ab1-4f5f-8bb5-db7310fd2448/300/300/False/pW8TCl4BJzuydjymKrwloQ.jpg",
+      "list_price": 270,
+      "sale_price": 99,
+      "sale_date": "2026-11-20"
+    },
+    {
+      "title": "铁马秋风集",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/Oyh8j_L5zjO7lKmrOglFGg",
+      "cover_url": "https://cdn.kobo.com/book-images/01a52b8b-bcc1-46e9-9c8d-501d421a0dc3/300/300/False/Oyh8j_L5zjO7lKmrOglFGg.jpg",
+      "list_price": 265,
+      "sale_price": 99,
+      "sale_date": "2026-11-20"
+    },
+    {
+      "title": "都柏林人（二十世紀必讀經典文學:短篇小說集之最）",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/cE5CQeH2xzmDj5MwgDZlyA",
+      "cover_url": "https://cdn.kobo.com/book-images/7269a1bb-3562-4a76-966a-65e91a8d9dd6/300/300/False/cE5CQeH2xzmDj5MwgDZlyA.jpg",
+      "list_price": 247,
+      "sale_price": 99,
+      "sale_date": "2026-11-21"
+    },
+    {
+      "title": "天賦覺醒",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/mbti-mbti-2",
+      "cover_url": "https://cdn.kobo.com/book-images/0bc14586-2f93-4645-bd7e-9a2bb657fdf8/300/300/False/mbti-mbti-2.jpg",
+      "list_price": 315,
+      "sale_price": 99,
+      "sale_date": "2026-11-22"
+    },
+    {
+      "title": "50堂經典哲學思維課",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/_cPcqI1SBj-WbSRs33bhmA",
+      "cover_url": "https://cdn.kobo.com/book-images/cfd7d061-a5d7-4225-b6f3-65ea6c8e78ae/300/300/False/_cPcqI1SBj-WbSRs33bhmA.jpg",
+      "list_price": 356,
+      "sale_price": 99,
+      "sale_date": "2026-11-23"
+    },
+    {
+      "title": "格雷的五十道陰影I：調教",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/i-150",
+      "cover_url": "https://cdn.kobo.com/book-images/fd6723d5-ec69-41e9-af2f-1f62c6b6bd0c/300/300/False/i-150.jpg",
+      "list_price": 266,
+      "sale_price": 99,
+      "sale_date": "2026-11-24"
+    },
+    {
+      "title": "從小致富",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/QDk-dgOZtT2_d9sxc7Yq4g",
+      "cover_url": "https://cdn.kobo.com/book-images/8ca3ad50-ea56-46a2-bd70-662503f92ffe/300/300/False/QDk-dgOZtT2_d9sxc7Yq4g.jpg",
+      "list_price": 228,
+      "sale_price": 99,
+      "sale_date": "2026-11-25"
+    }
+  ]
+}
