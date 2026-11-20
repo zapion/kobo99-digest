@@ -24,6 +24,30 @@
           "count": 1,
           "url": "https://www.books.com.tw/products/E050052527",
           "source": "page"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.6,
+          "count": 14,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.28,
+          "count": 53823,
+          "url": "https://www.goodreads.com/book/show/127894197",
+          "source": "kobo99"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.6,
+          "count": 6026,
+          "url": "https://www.amazon.com/dp/B003L1ZZFU",
+          "source": "kobo99"
         }
       ]
     },
@@ -45,6 +69,22 @@
           "source": "page"
         },
         {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.3,
+          "count": 3,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.17,
+          "count": 6,
+          "url": "https://www.goodreads.com/book/show/30626537",
+          "source": "kobo99"
+        },
+        {
           "platform": "amazon",
           "name": "Amazon",
           "score": 4.4,
@@ -62,7 +102,16 @@
       "list_price": 265,
       "sale_price": 99,
       "sale_date": "2026-11-20",
-      "ratings": []
+      "ratings": [
+        {
+          "platform": "goodreads",
+          "name": "Goodreads",
+          "score": 4.0,
+          "count": 1,
+          "url": "https://www.goodreads.com/book/show/115747869",
+          "source": "kobo99"
+        }
+      ]
     },
     {
       "title": "都柏林人（二十世紀必讀經典文學:短篇小說集之最）",
@@ -88,6 +137,14 @@
           "count": 2,
           "url": "https://www.books.com.tw/products/0010873186",
           "source": "page"
+        },
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.6,
+          "count": 9,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
         },
         {
           "platform": "goodreads",
@@ -135,6 +192,14 @@
       "sale_price": 99,
       "sale_date": "2026-11-23",
       "ratings": [
+        {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.0,
+          "count": 3,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
         {
           "platform": "goodreads",
           "name": "Goodreads",
@@ -206,12 +271,28 @@
           "source": "page"
         },
         {
+          "platform": "readmoo",
+          "name": "讀墨",
+          "score": 4.5,
+          "count": 8,
+          "url": "https://kobo99.com/",
+          "source": "kobo99"
+        },
+        {
           "platform": "goodreads",
           "name": "Goodreads",
           "score": 4.22,
           "count": 166,
           "url": "https://www.goodreads.com/book/show/23444779-rich-kids",
           "source": "page"
+        },
+        {
+          "platform": "amazon",
+          "name": "Amazon",
+          "score": 4.7,
+          "count": 299,
+          "url": "https://www.amazon.com/dp/B00NF3ZZJA",
+          "source": "kobo99"
         }
       ]
     }

@@ -27,6 +27,23 @@
       "status": "no_rating",
       "url": "https://www.amazon.com/dp/B0DZG4L1GH",
       "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-20T12:22:01+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/mbti-mbti-2",
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-20T12:22:01+00:00",
+    "ratings": {
+      "books": {
+        "score": 5.0,
+        "count": 1,
+        "url": "https://www.books.com.tw/products/E050253141"
+      }
     }
   }
 }

@@ -42,5 +42,25 @@
       "count": 6,
       "via": "apify"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-20T12:22:01+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 4.5,
+        "count": 6,
+        "url": "https://www.kobo.com/tw/zh/ebook/i-150"
+      },
+      "goodreads": {
+        "score": 3.67,
+        "count": 2940036,
+        "url": "https://www.goodreads.com/book/show/58112485"
+      },
+      "amazon": {
+        "score": 3.3,
+        "count": 6,
+        "url": "https://www.amazon.com/dp/B07X25R1Q9"
+      }
+    }
   }
 }

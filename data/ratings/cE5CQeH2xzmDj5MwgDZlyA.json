@@ -45,5 +45,35 @@
       "count": 2,
       "via": "apify"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-20T12:22:01+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 3.0,
+        "count": 2,
+        "url": "https://www.kobo.com/tw/zh/ebook/cE5CQeH2xzmDj5MwgDZlyA"
+      },
+      "books": {
+        "score": 5.0,
+        "count": 2,
+        "url": "https://www.books.com.tw/products/E050121996"
+      },
+      "readmoo": {
+        "score": 4.6,
+        "count": 9,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.83,
+        "count": 188109,
+        "url": "https://www.goodreads.com/book/show/37151111"
+      },
+      "amazon": {
+        "score": 4.2,
+        "count": 5087,
+        "url": "https://www.amazon.com/dp/B01JDOS4SS"
+      }
+    }
   }
 }

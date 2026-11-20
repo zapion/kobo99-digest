@@ -36,5 +36,30 @@
       "count": 4,
       "via": "apify"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-20T12:22:01+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 4.0,
+        "count": 4,
+        "url": "https://www.kobo.com/tw/zh/ebook/pW8TCl4BJzuydjymKrwloQ"
+      },
+      "readmoo": {
+        "score": 4.3,
+        "count": 3,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.17,
+        "count": 6,
+        "url": "https://www.goodreads.com/book/show/30626537"
+      },
+      "amazon": {
+        "score": 4.4,
+        "count": 1267,
+        "url": "https://www.amazon.co.jp/dp/4492556559"
+      }
+    }
   }
 }

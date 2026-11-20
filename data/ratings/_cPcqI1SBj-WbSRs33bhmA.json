@@ -39,5 +39,20 @@
       "url": "https://www.kobo.com/tw/zh/ebook/_cPcqI1SBj-WbSRs33bhmA",
       "via": "apify"
     }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-20T12:22:01+00:00",
+    "ratings": {
+      "readmoo": {
+        "score": 4.0,
+        "count": 3,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 5.0,
+        "count": 1,
+        "url": "https://www.goodreads.com/book/show/205596441"
+      }
+    }
   }
 }
