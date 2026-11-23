@@ -1,0 +1,83 @@
+{
+  "kobo_id": "RobWlsACETyawLTUYnIGvg",
+  "title": "害群之人",
+  "hints": {},
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/220715005",
+          "title": "Invisible Rivals: How We Evolved to Compete in a Cooperative World",
+          "authors": [
+            "Jonathan R Goodman",
+            "Robert A. Foley"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050363459",
+      "matched_title": "害群之人：看穿以善意包裝的惡，在信任崩壞的時代找回互信 (電子書)",
+      "score": 5.0,
+      "count": 4,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.com/dp/B0F7J7SPTK",
+          "title": "Invisible Rivals: How We Evolved to Compete in a Cooperative World",
+          "authors": [
+            "Jonathan R Goodman"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/RobWlsACETyawLTUYnIGvg",
+      "matched_title": "害群之人：看穿以善意包裝的惡，在信任崩壞的時代找回互信",
+      "score": 5.0,
+      "count": 1,
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-23T02:32:03+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 5.0,
+        "count": 1,
+        "url": "https://www.kobo.com/tw/zh/ebook/RobWlsACETyawLTUYnIGvg"
+      },
+      "books": {
+        "score": 5.0,
+        "count": 4,
+        "url": "https://www.books.com.tw/products/E050363459"
+      },
+      "goodreads": {
+        "score": 3.71,
+        "count": 34,
+        "url": "https://www.goodreads.com/book/show/220715005"
+      },
+      "amazon": {
+        "score": 3.5,
+        "count": 8,
+        "url": "https://www.amazon.com/dp/B0F7J7SPTK"
+      }
+    }
+  }
+}

@@ -17,18 +17,13 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/0010762774",
-          "title": "失控的同理心︰道德判斷的偏誤與理性思考的價值",
-          "authors": [
-            "保羅‧布倫"
-          ],
-          "confidence": 0.97
-        }
-      ]
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011051292",
+      "matched_title": "失控的同理心︰道德判斷的偏誤與理性思考的價值",
+      "score": 3.5,
+      "count": 3,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",

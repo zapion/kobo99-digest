@@ -8,28 +8,32 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/221193153",
+      "matched_title": "Your Life Is Manufactured: How We Make Things, Why It Matters and How We Can Do It Better",
+      "score": 3.63,
+      "count": 510
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/0011061891",
-          "title": "韌性製造：斷鏈危機下，如何打造「韌性供應鏈」大未來",
-          "authors": [
-            "提姆．敏謝爾"
-          ],
-          "confidence": 0.97
-        }
-      ]
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011061891",
+      "matched_title": "韌性製造：斷鏈危機下，如何打造「韌性供應鏈」大未來",
+      "score": 4.5,
+      "count": 5,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B0DLWX7XCN",
+      "matched_title": "Your Life Is Manufactured: How We Make Things, Why It Matters and How We Can Do It Better",
+      "score": 4.3,
+      "count": 114,
+      "via": "apify"
     },
     "kobo": {
       "platform": "kobo",

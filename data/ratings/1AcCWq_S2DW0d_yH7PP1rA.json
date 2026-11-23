@@ -17,14 +17,28 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050357059",
+          "title": "荊棘與玫瑰【荊棘與玫瑰系列1】 (電子書)",
+          "authors": [
+            "莎菈．J．瑪斯"
+          ],
+          "confidence": 0.0
+        }
+      ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "no_rating",
-      "url": "https://www.amazon.com/dp/1635575567"
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B0GRCSB6WG",
+      "matched_title": "A Court of Thorns and Roses",
+      "score": 5.0,
+      "count": 2,
+      "via": "apify"
     },
     "kobo": {
       "platform": "kobo",

@@ -1,0 +1,72 @@
+{
+  "kobo_id": "87QVogQDrD6r4wiL6tH02Q",
+  "title": "世界，本來就不可預測",
+  "hints": {
+    "original_title": "The Art of Uncertainty: How to Navigate Chance, Ignorance, Risk and Luck",
+    "original_author": "David Spiegelhalter"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/213395504",
+          "title": "The Art of Uncertainty: How to Navigate Chance, Ignorance, Risk and Luck",
+          "authors": [
+            "David Spiegelhalter"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050360410",
+      "matched_title": "世界，本來就不可預測：從機率、風險、運氣到未知，在充滿變數的世界裡保持清醒 (電子書)",
+      "score": 4.0,
+      "count": 1,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.co.jp/dp/0241658624",
+      "matched_title": "The Art of Uncertainty: How to Navigate Chance, Ignorance, Risk and Luck (Pelican Books)",
+      "score": 4.4,
+      "count": 444,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/87QVogQDrD6r4wiL6tH02Q",
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-23T02:32:03+00:00",
+    "ratings": {
+      "books": {
+        "score": 4.0,
+        "count": 1,
+        "url": "https://www.books.com.tw/products/E050360410"
+      },
+      "goodreads": {
+        "score": 3.75,
+        "count": 956,
+        "url": "https://www.goodreads.com/book/show/213395504"
+      },
+      "amazon": {
+        "score": 4.2,
+        "count": 453,
+        "url": "https://www.amazon.com/dp/B0D8RJLSBG"
+      }
+    }
+  }
+}

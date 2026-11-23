@@ -1,0 +1,62 @@
+{
+  "kobo_id": "BKybPxeBYzWU_PONIA043g",
+  "title": "寫信的人【台灣獨家獻禮：致讀者】",
+  "hints": {
+    "original_title": "The Correspondent",
+    "original_author": "Virginia Evans"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/0011061170",
+          "title": "寫信的人【台灣獨家獻禮：致讀者心形郵簡】",
+          "authors": [
+            "維吉尼亞．伊凡斯"
+          ],
+          "confidence": 0.8
+        }
+      ]
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/7521787889",
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/BKybPxeBYzWU_PONIA043g",
+      "matched_title": "寫信的人【台灣獨家獻禮：致讀者】",
+      "score": 4.69,
+      "count": 13,
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-23T02:32:03+00:00",
+    "ratings": {
+      "books": {
+        "score": 5.0,
+        "count": 14,
+        "url": "https://www.books.com.tw/products/0011061170"
+      },
+      "readmoo": {
+        "score": 4.7,
+        "count": 93,
+        "url": "https://kobo99.com/"
+      }
+    }
+  }
+}

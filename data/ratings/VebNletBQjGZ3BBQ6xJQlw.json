@@ -1,0 +1,71 @@
+{
+  "kobo_id": "VebNletBQjGZ3BBQ6xJQlw",
+  "title": "正常的迷思",
+  "hints": {
+    "original_title": "The Myth of Normal: Trauma, Illness, and Healing in a Toxic Culture",
+    "original_author": "Gabor Maté, Daniel Maté"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/57951388-the-myth-of-normal",
+      "matched_title": "The Myth of Normal: Trauma, Illness, and Healing in a Toxic Culture",
+      "score": 4.29,
+      "count": 40574
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011058234",
+      "matched_title": "正常的迷思：理解壓力與創傷如何形塑身心，鬆動情緒困境與疾病的循環，回到完整的自己",
+      "score": 4.5,
+      "count": 9,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/0593083881",
+      "matched_title": "The Myth of Normal: Trauma, Illness, and Healing in a Toxic Culture",
+      "score": 4.7,
+      "count": 8278,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/VebNletBQjGZ3BBQ6xJQlw",
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-23T02:32:03+00:00",
+    "ratings": {
+      "books": {
+        "score": 4.5,
+        "count": 9,
+        "url": "https://www.books.com.tw/products/E050348565"
+      },
+      "readmoo": {
+        "score": 5.0,
+        "count": 4,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.29,
+        "count": 40574,
+        "url": "https://www.goodreads.com/book/show/58537332"
+      },
+      "amazon": {
+        "score": 4.7,
+        "count": 8278,
+        "url": "https://www.amazon.com/dp/B098PXTS5K"
+      }
+    }
+  }
+}

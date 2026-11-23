@@ -1,0 +1,56 @@
+{
+  "kobo_id": "khotkxyNujWJzzbVJvL65Q",
+  "title": "你不爽，為什麼不明說？",
+  "hints": {
+    "original_title": "8 Keys to Eliminating Passive-Aggressiveness",
+    "original_author": "Andrea Brandt"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/16673565-8-keys-to-eliminating-passive-aggressiveness",
+      "matched_title": "8 Keys to Eliminating Passive-Aggressiveness (8 Keys to Mental Health)",
+      "score": 3.78,
+      "count": 182
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "not_found"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/0393708462",
+      "matched_title": "8 Keys to Eliminating Passive-Aggressiveness (8 Keys to Mental Health)",
+      "score": 4.4,
+      "count": 248,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/khotkxyNujWJzzbVJvL65Q",
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-23T02:32:03+00:00",
+    "ratings": {
+      "goodreads": {
+        "score": 3.78,
+        "count": 182,
+        "url": "https://www.goodreads.com/book/show/16673565"
+      },
+      "amazon": {
+        "score": 4.4,
+        "count": 248,
+        "url": "https://www.amazon.com/dp/B00AYMFW66"
+      }
+    }
+  }
+}

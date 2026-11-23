@@ -8,18 +8,37 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/210300489",
+      "matched_title": "Isles of the Emberdark",
+      "score": 4.46,
+      "count": 47594
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.books.com.tw/products/E050360267",
+          "title": "餘燼冥之島（邪惡奇幻天才大神超凡驚豔震撼全球祕密計畫） (電子書)",
+          "authors": [
+            "布蘭登．山德森"
+          ],
+          "confidence": 0.0
+        }
+      ]
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B0DHZYWCN9",
+      "matched_title": "Isles of the Emberdark: A Cosmere Novel (Secret Projects)",
+      "score": 4.8,
+      "count": 7766,
+      "via": "apify"
     },
     "kobo": {
       "platform": "kobo",

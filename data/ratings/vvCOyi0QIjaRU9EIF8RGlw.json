@@ -1,0 +1,80 @@
+{
+  "kobo_id": "vvCOyi0QIjaRU9EIF8RGlw",
+  "title": "最有企圖心的一天",
+  "hints": {
+    "original_title": "Intentional: How to Finish What You Start",
+    "original_author": "Chris Bailey"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/231108743",
+          "title": "Intentional: How to Finish What You Start",
+          "authors": [
+            "Chris   Bailey"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011057612",
+      "matched_title": "最有企圖心的一天：如何刻意行動，讓每個目標都有始有終",
+      "score": 2.5,
+      "count": 2,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B0F3WQM8F9",
+      "matched_title": "Intentional: How to Finish What You Start",
+      "score": 4.4,
+      "count": 80,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/vvCOyi0QIjaRU9EIF8RGlw",
+      "matched_title": "最有企圖心的一天：如何刻意行動，讓每個目標都有始有終",
+      "score": 5.0,
+      "count": 1,
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-23T02:32:03+00:00",
+    "ratings": {
+      "books": {
+        "score": 2.5,
+        "count": 2,
+        "url": "https://www.books.com.tw/products/E050346706"
+      },
+      "readmoo": {
+        "score": 5.0,
+        "count": 1,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.85,
+        "count": 404,
+        "url": "https://www.goodreads.com/book/show/231108743"
+      },
+      "amazon": {
+        "score": 4.4,
+        "count": 80,
+        "url": "https://www.amazon.com/dp/B0F3WQM8F9"
+      }
+    }
+  }
+}

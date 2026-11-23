@@ -5,17 +5,22 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
       "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050346703",
+      "matched_title": "透視職場冰山：薩提爾帶你終止內耗，打造高能量的行動力 (電子書)",
+      "score": 5.0,
+      "count": 1,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
       "status": "not_found"
     },
     "kobo": {

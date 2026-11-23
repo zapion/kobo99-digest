@@ -1,0 +1,64 @@
+{
+  "kobo_id": "ai-701",
+  "title": "無人機戰爭【不對稱關鍵戰力全解讀】",
+  "hints": {},
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050356687",
+      "matched_title": "無人機戰爭【不對稱關鍵戰力全解讀】：從供應鏈、戰略、AI到地緣政治，第一本拆解「新型態無人軍團」如何顛覆現代戰場 (電子書)",
+      "score": 5.0,
+      "count": 1,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.amazon.co.jp/dp/B0GLXGGZZP",
+          "title": "ドローン戦入門　無人機は現代戦をどう変えたのか",
+          "authors": [
+            "多田将"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-701",
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-23T02:32:03+00:00",
+    "ratings": {
+      "books": {
+        "score": 5.0,
+        "count": 1,
+        "url": "https://www.books.com.tw/products/E050356687"
+      },
+      "readmoo": {
+        "score": 4.5,
+        "count": 4,
+        "url": "https://kobo99.com/"
+      },
+      "amazon": {
+        "score": 4.6,
+        "count": 36,
+        "url": "https://www.amazon.co.jp/dp/B0GLXGGZZP"
+      }
+    }
+  }
+}

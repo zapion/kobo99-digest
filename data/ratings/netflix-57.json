@@ -1,0 +1,66 @@
+{
+  "kobo_id": "netflix-57",
+  "title": "餘命一年買男人",
+  "hints": {
+    "original_title": "余命一年、男をかう",
+    "original_author": "吉川トリコ"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/58865835",
+      "matched_title": "余命一年、男をかう",
+      "score": 3.63,
+      "count": 19
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011040678",
+      "matched_title": "餘命一年買男人（島清戀愛文學獎得主，獻給不敢依靠他人的你）",
+      "score": 5.0,
+      "count": 5,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.co.jp/dp/4065238145",
+      "matched_title": "余命一年、男をかう",
+      "score": 4.3,
+      "count": 250,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/netflix-57",
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-23T02:32:03+00:00",
+    "ratings": {
+      "readmoo": {
+        "score": 5.0,
+        "count": 5,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.63,
+        "count": 19,
+        "url": "https://www.goodreads.com/book/show/58865835"
+      },
+      "amazon": {
+        "score": 4.3,
+        "count": 250,
+        "url": "https://www.amazon.co.jp/dp/4065335442"
+      }
+    }
+  }
+}

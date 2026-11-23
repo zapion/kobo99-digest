@@ -1,0 +1,85 @@
+{
+  "kobo_id": "FyPvX9C0djm1MI-UoVInEw",
+  "title": "夏日悄悄話",
+  "hints": {
+    "original_title": "Foster",
+    "original_author": "Claire Keegan"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/8143909",
+          "title": "Foster",
+          "authors": [
+            "Claire Keegan"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011063554",
+      "matched_title": "夏日悄悄話",
+      "score": 5.0,
+      "count": 6,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B0B15LS4MR",
+      "matched_title": "Foster",
+      "score": 4.5,
+      "count": 23266,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/FyPvX9C0djm1MI-UoVInEw",
+      "matched_title": "夏日悄悄話",
+      "score": 4.71,
+      "count": 7,
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-23T02:32:03+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 4.71,
+        "count": 7,
+        "url": "https://www.kobo.com/tw/zh/ebook/FyPvX9C0djm1MI-UoVInEw"
+      },
+      "books": {
+        "score": 5.0,
+        "count": 6,
+        "url": "https://www.books.com.tw/products/E050360160"
+      },
+      "readmoo": {
+        "score": 4.7,
+        "count": 57,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.29,
+        "count": 211147,
+        "url": "https://www.goodreads.com/book/show/8143909"
+      },
+      "amazon": {
+        "score": 4.5,
+        "count": 23266,
+        "url": "https://www.amazon.com/dp/B0B15LS4MR"
+      }
+    }
+  }
+}

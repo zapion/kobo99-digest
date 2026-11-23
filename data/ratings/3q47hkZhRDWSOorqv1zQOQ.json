@@ -1,0 +1,64 @@
+{
+  "kobo_id": "3q47hkZhRDWSOorqv1zQOQ",
+  "title": "獨裁者的秋天",
+  "hints": {
+    "original_title": "El otoño del patriarca",
+    "original_author": "Gabriel García Márquez"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.goodreads.com/book/show/35174817",
+      "matched_title": "El otoño del patriarca",
+      "score": 3.86,
+      "count": 28010
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011062961",
+      "matched_title": "獨裁者的秋天：馬奎斯自認比《百年孤寂》更重要的一部作品！最後一部正式授權繁體中文版的馬奎斯長篇小說！",
+      "score": 5.0,
+      "count": 2,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/030747576X",
+      "matched_title": "El otoño del patriarca / The Autumn of the Patriarch",
+      "score": 4.4,
+      "count": 609,
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-23T02:32:03+00:00",
+    "ratings": {
+      "books": {
+        "score": 5.0,
+        "count": 2,
+        "url": "https://www.books.com.tw/products/E050357221"
+      },
+      "readmoo": {
+        "score": 4.7,
+        "count": 3,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.86,
+        "count": 28010,
+        "url": "https://www.goodreads.com/book/show/761"
+      },
+      "amazon": {
+        "score": 4.4,
+        "count": 609,
+        "url": "https://www.amazon.com/dp/B00SNOFVQI"
+      }
+    }
+  }
+}

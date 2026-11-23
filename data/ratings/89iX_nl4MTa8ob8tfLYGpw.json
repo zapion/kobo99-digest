@@ -8,17 +8,22 @@
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
       "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-23T02:32:03+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050356554",
+      "matched_title": "真正會讀書的人，都背得很少：只背最少內容也上榜的超強學習術 (電子書)",
+      "score": 5.0,
+      "count": 3,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-09T02:31:58+00:00",
+      "fetched_at": "2026-11-23T02:32:03+00:00",
       "status": "not_found"
     },
     "kobo": {
