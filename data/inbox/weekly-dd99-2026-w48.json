@@ -1,0 +1,84 @@
+{
+  "slug": "weekly-dd99-2026-w48",
+  "kind": "dd99",
+  "label": "一週99書單",
+  "url": "https://www.kobo.com/zh/blog/weekly-dd99-2026-w48",
+  "title": "【今日 99】不再被動隨波逐流！《正念自律》讓你可以選擇做自己想成為的人！限時99元，購書去",
+  "period_start": "2026-11-26",
+  "period_end": "2026-12-02",
+  "promo_code": null,
+  "books": [
+    {
+      "title": "正念自律",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/u6Uqg32iMDmNONPP7hOF1A",
+      "cover_url": "https://cdn.kobo.com/book-images/3705ead1-a8b3-4c70-99da-9660f99f692f/300/300/False/u6Uqg32iMDmNONPP7hOF1A.jpg",
+      "list_price": 476,
+      "sale_price": 99,
+      "sale_date": "2026-11-26"
+    },
+    {
+      "title": "當上主管，難道只能被討厭？",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/aiDOoNIbkzK2fAPC0znyzw",
+      "cover_url": "https://cdn.kobo.com/book-images/b8d05ee6-6e28-4f42-9ecb-8a0d3c68b91e/300/300/False/aiDOoNIbkzK2fAPC0znyzw.jpg",
+      "list_price": 336,
+      "sale_price": 99,
+      "sale_date": "2026-11-27"
+    },
+    {
+      "title": "自行车的诞生：从手稿到环球利器",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/zRQhO0_BFjq7O_ReFCVD0g",
+      "cover_url": "https://cdn.kobo.com/book-images/9297a6cb-eab0-4f33-b223-c30ce8ba624d/300/300/False/zRQhO0_BFjq7O_ReFCVD0g.jpg",
+      "list_price": 487,
+      "sale_price": 99,
+      "sale_date": "2026-11-27"
+    },
+    {
+      "title": "霧迷宮",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/vDx2Rhc1Rj61sCOKUpsivw",
+      "cover_url": "https://cdn.kobo.com/book-images/f5a229ea-e15c-4578-b27f-b283b30091b3/300/300/False/vDx2Rhc1Rj61sCOKUpsivw.jpg",
+      "list_price": 338,
+      "sale_price": 99,
+      "sale_date": "2026-11-28"
+    },
+    {
+      "title": "費瑪最後定理：尋找數學的聖杯",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/7G15KPiSPDaGX8ZpWy0Kkg",
+      "cover_url": "https://cdn.kobo.com/book-images/76a68bfc-7bc0-43a6-8cf5-3e9866049377/300/300/False/7G15KPiSPDaGX8ZpWy0Kkg.jpg",
+      "list_price": 360,
+      "sale_price": 99,
+      "sale_date": "2026-11-29"
+    },
+    {
+      "title": "熵減法則",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/FMH1rqOqcjqwJ71fQEtLrA",
+      "cover_url": "https://cdn.kobo.com/book-images/4cc22679-677b-463f-80e5-5c96ed64b554/300/300/False/FMH1rqOqcjqwJ71fQEtLrA.jpg",
+      "list_price": 294,
+      "sale_price": 99,
+      "sale_date": "2026-11-30"
+    },
+    {
+      "title": "沉睡的殺手",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/top-1-netflix-40",
+      "cover_url": "https://cdn.kobo.com/book-images/28204d31-7ba1-45a3-941d-114412d87414/300/300/False/top-1-netflix-40.jpg",
+      "list_price": 336,
+      "sale_price": 99,
+      "sale_date": "2026-12-01"
+    },
+    {
+      "title": "壽命天註定？──揭開生命週期、老化與死亡的關鍵機制",
+      "description": "",
+      "kobo_url": "https://www.kobo.com/tw/zh/ebook/JDf9OSqiUjizsyDFbhqLyQ",
+      "cover_url": "https://cdn.kobo.com/book-images/9f097f8a-d0b5-4928-b763-3c270c54529e/300/300/False/JDf9OSqiUjizsyDFbhqLyQ.jpg",
+      "list_price": 273,
+      "sale_price": 99,
+      "sale_date": "2026-12-02"
+    }
+  ]
+}
