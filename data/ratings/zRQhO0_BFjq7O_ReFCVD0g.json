@@ -1,0 +1,34 @@
+{
+  "kobo_id": "zRQhO0_BFjq7O_ReFCVD0g",
+  "title": "自行车的诞生：从手稿到环球利器",
+  "hints": {
+    "original_title": "自行车的诞生：从手稿到环球利器",
+    "original_author": "上海汽车博物馆"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/E050181345",
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/zRQhO0_BFjq7O_ReFCVD0g",
+      "via": "apify"
+    }
+  }
+}

@@ -34,6 +34,13 @@
       "score": 4.4,
       "count": 609,
       "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/3q47hkZhRDWSOorqv1zQOQ",
+      "via": "apify"
     }
   },
   "kobo99": {

@@ -17,40 +17,23 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-12T02:22:11+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/E050239911",
-          "title": "雲端咕咕國 (電子書)",
-          "authors": [
-            "安東尼．杜爾"
-          ],
-          "confidence": 0.97
-        },
-        {
-          "url": "https://www.books.com.tw/products/0011003209",
-          "title": "雲端咕咕國",
-          "authors": [
-            "安東尼．杜爾"
-          ],
-          "confidence": 0.9
-        },
-        {
-          "url": "https://www.books.com.tw/products/0011003190",
-          "title": "雲端咕咕國（作者親簽版）",
-          "authors": [
-            "安東尼．杜爾"
-          ],
-          "confidence": 0.6
-        }
-      ]
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050239911",
+      "matched_title": "雲端咕咕國 (電子書)",
+      "score": 5.0,
+      "count": 4,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-12T02:22:11+00:00",
-      "status": "no_rating",
-      "url": "https://www.amazon.co.jp/dp/0008478295"
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B08TRMSR3Z",
+      "matched_title": "Cloud Cuckoo Land: A Novel",
+      "score": 4.5,
+      "count": 36257,
+      "via": "apify"
     },
     "kobo": {
       "platform": "kobo",

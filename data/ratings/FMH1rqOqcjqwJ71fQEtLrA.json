@@ -1,0 +1,62 @@
+{
+  "kobo_id": "FMH1rqOqcjqwJ71fQEtLrA",
+  "title": "熵減法則",
+  "hints": {
+    "original_title": "熵减法则",
+    "original_author": "何圣君"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "not_found"
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0010964795",
+      "matched_title": "熵減法則：減去人生雜訊，從無序變有序，成為「最好版本的自己」",
+      "score": 4.5,
+      "count": 1,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "no_rating",
+      "url": "https://www.amazon.com/dp/B0CGTT21TY",
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/FMH1rqOqcjqwJ71fQEtLrA",
+      "matched_title": "熵減法則：減去人生雜訊，從無序變有序，成為「最好版本的自己」",
+      "score": 5.0,
+      "count": 2,
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-26T02:22:19+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 5.0,
+        "count": 2,
+        "url": "https://www.kobo.com/tw/zh/ebook/FMH1rqOqcjqwJ71fQEtLrA"
+      },
+      "books": {
+        "score": 4.5,
+        "count": 1,
+        "url": "https://www.books.com.tw/products/E050177904"
+      },
+      "readmoo": {
+        "score": 4.4,
+        "count": 12,
+        "url": "https://kobo99.com/"
+      }
+    }
+  }
+}

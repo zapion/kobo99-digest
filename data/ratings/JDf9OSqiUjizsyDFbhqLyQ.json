@@ -1,0 +1,69 @@
+{
+  "kobo_id": "JDf9OSqiUjizsyDFbhqLyQ",
+  "title": "壽命天註定？──揭開生命週期、老化與死亡的關鍵機制",
+  "hints": {
+    "original_title": "The long and the short of it: the science of life span and aging",
+    "original_author": "Jonathan Silvertown"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/132905725",
+          "title": "The Long and the Short of it: The Science of Life Span and Aging by Jonathan Silvertown (2013-10-18)",
+          "authors": [
+            "Jonathan Silvertown"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0010939775",
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B00GE4MJSM",
+      "matched_title": "The Long and the Short of It: The Science of Life Span & Aging",
+      "score": 4.2,
+      "count": 36,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/JDf9OSqiUjizsyDFbhqLyQ",
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-26T02:22:19+00:00",
+    "ratings": {
+      "readmoo": {
+        "score": 4.1,
+        "count": 7,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.36,
+        "count": 232,
+        "url": "https://www.goodreads.com/book/show/132905725"
+      },
+      "amazon": {
+        "score": 4.2,
+        "count": 36,
+        "url": "https://www.amazon.com/dp/B00GE4MJSM"
+      }
+    }
+  }
+}

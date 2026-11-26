@@ -1,22 +1,30 @@
 {
   "kobo_id": "9b28lThLmT-YIuj3o26WSw",
   "title": "有一種勇敢:叫做自己",
-  "hints": {},
+  "hints": {
+    "original_title": "さみしい夜にはペンを持て",
+    "original_author": "古賀史健"
+  },
   "platforms": {
     "goodreads": {
       "platform": "goodreads",
-      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
       "status": "not_found"
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-12T02:22:11+00:00",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
       "status": "not_found"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-12T02:22:11+00:00",
-      "status": "not_found"
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.co.jp/dp/4591178544",
+      "matched_title": "さみしい夜にはペンを持て (一般書)",
+      "score": 4.6,
+      "count": 716,
+      "via": "apify"
     },
     "kobo": {
       "platform": "kobo",

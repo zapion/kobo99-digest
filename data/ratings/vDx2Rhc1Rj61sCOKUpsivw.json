@@ -1,0 +1,59 @@
+{
+  "kobo_id": "vDx2Rhc1Rj61sCOKUpsivw",
+  "title": "霧迷宮",
+  "hints": {
+    "original_author": "神谷悠",
+    "original_title": "霧迷宮・匣迷宮"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/241166819",
+          "title": "A Misty Labyrinth (Chinese Edition)",
+          "authors": [
+            "Geon Woo Jeon"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "no_rating",
+      "url": "https://www.books.com.tw/products/0011019042",
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "not_found"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "no_rating",
+      "url": "https://www.kobo.com/tw/zh/ebook/vDx2Rhc1Rj61sCOKUpsivw",
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-26T02:22:19+00:00",
+    "ratings": {
+      "readmoo": {
+        "score": 3.5,
+        "count": 11,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 2.75,
+        "count": 1,
+        "url": "https://www.goodreads.com/book/show/241166819"
+      }
+    }
+  }
+}

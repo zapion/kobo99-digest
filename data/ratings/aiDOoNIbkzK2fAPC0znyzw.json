@@ -1,0 +1,85 @@
+{
+  "kobo_id": "aiDOoNIbkzK2fAPC0znyzw",
+  "title": "當上主管，難道只能被討厭？",
+  "hints": {
+    "original_title": "You're the Boss: Become the Manager You Want to Be (and Others Need)",
+    "original_author": "Sabina Nawaz"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/211222737",
+          "title": "You’re the Boss: Become the Manager You Want to Be (And Others Need)",
+          "authors": [
+            "Sabina Nawaz"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050276102",
+      "matched_title": "當上主管，難道只能被討厭？：執行長教練教你兼顧績效與人氣的帶人技術 (電子書)",
+      "score": 4.0,
+      "count": 3,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/1668023180",
+      "matched_title": "You're the Boss: Become the Manager You Want to Be (and Others Need)",
+      "score": 4.9,
+      "count": 141,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/aiDOoNIbkzK2fAPC0znyzw",
+      "matched_title": "當上主管，難道只能被討厭？：執行長教練教你兼顧績效與人氣的帶人技術",
+      "score": 4.6,
+      "count": 5,
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-26T02:22:19+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 4.6,
+        "count": 5,
+        "url": "https://www.kobo.com/tw/zh/ebook/aiDOoNIbkzK2fAPC0znyzw"
+      },
+      "books": {
+        "score": 4.0,
+        "count": 3,
+        "url": "https://www.books.com.tw/products/E050276102"
+      },
+      "readmoo": {
+        "score": 4.0,
+        "count": 4,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 4.3,
+        "count": 135,
+        "url": "https://www.goodreads.com/book/show/211222737"
+      },
+      "amazon": {
+        "score": 4.9,
+        "count": 141,
+        "url": "https://www.amazon.com/dp/B0DBPHCR6L"
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@
   "title": "＜經典奇幻文學作家J. R. R. 托爾金1＞霍比特人",
   "hints": {
     "original_title": "The Hobbit",
-    "original_author": "J.R.R. Tolkien"
+    "original_author": "J. R. R. Tolkien"
   },
   "platforms": {
     "goodreads": {
@@ -17,32 +17,23 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-12T02:22:11+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/E050205641",
-          "title": "＜經典奇幻文學作家J. R. R. 托爾金1＞霍比特人 (電子書)",
-          "authors": [
-            "托爾金"
-          ],
-          "confidence": 0.97
-        },
-        {
-          "url": "https://www.books.com.tw/products/0010983917",
-          "title": "＜經典奇幻文學作家J. R. R. 托爾金1＞霍比特人",
-          "authors": [
-            "托爾金"
-          ],
-          "confidence": 0.93
-        }
-      ]
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/E050205641",
+      "matched_title": "＜經典奇幻文學作家J. R. R. 托爾金1＞霍比特人 (電子書)",
+      "score": 3.5,
+      "count": 6,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-12T02:22:11+00:00",
-      "status": "no_rating",
-      "url": "https://www.amazon.com/dp/054792822X"
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B0079KT81G",
+      "matched_title": "The Hobbit: Tolkien's Classic Epic Fantasy Adventure (Lord of the Rings)",
+      "score": 4.7,
+      "count": 82884,
+      "via": "apify"
     },
     "kobo": {
       "platform": "kobo",

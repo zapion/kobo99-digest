@@ -17,24 +17,23 @@
     },
     "books": {
       "platform": "books",
-      "fetched_at": "2026-11-12T02:22:11+00:00",
-      "status": "low_confidence",
-      "tried": [
-        {
-          "url": "https://www.books.com.tw/products/0010885345",
-          "title": "物種源始（達爾文二一二歲誕辰紀念版，完整重現寫給所有人的演化論）",
-          "authors": [
-            "達爾文"
-          ],
-          "confidence": 0.97
-        }
-      ]
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0010885345",
+      "matched_title": "物種源始（達爾文二一二歲誕辰紀念版，完整重現寫給所有人的演化論）",
+      "score": 5.0,
+      "count": 1,
+      "via": "apify"
     },
     "amazon": {
       "platform": "amazon",
-      "fetched_at": "2026-11-12T02:22:11+00:00",
-      "status": "no_rating",
-      "url": "https://www.amazon.com/dp/1841939897"
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B08ZXDWKG9",
+      "matched_title": "物種源始（達爾文二一二歲誕辰紀念版，完整重現寫給所有人的演化論） (Traditional Chinese Edition)",
+      "score": 5.0,
+      "count": 1,
+      "via": "apify"
     },
     "kobo": {
       "platform": "kobo",

@@ -1,0 +1,85 @@
+{
+  "kobo_id": "top-1-netflix-40",
+  "title": "沉睡的殺手",
+  "hints": {
+    "original_title": "Anna O",
+    "original_author": "Matthew Blake"
+  },
+  "platforms": {
+    "goodreads": {
+      "platform": "goodreads",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "low_confidence",
+      "tried": [
+        {
+          "url": "https://www.goodreads.com/book/show/134221476",
+          "title": "Anna O",
+          "authors": [
+            "Matthew   Blake"
+          ],
+          "confidence": 0.0
+        }
+      ]
+    },
+    "books": {
+      "platform": "books",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.books.com.tw/products/0011024207",
+      "matched_title": "沉睡的殺手：全球暢銷榜TOP 1《安眠書店》團隊×華納兄弟將改編Netflix影集，轟動超過40國！",
+      "score": 4.5,
+      "count": 9,
+      "via": "apify"
+    },
+    "amazon": {
+      "platform": "amazon",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.amazon.com/dp/B0C2Q5H3YK",
+      "matched_title": "Anna O: A Today Show and GMA Buzz Pick",
+      "score": 3.8,
+      "count": 4858,
+      "via": "apify"
+    },
+    "kobo": {
+      "platform": "kobo",
+      "fetched_at": "2026-11-26T02:22:19+00:00",
+      "status": "ok",
+      "url": "https://www.kobo.com/tw/zh/ebook/top-1-netflix-40",
+      "matched_title": "沉睡的殺手：全球暢銷榜TOP 1《安眠書店》團隊×華納兄弟將改編Netflix影集，轟動超過40國！",
+      "score": 3.6,
+      "count": 5,
+      "via": "apify"
+    }
+  },
+  "kobo99": {
+    "fetched_at": "2026-11-26T02:22:19+00:00",
+    "ratings": {
+      "kobo": {
+        "score": 3.6,
+        "count": 5,
+        "url": "https://www.kobo.com/tw/zh/ebook/top-1-netflix-40"
+      },
+      "books": {
+        "score": 4.5,
+        "count": 9,
+        "url": "https://www.books.com.tw/products/E050271686"
+      },
+      "readmoo": {
+        "score": 4.4,
+        "count": 59,
+        "url": "https://kobo99.com/"
+      },
+      "goodreads": {
+        "score": 3.42,
+        "count": 32924,
+        "url": "https://www.goodreads.com/book/show/134221476"
+      },
+      "amazon": {
+        "score": 3.8,
+        "count": 4858,
+        "url": "https://www.amazon.com/dp/B0C2Q5H3YK"
+      }
+    }
+  }
+}
